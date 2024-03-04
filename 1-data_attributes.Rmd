@@ -1,0 +1,18 @@
+# Tipos de Dados e Atributos
+
+## Tipos de Dados
+
+### Famílias
+
+### Vetores Atômicos
+
+### Listas
+
+
+## Atributos
+
+### Nomes
+
+### Dimensões
+
+### Classes

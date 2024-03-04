@@ -1,0 +1,58 @@
+--- 
+title: "R: Teoria e Aplicações"
+author: "Ricardo Semião"
+date: "03/2024"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    lib_dir: "libs"
+  bookdown::pdf_book:
+    keep_tex: yes
+documentclass: book
+bibliography: [book.bib] #, packages.bib
+link-citations: yes
+github-repo: ricardo-semiao/R-course
+description: "Book for a course on the theory of R, and aplications for data scientists."
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+---
+
+# Bem Vindo! {-}
+
+Este livro tem o objetivo de ensinar a a liguagem R, com duas especificidades:
+
+- Ele começa do nível "nunca instalei o R na vida", mas de cara expõe conceitos com profundidade, apresentando um andamento rápido.
+- Tem um foco no uso para ciência de dados e usando o _tidyverse_. Porém, apresenta os temas com uma visão mais "teórica", deixando a aplicabilidade para o fim.
+
+O livro é dividido em três partes: "R base", "Ciência de Dados com o Tidyverse", e "Aplicações Diversas". Elas são, em sua maior parte, uma curadoria e adaptação dos livros: [Advanced R, 2nd Edition](https://adv-r.hadley.nz/), [R for Data Science, 2nd Edition](https://r4ds.hadley.nz/), e [R Cookbook, 2nd Edition](https://rc2e.com/) (respectivamente).
+
+
+
+## Organização do Livro {-}
+
+### Introdução e preparação {-}
+A história da linguagem, seu objetivo e posição dentre outras linguagens focadas em estatística. A preparação para começar a programar em R: a instalação e explicação da interface do RStudio.
+
+
+### Primeira parte - R base {-}
+Os conceitos basilares do R costumam ser ensinados rapidamente, para dar prioridade na manipulação de dados e aplicações. Esse curso não fará isso. Iremos passar com bastante calma por esse tema, tanto porque existem menos tutoriais que fazem isso, mas principalmente porque aprender sobre como o R funciona com mais detalhes gera uma série de benefícios:
+
+- Permite entender códigos mais complexos;
+- Permite aprender fontes comuns de erros e como evitá-las;
+- Permite escrever códigos mais elegantes e principalmente mais eficiêntes;
+- Facilitará a explicação dos conceitos que empoderam o _tidyverse_.
+
+Essa abordagem é algo como ter aulas formais de uma língua, e não ensino para turismo. A utilidade dessa abordagem depende de seu objetivo, se ele é conseguir aplicar rapidamente seus conhecimentos, outros livros serão mais úteis.
+
+
+### Segunda parte - Ciência de Dados com o Tidyverse {-}
+Na segunda parte, iremos ver sobre manipulação de dados, porque ela é uma tarefa que será necessária para praticamente todas as aplicações do R.
+
+Existem vários frameworks diferentes para isso, o R base, o DataTable, e o tidyverse. Nesse curso escolho o tidyverse pois é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Ao fim, também trataremos rapidamente sobre um framework para lidar com datas e séries de tempo.
+
+framework tidyverse: manipulação de dados (dplyr, tidyr), gráficos (ggplot2), Regex (forcats, stringr), leitura de dados (readr); framework lubridate/ts; programação funcional (purrr).
+
+
+
+### Terceira parte - Aplicações Diversas {-}
+Listagem de aplicações específicas no estilo "livro de receitas". A parte três apresenta várias aplicações específicas em R, sem detalhar muito a fundo todos seus detalhes nem explicar a teoria por trás, logo mais com o objetivo de mostrar as possibilidades no R.
