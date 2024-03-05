@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Subsetting | R: Teoria e Aplicações</title>
+  <title>Capítulo 1 Sintaxe e Variáveis | R: Teoria e Aplicações</title>
   <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Subsetting | R: Teoria e Aplicações" />
+  <meta property="og:title" content="Capítulo 1 Sintaxe e Variáveis | R: Teoria e Aplicações" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="github-repo" content="ricardo-semiao/R-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Subsetting | R: Teoria e Aplicações" />
+  <meta name="twitter:title" content="Capítulo 1 Sintaxe e Variáveis | R: Teoria e Aplicações" />
   
   <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-attributes.html"/>
-<link rel="next" href="control-conditions.html"/>
+<link rel="prev" href="r-base.html"/>
+<link rel="next" href="data-attributes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -256,20 +256,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="subsetting" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> Subsetting<a href="subsetting.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="operador" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Operador <code>[</code><a href="subsetting.html#operador" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="syntax-variables" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Sintaxe e Variáveis<a href="syntax-variables.html#syntax-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sintaxe" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Sintaxe<a href="syntax-variables.html#sintaxe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="programas-expressões-e-código" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Programas, Expressões, e Código<a href="syntax-variables.html#programas-expressões-e-código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Um <strong>programa</strong> (ou <em>script</em>) é um arquivo que será avaliado/“rodado” pelo computador: traduzido da linguagem R para linguagem de máquina, e avaliado, linha a linha. Ele é a sua redação do ENEM.</p>
+<p>O programa é composto por <strong>expressões</strong>, as frases da sua redação. As frases podem fazer referências à outras (não existem num vácuo), mas devem ser são completas, com começo meio e fim. Algumas expressões podem ocupar uma linha inteira, várias linhas, ou apenas uma palavra.</p>
+<p>A palavra “código” as vezes é utilizada para se referir a um programa, mas aqui, uso <strong>código</strong> como se referindo às palavras que compõe o programa.</p>
+<p>Mas então, o que são os parágrafos? Não sei, a metáfora não é perfeita, paciência.</p>
+<div id="código" class="section level4 unnumbered hasAnchor">
+<h4>Código<a href="syntax-variables.html#código" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Quais palavras podemos usar?</p>
+<ul>
+<li><strong>Valores/dados</strong>, que podem textos (chamados de <em>strings</em> na computação), números, ou algo mais complexo.</li>
+<li><strong>Variáveis</strong>, que são nomes associados à valores.</li>
+<li><strong>Operadores</strong> (símbolos como <code>+</code>, <code>&gt;</code>) e <strong>funções</strong>, que definem operações à serem realizadas nas variáveis/valores.</li>
+</ul>
+<p>Em termos simplificados, valores, dados, e variáveis, são nossos substantivos (variáveis são nomes próprios), enquanto operadores e funções são nossos verbos.</p>
+<p>Como imputar essas palavras?</p>
+<ul>
+<li><strong>Texto/strings:</strong> utilize <code>"</code> ou <code>'</code>: <code class="sourceCode r"><span class="st">&quot;Hello World!&quot;</span></code>, <code class="sourceCode r"><span class="st">&#39;Hello World!&#39;</span></code>.</li>
+<li><strong>Números:</strong> simplesmente escreva-os: <code>1</code>.</li>
+<li><strong>“Algo mais complexo”:</strong> calma, tudo em seu tempo.</li>
+<li><strong>Operadores:</strong> são imputados como <code class="sourceCode r"><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></code>, e <strong>funções</strong> parecem “operadores por extenso” <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>)</code>.
+<ul>
+<li>Parênteses podem ser utilizados em operações matemáticas: <code class="sourceCode r">(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span></code>.</li>
+</ul></li>
+<li><strong>Comentários:</strong> texto que não será avaliado como código. Use o símbolo <code>#</code>, que torna tudo após delena mesma linha, um comentário.</li>
+</ul>
+<p>Obs: nos exemplos deste livro, um comentário no formato <code class="sourceCode r"><span class="co">#&gt; ...</span></code> indica o resultado esperado da expressão que o precede.</p>
 </div>
-<div id="operador-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Operador <code>[[</code><a href="subsetting.html#operador-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="expressões" class="section level4 unnumbered hasAnchor">
+<h4>Expressões<a href="syntax-variables.html#expressões" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Expressões</strong> são aglomerações de código.</p>
+<p>Nós gostamos de expressões “completas”, no sentido que <code class="sourceCode r"><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></code> é uma expressão completa mas <code class="sourceCode r"><span class="dv">1</span><span class="sc">+</span></code> não. Assim como <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">1</span>)</code> e <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span></code>. No futuro, ficará claro que “completa” é sinônimo de “retorna um valor” (mesmo que invisivelmente).</p>
+<p>Uma expressão pode ser delimitada por uma quebra de linha, ou por chaves <code>{}</code>. As chaves permitem criar expressões que ocupem mais do que uma quebra de linha.</p>
+<p>Veja alguns exemplos abaixo, note que expressões podem ser compostas de outras expressões:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="syntax-variables.html#cb1-1" tabindex="-1"></a><span class="dv">1</span> <span class="co">#é uma expressão</span></span>
+<span id="cb1-2"><a href="syntax-variables.html#cb1-2" tabindex="-1"></a>{<span class="dv">1</span>} <span class="co">#é a mesma expressão que a anterior</span></span>
+<span id="cb1-3"><a href="syntax-variables.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="syntax-variables.html#cb1-4" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co">#é uma expressão, uma operação &quot;+&quot; sobre dois &quot;1&quot;&#39;s</span></span>
+<span id="cb1-5"><a href="syntax-variables.html#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="syntax-variables.html#cb1-6" tabindex="-1"></a>{</span>
+<span id="cb1-7"><a href="syntax-variables.html#cb1-7" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-8"><a href="syntax-variables.html#cb1-8" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a href="syntax-variables.html#cb1-9" tabindex="-1"></a>} <span class="co">#é uma expressão, duas operações de soma</span></span>
+<span id="cb1-10"><a href="syntax-variables.html#cb1-10" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>; <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="co">#é a mesma expressão que a anterior</span></span></code></pre></div>
+<p>Nada disso deve fazer muito sentido em termos práticos ainda, tudo bem, apenas é preciso já ir se acostumando com a estrutura geral de um programa.</p>
+<p>Antes de avançar, vou mentir um pouco e dar uma definição simplificada de função, mas que será melhor detalhada no capítulo <a href="functions-environments.html#functions-environments">5</a>.</p>
+<p><strong>Função:</strong> é uma expressão, que depende de variáveis, associada à um nome. Utilizar esse nome, indicando os valores das variáveis envolvidas (entre parênteses), avalia a expressão, retornando seu resultado.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="syntax-variables.html#cb2-1" tabindex="-1"></a>liar <span class="ot">&lt;-</span> {x <span class="sc">+</span> y} <span class="co">#meramente ilustrativo, a sintaxe real é mais complexa</span></span>
+<span id="cb2-2"><a href="syntax-variables.html#cb2-2" tabindex="-1"></a><span class="fu">liar</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">2</span>) <span class="co">#&gt; 3</span></span>
+<span id="cb2-3"><a href="syntax-variables.html#cb2-3" tabindex="-1"></a><span class="fu">liar</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co">#equivalente à expressão anterior</span></span></code></pre></div>
+<p>No capítulo <a href="functions-environments.html#functions-environments">5</a>, veremos que operadores são um tipo especial de função.</p>
 </div>
-<div id="atribuição" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Atribuição<a href="subsetting.html#atribuição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="programas" class="section level4 unnumbered hasAnchor">
+<h4>Programas<a href="syntax-variables.html#programas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Um <strong>programa</strong> é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console. Lembrando que uma sequência de expressões é uma expressão.</p>
 </div>
-<div id="aplicações" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Aplicações<a href="subsetting.html#aplicações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+</div>
+<div id="variáveis" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Variáveis<a href="syntax-variables.html#variáveis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um dos tipos de palavras, as variáveis, merecem mais da nossa atenção. Mas não é para elas se acharem demais, dados e funções terão seus próprios capítulos.</p>
+<div id="definindo-variáveis" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Definindo Variáveis<a href="syntax-variables.html#definindo-variáveis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para definir variáveis, escrevemos seu nome, <code>=</code> ou <code>&lt;-</code>, e a expressão que definirá seu valor: <code class="sourceCode r">x <span class="ot">=</span> <span class="dv">1</span></code>, <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">1</span></code>.</p>
+<p>Ao rodar algo como <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">1</span></code>, o valor <code>1</code> é salvo na memória do computador, e associado ao nome <code>x</code>. Note que temos três parcelas:</p>
+<ul>
+<li>A informação salva na memória do computador (no exemplo, <code>1</code>), é chamada de <strong>objeto</strong>.</li>
+<li>O nome associado à esse objeto (no exemplo, <code>x</code>), é chamado de, bom, <strong>nome</strong>.</li>
+<li><strong>Variável</strong> se refere ao conjunto nome-objeto.</li>
+</ul>
+</div>
+<div id="copy-on-modify" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Copy on Modify<a href="syntax-variables.html#copy-on-modify" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Com base no que aprendeu, como pensaríamos em <code class="sourceCode r">y <span class="ot">&lt;-</span> x</code>? A resposta não é nada óbvia. Note que temos duas opções:</p>
+<ul>
+<li><code>y</code> pode ser um novo nome, associado ao mesmo objeto, mesma posição na memória do computador, que <code>x</code>.</li>
+<li><code>y</code> pode ser um novo nome, associado a um novo objeto, nova posição na memória do computador, que <code>x</code>, mas carregando a mesma informação.</li>
+</ul>
+<p>No R, a realidade é a primeira opção. Porém, se <code>y</code> for alterado, <code>x</code> não é. O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo <code>y</code>. Esse processo, de apenas “separar”/“copiar” objetos quando modificados, é chamado de <strong>copy-on-modify</strong>. Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso.</p>
+</div>
+<div id="outras-características" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Outras Características<a href="syntax-variables.html#outras-características" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Note que <code>=</code> e <code>&lt;-</code> são muito similares, mas <code>=</code> serve para mais coisas que somente definição de variáveis, como indicar argumentos em uma função. Portanto, <code>&lt;-</code> funciona como “definidor” em mais contextos, e é uma má prática utilizar <code>=</code> como definidor.</p>
+<p>Ambos podem definir várias variáveis de uma vez: <code class="sourceCode r">x <span class="ot">=</span> y <span class="ot">=</span> <span class="dv">3</span></code>, <code class="sourceCode r">x <span class="ot">&lt;-</span> y <span class="ot">&lt;-</span> <span class="dv">3</span></code>, <code class="sourceCode r">x <span class="ot">=</span> y <span class="ot">&lt;-</span> <span class="dv">3</span></code>.</p>
+<p>Existe um terceiro operador <code>&lt;&lt;-</code>, que será discutido no capítulo <a href="functions-environments.html#functions-environments">5</a>.</p>
+</div>
+<div id="regras-de-nomenclatura" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Regras de Nomenclatura<a href="syntax-variables.html#regras-de-nomenclatura" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Nem toda combinação de caracteres pode ser um nome de variável. As principais regras são:</p>
+<ul>
+<li>Nomes podem conter letras, números, “.” e “_“.</li>
+<li>São “case-sensitive”.</li>
+<li>Podem começar apenas com letras ou “.”.</li>
+<li>Não podem ser palavras reservadas como “TRUE”.</li>
+</ul>
+</div>
+</div>
+<div id="recapitulando" class="section level2 unnumbered hasAnchor">
+<h2>Recapitulando<a href="syntax-variables.html#recapitulando" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dicionário-de-funções" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Dicionário de Funções<a href="syntax-variables.html#dicionário-de-funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
+</div>
 </div>
 </div>
             </section>
@@ -277,8 +370,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-attributes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="control-conditions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-base.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-attributes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -309,7 +402,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-subsetting.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-syntax_variables.Rmd",
 "text": "Edit"
 },
 "history": {

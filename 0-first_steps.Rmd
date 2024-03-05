@@ -1,12 +1,14 @@
-# Primeiros passos{-}
+# Primeiros passos {#first_steps .unnumbered}
 
 ## História {-}
 
-R é uma linguagem de programação para análise estatística criada em 1993 por Ross Ihaka e Robert Gentleman da Universdade de Auckland, Nova Zelândia. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R.
+R é uma linguagem de programação para análise estatística criada em 1993 por Ross Ihaka e Robert Gentleman da Universdade de Auckland, Nova Zelândia. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R. Não, infelizmente, não é R de "Ricardo".
 
-O "Comprehensive R Archive Network" (CRAN) foi criado em 1997 por Kurt Hornik e Fritz Leisch para armazenar o código fonte, documentação, e pacotes do R. O "R Core Team" foi formado em 1997 para desenvolver a linguagem, e em 2003 a "R Foundation" foi fundada para ajudar o projeto R. Em 2011 foi lançado o RStudio, um ambiente de desenvolvimento integrado para R.
+Algumas curiosidades:
 
-Obs: o código fonte está livre para uso sob licencsa GNU General Public Licence; o código fonte R utiliza scripts em C, C++, .Net, e Python para maior eficiência. 
+- O "Comprehensive R Archive Network" (CRAN) foi criado em 1997 por Kurt Hornik e Fritz Leisch para armazenar o código fonte, documentação, e pacotes do R. O "R Core Team" foi formado em 1997 para desenvolver a linguagem, e em 2003 a "R Foundation" foi fundada para ajudar o projeto R. Em 2011 foi lançado o RStudio, um ambiente de desenvolvimento integrado para R.
+- O código fonte está livre para uso sob licencsa GNU General Public Licence.
+- O código fonte R utiliza scripts em C, C++, .Net, e Python para maior eficiência. 
 
 
 ## Por que R? {-}
@@ -30,3 +32,5 @@ Além disso, existem três configurações mais comuns de serem alteradas: alter
 ![](images/Settings general.png){width=300px} ![](images/Settings appearance.png){width=300px}
 
 Mais informações úteis sobre a interface podem ser encontradas na Seção ["Navigating the Software"](https://rc2e.com/navigatingthesoftware) do livro "R Cookbok 2nd Edition".
+
+Até o momento, eu fui preguiçoso e não trouxe esse material para o livro. Ainda assim, veja as referências com calma, não deixe confusões com o software atrapalharem seu aprendizado.

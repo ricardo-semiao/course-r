@@ -1,5 +1,125 @@
-# Sintaxe e Variáveis
+# Sintaxe e Variáveis {#syntax-variables}
 
 ## Sintaxe
 
+### Programas, Expressões, e Código
+Um **programa** (ou _script_) é um arquivo que será avaliado/"rodado" pelo computador: traduzido da linguagem R para linguagem de máquina, e avaliado, linha a linha. Ele é a sua redação do ENEM.
+
+O programa é composto por **expressões**, as frases da sua redação. As frases podem fazer referências à outras (não existem num vácuo), mas devem ser são completas, com começo meio e fim. Algumas expressões podem ocupar uma linha inteira, várias linhas, ou apenas uma palavra.
+
+A palavra "código" as vezes é utilizada para se referir a um programa, mas aqui, uso **código** como se referindo às palavras que compõe o programa.
+
+Mas então, o que são os parágrafos? Não sei, a metáfora não é perfeita, paciência.
+
+
+#### Código {-}
+Quais palavras podemos usar?
+
+- **Valores/dados**, que podem textos (chamados de _strings_ na computação), números, ou algo mais complexo.
+- **Variáveis**, que são nomes associados à valores.
+- **Operadores** (símbolos como `+`, `>`) e **funções**, que definem operações à serem realizadas nas variáveis/valores.
+
+Em termos simplificados, valores, dados, e variáveis, são nossos substantivos (variáveis são nomes próprios), enquanto operadores e funções são nossos verbos.
+
+Como imputar essas palavras?
+
+- **Texto/strings:** utilize `"` ou `'`: `"Hello World!"`{.r}, `'Hello World!'`{.r}\footnote{Alguns caracteres de texto são especiais, e precisam ser precedidos por uma barra (mais na aula de manipulação de texto).}.
+- **Números:** simplesmente escreva-os: `1`.
+- **"Algo mais complexo":** calma, tudo em seu tempo.
+- **Operadores:** são imputados como `1+1`{.r}, e **funções** parecem "operadores por extenso" `sum(1, 1)`{.r}.
+  - Parênteses podem ser utilizados em operações matemáticas: `(1+1)/2`{.r}.
+- **Comentários:** texto que não será avaliado como código. Use o símbolo `#`, que torna tudo após delena mesma linha, um comentário.
+
+Obs: nos exemplos deste livro, um comentário no formato `#> ...`{.r} indica o resultado esperado da expressão que o precede.
+
+
+#### Expressões {-}
+**Expressões** são aglomerações de código\footnote{A definição formal será exposta no tema de "Metaprogramming".}.
+
+Nós gostamos de expressões "completas", no sentido que `1+1`{.r} é uma expressão completa mas `1+`{.r} não. Assim como `sum(1,1)`{.r} e `sum(1`{.r}. No futuro, ficará claro que "completa" é sinônimo de "retorna um valor" (mesmo que invisivelmente).
+
+Uma expressão pode ser delimitada por uma quebra de linha, ou por chaves `{}`\footnote{Equivalente à quebrar linha é usar um ponto e vírgula `;`, mas não é uma boa prática nem algo comum de ser utilizado.}. As chaves permitem criar expressões que ocupem mais do que uma quebra de linha.
+
+Veja alguns exemplos abaixo, note que expressões podem ser compostas de outras expressões:
+
+```{r}
+1 #é uma expressão
+{1} #é a mesma expressão que a anterior
+
+1 + 1 #é uma expressão, uma operação "+" sobre dois "1"'s
+
+{
+  1 + 1
+  2 + 2
+} #é uma expressão, duas operações de soma
+1 + 1; 2 + 2 #é a mesma expressão que a anterior
+```
+
+Nada disso deve fazer muito sentido em termos práticos ainda, tudo bem, apenas é preciso já ir se acostumando com a estrutura geral de um programa.
+
+Antes de avançar, vou mentir um pouco e dar uma definição simplificada de função, mas que será melhor detalhada no capítulo \@ref(functions-environments).
+
+**Função:** é uma expressão, que depende de variáveis, associada à um nome. Utilizar esse nome, indicando os valores das variáveis envolvidas (entre parênteses), avalia a expressão, retornando seu resultado.
+
+```{r}
+liar <- {x + y} #meramente ilustrativo, a sintaxe real é mais complexa
+liar(x = 1, y = 2) #> 3
+liar(1, 2) #equivalente à expressão anterior
+```
+
+No capítulo \@ref(functions-environments), veremos que operadores são um tipo especial de função.
+
+
+#### Programas {-}
+Um **programa** é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console. Lembrando que uma sequência de expressões é uma expressão.
+
+
+
 ## Variáveis
+
+Um dos tipos de palavras, as variáveis, merecem mais da nossa atenção. Mas não é para elas se acharem demais, dados e funções terão seus próprios capítulos. 
+
+
+### Definindo Variáveis
+Para definir variáveis, escrevemos seu nome, `=` ou `<-`, e a expressão que definirá seu valor: `x = 1`{.r}, `x <- 1`{.r}.
+
+Ao rodar algo como `x <- 1`{.r}, o valor `1` é salvo na memória do computador, e associado ao nome `x`. Note que temos três parcelas:
+
+- A informação salva na memória do computador (no exemplo, `1`), é chamada de **objeto**.
+- O nome associado à esse objeto (no exemplo, `x`), é chamado de, bom, **nome**.
+- **Variável** se refere ao conjunto nome-objeto.
+
+
+### Copy on Modify
+Com base no que aprendeu, como pensaríamos em `y <- x`{.r}? A resposta não é nada óbvia. Note que temos duas opções:
+
+- `y` pode ser um novo nome, associado ao mesmo objeto, mesma posição na memória do computador, que `x`.
+- `y` pode ser um novo nome, associado a um novo objeto, nova posição na memória do computador, que `x`, mas carregando a mesma informação.
+
+No R, a realidade é a primeira opção. Porém, se `y` for alterado, `x` não é. O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo `y`. Esse processo, de apenas "separar"/"copiar" objetos quando modificados, é chamado de **copy-on-modify**. Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso.
+
+
+### Outras Características
+Note que `=` e `<-` são muito similares, mas `=` serve para mais coisas que somente definição de variáveis, como indicar argumentos em uma função. Portanto, `<-` funciona como "definidor" em mais contextos, e é uma má prática utilizar `=` como definidor.
+
+Ambos podem definir várias variáveis de uma vez: `x = y = 3`{.r}, `x <- y <- 3`{.r}, `x = y <- 3`{.r}.
+
+Existe um terceiro operador `<<-`, que será discutido no capítulo \@ref(functions-environments).
+
+
+### Regras de Nomenclatura
+
+Nem toda combinação de caracteres pode ser um nome de variável. As principais regras são:
+
+- Nomes podem conter letras, números, "." e "_".
+- São "case-sensitive".
+- Podem começar apenas com letras ou ".".
+- Não podem ser palavras reservadas como "TRUE".
+
+
+
+## Recapitulando {-}
+
+
+### Dicionário de Funções
+

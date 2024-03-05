@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Subsetting | R: Teoria e Aplicações</title>
+  <title>Primeiros passos | R: Teoria e Aplicações</title>
   <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Subsetting | R: Teoria e Aplicações" />
+  <meta property="og:title" content="Primeiros passos | R: Teoria e Aplicações" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="github-repo" content="ricardo-semiao/R-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Subsetting | R: Teoria e Aplicações" />
+  <meta name="twitter:title" content="Primeiros passos | R: Teoria e Aplicações" />
   
   <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-attributes.html"/>
-<link rel="next" href="control-conditions.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="r-base.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -256,19 +256,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="subsetting" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> Subsetting<a href="subsetting.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="operador" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Operador <code>[</code><a href="subsetting.html#operador" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="first_steps" class="section level1 unnumbered hasAnchor">
+<h1>Primeiros passos<a href="first_steps.html#first_steps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="história" class="section level2 unnumbered hasAnchor">
+<h2>História<a href="first_steps.html#história" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R é uma linguagem de programação para análise estatística criada em 1993 por Ross Ihaka e Robert Gentleman da Universdade de Auckland, Nova Zelândia. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R. Não, infelizmente, não é R de “Ricardo”.</p>
+<p>Algumas curiosidades:</p>
+<ul>
+<li>O “Comprehensive R Archive Network” (CRAN) foi criado em 1997 por Kurt Hornik e Fritz Leisch para armazenar o código fonte, documentação, e pacotes do R. O “R Core Team” foi formado em 1997 para desenvolver a linguagem, e em 2003 a “R Foundation” foi fundada para ajudar o projeto R. Em 2011 foi lançado o RStudio, um ambiente de desenvolvimento integrado para R.</li>
+<li>O código fonte está livre para uso sob licencsa GNU General Public Licence.</li>
+<li>O código fonte R utiliza scripts em C, C++, .Net, e Python para maior eficiência.</li>
+</ul>
 </div>
-<div id="operador-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Operador <code>[[</code><a href="subsetting.html#operador-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="por-que-r" class="section level2 unnumbered hasAnchor">
+<h2>Por que R?<a href="first_steps.html#por-que-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O R foi desenvolvido para análise estatística, então provê uma grande comunidade e variedade de pacotes acerca de temas como análise e vizualização de dados, modelos estatísticos, data science e machine learning. Embora consiga fazer uma grande gama de outros processos não relacionados aos supracitados, costuma ter menor eficiência em comparação a linguagens mais generalistas como Python, e C.</p>
+<p>O R, com sua estrutura de linguaem de programação, pode ser considerado mais difícil de usar que seus competidores “point and click” SAS, SPSS, Stata, Eviews, GRETL, entre outros, mas ao mesmo tempo, essa estrutura dá mais liberdade ao usuário, permitindo a resolução de problemas menos comuns.</p>
 </div>
-<div id="atribuição" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Atribuição<a href="subsetting.html#atribuição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="instalação" class="section level2 unnumbered hasAnchor">
+<h2>Instalação<a href="first_steps.html#instalação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>É preciso instalar o R e o RStudio, veja como <a href="https://www.curso-de-programacao-em-r-para-jornalistas.com/2019/10/27/instalacao-r-e-rstudio/">neste tutorial</a> do curso “R Para Jornalistas”. Obs: coincidentenmente, a maneira que jornalistas instalam o R serve para qualquer outra profissão também.</p>
 </div>
-<div id="aplicações" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Aplicações<a href="subsetting.html#aplicações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="interface-e-ferramentas" class="section level2 unnumbered hasAnchor">
+<h2>Interface e ferramentas<a href="first_steps.html#interface-e-ferramentas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Existêm vários tutoriais online explicando a interface, como o da <a href="https://www.datacamp.com/tutorial/r-studio-tutorial">Datacamp</a> (veja até “How to Write R Scripts in RStudio”) e este <a href="https://www.youtube.com/watch?v=FIrsOBy5k58">vídeo no youtube</a>.</p>
+<p>Além disso, existem três configurações mais comuns de serem alteradas: alterar onde os arquivos são salvos por padrão (figura 1, “browse”); impedir que os dados da última vez que você entrou no R sejam recarregados quando você voltar (figura 1, “workspace”); e alterar aparência (figura 2). Todas elas podem ser encontradas na tab <em>Tools &gt; Global Options</em>:</p>
+<p><img src="images/Settings%20general.png" width="300" /> <img src="images/Settings%20appearance.png" width="300" /></p>
+<p>Mais informações úteis sobre a interface podem ser encontradas na Seção <a href="https://rc2e.com/navigatingthesoftware">“Navigating the Software”</a> do livro “R Cookbok 2nd Edition”.</p>
+<p>Até o momento, eu fui preguiçoso e não trouxe esse material para o livro. Ainda assim, veja as referências com calma, não deixe confusões com o software atrapalharem seu aprendizado.</p>
 
 </div>
 </div>
@@ -277,8 +292,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-attributes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="control-conditions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-base.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -309,7 +324,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-subsetting.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/0-first_steps.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -11,11 +11,16 @@ rmd_files: [
   "1-subsetting.Rmd",
   "1-control_conditions.Rmd",
   "1-functions_environments.Rmd",
+  "1-paradigms.Rmd",
+  "1-other_topics.Rmd",
+  "1-recap.Rmd",
   "2-introduction.Rmd",
   "2-ds_importing.Rmd",
   "2-manipulation.Rmd",
   "2-strings_factors.Rmd",
   "2-visualization.Rmd",
   "2-functional.Rmd",
-  "2-time_series.Rmd"
+  "2-time_series.Rmd",
+  "3-introduction.Rmd",
+  "dictionary.Rmd"
   ]

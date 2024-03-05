@@ -1,0 +1,7 @@
+# Paradigmas de Programação {#paradigms}
+
+## Programação Funcional
+
+## Programação Orientada ao Objeto
+
+## Metaprogramação

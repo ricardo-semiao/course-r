@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Subsetting | R: Teoria e Aplicações</title>
+  <title>Capítulo 2 Tipos de Dados e Atributos | R: Teoria e Aplicações</title>
   <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Subsetting | R: Teoria e Aplicações" />
+  <meta property="og:title" content="Capítulo 2 Tipos de Dados e Atributos | R: Teoria e Aplicações" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="github-repo" content="ricardo-semiao/R-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Subsetting | R: Teoria e Aplicações" />
+  <meta name="twitter:title" content="Capítulo 2 Tipos de Dados e Atributos | R: Teoria e Aplicações" />
   
   <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-attributes.html"/>
-<link rel="next" href="control-conditions.html"/>
+<link rel="prev" href="syntax-variables.html"/>
+<link rel="next" href="subsetting.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -256,20 +256,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="subsetting" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> Subsetting<a href="subsetting.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="operador" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Operador <code>[</code><a href="subsetting.html#operador" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-attributes" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Tipos de Dados e Atributos<a href="data-attributes.html#data-attributes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tipos-de-dados" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Tipos de Dados<a href="data-attributes.html#tipos-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="famílias" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Famílias<a href="data-attributes.html#famílias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="operador-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Operador <code>[[</code><a href="subsetting.html#operador-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="vetores-atômicos" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Vetores Atômicos<a href="data-attributes.html#vetores-atômicos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="atribuição" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Atribuição<a href="subsetting.html#atribuição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="listas" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Listas<a href="data-attributes.html#listas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="aplicações" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Aplicações<a href="subsetting.html#aplicações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="atributos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Atributos<a href="data-attributes.html#atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="nomes" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Nomes<a href="data-attributes.html#nomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="dimensões" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Dimensões<a href="data-attributes.html#dimensões" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="classes" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Classes<a href="data-attributes.html#classes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
+</div>
 </div>
 </div>
             </section>
@@ -277,8 +289,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-attributes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="control-conditions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="syntax-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="subsetting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -309,7 +321,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-subsetting.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-data_attributes.Rmd",
 "text": "Edit"
 },
 "history": {
