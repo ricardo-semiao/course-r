@@ -161,7 +161,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="syntax-variables.html"><a href="syntax-variables.html#sintaxe"><i class="fa fa-check"></i><b>1.1</b> Sintaxe</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="syntax-variables.html"><a href="syntax-variables.html#programas-expressões-e-código"><i class="fa fa-check"></i><b>1.1.1</b> Programas, Expressões, e Código</a></li>
+<li class="chapter" data-level="1.1.1" data-path="syntax-variables.html"><a href="syntax-variables.html#código"><i class="fa fa-check"></i><b>1.1.1</b> Código</a></li>
+<li class="chapter" data-level="1.1.2" data-path="syntax-variables.html"><a href="syntax-variables.html#expressões"><i class="fa fa-check"></i><b>1.1.2</b> Expressões</a></li>
+<li class="chapter" data-level="1.1.3" data-path="syntax-variables.html"><a href="syntax-variables.html#programas"><i class="fa fa-check"></i><b>1.1.3</b> Programas</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="syntax-variables.html"><a href="syntax-variables.html#variáveis"><i class="fa fa-check"></i><b>1.2</b> Variáveis</a>
 <ul>
@@ -170,9 +172,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.3" data-path="syntax-variables.html"><a href="syntax-variables.html#outras-características"><i class="fa fa-check"></i><b>1.2.3</b> Outras Características</a></li>
 <li class="chapter" data-level="1.2.4" data-path="syntax-variables.html"><a href="syntax-variables.html#regras-de-nomenclatura"><i class="fa fa-check"></i><b>1.2.4</b> Regras de Nomenclatura</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="syntax-variables.html"><a href="syntax-variables.html#recapitulando"><i class="fa fa-check"></i>Recapitulando</a>
+<li class="chapter" data-level="1.3" data-path="syntax-variables.html"><a href="syntax-variables.html#operadores"><i class="fa fa-check"></i><b>1.3</b> Operadores</a>
 <ul>
-<li class="chapter" data-level="1.2.5" data-path="syntax-variables.html"><a href="syntax-variables.html#dicionário-de-funções"><i class="fa fa-check"></i><b>1.2.5</b> Dicionário de Funções</a></li>
+<li class="chapter" data-level="1.3.1" data-path="syntax-variables.html"><a href="syntax-variables.html#operadores-aritmétricos"><i class="fa fa-check"></i><b>1.3.1</b> Operadores Aritmétricos</a></li>
+<li class="chapter" data-level="1.3.2" data-path="syntax-variables.html"><a href="syntax-variables.html#operadores-de-comparação"><i class="fa fa-check"></i><b>1.3.2</b> Operadores de Comparação</a></li>
+<li class="chapter" data-level="1.3.3" data-path="syntax-variables.html"><a href="syntax-variables.html#operadores-lógicos"><i class="fa fa-check"></i><b>1.3.3</b> Operadores Lógicos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-attributes.html"><a href="data-attributes.html"><i class="fa fa-check"></i><b>2</b> Tipos de Dados e Atributos</a>
@@ -260,14 +264,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Capítulo 1</span> Sintaxe e Variáveis<a href="syntax-variables.html#syntax-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="sintaxe" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Sintaxe<a href="syntax-variables.html#sintaxe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="programas-expressões-e-código" class="section level3 hasAnchor" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Programas, Expressões, e Código<a href="syntax-variables.html#programas-expressões-e-código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Um <strong>programa</strong> (ou <em>script</em>) é um arquivo que será avaliado/“rodado” pelo computador: traduzido da linguagem R para linguagem de máquina, e avaliado, linha a linha. Ele é a sua redação do ENEM.</p>
 <p>O programa é composto por <strong>expressões</strong>, as frases da sua redação. As frases podem fazer referências à outras (não existem num vácuo), mas devem ser são completas, com começo meio e fim. Algumas expressões podem ocupar uma linha inteira, várias linhas, ou apenas uma palavra.</p>
 <p>A palavra “código” as vezes é utilizada para se referir a um programa, mas aqui, uso <strong>código</strong> como se referindo às palavras que compõe o programa.</p>
 <p>Mas então, o que são os parágrafos? Não sei, a metáfora não é perfeita, paciência.</p>
-<div id="código" class="section level4 unnumbered hasAnchor">
-<h4>Código<a href="syntax-variables.html#código" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="código" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Código<a href="syntax-variables.html#código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Quais palavras podemos usar?</p>
 <ul>
 <li><strong>Valores/dados</strong>, que podem textos (chamados de <em>strings</em> na computação), números, ou algo mais complexo.</li>
@@ -278,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Como imputar essas palavras?</p>
 <ul>
 <li><strong>Texto/strings:</strong> utilize <code>"</code> ou <code>'</code>: <code class="sourceCode r"><span class="st">&quot;Hello World!&quot;</span></code>, <code class="sourceCode r"><span class="st">&#39;Hello World!&#39;</span></code>.</li>
-<li><strong>Números:</strong> simplesmente escreva-os: <code>1</code>.</li>
+<li><strong>Números:</strong> simplesmente escreva-os: <code>1</code>. Use <code>.</code> como o separador decimal <code>0.01</code>.</li>
 <li><strong>“Algo mais complexo”:</strong> calma, tudo em seu tempo.</li>
 <li><strong>Operadores:</strong> são imputados como <code class="sourceCode r"><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></code>, e <strong>funções</strong> parecem “operadores por extenso” <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>)</code>.
 <ul>
@@ -288,8 +290,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Obs: nos exemplos deste livro, um comentário no formato <code class="sourceCode r"><span class="co">#&gt; ...</span></code> indica o resultado esperado da expressão que o precede.</p>
 </div>
-<div id="expressões" class="section level4 unnumbered hasAnchor">
-<h4>Expressões<a href="syntax-variables.html#expressões" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="expressões" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Expressões<a href="syntax-variables.html#expressões" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Expressões</strong> são aglomerações de código.</p>
 <p>Nós gostamos de expressões “completas”, no sentido que <code class="sourceCode r"><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></code> é uma expressão completa mas <code class="sourceCode r"><span class="dv">1</span><span class="sc">+</span></code> não. Assim como <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">1</span>)</code> e <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span></code>. No futuro, ficará claro que “completa” é sinônimo de “retorna um valor” (mesmo que invisivelmente).</p>
 <p>Uma expressão pode ser delimitada por uma quebra de linha, ou por chaves <code>{}</code>. As chaves permitem criar expressões que ocupem mais do que uma quebra de linha.</p>
@@ -312,10 +314,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-3"><a href="syntax-variables.html#cb2-3" tabindex="-1"></a><span class="fu">liar</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co">#equivalente à expressão anterior</span></span></code></pre></div>
 <p>No capítulo <a href="functions-environments.html#functions-environments">5</a>, veremos que operadores são um tipo especial de função.</p>
 </div>
-<div id="programas" class="section level4 unnumbered hasAnchor">
-<h4>Programas<a href="syntax-variables.html#programas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Um <strong>programa</strong> é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console. Lembrando que uma sequência de expressões é uma expressão.</p>
-</div>
+<div id="programas" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Programas<a href="syntax-variables.html#programas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Um <strong>programa</strong> é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console.</p>
 </div>
 </div>
 <div id="variáveis" class="section level2 hasAnchor" number="1.2">
@@ -338,7 +339,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>y</code> pode ser um novo nome, associado ao mesmo objeto, mesma posição na memória do computador, que <code>x</code>.</li>
 <li><code>y</code> pode ser um novo nome, associado a um novo objeto, nova posição na memória do computador, que <code>x</code>, mas carregando a mesma informação.</li>
 </ul>
-<p>No R, a realidade é a primeira opção. Porém, se <code>y</code> for alterado, <code>x</code> não é. O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo <code>y</code>. Esse processo, de apenas “separar”/“copiar” objetos quando modificados, é chamado de <strong>copy-on-modify</strong>. Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso.</p>
+<p>No R, a realidade é a primeira opção. Porém, se <code>y</code> for alterado, <code>x</code> não é (e vice versa). O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo <code>y</code>. Esse processo, de apenas “separar”/“copiar” objetos quando modificados, é chamado de <strong>copy-on-modify</strong>.</p>
+<p>Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso. O importante é saber que não temos os objetos são copiados quando modificados, alterar <code>y</code> não altera <code>x</code> e vice versa, independente da complexidade do objeto.</p>
 </div>
 <div id="outras-características" class="section level3 hasAnchor" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Outras Características<a href="syntax-variables.html#outras-características" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -357,10 +359,218 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="recapitulando" class="section level2 unnumbered hasAnchor">
-<h2>Recapitulando<a href="syntax-variables.html#recapitulando" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="dicionário-de-funções" class="section level3 hasAnchor" number="1.2.5">
-<h3><span class="header-section-number">1.2.5</span> Dicionário de Funções<a href="syntax-variables.html#dicionário-de-funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="operadores" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Operadores<a href="syntax-variables.html#operadores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiquei com medo deles se sentirem excluídos. Abaixo listo os parâmetros importantes.</p>
+<div id="operadores-aritmétricos" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Operadores Aritmétricos<a href="syntax-variables.html#operadores-aritmétricos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="44%" />
+<col width="36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Função</th>
+<th align="left">Descição</th>
+<th align="left">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">+</a></td>
+<td align="left">soma</td>
+<td align="left">num <code>+</code> num</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">-</a></td>
+<td align="left">subtração</td>
+<td align="left">num <code>-</code> num</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">*</a></td>
+<td align="left">multiplicação</td>
+<td align="left">num <code>*</code> num</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">/</a></td>
+<td align="left">divisão</td>
+<td align="left">num <code>/</code> num</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">^</a></td>
+<td align="left">exponenciação</td>
+<td align="left">num <code>^</code> num</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">%%</a></td>
+<td align="left">divisão inteira</td>
+<td align="left">num <code>%%</code> num</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">%/%</a></td>
+<td align="left">resto da divisão</td>
+<td align="left">num <code>%/%</code> num</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html">(</a></td>
+<td align="left">parênteses</td>
+<td align="left"><code>(</code> expr <code>)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="operadores-de-comparação" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Operadores de Comparação<a href="syntax-variables.html#operadores-de-comparação" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="44%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Função</th>
+<th align="left">Descição</th>
+<th align="left">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html">==</a></td>
+<td align="left">igual</td>
+<td align="left">x == y</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html">!=</a></td>
+<td align="left">diferente</td>
+<td align="left">x != y</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html">&lt;</a></td>
+<td align="left">menor que</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html">&gt;</a></td>
+<td align="left">maior que</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html">&gt;=</a></td>
+<td align="left">maior igual</td>
+<td align="left">x &gt;= y</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html">&lt;=</a></td>
+<td align="left">menor igual</td>
+<td align="left">x &lt;= y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="operadores-lógicos" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Operadores Lógicos<a href="syntax-variables.html#operadores-lógicos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="27%" />
+<col width="51%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Função</th>
+<th align="left">Descição</th>
+<th align="left">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html">!</a></td>
+<td align="left">negação</td>
+<td align="left">! logi</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html">&amp;</a></td>
+<td align="left">e</td>
+<td align="left">logi &amp; logi</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html">|</a></td>
+<td align="left">ou</td>
+<td align="left">logi | logi</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="complemento" class="section level2 unlisted unnumbered hasAnchor">
+<h2>Complemento<a href="syntax-variables.html#complemento" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="recapitulando" class="section level3 unnumbered hasAnchor">
+<h3>Recapitulando<a href="syntax-variables.html#recapitulando" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Neste capítulo, vimos a estrutura geral de um programa:</p>
+<ul>
+<li>Código, as palavras do programa, podem ser valores, variáveis, ou funções.
+<ul>
+<li>Vimos como imputar cada tipo de palavra.</li>
+</ul></li>
+<li>Expressões, as frases do programa, são aglomerações de código.
+<ul>
+<li>Podem ser completas ou não.</li>
+<li>Podem ser delimitadas por quebras de linha ou chaves.</li>
+</ul></li>
+<li>Programas, são várias expressões em sequência.</li>
+</ul>
+<p>Também demos uma atenção extra ao conceito de variável:</p>
+<ul>
+<li>Vimos os operadores que definem variáveis <code>=</code> e <code>&lt;-</code>.
+<ul>
+<li>E porque <code>&lt;-</code> é preferível.</li>
+</ul></li>
+<li>Vimos a relação de variáveis e a memória do computador, algo intimamente relacionado aos conceitos de nome e objeto.
+<ul>
+<li>Inclusive, variável é o conjunto nome-objeto.</li>
+</ul></li>
+<li>Aprendemos também as regras de nomenclatura de variáveis.</li>
+</ul>
+<p>Aprendemos sobre a dinâmica de <em>copy-on-modify</em> do R, onde <code>y &lt;- x</code> define um novo nome <code>y</code> ao mesmo objeto. Apenas quando alguma alteração ocorra sobre <code>y</code> que o nome se associará a um outro objeto na memória do computador.</p>
+<p>Uma das implicações importantes, é que alterar <code>y</code> não altera <code>x</code> e vice versa, independente da complexidade do objeto.</p>
+</div>
+<div id="exercícios" class="section level3 unnumbered hasAnchor">
+<h3>Exercícios<a href="syntax-variables.html#exercícios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="variáveis-1" class="section level4 unnumbered hasAnchor">
+<h4>Variáveis<a href="syntax-variables.html#variáveis-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Explique a diferença entre <code>1</code> e cada uma das variáveis abaixo.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="syntax-variables.html#cb3-1" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb3-2"><a href="syntax-variables.html#cb3-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="syntax-variables.html#cb3-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> a</span>
+<span id="cb3-4"><a href="syntax-variables.html#cb3-4" tabindex="-1"></a>c <span class="ot">&lt;-</span> a <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb3-5"><a href="syntax-variables.html#cb3-5" tabindex="-1"></a>d <span class="ot">&lt;-</span> b</span>
+<span id="cb3-6"><a href="syntax-variables.html#cb3-6" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Foi comentado que objetos mais complexos têm comportamentos diferentes com relação ao processo de definição , mas todos seguem uma característica geral. Com base nisso, o que você espera que ocorra com <code>b</code> após a terceira linha do código abaixo?</li>
+</ol>
+<p>Obs: você verá a função <code>list()</code> no próximo capítulo, mas saiba que ela cria uma lista, uma coleção, dos elementos que a são passados como argumentos.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="syntax-variables.html#cb4-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb4-2"><a href="syntax-variables.html#cb4-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">list</span>(a, a)</span>
+<span id="cb4-3"><a href="syntax-variables.html#cb4-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> a <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+</div>
+<div id="operadores-1" class="section level4 unnumbered hasAnchor">
+<h4>Operadores<a href="syntax-variables.html#operadores-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>form integer division in R?
+identical?</p>
+</div>
+</div>
+<div id="dicionário-de-funções" class="section level3 unnumbered hasAnchor">
+<h3>Dicionário de Funções<a href="syntax-variables.html#dicionário-de-funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>=, &lt;-, &lt;&lt;-
+operadores</p>
+</div>
+<div id="referências" class="section level3 unnumbered hasAnchor">
+<h3>Referências<a href="syntax-variables.html#referências" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>

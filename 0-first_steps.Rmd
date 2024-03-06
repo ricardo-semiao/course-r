@@ -29,7 +29,7 @@ Existêm vários tutoriais online explicando a interface, como o da [Datacamp](h
 
 Além disso, existem três configurações mais comuns de serem alteradas: alterar onde os arquivos são salvos por padrão (figura 1, "browse"); impedir que os dados da última vez que você entrou no R sejam recarregados quando você voltar (figura 1, "workspace"); e alterar aparência (figura 2). Todas elas podem ser encontradas na tab _Tools > Global Options_:
 
-![](images/Settings general.png){width=300px} ![](images/Settings appearance.png){width=300px}
+![](assets/Settings general.png){width=300px} ![](assets/Settings appearance.png){width=300px}
 
 Mais informações úteis sobre a interface podem ser encontradas na Seção ["Navigating the Software"](https://rc2e.com/navigatingthesoftware) do livro "R Cookbok 2nd Edition".
 

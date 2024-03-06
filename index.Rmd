@@ -19,6 +19,18 @@ description: "Book for a course on the theory of R, and aplications for data sci
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
+
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+tabulate_funs <- function(chap, cat) {
+  readxl::read_excel("assets/functions_list.xlsx") %>%
+  filter(Chapter == chap & Category == cat) %>%
+  select(-c(Chapter, Category)) %>%
+  setNames(c("Função", "Descição", "Uso")) %>%
+  kable()
+}
 ```
 
 # Bem Vindo! {-}

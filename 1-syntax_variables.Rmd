@@ -2,8 +2,16 @@
 
 ## Sintaxe
 
-### Programas, Expressões, e Código
-Um **programa** (ou _script_) é um arquivo que será avaliado/"rodado" pelo computador: traduzido da linguagem R para linguagem de máquina, e avaliado, linha a linha. Ele é a sua redação do ENEM.
+Em termos simplistas, um _script_ é um arquivo de texto com instruções a serem executadas por um computador que antes traduzirá o arquivo para linguagem de máquina.
+
+Um _script_ é um texto instrucional como qualquer outro, escrito em um tipo de linguagem especial, "de programação", ou "código", mas é um texto. Pode similar à receita de bolo de cenoura da minha vó, ou o roteiro da peça escolar onde interpretei, com maestria, a árvore #3.
+
+Como em qualquer linguagem, temos um vocabulário à disposição, um conjunto de _palavras_ (ou _tokens_) existentes, organizadas em categorias como substantivos, adjetivos, etc. Nós combinamos as palavras em _frases_ (ou _statements_) para descrever as instruções. Por fim, organizamos o texto em _parágrafos_ (ou _blocks_), conjuntos de frases que devem ser lidas juntas, para definir a estrutura e facilitar o entendimento do texto.
+
+
+
+
+que será rodado pelo computador: traduzido da linguagem R para linguagem de máquina, e avaliado, linha a linha. Ele é a sua redação do ENEM.
 
 O programa é composto por **expressões**, as frases da sua redação. As frases podem fazer referências à outras (não existem num vácuo), mas devem ser são completas, com começo meio e fim. Algumas expressões podem ocupar uma linha inteira, várias linhas, ou apenas uma palavra.
 
@@ -11,8 +19,7 @@ A palavra "código" as vezes é utilizada para se referir a um programa, mas aqu
 
 Mas então, o que são os parágrafos? Não sei, a metáfora não é perfeita, paciência.
 
-
-#### Código {-}
+### Código
 Quais palavras podemos usar?
 
 - **Valores/dados**, que podem textos (chamados de _strings_ na computação), números, ou algo mais complexo.
@@ -24,7 +31,7 @@ Em termos simplificados, valores, dados, e variáveis, são nossos substantivos 
 Como imputar essas palavras?
 
 - **Texto/strings:** utilize `"` ou `'`: `"Hello World!"`{.r}, `'Hello World!'`{.r}\footnote{Alguns caracteres de texto são especiais, e precisam ser precedidos por uma barra (mais na aula de manipulação de texto).}.
-- **Números:** simplesmente escreva-os: `1`.
+- **Números:** simplesmente escreva-os: `1`. Use `.` como o separador decimal `0.01`.
 - **"Algo mais complexo":** calma, tudo em seu tempo.
 - **Operadores:** são imputados como `1+1`{.r}, e **funções** parecem "operadores por extenso" `sum(1, 1)`{.r}.
   - Parênteses podem ser utilizados em operações matemáticas: `(1+1)/2`{.r}.
@@ -33,7 +40,7 @@ Como imputar essas palavras?
 Obs: nos exemplos deste livro, um comentário no formato `#> ...`{.r} indica o resultado esperado da expressão que o precede.
 
 
-#### Expressões {-}
+### Expressões
 **Expressões** são aglomerações de código\footnote{A definição formal será exposta no tema de "Metaprogramming".}.
 
 Nós gostamos de expressões "completas", no sentido que `1+1`{.r} é uma expressão completa mas `1+`{.r} não. Assim como `sum(1,1)`{.r} e `sum(1`{.r}. No futuro, ficará claro que "completa" é sinônimo de "retorna um valor" (mesmo que invisivelmente).
@@ -70,8 +77,8 @@ liar(1, 2) #equivalente à expressão anterior
 No capítulo \@ref(functions-environments), veremos que operadores são um tipo especial de função.
 
 
-#### Programas {-}
-Um **programa** é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console. Lembrando que uma sequência de expressões é uma expressão.
+### Programas
+Um **programa** é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console.
 
 
 
@@ -96,7 +103,9 @@ Com base no que aprendeu, como pensaríamos em `y <- x`{.r}? A resposta não é 
 - `y` pode ser um novo nome, associado ao mesmo objeto, mesma posição na memória do computador, que `x`.
 - `y` pode ser um novo nome, associado a um novo objeto, nova posição na memória do computador, que `x`, mas carregando a mesma informação.
 
-No R, a realidade é a primeira opção. Porém, se `y` for alterado, `x` não é. O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo `y`. Esse processo, de apenas "separar"/"copiar" objetos quando modificados, é chamado de **copy-on-modify**. Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso.
+No R, a realidade é a primeira opção. Porém, se `y` for alterado, `x` não é (e vice versa). O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo `y`. Esse processo, de apenas "separar"/"copiar" objetos quando modificados, é chamado de **copy-on-modify**.
+
+Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso. O importante é saber que não temos os objetos são copiados quando modificados, alterar `y` não altera `x` e vice versa, independente da complexidade do objeto.
 
 
 ### Outras Características
@@ -118,8 +127,98 @@ Nem toda combinação de caracteres pode ser um nome de variável. As principais
 
 
 
-## Recapitulando {-}
+## Operadores
+
+A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiquei com medo deles se sentirem excluídos. Abaixo listo os parâmetros importantes.
 
 
-### Dicionário de Funções
+### Operadores Aritmétricos
+
+```{r, eval = TRUE, echo = FALSE}
+tabulate_funs("1", "aritmetrics")
+```
+
+
+### Operadores de Comparação
+
+```{r, eval = TRUE, echo = FALSE}
+tabulate_funs("1", "comparison")
+```
+
+
+### Operadores Lógicos
+
+```{r, eval = TRUE, echo = FALSE}
+tabulate_funs("1", "logical")
+```
+
+
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+Neste capítulo, vimos a estrutura geral de um programa:
+
+- Código, as palavras do programa, podem ser valores, variáveis, ou funções.
+  - Vimos como imputar cada tipo de palavra.
+- Expressões, as frases do programa, são aglomerações de código.
+  - Podem ser completas ou não.
+  - Podem ser delimitadas por quebras de linha ou chaves.
+- Programas, são várias expressões em sequência.
+
+Também demos uma atenção extra ao conceito de variável:
+
+- Vimos os operadores que definem variáveis `=` e `<-`.
+  - E porque `<-` é preferível.
+- Vimos a relação de variáveis e a memória do computador, algo intimamente relacionado aos conceitos de nome e objeto.
+  - Inclusive, variável é o conjunto nome-objeto.
+- Aprendemos também as regras de nomenclatura de variáveis.
+
+Aprendemos sobre a dinâmica de _copy-on-modify_ do R, onde `y <- x` define um novo nome `y` ao mesmo objeto. Apenas quando alguma alteração ocorra sobre `y` que o nome se associará a um outro objeto na memória do computador.
+
+Uma das implicações importantes, é que alterar `y` não altera `x` e vice versa, independente da complexidade do objeto.
+
+
+
+### Exercícios {-}
+
+#### Variáveis {-}
+1. Explique a diferença entre `1` e cada uma das variáveis abaixo.
+
+```{r}
+1
+a <- 1
+b <- a
+c <- a + 1
+d <- b
+e <- 1
+```
+
+2. Foi comentado que objetos mais complexos têm comportamentos diferentes com relação ao processo de definição , mas todos seguem uma característica geral. Com base nisso, o que você espera que ocorra com `b` após a terceira linha do código abaixo?
+
+Obs: você verá a função `list()` no próximo capítulo, mas saiba que ela cria uma lista, uma coleção, dos elementos que a são passados como argumentos.
+
+```{r}
+a <- 1
+b <- list(a, a)
+a <- a + 1
+```
+
+
+#### Operadores {-}
+
+
+form integer division in R?
+identical?
+
+
+### Dicionário de Funções {-}
+=, <-, <<-
+operadores
+
+
+### Referências {-}
+
+
 
