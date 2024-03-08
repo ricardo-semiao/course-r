@@ -6,10 +6,11 @@ site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
     lib_dir: "libs"
+    citation_package: biblatex
   bookdown::pdf_book:
     keep_tex: yes
 documentclass: book
-bibliography: [book.bib] #, packages.bib
+bibliography: book.bib #, packages.bib
 link-citations: yes
 github-repo: ricardo-semiao/R-course
 description: "Book for a course on the theory of R, and aplications for data scientists."
@@ -24,34 +25,60 @@ library(knitr)
 library(kableExtra)
 library(dplyr)
 
-tabulate_funs <- function(chap, cat) {
-  readxl::read_excel("assets/functions_list.xlsx") %>%
-  filter(Chapter == chap & Category == cat) %>%
-  select(-c(Chapter, Category)) %>%
-  setNames(c("Função", "Descição", "Uso")) %>%
+tabulate_funs <- function(sheet, chap, cat, drop = "") {
+  readxl::read_excel("assets/functions_list.xlsx", sheet = sheet) %>%
+  filter(`Capítulo` %in% chap & `Categoria` %in% cat) %>%
+  select(-any_of(drop)) %>%
   kable()
 }
 ```
 
 # Bem Vindo! {-}
 
-Este livro tem o objetivo de ensinar a a liguagem R, com duas especificidades:
+Este livro tem o objetivo de ensinar a liguagem R. O material tem duas especificidades principais: (i) é um livro para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e functionamento da linguagem, mas depois apresentando temas aplicados. Abaixo explico a motivação para esse estilo, bem como para quem ele pode ser útil.
 
-- Ele começa do nível "nunca instalei o R na vida", expõe conceitos com profundidade, apresentando um andamento rápido.
-- Tem um foco no uso para ciência de dados e usando o _tidyverse_. Porém, apresenta os tópicos relevantes com uma visão mais "teórica", deixando a aplicabilidade para o fim.
 
-O livro é dividido em três partes: "R base", "Ciência de Dados com o Tidyverse", e "Aplicações Diversas". Elas são, em sua maior parte, uma curadoria, simplificação, e adaptação dos livros: [Advanced R, 2nd Edition](https://adv-r.hadley.nz/), [R for Data Science, 2nd Edition](https://r4ds.hadley.nz/), e [R Cookbook, 2nd Edition](https://rc2e.com/) (respectivamente).
 
-Antes de seguir adiante, uma palava motivacional: as vezes uma pessoa passa mais tempo estudando um assunto do que deveria, e quanto mais fundo vai, mais difícil é parar de estudar. Esse é o meu caso, mas gostaria de ter companhia nessa situação (ninguém é de ferro). Foi com isso em mente que montei esse material, para dar a oportunidade do leitor fazer o mesmo, da forma mais eficiente possível. Espero que goste!
+## Por que Este Livro? {-}
+
+Existem diferentes estilos de aprendizagem, alguns preferem "aprender fazendo", outros preferem "aprender estudando". Este livro é, em sua maior parte, signatário do segundo. Porém, mesmo se esse não for seu estilo preferido, argumento que ele combina com o estudo de R.
+
+R é uma linguagem única, para o bem e para o mal:
+
+- Ela contém muitas exeções, particularidades, e heranças de outros tempos. Elas são causas comuns de erros e dificuldades de compreensão. Aprender a regra, a teoria, o contexto geral, facilita muito aprender a lidar com exeções da maneira menos dolorosa possível.
+- Ela contém ferramentas poderosas e incomuns. A especialização em estatísta motiva a existência de construtos nada óbvios, mas muito úteis. Existe uma variedade de estilos (funcionais, orientado ao objeto, metalinguísticos) igualmente importantes, mas difíceis de alcaçar sem um estudo mais teórico.
+
+Mas claro que o conhecimento aplicado também é quisto (deixemos o estudo teórico em si mesmo para os _nerds_ da ciência da computação). Por isso, tento expor a parte teórica da maneira mais tranquila e enxuta possível, focando no essencial e deixando o extra como extra.
+
+Portanto, na segunda parte do livro, foco em aplicar o conhecimento recém adquirido para aprender a fazer as duas tarefas mais comums, presentes em basicamente todo projeto no R, a manipulação e visualização de dados.
+
+Por fim, na terceira parte, apresento aplicações variadas no estilo "livro de receitas". Aqui, existe muita intersecção com uma extensa litaratura já existente, mas creio que vale muito a pena aprender como aplicar todo o arcabouço visto antes em alguns dos tipos de projetos mais comuns.
+
+Antes de seguir adiante, __uma palava motivacional__: as vezes uma pessoa passa mais tempo estudando um assunto do que deveria, e quanto mais fundo vai, mais difícil é parar de estudar. Esse é o meu caso, mas gostaria de ter companhia nessa situação (ninguém é de ferro). Foi com isso em mente que montei esse material, para dar a oportunidade do leitor fazer o mesmo, da forma mais eficiente possível. Espero que goste!
+
 
 
 ## Organização do Livro {-}
 
-### Primeiros Passos {-}
-Aqui, exponho a história da linguagem, seu objetivo, e posição dentre outras linguagens focadas em estatística.  Também exponho, de uma maneira bastante preguiçosa, a preparação para começar a programar em R: a instalação e explicação da interface do RStudio.
+O livro é dividido em três partes: "R base", "Ciência de Dados com o Tidyverse", e "Aplicações Diversas".
+
+As bases desse material estão descritas na seção \@(refs), mas adianto o **_disclaimer_:** boa parte do conteúdo deste livro é uma curadoria, simplificação, e adaptação dos materiais abaixo (organizados por parte):
+
+- Primeira parte - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R, 2nd Edition](https://adv-r.hadley.nz/).
+- Segunda parte - [R for Data Science, 2nd Edition](https://r4ds.hadley.nz/), e [tidyverse documentation](https://www.tidyverse.org/).
+- Terceira parte - [R Cookbook, 2nd Edition](https://rc2e.com/), e [Big Book of R](https://www.bigbookofr.com/).
 
 
-### Primeira parte - R base {-}
+### Introdução {-}
+Para começar exponho alguns temas iniciais:
+
+- A história da linguagem, suas características gerais, porque aprender R.
+- A literatura sobre R, e as referências deste livro.
+- O estilo e didática do livro.
+- A instalação e explicação da interface do RStudio (de uma maneira bastante preguiçosa).
+
+
+### Parte I - R base {-}
 Os conceitos basilares do R costumam ser ensinados rapidamente, para dar prioridade na manipulação de dados e aplicações. Esse curso não fará isso, iremos passar com bastante calma por essa dimensão. Tanto porque existem menos tutoriais que fazem isso, mas principalmente, porque aprender sobre como o R funciona com detalhe gera uma série de benefícios:
 
 - Permite entender códigos mais complexos;
@@ -62,11 +89,22 @@ Os conceitos basilares do R costumam ser ensinados rapidamente, para dar priorid
 Essa abordagem é algo como ter aulas formais de uma língua, em oposição a ensino para turismo. A utilidade dessa abordagem depende de seu objetivo, se ele é "conseguir aplicar rapidamente novos conhecimentos", outros livros serão mais úteis.
 
 
-### Segunda parte - Ciência de Dados com o Tidyverse {-}
-Na segunda parte, iremos ver sobre manipulação de dados, porque ela é uma tarefa que será necessária para praticamente todas as aplicações do R.
+### Parte II - Ciência de Dados com o Tidyverse {-}
+Na segunda parte, iremos ver sobre manipulação e visualização de dados, porque ela é uma tarefa que será necessária para praticamente todas as aplicações do R.
 
 Existem vários frameworks diferentes para isso, o R base, o DataTable, e o tidyverse. Nesse curso escolho o tidyverse pois é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Ao fim, também trataremos rapidamente sobre um framework para lidar com datas e séries de tempo.
 
 
-### Terceira parte - Aplicações Diversas {-}
-A parte três apresenta várias aplicações específicas em R, sem detalhar muito a fundo todos seus detalhes nem explicar a teoria por trás, logo mais com o objetivo de mostrar as possibilidades no R.
+### Parte II - Aplicações Diversas {-}
+A parte três apresenta várias aplicações específicas em R, sem detalhar muito a fundo todos seus detalhes nem explicar a teoria por trás, logo, mais com o objetivo de mostrar as possibilidades no R.
+
+
+
+## Contato {-}
+
+Meu nome é Ricardo Semião, sou mestrando em economia da FGV-EESP, e _sou fã_ de R. Se tiver algum comentário sobre este material, por favor mande em meu email ricardo.semiao@outlook.com. Minhas outras redes são:
+
+- [Github](https://github.com/ricardo-semiao).
+- [Linkedin](https://www.linkedin.com/in/ricardo-semiao/).
+- [StackOverflow](https://stackoverflow.com/users/13048728/ricardo-semi%c3%a3o-e-castro).
+- [Twitter](https://twitter.com/ricardo_semiao).

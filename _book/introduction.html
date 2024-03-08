@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Introdução | R: Teoria e Aplicações</title>
+  <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Introdução | R: Teoria e Aplicações" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="github-repo" content="ricardo-semiao/R-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Introdução | R: Teoria e Aplicações" />
+  
+  <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  
+
+<meta name="author" content="Ricardo Semião" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="r-base.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R: Teoria e Aplicações</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem Vindo!</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#por-que-este-livro"><i class="fa fa-check"></i>Por que Este Livro?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organização-do-livro"><i class="fa fa-check"></i>Organização do Livro</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introdução"><i class="fa fa-check"></i>Introdução</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#primeira-parte---r-base"><i class="fa fa-check"></i>Primeira parte - R base</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#segunda-parte---ciência-de-dados-com-o-tidyverse"><i class="fa fa-check"></i>Segunda parte - Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#terceira-parte---aplicações-diversas"><i class="fa fa-check"></i>Terceira parte - Aplicações Diversas</a></li>
+</ul></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contato"><i class="fa fa-check"></i><b>0.1</b> Contato</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#história"><i class="fa fa-check"></i><b>1.1</b> História</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#características-da-linguagem-e-porque-r"><i class="fa fa-check"></i><b>1.2</b> Características da Linguagem, e “Porque R?”</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#literatura-sobre-r"><i class="fa fa-check"></i><b>1.3</b> Literatura sobre R</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#estilo-do-livro"><i class="fa fa-check"></i><b>1.4</b> Estilo do Livro</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#instalação-interface-e-ferramentas"><i class="fa fa-check"></i><b>1.5</b> Instalação, Interface, e Ferramentas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html"><i class="fa fa-check"></i>R Base</a></li>
+<li class="chapter" data-level="2" data-path="syntax-variables.html"><a href="syntax-variables.html"><i class="fa fa-check"></i><b>2</b> Sintaxe e Variáveis</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syntax-variables.html"><a href="syntax-variables.html#sintaxe"><i class="fa fa-check"></i><b>2.1</b> Sintaxe</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="syntax-variables.html"><a href="syntax-variables.html#palavras"><i class="fa fa-check"></i><b>2.1.1</b> Palavras</a></li>
+<li class="chapter" data-level="2.1.2" data-path="syntax-variables.html"><a href="syntax-variables.html#frases"><i class="fa fa-check"></i><b>2.1.2</b> Frases</a></li>
+<li class="chapter" data-level="2.1.3" data-path="syntax-variables.html"><a href="syntax-variables.html#parágrafos"><i class="fa fa-check"></i><b>2.1.3</b> Parágrafos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="syntax-variables.html"><a href="syntax-variables.html#variáveis"><i class="fa fa-check"></i><b>2.2</b> Variáveis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="syntax-variables.html"><a href="syntax-variables.html#definindo-variáveis"><i class="fa fa-check"></i><b>2.2.1</b> Definindo Variáveis</a></li>
+<li class="chapter" data-level="2.2.2" data-path="syntax-variables.html"><a href="syntax-variables.html#copy-on-modify"><i class="fa fa-check"></i><b>2.2.2</b> Copy on Modify</a></li>
+<li class="chapter" data-level="2.2.3" data-path="syntax-variables.html"><a href="syntax-variables.html#outras-características"><i class="fa fa-check"></i><b>2.2.3</b> Outras Características</a></li>
+<li class="chapter" data-level="2.2.4" data-path="syntax-variables.html"><a href="syntax-variables.html#regras-de-nomenclatura"><i class="fa fa-check"></i><b>2.2.4</b> Regras de Nomenclatura</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="syntax-variables.html"><a href="syntax-variables.html#operadores"><i class="fa fa-check"></i><b>2.3</b> Operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-attributes.html"><a href="data-attributes.html"><i class="fa fa-check"></i><b>3</b> Tipos de Dados e Atributos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-attributes.html"><a href="data-attributes.html#tipos-de-dados"><i class="fa fa-check"></i><b>3.1</b> Tipos de Dados</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="data-attributes.html"><a href="data-attributes.html#famílias"><i class="fa fa-check"></i><b>3.1.1</b> Famílias</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-attributes.html"><a href="data-attributes.html#vetores-atômicos"><i class="fa fa-check"></i><b>3.1.2</b> Vetores Atômicos</a></li>
+<li class="chapter" data-level="3.1.3" data-path="data-attributes.html"><a href="data-attributes.html#listas"><i class="fa fa-check"></i><b>3.1.3</b> Listas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-attributes.html"><a href="data-attributes.html#atributos"><i class="fa fa-check"></i><b>3.2</b> Atributos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-attributes.html"><a href="data-attributes.html#nomes"><i class="fa fa-check"></i><b>3.2.1</b> Nomes</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-attributes.html"><a href="data-attributes.html#dimensões"><i class="fa fa-check"></i><b>3.2.2</b> Dimensões</a></li>
+<li class="chapter" data-level="3.2.3" data-path="data-attributes.html"><a href="data-attributes.html#classes"><i class="fa fa-check"></i><b>3.2.3</b> Classes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="subsetting.html"><a href="subsetting.html#operador"><i class="fa fa-check"></i><b>4.1</b> Operador <code>[</code></a></li>
+<li class="chapter" data-level="4.2" data-path="subsetting.html"><a href="subsetting.html#operador-1"><i class="fa fa-check"></i><b>4.2</b> Operador <code>[[</code></a></li>
+<li class="chapter" data-level="4.3" data-path="subsetting.html"><a href="subsetting.html#atribuição"><i class="fa fa-check"></i><b>4.3</b> Atribuição</a></li>
+<li class="chapter" data-level="4.4" data-path="subsetting.html"><a href="subsetting.html#aplicações"><i class="fa fa-check"></i><b>4.4</b> Aplicações</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-conditions.html"><a href="control-conditions.html"><i class="fa fa-check"></i><b>5</b> Control Flow e Condições</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-conditions.html"><a href="control-conditions.html#introdução-1"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="control-conditions.html"><a href="control-conditions.html#choices"><i class="fa fa-check"></i><b>5.2</b> Choices</a></li>
+<li class="chapter" data-level="5.3" data-path="control-conditions.html"><a href="control-conditions.html#loops"><i class="fa fa-check"></i><b>5.3</b> Loops</a></li>
+<li class="chapter" data-level="5.4" data-path="control-conditions.html"><a href="control-conditions.html#condições"><i class="fa fa-check"></i><b>5.4</b> Condições</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions-environments.html"><a href="functions-environments.html"><i class="fa fa-check"></i><b>6</b> Funções e Ambientes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="functions-environments.html"><a href="functions-environments.html#fundamentos"><i class="fa fa-check"></i><b>6.1</b> Fundamentos</a></li>
+<li class="chapter" data-level="6.2" data-path="functions-environments.html"><a href="functions-environments.html#ambientes"><i class="fa fa-check"></i><b>6.2</b> Ambientes</a></li>
+<li class="chapter" data-level="6.3" data-path="functions-environments.html"><a href="functions-environments.html#scoping-e-evaluation"><i class="fa fa-check"></i><b>6.3</b> Scoping e Evaluation</a></li>
+<li class="chapter" data-level="6.4" data-path="functions-environments.html"><a href="functions-environments.html#oop-funções-genéricas"><i class="fa fa-check"></i><b>6.4</b> OOP: Funções Genéricas</a></li>
+<li class="chapter" data-level="6.5" data-path="functions-environments.html"><a href="functions-environments.html#conceitos-adicionais"><i class="fa fa-check"></i><b>6.5</b> Conceitos Adicionais</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="paradigms.html"><a href="paradigms.html"><i class="fa fa-check"></i><b>7</b> Paradigmas de Programação</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="paradigms.html"><a href="paradigms.html#programação-funcional"><i class="fa fa-check"></i><b>7.1</b> Programação Funcional</a></li>
+<li class="chapter" data-level="7.2" data-path="paradigms.html"><a href="paradigms.html#programação-orientada-ao-objeto"><i class="fa fa-check"></i><b>7.2</b> Programação Orientada ao Objeto</a></li>
+<li class="chapter" data-level="7.3" data-path="paradigms.html"><a href="paradigms.html#metaprogramação"><i class="fa fa-check"></i><b>7.3</b> Metaprogramação</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="other-topics.html"><a href="other-topics.html"><i class="fa fa-check"></i><b>8</b> Outros Tópicos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="other-topics.html"><a href="other-topics.html#projetos-github-e-addins"><i class="fa fa-check"></i><b>8.1</b> Projetos, Github, e Addins</a></li>
+<li class="chapter" data-level="8.2" data-path="other-topics.html"><a href="other-topics.html#debbuging"><i class="fa fa-check"></i><b>8.2</b> Debbuging</a></li>
+<li class="chapter" data-level="8.3" data-path="other-topics.html"><a href="other-topics.html#gerenciamento-de-memória"><i class="fa fa-check"></i><b>8.3</b> Gerenciamento de Memória</a></li>
+<li class="chapter" data-level="8.4" data-path="other-topics.html"><a href="other-topics.html#performance"><i class="fa fa-check"></i><b>8.4</b> Performance</a></li>
+<li class="chapter" data-level="8.5" data-path="other-topics.html"><a href="other-topics.html#organização-de-código-e-boas-práticas"><i class="fa fa-check"></i><b>8.5</b> Organização de Código e Boas Práticas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="recapitulando-1.html"><a href="recapitulando-1.html"><i class="fa fa-check"></i>Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="ciência-de-dados-com-o-tidyverse.html"><a href="ciência-de-dados-com-o-tidyverse.html"><i class="fa fa-check"></i>Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="9" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html"><i class="fa fa-check"></i><b>9</b> Ciência de Dados e Importação</a></li>
+<li class="chapter" data-level="10" data-path="manipulação-de-dados.html"><a href="manipulação-de-dados.html"><i class="fa fa-check"></i><b>10</b> Manipulação de Dados</a></li>
+<li class="chapter" data-level="11" data-path="strings-factors.html"><a href="strings-factors.html"><i class="fa fa-check"></i><b>11</b> Manipulação de Strings e Factors</a></li>
+<li class="chapter" data-level="12" data-path="visualização-gráfica.html"><a href="visualização-gráfica.html"><i class="fa fa-check"></i><b>12</b> Visualização Gráfica</a></li>
+<li class="chapter" data-level="13" data-path="programação-funcional-1.html"><a href="programação-funcional-1.html"><i class="fa fa-check"></i><b>13</b> Programação Funcional</a></li>
+<li class="chapter" data-level="14" data-path="manipulação-de-séries-de-tempo.html"><a href="manipulação-de-séries-de-tempo.html"><i class="fa fa-check"></i><b>14</b> Manipulação de Séries de Tempo</a></li>
+<li class="chapter" data-level="" data-path="aplicações-diversas.html"><a href="aplicações-diversas.html"><i class="fa fa-check"></i>Aplicações Diversas</a></li>
+<li class="chapter" data-level="" data-path="dicionário-de-funções-1.html"><a href="dicionário-de-funções-1.html"><i class="fa fa-check"></i>Dicionário de funções</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R: Teoria e Aplicações</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Introdução<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="história" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> História<a href="introduction.html#história" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R é “uma linguagem de programação e um ambiente para computação estatística e gráfica”. Ela criada em 1993 por Ross Ihaka e Robert Gentleman da Universdade de Auckland, Nova Zelândia, com o apoio de John Chambers da Bell Laboratories. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R. Não, infelizmente, não é R de “Ricardo”.</p>
+<p>“Ambiente” no sentido de que é uma linguagem de programação formal, um “sistema totalmente planejado e coerente”. Mas ainda assim, sendo especializada, com ferramentas poderosas e acessíveis para computação e vizualização de projetos estatísticos ou da ciência de dados. Ao mesmo tempo, é fácilmente incrementável, com centenas de extensões para as mais diversas áreas.</p>
+<p>Entidades associadas ao desenvolvimento da linguagem:</p>
+<ul>
+<li>O <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) foi criado em 1997 por Kurt Hornik e Fritz Leisch para armazenar o código fonte, documentação, e pacotes do R.</li>
+<li>O <a href="https://www.r-project.org/contributors.html">R Core Team</a> foi formado em 1997 para desenvolver a linguagem</li>
+<li>A linguagem como projeto e homepage oficial é o <a href="https://www.r-project.org/">R Project</a>. Também existe a <a href="https://stat.ethz.ch/R-manual/">homepage</a> das versões em desenvolvimento do R.</li>
+<li>A <a href="https://www.r-project.org/foundation/">R Foundation</a> foi fundada em 2003 para guiar o R Project.</li>
+<li>O RStudio, agora <a href="https://posit.co/about/">Posit</a> foi fundado para expandir a qualidade do projeto, lançando um ambiente de desenvolvimento integrado em 2011, e oferecendo soluções para empresas.</li>
+<li>O <a href="https://journal.r-project.org/">R Journal</a> e <a href="https://blog.r-project.org/">R Blog</a>.</li>
+</ul>
+</div>
+<div id="características-da-linguagem-e-porque-r" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Características da Linguagem, e “Porque R?”<a href="introduction.html#características-da-linguagem-e-porque-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O R é uma linguagem bem específica. Abaixo cito algumas de suas características, e porque elas podem motivar seu estudo.</p>
+<ul>
+<li><p>R está disponível como código aberto, com sua licença <a href="https://www.r-project.org/COPYING">GNU General Public License</a>. Adicionalmente, é acessível para a maioria das máquinas/sistemas operacionais. Isso faz com que projetos no R sejam facilmente replicados por outros, e aumenta sua popularidade.</p></li>
+<li><p>R é uma linguagem popular, ficou na posição 21 no <a href="https://www.tiobe.com/tiobe-index/">TIOBE Index</a> em fev/2024. Especialmente, ele conta com uma comunidade muito ativa e amigável, na <a href="https://twitter.com/search?q=%23rstats">#rstats</a> do Twitter, no <a href="https://stackoverflow.com/questions/tagged/r">StackOverflow</a>, no <a href="https://community.rstudio.com/">Posit Community</a>, e <a href="https://www.meetup.com/topics/r-programming-language/">pessoalmente</a>.</p></li>
+<li><p>Um produto dessa popularidade é a quantidade massiva de extensões, para toda sorte de tarefa.</p>
+<ul>
+<li>Existem múltiplas abordagens para manipulação de dados, modelagem, e criação de vizualizações.</li>
+<li>Poderosas ferramentas para comunicação, o RMarkdown (que foi utilizado para construir esse livro), e o Shiny, utilizado para construir Apps.</li>
+<li>Ferramentas na fronteira de pesquisa, uma vez que pesquisadores costumam criar pacotes no R para acompanhar sua pesquisa.</li>
+</ul></li>
+<li><p>Ocupa um espaço muito interessante na paisagem de softwares:</p>
+<ul>
+<li>É uma linguagem de programação verdadeira, permitindo soluções para problemas mais complexos, e dando mais flexibilidade ao usuário, quando comparado com outros softwares estatísticos não programáticos como o SAS, SPSS, Stata, Eviews, e GRETL.</li>
+<li>Mas é especializado, <em>intepretada</em>, e <em>high-level</em>, facilitando seu uso, e apresentando uma cuva de aprendizado mais rápida que linguagems mais complexas/generalistas como C, e talvez Python. <br></li>
+</ul></li>
+<li><p>A especialização em estatística faz com que ferramentas muito necessárias para análise de dados sejam de fácil acesso, como <em>data-frames</em> e <em>vetorização</em>. O usuário não precisa aprender extensões para realizar projetos em ciência de dados.</p></li>
+<li><p>Algumas características mais técnicas:</p>
+<ul>
+<li>Sua sintaxe é similar à C e Python, mas sua semântica é a de uma linguagem funcional, mais similar à Lisp e APL. Veremos que o estilo funcional é muito útil para projetos de ciência de dados.</li>
+<li>Além das funcionais, R tem capacidades incomuns de metaprogramação, permitindo códigos elegantes e succintos.</li>
+<li>Não é seu forte, mas também conta com algumas ferramentas de programação orientada ao objeto, facilitando a vida do usuário.</li>
+<li>O R usa código em C, C++, e Fortran para executar tarefas computacionalmente intensivas. Isso é algo que o usuário também pode explorar.</li>
+</ul></li>
+</ul>
+<p>Porém, nem tudo são flores. Muitas dessas características tem prós e contras, e a execução dessas ideias conta com heranças obsoletas e inconsistências. Neste livro, deixarei claro os pontos negativos mais importantes, e ensino a evitá-los.</p>
+</div>
+<div id="literatura-sobre-r" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Literatura sobre R<a href="introduction.html#literatura-sobre-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A literatura base pode ser encontrada no <a href="https://cran.r-project.org/manuals.html">CRAN</a>. Ela é composta de, principalmente:</p>
+<ul>
+<li>O código fonte <span class="citation">(<a href="#ref-r-source">R Core Team 2024b</a>)</span>.</li>
+<li>O manual “R Language Definition” <span class="citation">(<a href="#ref-r-lang">R Core Team 2024d</a>)</span>, que descreve a linguagem em si.</li>
+<li>O manual “R Internals” <span class="citation">(<a href="#ref-r-int">R Core Team 2024c</a>)</span>, que descreve as estruturas internas do R, e a fundação do código em C.</li>
+<li>A documentação de ajuda para o R base e as extensões padrões <span class="citation">(<a href="#ref-r-helps">R Core Team, n.d.</a>)</span>.</li>
+<li>A <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">documentação de ajuda</a> para as extensões externas.</li>
+</ul>
+<p>Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de livros para R, tanto para ensinar a linguagem no geral, quanto para toda sorte de aplicações. Abaixo alguns exemplos mais recentes, divididos pela sua relação com cada parte deste livro.</p>
+<p><strong>Bibliografia base da parte I:</strong> o livro “Advanced R” (segunda edição) <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span>, junto com “R Language Definition”.</p>
+<ul>
+<li>Outros livros introdutórios:
+<ul>
+<li>“An Introduction to R” <span class="citation">(<a href="#ref-r-intro">R Core Team 2024a</a>)</span> (manual oficial).</li>
+<li>“Working with R” <span class="citation">(<a href="#ref-workr">Stephanie Locke 2017b</a>)</span>.</li>
+<li>“An Introduction to R” <span class="citation">(<a href="#ref-intror">Longhow Lam 2010</a>)</span>.</li>
+</ul></li>
+<li>Alguns livros complementares, que assumem uma abordagem “aprender fazendo”:
+<ul>
+<li>“Hands on Programming with R” <span class="citation">(<a href="#ref-hopr">Garrett Grolemund 2014</a>)</span>.</li>
+<li>“A Student’s Guide to R” <span class="citation">(<a href="#ref-student">Nicholas J. Horton, Daniel T. Kaplan, and Randall Pruim 2015</a>)</span>.</li>
+</ul></li>
+</ul>
+<p><strong>Bibliografia base da parte II:</strong> o livro “R for Data Science” <span class="citation">(<a href="#ref-r4ds">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel 2024</a>)</span> e as documentações dos pacotes do tidyverse <span class="citation">(<a href="#ref-tidy"><span>“Tidyverse,”</span> n.d.</a>)</span>.</p>
+<ul>
+<li>Outros livros sobre manipulação e visualização de dados:
+<ul>
+<li>“Data Manipulation in R” <span class="citation">(<a href="#ref-mandata">Stephanie Locke 2017a</a>)</span>.</li>
+<li>“ggplot2: Elegant Graphics for Data Analysis” <span class="citation">(<a href="#ref-ggplot">Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen 2010</a>)</span>.</li>
+<li>“Data Wrangling Recipes in R” <span class="citation">(<a href="#ref-wrandata">Hilary Watt and Tristan Naidoo, n.d.</a>)</span>.</li>
+</ul></li>
+<li>Alguns livros complementares, que assumem uma abordagem “aprender fazendo”:
+<ul>
+<li>Introduction to Data Exploration and Analysis with R <span class="citation">(<a href="#ref-introdata">Michael Mahoney 2019</a>)</span>.</li>
+<li><a href="https://www.rprimer.dk/">“The R Primer”</a>.</li>
+</ul></li>
+</ul>
+<p><strong>Bibliografia base da parte III:</strong> o livro “R Cookbook” (segunda edição) <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span>, e o livro “Big Book of R” <span class="citation">(<a href="#ref-bigr">Oscar Baruffa 2024</a>)</span>.</p>
+<ul>
+<li>Existem muitos outros livros e tutoriais dedicados a aplicações específicas. Algumas listas (incompletas) podem ser encontradas no <a href="https://www.r-project.org/doc/bib/R-jabref.html">arquivo do CRAN</a>.</li>
+</ul>
+</div>
+<div id="estilo-do-livro" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Estilo do Livro<a href="introduction.html#estilo-do-livro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antes de prosseguir, quero expor de antemão o estilo e organização dos capítulos.</p>
+<p>Este livro tem muito a cobrir, e tem um andamento acelerado. Para facilitar ao máximo a vida do leitor, o estilo dos capítulos foi definido para ajudar a direcionar a atenção para o que é mais importante, e menos atenção para o extra. Abaixo apresento alguns dos construtos utilizados para tal.</p>
+<div class="my_result">
+<p><strong>“Nome” do resultado</strong><br>
+Resultados importantes são expostos neste tipo de bloco. Note que nem todos os resultados serão simples de entender imediatamente, mas são expostos no momento em que é relevante para o estudo da linguagem.</p>
+</div>
+<p><strong>Palavras em negrito:</strong> normalmente indicam conceitos que serão definidos. Após sua apresentação, os conceitos costumam deixar de aparecer em negrito.</p>
+<p><em>Palavras em itálico</em> costumam ser palavras com utilizadas com um significado específico no contexto relevante, mas não necessariamente “conceitos”. Em contrapartida, as vezes uso aspas para indicar uma palavra sendo utilizada pelo seu significado em português, e não como um conceito da programação. Porém, cuidado, as vezes aspas tem seu uso padrão, e itálico é usado para palavras em inglês.</p>
+<div class="my_example">
+<p>as vezes é importante apresentar um exemplo para esclarecer um conceito. Tendo a colocar exemplos apenas quando necessário, de modo que é importante entendê-los. Em contrapartida, não há muitos exemplos “complementares”. É natural que essa baixa frequência torne difícil a compreensão de alguns temas. Mas para isso existem os exercícios.</p>
+</div>
+<ul>
+<li><em>Observação:</em> observações deste tipo costumam ser sobre a organização do livro ou outros esclarecimentos menos importantes.</li>
+</ul>
+<p>Ao final de cada capítulo existe uma seção de “Complemento”. Nele, há:</p>
+<ul>
+<li>Uma recapitulação dos conceitos apresentados.</li>
+<li>Uma lista de exercícios, que pode, inclusive, apresentar novos conceitos/funções.</li>
+<li>Uma lista de funções apresentadas no capítulo.</li>
+<li>Uma seção de referências, inclusive com links para conceitos deixados de lado no capítulo, para o leitor que quiser ir além.</li>
+</ul>
+</div>
+<div id="instalação-interface-e-ferramentas" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Instalação, Interface, e Ferramentas<a href="introduction.html#instalação-interface-e-ferramentas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antes de começar o aprendizado, é preciso instalar a linguagem (R), e se familizarizar com a interface do editor de código oficial (RStudio).</p>
+<p>Veja como instalar <a href="https://www.curso-de-programacao-em-r-para-jornalistas.com/2019/10/27/instalacao-r-e-rstudio/">neste tutorial</a> do curso “R Para Jornalistas”. PS: coincidentenmente, a maneira que jornalistas instalam o R serve para qualquer outra profissão também.</p>
+<p>Existêm vários tutoriais online explicando a interface, como o da <a href="https://www.datacamp.com/tutorial/r-studio-tutorial">Datacamp</a> (veja até “How to Write R Scripts in RStudio”) e este <a href="https://www.youtube.com/watch?v=FIrsOBy5k58">vídeo no youtube</a>.</p>
+<p>Além disso, existem três configurações mais comuns de serem alteradas: alterar onde os arquivos são salvos por padrão (figura 1, “browse”); impedir que os dados da última vez que você entrou no R sejam recarregados quando você voltar (figura 1, “workspace”); e alterar aparência (figura 2). Todas elas podem ser encontradas na tab <em>Tools &gt; Global Options</em>:</p>
+<p><img src="assets/Settings%20general.png" width="300" /> <img src="assets/Settings%20appearance.png" width="300" /></p>
+<p>Mais informações úteis sobre a interface podem ser encontradas na Seção <a href="https://rc2e.com/navigatingthesoftware">“Navigating the Software”</a> do livro “R Cookbok 2nd Edition”.</p>
+<p>Até o momento, eu fui preguiçoso e não trouxe esse material para o livro. Ainda assim, veja as referências com calma, não deixe confusões com o software atrapalharem seu aprendizado.</p>
+<p>Última coisa, eu juro. O R provê alguns comandos para procurar por ajuda. A função <code>vignette()</code> abre uma lista de artigos de ajuda das extensões do R. Adicionalmente, se você quer saber informações sobre uma função chamada “acaba_pelo_amor_de_deus”, os códigos abaixo abrem suas documentações de ajuda. Vejam mais sobre <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/vignette.html">aqui</a>, e <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/help.html">aqui</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" tabindex="-1"></a>?acaba_pelo_amor_de_deus</span>
+<span id="cb1-2"><a href="introduction.html#cb1-2" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;acaba_pelo_amor_de_deus&quot;</span>)</span></code></pre></div>
+<p>Agora sim, vamos começar. <strong>Boa sorte!</strong></p>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-hopr" class="csl-entry">
+Garrett Grolemund. 2014. <em>Hands-<span>On</span> <span>Programming</span> with <span>R</span></em>. 1st ed. <a href="https://rstudio-education.github.io/hopr/">https://rstudio-education.github.io/hopr/</a>.
+</div>
+<div id="ref-advr" class="csl-entry">
+Hadley Wickham. 2019. <em>Advanced <span>R</span></em>. 2nd ed. <a href="https://adv-r.hadley.nz/index.html">https://adv-r.hadley.nz/index.html</a>.
+</div>
+<div id="ref-ggplot" class="csl-entry">
+Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen. 2010. <em>Ggplot2: <span>Elegant</span> <span>Graphics</span> for <span>Data</span> <span>Analysis</span></em>. 3rd ed. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>.
+</div>
+<div id="ref-r4ds" class="csl-entry">
+Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel. 2024. <em>R for <span>Data</span> <span>Science</span></em>. 2nd ed. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+</div>
+<div id="ref-wrandata" class="csl-entry">
+Hilary Watt, and Tristan Naidoo. n.d. <em>Data <span>Wrangling</span> <span>Recipes</span> in <span>R</span></em>. 1st ed. <a href="https://bookdown.org/hcwatt99/Data_Wrangling_Recipes_in_R/">https://bookdown.org/hcwatt99/Data_Wrangling_Recipes_in_R/</a>.
+</div>
+<div id="ref-intror" class="csl-entry">
+Longhow Lam. 2010. <em>An Introduction to <span>R</span></em>. <a href="https://cran.r-project.org/doc/contrib/Lam-IntroductionToR_LHL.pdf">https://cran.r-project.org/doc/contrib/Lam-IntroductionToR_LHL.pdf</a>.
+</div>
+<div id="ref-introdata" class="csl-entry">
+Michael Mahoney. 2019. <em>Introduction to <span>Data</span> <span>Exploration</span> and <span>Analysis</span> with <span>R</span></em>. 1st ed. <a href="https://bookdown.org/mikemahoney218/IDEAR/">https://bookdown.org/mikemahoney218/IDEAR/</a>.
+</div>
+<div id="ref-student" class="csl-entry">
+Nicholas J. Horton, Daniel T. Kaplan, and Randall Pruim. 2015. <em>A <span>Student</span>’s <span>Guide</span> to <span>R</span></em>. 1.2 ed. <a href="https://cran.r-project.org/doc/contrib/Horton+Pruim+Kaplan_MOSAIC-StudentGuide.pdf">https://cran.r-project.org/doc/contrib/Horton+Pruim+Kaplan_MOSAIC-StudentGuide.pdf</a>.
+</div>
+<div id="ref-bigr" class="csl-entry">
+Oscar Baruffa. 2024. <em>Big <span>Book</span> of <span>R</span></em>. 1st ed. <a href="https://www.bigbookofr.com/">https://www.bigbookofr.com/</a>.
+</div>
+<div id="ref-r-intro" class="csl-entry">
+R Core Team. 2024a. <span>“An <span>Introduction</span> to <span>R</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</a>.
+</div>
+<div id="ref-r-source" class="csl-entry">
+———. 2024b. <span>“Index of /Src/Base.”</span> <a href="https://cran.r-project.org/src/base/">https://cran.r-project.org/src/base/</a>.
+</div>
+<div id="ref-r-int" class="csl-entry">
+———. 2024c. <span>“R <span>Internals</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.pdf">https://cran.r-project.org/doc/manuals/r-release/R-ints.pdf</a>.
+</div>
+<div id="ref-r-lang" class="csl-entry">
+———. 2024d. <span>“R <span>Language</span> <span>Definition</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf">https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf</a>.
+</div>
+<div id="ref-r-helps" class="csl-entry">
+———. n.d. <span>“R: <span>Package</span> <span>Index</span>.”</span> <a href="https://stat.ethz.ch/R-manual/R-patched/doc/html/packages.html">https://stat.ethz.ch/R-manual/R-patched/doc/html/packages.html</a>.
+</div>
+<div id="ref-mandata" class="csl-entry">
+Stephanie Locke. 2017a. <em>Data <span>Manipulation</span> in <span>R</span></em>. 1st ed. <a href="https://itsalocke.com/files/DataManipulationinR.pdf">https://itsalocke.com/files/DataManipulationinR.pdf</a>.
+</div>
+<div id="ref-workr" class="csl-entry">
+———. 2017b. <em>Working with <span>R</span></em>. 1st ed. <a href="https://itsalocke.com/files/workingwithr.pdf">https://itsalocke.com/files/workingwithr.pdf</a>.
+</div>
+<div id="ref-tidy" class="csl-entry">
+<span>“Tidyverse.”</span> n.d. <a href="https://www.tidyverse.org/">https://www.tidyverse.org/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-base.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/0-introduction.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

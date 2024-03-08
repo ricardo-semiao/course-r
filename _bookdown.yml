@@ -4,7 +4,7 @@ language:
     chapter_name: "Capítulo "
 rmd_files: [
   "index.Rmd",
-  "0-first_steps.Rmd",
+  "0-introduction.Rmd",
   "1-introduction.Rmd",
   "1-syntax_variables.Rmd",
   "1-data_attributes.Rmd",
@@ -22,5 +22,6 @@ rmd_files: [
   "2-functional.Rmd",
   "2-time_series.Rmd",
   "3-introduction.Rmd",
-  "dictionary.Rmd"
+  "0-dictionary.Rmd",
+  "0-references.Rmd"
   ]

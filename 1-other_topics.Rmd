@@ -9,3 +9,5 @@
 ## Performance
 
 ## Organização de Código e Boas Práticas
+
+(tidyverse style), lintr, e o outro pacote lá

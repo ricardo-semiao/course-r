@@ -8,77 +8,125 @@ Um _script_ é um texto instrucional como qualquer outro, escrito em um tipo de 
 
 Como em qualquer linguagem, temos um vocabulário à disposição, um conjunto de _palavras_ (ou _tokens_) existentes, organizadas em categorias como substantivos, adjetivos, etc. Nós combinamos as palavras em _frases_ (ou _statements_) para descrever as instruções. Por fim, organizamos o texto em _parágrafos_ (ou _blocks_), conjuntos de frases que devem ser lidas juntas, para definir a estrutura e facilitar o entendimento do texto.
 
+Ok, a receita da minha vó não tinha parágrafos, a metáfora não é perfeita, paciência.
+
+A seguir, vamos descrever com mais calma esses conceitos de _tokens_, _statements_, _blocks_, e _script_.
 
 
+### Palavras
+::: {.my_result}
+**Vocabulário**<br>
 
-que será rodado pelo computador: traduzido da linguagem R para linguagem de máquina, e avaliado, linha a linha. Ele é a sua redação do ENEM.
+Quais **palavras**, **_tokens_**, temos disponíveis na linguagem R?
 
-O programa é composto por **expressões**, as frases da sua redação. As frases podem fazer referências à outras (não existem num vácuo), mas devem ser são completas, com começo meio e fim. Algumas expressões podem ocupar uma linha inteira, várias linhas, ou apenas uma palavra.
+- **Dados**, que podem ser _strings_ (palavras literais), números, valores booleanos (valores binários de verdadeiro ou falso), entre outros.
+  - Também podemos ter "coleções" desses dados (ex: vários números em uma "lista").
+- **Variáveis**, nomes associados à **objetos**.
+  - No futuro, veremos que podemos associar muito mais do que apenas dados à variáveis, por isso a nomenclatura mais geral "objetos".
+  - Mais precisamente, a "palava" em si é o nome.
+- **Funções**, que definem operações à serem realizadas usando variáveis/valores.
+  - **Operadores**, símbolos como `+` e `>`, são um tipo de função especial, que apresentam uma sintaxe mais enxuta.
+:::
 
-A palavra "código" as vezes é utilizada para se referir a um programa, mas aqui, uso **código** como se referindo às palavras que compõe o programa.
+Em termos simplificados, dados e variáveis são nossos substantivos (variáveis são "nomes próprios"), enquanto funções são nossos verbos.
 
-Mas então, o que são os parágrafos? Não sei, a metáfora não é perfeita, paciência.
+Como escrevemos essas palavras em um texto em R?
 
-### Código
-Quais palavras podemos usar?
-
-- **Valores/dados**, que podem textos (chamados de _strings_ na computação), números, ou algo mais complexo.
-- **Variáveis**, que são nomes associados à valores.
-- **Operadores** (símbolos como `+`, `>`) e **funções**, que definem operações à serem realizadas nas variáveis/valores.
-
-Em termos simplificados, valores, dados, e variáveis, são nossos substantivos (variáveis são nomes próprios), enquanto operadores e funções são nossos verbos.
-
-Como imputar essas palavras?
-
-- **Texto/strings:** utilize `"` ou `'`: `"Hello World!"`{.r}, `'Hello World!'`{.r}\footnote{Alguns caracteres de texto são especiais, e precisam ser precedidos por uma barra (mais na aula de manipulação de texto).}.
-- **Números:** simplesmente escreva-os: `1`. Use `.` como o separador decimal `0.01`.
-- **"Algo mais complexo":** calma, tudo em seu tempo.
-- **Operadores:** são imputados como `1+1`{.r}, e **funções** parecem "operadores por extenso" `sum(1, 1)`{.r}.
+- **Strings:** utilize aspas duplas `"` ou aspas simples`'`: `"Hello World!"`{.r}, `'Hello World!'`{.r}[^special-chars].
+- **Números:** simplesmente escreva-os: `1`. Use um ponto `.` como o separador decimal `0.01`.
+- **Valores booleanos:** escreva as palavras especiais `TRUE` e `FALSE`.
+- **Coleções:** calma, tudo em seu tempo.
+- **Funções:** escreva o nome da função, e os arumentos que ela receberá entre parênteses `sum(1, 1)`{.r}. Não se preocupe muito com elas por agora.
+  - **Operadores:** são imputados como `1 + 1`{.r}.
   - Parênteses podem ser utilizados em operações matemáticas: `(1+1)/2`{.r}.
 - **Comentários:** texto que não será avaliado como código. Use o símbolo `#`, que torna tudo após delena mesma linha, um comentário.
 
-Obs: nos exemplos deste livro, um comentário no formato `#> ...`{.r} indica o resultado esperado da expressão que o precede.
+[^special-chars]: Alguns caracteres de texto são especiais, e precisam ser precedidos por uma barra. Mais sobre isso no capítulo \@strings-factors.
+
+- _Observação:_ nos exemplos deste livro, um comentário no formato `#> ...`{.r} indica o resultado esperado da expressão que o precede.
 
 
-### Expressões
-**Expressões** são aglomerações de código\footnote{A definição formal será exposta no tema de "Metaprogramming".}.
 
-Nós gostamos de expressões "completas", no sentido que `1+1`{.r} é uma expressão completa mas `1+`{.r} não. Assim como `sum(1,1)`{.r} e `sum(1`{.r}. No futuro, ficará claro que "completa" é sinônimo de "retorna um valor" (mesmo que invisivelmente).
+### Frases
+Como dito, as **frases** no R serão combinações de _tokens_. Qualquer combinação.
 
-Uma expressão pode ser delimitada por uma quebra de linha, ou por chaves `{}`\footnote{Equivalente à quebrar linha é usar um ponto e vírgula `;`, mas não é uma boa prática nem algo comum de ser utilizado.}. As chaves permitem criar expressões que ocupem mais do que uma quebra de linha.
-
-Veja alguns exemplos abaixo, note que expressões podem ser compostas de outras expressões:
+::: {.my_example}
+cada linha do código abaixo é uma frase:
 
 ```{r}
-1 #é uma expressão
-{1} #é a mesma expressão que a anterior
+1
+1 + 1
+a <- 1 #define a variável "a" com valor "1"
+a #pede o valor da variável "a"
+sum(1, 1)
+sum(1, 1) + a
+```
+:::
 
-1 + 1 #é uma expressão, uma operação "+" sobre dois "1"'s
+Algumas frases são apenas o nome de uma variável (`a`), algumas são a chamada de uma função `sum(1, 1)`{r}, algumas são algo mais geral. Cada uma dessas tem um nome especial. Vou ensiná-los abaixo, mas não se preocupe demais, suas definições formais serão expostas no tema de "Metaprogramming".
+
+::: {.my_result}
+**"Frases" da linguagem**<br>
+
+Existem três tipos de "frases" que compõe a linguagem R, **_names_**, **_calls_**, e **_expressions_** (respectivamente). Note que _expressions_ são algo mais geral, podendo ser compostas de **_names_** e **_calls_**.
+:::
+
+- O uso de aspas em "frases" é proposital. Eu menti um pouco aqui, mas irei corrigir esse resultado na seção de variáveis.
+
+- Com essa definição, parece que o que estamos chamando de "frase" é sinônimo de "expressão". Veremos no tema de "Metaprogramming" que isso não é 100% preciso.
+
+E quanto a um código como `1 +`? Bom, esse código não é _sintáticamente correto_. Tendemos a não chamar isso de frase/_statement_, mas formalmente, ele pode ser uma _expression_.
+
+
+### Parágrafos
+Como delimitamos frases em **parágrafos**?
+
+- Por padrão, uma expressão acaba na quebra de linha.
+- Se a expressão terminar inacabada (como no exemplo `1 +`), o R ignora a quebra de linha, e tenta completar a expressão com a linha seguinte.
+- Um ponto e vírgula pode ser usado para delimitar uma expressão explicitamente: `1 + 1; 2 + 2`. Mas seu uso não é uma comum nem recomendável.
+- Várias frases podem ser agregadas em grupos ou _blocks_ usando chaves `{}`. Um grupo de frases é avaliado apenas após seu fim.
+
+- _Observação:_ a partir de aqui, "frase" ou "statement" se refere a uma unidade ou a um grupo de frases.
+
+::: {.my_example}
+veja alguns exemplos de frases. note que frases podem ser compostas de outras frases:
+
+```{r}
+a #é uma frase
+1 #é uma frase
+{1} #é a mesma frase que a anterior
+
+1 + 1 #é uma frase, uma operação "+" sobre dois "1"'s
 
 {
   1 + 1
   2 + 2
-} #é uma expressão, duas operações de soma
-1 + 1; 2 + 2 #é a mesma expressão que a anterior
+} #é uma frase, compostas por duas frases (meio estranho, eu sei)
+1 + 1; 2 + 2 #é a mesma frase que a anterior
 ```
+:::
 
 Nada disso deve fazer muito sentido em termos práticos ainda, tudo bem, apenas é preciso já ir se acostumando com a estrutura geral de um programa.
 
 Antes de avançar, vou mentir um pouco e dar uma definição simplificada de função, mas que será melhor detalhada no capítulo \@ref(functions-environments).
 
-**Função:** é uma expressão, que depende de variáveis, associada à um nome. Utilizar esse nome, indicando os valores das variáveis envolvidas (entre parênteses), avalia a expressão, retornando seu resultado.
+::: {.my_result}
+**Função**<br>
 
+É uma expressão, que depende de variáveis, associada à um nome. Utilizar esse nome, indicando os valores das variáveis envolvidas (entre parênteses `()`), avalia a expressão, retornando seu resultado.
+:::
+
+::: {.my_example}
 ```{r}
 liar <- {x + y} #meramente ilustrativo, a sintaxe real é mais complexa
 liar(x = 1, y = 2) #> 3
 liar(1, 2) #equivalente à expressão anterior
 ```
+:::
 
-No capítulo \@ref(functions-environments), veremos que operadores são um tipo especial de função.
+Com essa definição em mente, vale incluir funções na nossa analogia de parágrafos, também as usamos para organizar o texto.
 
-
-### Programas
-Um **programa** é uma sequência de expressões, que são avaliadas em ordem cronológica, tendo seus resultados impressos no console.
+- No capítulo \@ref(functions-environments), veremos que operadores são funções como qualquer outra, que apenas apresentam uma sintaxe diferente.
 
 
 
@@ -88,13 +136,29 @@ Um dos tipos de palavras, as variáveis, merecem mais da nossa atenção. Mas n�
 
 
 ### Definindo Variáveis
-Para definir variáveis, escrevemos seu nome, `=` ou `<-`, e a expressão que definirá seu valor: `x = 1`{.r}, `x <- 1`{.r}.
+Para definir variáveis, escrevemos seu nome, `=` ou `<-`, e a frase que definirá seu valor: `x = 1 + 1`{.r}, `x <- 1 + 1`{.r}.
+
+::: {.my_result}
+**Variáveis, nomes, e objetos**<br>
 
 Ao rodar algo como `x <- 1`{.r}, o valor `1` é salvo na memória do computador, e associado ao nome `x`. Note que temos três parcelas:
 
 - A informação salva na memória do computador (no exemplo, `1`), é chamada de **objeto**.
 - O nome associado à esse objeto (no exemplo, `x`), é chamado de, bom, **nome**.
 - **Variável** se refere ao conjunto nome-objeto.
+:::
+
+No capítulo \@ref(data-attributes), veremos que "objeto" é algo muito geral. Especialmente, _names_, _calls_, e _expressions_ também são objetos.
+
+O leitor ainda não deve ter o contexto suficiente pra essa frase fazer tanto sentido, e tudo bem. Ainda assim, já vale para eu me retratar:
+
+::: {.my_result}
+**Objetos da linguagem**<br>
+
+Existem três tipos de objtos que compõe a linguagem R, **_names_**, **_calls_**, e **_expressions_** (respectivamente). Note que _expressions_ são algo mais geral, podendo ser compostas de **_names_** e **_calls_**.
+:::
+
+No futuro, ficará claro que termos tão poucos objetos compondo a linguagem é algo distintivo do R, e gerará resultados que, eu pelo menos, considero muito bonitos (e gosto não se discute).
 
 
 ### Copy on Modify
@@ -106,6 +170,18 @@ Com base no que aprendeu, como pensaríamos em `y <- x`{.r}? A resposta não é 
 No R, a realidade é a primeira opção. Porém, se `y` for alterado, `x` não é (e vice versa). O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo `y`. Esse processo, de apenas "separar"/"copiar" objetos quando modificados, é chamado de **copy-on-modify**.
 
 Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso. O importante é saber que não temos os objetos são copiados quando modificados, alterar `y` não altera `x` e vice versa, independente da complexidade do objeto.
+
+Em outras palavras:
+
+::: {.my_result}
+**Copy-on-modify**<br>
+
+No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.
+
+Existem duas exeções: objetos com apenas uma referência, e _ambientes_[^envs]. Esses são alterados "na hora"/"no lugar", ou _modify-in-place_.
+:::
+
+[^envs]: Tratados no capítulo \@ref(functions-environments)
 
 
 ### Outras Características
@@ -125,63 +201,89 @@ Nem toda combinação de caracteres pode ser um nome de variável. As principais
 - Podem começar apenas com letras ou ".".
 - Não podem ser palavras reservadas como "TRUE".
 
+Nomes não sintáticos podem ser definidos, se escritos usando crases (_backticks_) "\`": ```_x` <- 1``. Você provavelmente encontrará isso ao importar dados que não foram criados no R.
+
+Em muitos momentos, o R converte nomes não sintáticos utilizando a função `make.names()`. Você aprenderá sobre ela nos exercícios. É muito importante estar atento à esse comportamento, uma vez que é causa comum de erros.
+
+Você verá que isso é um tema comum: o R tenta fácilitar muitas tarefas, fazendo as coisas por você. Isso por um lado é o que o torna fácil de sair trabalhando, mas sempre é causa de inconsistências.
+
 
 
 ## Operadores
 
-A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiquei com medo deles se sentirem excluídos. Abaixo listo os parâmetros importantes.
+A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiquei com medo deles se sentirem excluídos.
 
-
-### Operadores Aritmétricos
-
-```{r, eval = TRUE, echo = FALSE}
-tabulate_funs("1", "aritmetrics")
-```
-
-
-### Operadores de Comparação
+Abaixo estão os operadores relevantes para o momento, suas descições, e seu uso. Clique nos links dos operadores para abrir suas _páginas de ajuda_.
 
 ```{r, eval = TRUE, echo = FALSE}
-tabulate_funs("1", "comparison")
+tabulate_funs("operadores", "1", c("aritmétrica", "comparação", "lógica"), "Capítulo")
 ```
 
+- _Observação:_ na coluna de "Uso", "logi" se refere a qualquer valor que se comporte como um valor booleano, "num" a qualquer valor que se comporte como número, "expr" à qualquer expressão, e "x"/"y" à valores mais genéricos, ou à nomes de variáveis.
 
-### Operadores Lógicos
+Agora vou apresentar a ordem de precedência da aplicação dos operadores. Associatividade se refere à como são resolvidos "empates", "direita pra esquerda" significa que o operador mais à direita é analisado antes. Tudo ficará mais claro no exemplo seguinte.
 
 ```{r, eval = TRUE, echo = FALSE}
-tabulate_funs("1", "logical")
+readxl::read_excel("assets/functions_list.xlsx", sheet = "precedência") %>%
+  kable()
 ```
 
+- _Observação:_ linhas com um "(*)" apresentam operadores que ainda não foram apresentados.
+  
+:::{.my_example}
+para deixar mais claro, na expressão `(3+6)/(1+2)/5^4` o seguinte ocorre:
 
+- `()` são analizados primeiro, porque tem precedência (estão acima na tabela).
+  - Como é da direita pra esquerda, primeiro `(1+2)` vira `3`, e depois, `(3+6)` vira `9`.
+- `^` é analizado a seguir, logo, `5^4` vira `625`.
+- `/` é analizado a seguir.
+  - Como é da esquerda pra direita, primeiro `9/3` vira `3`, e depois `3/625` vira `0.0048`.
+:::
+
+
+
+<div class="double-hrule"></div>
 
 ## Complemento {.unlisted .unnumbered}
 
 ### Recapitulando {-}
 
+#### Sintaxe {-}
 Neste capítulo, vimos a estrutura geral de um programa:
 
-- Código, as palavras do programa, podem ser valores, variáveis, ou funções.
+- As palavras do programa, podem ser valores, variáveis, ou funções.
+  - Valores serão o tema do próximo capítulo.
   - Vimos como imputar cada tipo de palavra.
-- Expressões, as frases do programa, são aglomerações de código.
-  - Podem ser completas ou não.
+- As frases do programa são combinações de palavras.
   - Podem ser delimitadas por quebras de linha ou chaves.
-- Programas, são várias expressões em sequência.
-
-Também demos uma atenção extra ao conceito de variável:
-
-- Vimos os operadores que definem variáveis `=` e `<-`.
-  - E porque `<-` é preferível.
-- Vimos a relação de variáveis e a memória do computador, algo intimamente relacionado aos conceitos de nome e objeto.
-  - Inclusive, variável é o conjunto nome-objeto.
-- Aprendemos também as regras de nomenclatura de variáveis.
-
-Aprendemos sobre a dinâmica de _copy-on-modify_ do R, onde `y <- x` define um novo nome `y` ao mesmo objeto. Apenas quando alguma alteração ocorra sobre `y` que o nome se associará a um outro objeto na memória do computador.
-
-Uma das implicações importantes, é que alterar `y` não altera `x` e vice versa, independente da complexidade do objeto.
+  - Podem ser organizadas em parágrafos vias chaves, ou "nomeadas" via funções.
+    - Inclusive, vimos que uma função, de modo simplista, é uma expressão, que depende de variáveis, associada à um nome.
+- _Scripts_ são sequências de frases.
 
 
+#### Variáveis {-}
+Também demos uma atenção extra ao conceito de variável, nome, e objeto:
+
+- Variáveis são _nomes_ associados à informações na memória do computador, os _objetos_.
+- Aprendemos os operadores que definem variáveis `=` e `<-`, e porque `<-` é preferível.
+- Vimos características como `x <- y <- 3`{.r} e as regras de nomenclatura.
+
+Bem como alguns conceitos mais técnicos e avançados:
+
+- A dinâmica da memória no R é pautada pelo conceito de _copy-on-modify_. No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.
+  - As exeções são objetos com apenas uma referência, e ambientes, que usam _modify-in-place_.
+- O conceito de objeto é muito geral. Inclusive, a prória linguagem R é composta por (apenas) três tipos de objetos: **_names_**, **_calls_**, e **_expressions_**. _Expressions_ são algo mais geral, podendo ser compostas de **_names_** e **_calls_**.
+
+
+#### Operadores {-}
+Por fim, apresentamos os operadores básicos, seu uso, e ordem de preferência. Também vimos que operadores são funções, apenas com sintaxe diferente.
+
+
+---
 
 ### Exercícios {-}
+
+- _Obsservação:_ os exercícios usam variáveis de mesmo nome. Lembre-se de limpar as definições de variáveis após completar um exercício, rodando a frase `rm(list = ls())`.
 
 #### Variáveis {-}
 1. Explique a diferença entre `1` e cada uma das variáveis abaixo.
@@ -197,26 +299,52 @@ e <- 1
 
 2. Foi comentado que objetos mais complexos têm comportamentos diferentes com relação ao processo de definição , mas todos seguem uma característica geral. Com base nisso, o que você espera que ocorra com `b` após a terceira linha do código abaixo?
 
-Obs: você verá a função `list()` no próximo capítulo, mas saiba que ela cria uma lista, uma coleção, dos elementos que a são passados como argumentos.
-
 ```{r}
 a <- 1
 b <- list(a, a)
 a <- a + 1
 ```
 
+- _Obsservação:_ você verá a função `list()` no próximo capítulo, mas saiba que ela cria uma lista, uma coleção, dos elementos que a são passados como argumentos.
+
+3. Leia a página de ajuda da função `make.names()` para aprender as regras completas de definição de nomes, sobre como o R converte nomes não sintáticos. Preveja qual será o resultado das chamadas abaixo.
+
+```{r}
+make.names("")
+make.names("@")
+make.names("TRUE")
+make.names("`TRUE`")
+```
+
 
 #### Operadores {-}
+4. Parta de um número qualquer `x`, por exemplo, `x <- 5`. Use os ensinados operadores para criar:
+
+- Uma frase que retorne `TRUE` se `x` for múltiplo de 2.
+- Uma frase que retonre `TRUE` se `x` não for múltiplo nem de 3, nem de 5.
+- Uma frase que retonre `TRUE` se a parte inteira da divisão de `x` por 4 é igual a 2, ou se seu quadrado for maior ou igual à 10.
+
+5. Liste a ordem das ações executadas no cálculo da expressão abaixo:
+
+```{r}
+x <- FALSE | !5.2 %% 2*7*4 - -3 <= 100 & TRUE
+```
 
 
-form integer division in R?
-identical?
-
+---
 
 ### Dicionário de Funções {-}
-=, <-, <<-
-operadores
 
+Abaixo segue a lista de funções vistas neste capítulo.
+
+```{r, eval = TRUE, echo = FALSE}
+readxl::read_excel("assets/functions_list.xlsx", sheet = "lista") %>%
+  select(-Capítulo) %>%
+  kable()
+```
+
+
+---
 
 ### Referências {-}
 

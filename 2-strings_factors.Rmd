@@ -1,1 +1,1 @@
-# Manipulação de Strings e Factors
+# Manipulação de Strings e Factors {#strings-factors}

@@ -12,3 +12,46 @@ pre {
 pre code {
   white-space: inherit;
 }
+.my_result {
+  background-color: #EEDCCA;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.my_result p{
+    display: inline;
+}
+.my_result::before {
+  content: "Resultado - ";
+  font-weight: bold;
+}
+.my_example {
+  background-color: #DCF0DC;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.my_example p{
+    display: inline;
+}
+.my_example::before {
+  content: "Exemplo: ";
+  display: inline;
+  font-weight: bold;
+}
+.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n){background-color:#E4C8AC}
+.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n-1){background-color:#EEDCCA}
+.book .book-body .page-wrapper .page-inner section.normal table th{background-color:#DAB48E}
+.double-hrule {
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  height: 8px;
+  margin: 50px 0 0px;
+  border-color: #E7E7E7;
+}
+li > p:not(:last-child) {
+  margin: 0 !important;
+}
+li > ul:last-child {
+  margin-bottom: 1em !important;
+}

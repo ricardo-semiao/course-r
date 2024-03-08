@@ -2,7 +2,7 @@
 
 Bem vindo à primeira parte deste livro, onde estudaremos os conceitos na base do R. Partirei do zero absoluto, de modo que é possível que o leitor tenha algum nível de familiaridade com os temas, mas provavelmente, não na profundidade aqui abordada.
 
-O nível de complexidade pode ser tão grande quanto quisermos, é difícil saber onde parar, e muitos conceitos serão introduzidos rapidamente. Mas não se assute, muitas vezes, meu objetivo maior é passar uma intuição geral de como o R funciona, e dar um primeiro contato com os temas mais complexos. Tento ao máximo deixar claro onde gastar seu cérebro e onde nem tanto, e todo capítulo terá uma seção final de "Recapitulando".
+Nessa parte mais "teórica", é difícil de traçar o limite no nível de complexidade ideal. Por conta disso, muitos conceitos tiveram de ser introduzidos rapidamente. Mas não se assute, muitas vezes, meu objetivo maior é passar uma intuição geral de como o R funciona, e dar um primeiro contato com os temas mais complexos. Tento ao máximo deixar claro onde gastar seu cérebro e onde nem tanto.
 
 Meu foco é mostrar a lógica do R, a "sintaxe e semântica" da linguagem. A "gramática/vocabulário", isto é, funções, truques, e aplicações específicas, serão ensinadas de passagem e via exercícios. Mas no final, a ideia é ter apresentado a maioria das funções commumente relevantes, construindo uma lista de referência para futuras consultas.
 
