@@ -1,0 +1,8 @@
+# Dicionário de funções {#dict .unnumbered}
+
+Abaixo segue a lista de funções vistas neste livro.
+
+```{r, eval = TRUE, echo = FALSE}
+readxl::read_excel("assets/functions_list.xlsx", sheet = "lista") %>%
+  kable()
+```

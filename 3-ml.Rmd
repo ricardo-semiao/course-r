@@ -1,29 +1,20 @@
-# Visualização Gráfica {#visualization}
+# Aprendizado de Máquina {#ml}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, descreverei os fundamentos da visualização de dados. Falo como aplicá-la usando o pacote "ggplot2".
+Neste capítulo, apresentarei rapidamente alguns _frameworks_ para modelos mais complexos de _machine learning_.
 
 
-## Introdução à Visualização
+## Fundamentals
 
 
-
-## Layers
-
+## ML in Built-In R
 
 
-## Scales
+## ML in External Packages
 
-
-
-## Grammar
-
-
-
-## Others
 
 
 

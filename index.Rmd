@@ -50,7 +50,7 @@ R é uma linguagem única, para o bem e para o mal:
 
 Mas claro que o conhecimento aplicado também é quisto (deixemos o estudo teórico em si mesmo para os _nerds_ da ciência da computação). Por isso, tento expor a parte teórica da maneira mais tranquila e enxuta possível, focando no essencial e deixando o extra como extra.
 
-Portanto, na segunda parte do livro, foco em aplicar o conhecimento recém adquirido para aprender a fazer as duas tarefas mais comums, presentes em basicamente todo projeto no R, a manipulação e visualização de dados.
+Portanto, na segunda parte do livro, foco em aplicar o conhecimento recém adquirido para aprender a fazer as duas tarefas mais comums, presentes em basicamente todo projeto no R, a manipulação e visualização de dados. Mas sempre relacionando com os conceitos "teóricos" da ciência de dados.
 
 Por fim, na terceira parte, apresento aplicações variadas no estilo "livro de receitas". Aqui, existe muita intersecção com uma extensa litaratura já existente, mas creio que vale muito a pena aprender como aplicar todo o arcabouço visto antes em alguns dos tipos de projetos mais comuns.
 
@@ -79,24 +79,26 @@ Para começar exponho alguns temas iniciais:
 
 
 ### Parte I - R base {-}
-Os conceitos basilares do R costumam ser ensinados rapidamente, para dar prioridade na manipulação de dados e aplicações. Esse curso não fará isso, iremos passar com bastante calma por essa dimensão. Tanto porque existem menos tutoriais que fazem isso, mas principalmente, porque aprender sobre como o R funciona com detalhe gera uma série de benefícios:
+Os conceitos basilares do R costumam ser ensinados rapidamente, para dar prioridade na manipulação de dados e aplicações. Esse curso não fará isso, iremos passar com bastante calma por essa dimensão, tanto porque existem menos tutoriais que fazem isso, mas principalmente, porque aprender sobre como o R funciona com detalhe gera uma série de benefícios:
 
-- Permite entender códigos mais complexos;
-- Permite aprender fontes comuns de erros e como evitá-las;
-- Permite escrever códigos mais elegantes e principalmente mais eficiêntes;
+- Permite entender códigos mais complexos.
+- Permite aprender fontes comuns de erros e como evitá-las.
+- Permite escrever códigos mais elegantes e principalmente mais eficiêntes.
 - Facilitará a explicação dos conceitos que empoderam o _tidyverse_.
 
 Essa abordagem é algo como ter aulas formais de uma língua, em oposição a ensino para turismo. A utilidade dessa abordagem depende de seu objetivo, se ele é "conseguir aplicar rapidamente novos conhecimentos", outros livros serão mais úteis.
 
 
 ### Parte II - Ciência de Dados com o Tidyverse {-}
-Na segunda parte, iremos ver sobre manipulação e visualização de dados, porque ela é uma tarefa que será necessária para praticamente todas as aplicações do R.
+Na segunda parte, iremos aplicar os conhecimentos obtidos e a linguagem desenvolvida para aprender sobre duas das tarefas mais comuns em aplicações do R, manipulação e visualização de dados. Porém, ensino esses conceitas com base na "teoria" por trás de projetos de ciência de dados.
 
-Existem vários frameworks diferentes para isso, o R base, o DataTable, e o tidyverse. Nesse curso escolho o tidyverse pois é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Ao fim, também trataremos rapidamente sobre um framework para lidar com datas e séries de tempo.
+Vamos executar essas tarefas no R usando o _framework_ tidyverse. Escolhi falar sobre ele, em oposição à usar o R base, ou outro _framework_, porque ele é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Especialmente, os conceitos expostos na parte I farão com que sua compreensão seja muito mais simples.
 
 
 ### Parte II - Aplicações Diversas {-}
-A parte três apresenta várias aplicações específicas em R, sem detalhar muito a fundo todos seus detalhes nem explicar a teoria por trás, logo, mais com o objetivo de mostrar as possibilidades no R.
+A parte três mostra como aplicar os conhecimentos adquiridos nas outras duas partes, em temas comuns. Já existe uma literatura extensa com objetivos similares, portanto, foco em temas mais centrais, e/ou que tenham um alto ganho de serem abordados com os _frameworks_ e linguagem desenvolvida neste livro.
+
+Os temas são: problemas comuns da probabilidade e estatística, exploração de dados, modelagem de regressão, e modelagem de machine learning. Ao fim, listo referências para otras aplicações de possível interesse.
 
 
 

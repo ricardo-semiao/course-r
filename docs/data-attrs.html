@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Tipos de Dados e Atributos | R: Teoria e Aplicações</title>
+  <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Tipos de Dados e Atributos | R: Teoria e Aplicações" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="github-repo" content="ricardo-semiao/R-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Tipos de Dados e Atributos | R: Teoria e Aplicações" />
+  
+  <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  
+
+<meta name="author" content="Ricardo Semião" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="syntax-vars.html"/>
+<link rel="next" href="subset.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R: Teoria e Aplicações</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem Vindo!</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#por-que-este-livro"><i class="fa fa-check"></i>Por que Este Livro?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organização-do-livro"><i class="fa fa-check"></i>Organização do Livro</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introdução"><i class="fa fa-check"></i>Introdução</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-i---r-base"><i class="fa fa-check"></i>Parte I - R base</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-ii---ciência-de-dados-com-o-tidyverse"><i class="fa fa-check"></i>Parte II - Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-ii---aplicações-diversas"><i class="fa fa-check"></i>Parte II - Aplicações Diversas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licensa"><i class="fa fa-check"></i>Licensa</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contato"><i class="fa fa-check"></i>Contato</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#história"><i class="fa fa-check"></i><b>1.1</b> História</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#características-da-linguagem-e-porque-r"><i class="fa fa-check"></i><b>1.2</b> Características da Linguagem, e “Porque R?”</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#refs"><i class="fa fa-check"></i><b>1.3</b> Literatura sobre R</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#estilo-do-livro"><i class="fa fa-check"></i><b>1.4</b> Estilo do Livro</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#instalação-interface-e-ferramentas"><i class="fa fa-check"></i><b>1.5</b> Instalação, Interface, e Ferramentas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parte-i---r-base-1.html"><a href="parte-i---r-base-1.html"><i class="fa fa-check"></i>Parte I - R Base</a></li>
+<li class="chapter" data-level="2" data-path="syntax-vars.html"><a href="syntax-vars.html"><i class="fa fa-check"></i><b>2</b> Sintaxe e Variáveis</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syntax-vars.html"><a href="syntax-vars.html#sintaxe"><i class="fa fa-check"></i><b>2.1</b> Sintaxe</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="syntax-vars.html"><a href="syntax-vars.html#palavras"><i class="fa fa-check"></i><b>2.1.1</b> Palavras</a></li>
+<li class="chapter" data-level="2.1.2" data-path="syntax-vars.html"><a href="syntax-vars.html#frases"><i class="fa fa-check"></i><b>2.1.2</b> Frases</a></li>
+<li class="chapter" data-level="2.1.3" data-path="syntax-vars.html"><a href="syntax-vars.html#parágrafos"><i class="fa fa-check"></i><b>2.1.3</b> Parágrafos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="syntax-vars.html"><a href="syntax-vars.html#variáveis"><i class="fa fa-check"></i><b>2.2</b> Variáveis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="syntax-vars.html"><a href="syntax-vars.html#definindo-variáveis"><i class="fa fa-check"></i><b>2.2.1</b> Definindo Variáveis</a></li>
+<li class="chapter" data-level="2.2.2" data-path="syntax-vars.html"><a href="syntax-vars.html#copy-on-modify"><i class="fa fa-check"></i><b>2.2.2</b> Copy on Modify</a></li>
+<li class="chapter" data-level="2.2.3" data-path="syntax-vars.html"><a href="syntax-vars.html#outras-características"><i class="fa fa-check"></i><b>2.2.3</b> Outras Características</a></li>
+<li class="chapter" data-level="2.2.4" data-path="syntax-vars.html"><a href="syntax-vars.html#regras-de-nomenclatura"><i class="fa fa-check"></i><b>2.2.4</b> Regras de Nomenclatura</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="syntax-vars.html"><a href="syntax-vars.html#operadores"><i class="fa fa-check"></i><b>2.3</b> Operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-attrs.html"><a href="data-attrs.html"><i class="fa fa-check"></i><b>3</b> Tipos de Dados e Atributos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-attrs.html"><a href="data-attrs.html#famílias"><i class="fa fa-check"></i><b>3.1</b> Famílias</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="data-attrs.html"><a href="data-attrs.html#tipos-de-dados"><i class="fa fa-check"></i><b>3.1.1</b> Tipos de Dados</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-attrs.html"><a href="data-attrs.html#famílias-1"><i class="fa fa-check"></i><b>3.1.2</b> Famílias</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-attrs.html"><a href="data-attrs.html#vetores-atômicos"><i class="fa fa-check"></i><b>3.2</b> Vetores atômicos</a></li>
+<li class="chapter" data-level="3.3" data-path="data-attrs.html"><a href="data-attrs.html#listas"><i class="fa fa-check"></i><b>3.3</b> Listas</a></li>
+<li class="chapter" data-level="3.4" data-path="data-attrs.html"><a href="data-attrs.html#atributos"><i class="fa fa-check"></i><b>3.4</b> Atributos</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-attrs.html"><a href="data-attrs.html#nomes"><i class="fa fa-check"></i><b>3.4.1</b> Nomes</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-attrs.html"><a href="data-attrs.html#dimensões"><i class="fa fa-check"></i><b>3.4.2</b> Dimensões</a></li>
+<li class="chapter" data-level="3.4.3" data-path="data-attrs.html"><a href="data-attrs.html#classes"><i class="fa fa-check"></i><b>3.4.3</b> Classes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="subset.html"><a href="subset.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="subset.html"><a href="subset.html#introdução-1"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="subset.html"><a href="subset.html#operador"><i class="fa fa-check"></i><b>4.2</b> Operador [</a></li>
+<li class="chapter" data-level="4.3" data-path="subset.html"><a href="subset.html#operador-e"><i class="fa fa-check"></i><b>4.3</b> Operador [[ e $</a></li>
+<li class="chapter" data-level="4.4" data-path="subset.html"><a href="subset.html#atribuição"><i class="fa fa-check"></i><b>4.4</b> Atribuição</a></li>
+<li class="chapter" data-level="4.5" data-path="subset.html"><a href="subset.html#aplicações"><i class="fa fa-check"></i><b>4.5</b> Aplicações</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-conds.html"><a href="control-conds.html"><i class="fa fa-check"></i><b>5</b> Control Flow e Condições</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-conds.html"><a href="control-conds.html#introdução-2"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="control-conds.html"><a href="control-conds.html#choices"><i class="fa fa-check"></i><b>5.2</b> Choices</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="control-conds.html"><a href="control-conds.html#if-else"><i class="fa fa-check"></i><b>5.2.1</b> If &amp; else</a></li>
+<li class="chapter" data-level="5.2.2" data-path="control-conds.html"><a href="control-conds.html#and-and-e-or-or"><i class="fa fa-check"></i><b>5.2.2</b> And and e or or</a></li>
+<li class="chapter" data-level="5.2.3" data-path="control-conds.html"><a href="control-conds.html#switch"><i class="fa fa-check"></i><b>5.2.3</b> Switch</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="control-conds.html"><a href="control-conds.html#loops"><i class="fa fa-check"></i><b>5.3</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="control-conds.html"><a href="control-conds.html#loops-for"><i class="fa fa-check"></i><b>5.3.1</b> Loops For</a></li>
+<li class="chapter" data-level="5.3.2" data-path="control-conds.html"><a href="control-conds.html#outros-loops"><i class="fa fa-check"></i><b>5.3.2</b> Outros loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="control-conds.html"><a href="control-conds.html#condições"><i class="fa fa-check"></i><b>5.4</b> Condições</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="funs-envs.html"><a href="funs-envs.html"><i class="fa fa-check"></i><b>6</b> Funções e Ambientes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="funs-envs.html"><a href="funs-envs.html#fundamentos"><i class="fa fa-check"></i><b>6.1</b> Fundamentos</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="funs-envs.html"><a href="funs-envs.html#introdução-3"><i class="fa fa-check"></i><b>6.1.1</b> Introdução</a></li>
+<li class="chapter" data-level="6.1.2" data-path="funs-envs.html"><a href="funs-envs.html#formatos-e-combinações"><i class="fa fa-check"></i><b>6.1.2</b> Formatos e combinações</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="funs-envs.html"><a href="funs-envs.html#ambientes"><i class="fa fa-check"></i><b>6.2</b> Ambientes</a></li>
+<li class="chapter" data-level="6.3" data-path="funs-envs.html"><a href="funs-envs.html#scoping-e-evaluation"><i class="fa fa-check"></i><b>6.3</b> Scoping e Evaluation</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="funs-envs.html"><a href="funs-envs.html#scoping"><i class="fa fa-check"></i><b>6.3.1</b> Scoping</a></li>
+<li class="chapter" data-level="6.3.2" data-path="funs-envs.html"><a href="funs-envs.html#lazy-evaluation"><i class="fa fa-check"></i><b>6.3.2</b> Lazy evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="funs-envs.html"><a href="funs-envs.html#conceitos-adicionais"><i class="fa fa-check"></i><b>6.4</b> Conceitos Adicionais</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="funs-envs.html"><a href="funs-envs.html#dot-dot-dot"><i class="fa fa-check"></i><b>6.4.1</b> Dot dot dot</a></li>
+<li class="chapter" data-level="6.4.2" data-path="funs-envs.html"><a href="funs-envs.html#resultados"><i class="fa fa-check"></i><b>6.4.2</b> Resultados</a></li>
+<li class="chapter" data-level="6.4.3" data-path="funs-envs.html"><a href="funs-envs.html#exit-handlers"><i class="fa fa-check"></i><b>6.4.3</b> Exit Handlers</a></li>
+<li class="chapter" data-level="6.4.4" data-path="funs-envs.html"><a href="funs-envs.html#pacotes"><i class="fa fa-check"></i><b>6.4.4</b> Pacotes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="paradigms.html"><a href="paradigms.html"><i class="fa fa-check"></i><b>7</b> Paradigmas de Programação</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="paradigms.html"><a href="paradigms.html#programação-funcional"><i class="fa fa-check"></i><b>7.1</b> Programação Funcional</a></li>
+<li class="chapter" data-level="7.2" data-path="paradigms.html"><a href="paradigms.html#programação-orientada-ao-objeto"><i class="fa fa-check"></i><b>7.2</b> Programação Orientada ao Objeto</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="paradigms.html"><a href="paradigms.html#sistemas-de-oop"><i class="fa fa-check"></i><b>7.2.1</b> Sistemas de OOP</a></li>
+<li class="chapter" data-level="7.2.2" data-path="paradigms.html"><a href="paradigms.html#polimorfismo"><i class="fa fa-check"></i><b>7.2.2</b> Polimorfismo</a></li>
+<li class="chapter" data-level="7.2.3" data-path="paradigms.html"><a href="paradigms.html#funções-genéricas"><i class="fa fa-check"></i><b>7.2.3</b> Funções genéricas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="paradigms.html"><a href="paradigms.html#metaprogramação"><i class="fa fa-check"></i><b>7.3</b> Metaprogramação</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="others1.html"><a href="others1.html"><i class="fa fa-check"></i><b>8</b> Outros Tópicos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="others1.html"><a href="others1.html#projetos-github-e-addins"><i class="fa fa-check"></i><b>8.1</b> Projetos, Github, e Addins</a></li>
+<li class="chapter" data-level="8.2" data-path="others1.html"><a href="others1.html#debbuging"><i class="fa fa-check"></i><b>8.2</b> Debbuging</a></li>
+<li class="chapter" data-level="8.3" data-path="others1.html"><a href="others1.html#gerenciamento-de-memória-e-performance"><i class="fa fa-check"></i><b>8.3</b> Gerenciamento de Memória e Performance</a></li>
+<li class="chapter" data-level="8.4" data-path="others1.html"><a href="others1.html#organização-de-código-e-boas-práticas"><i class="fa fa-check"></i><b>8.4</b> Organização de Código e Boas Práticas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="recapitulando-7.html"><a href="recapitulando-7.html"><i class="fa fa-check"></i>Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="parte-ii---ciência-de-dados-com-o-tidyverse-1.html"><a href="parte-ii---ciência-de-dados-com-o-tidyverse-1.html"><i class="fa fa-check"></i>Parte II - Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="9" data-path="ds-import.html"><a href="ds-import.html"><i class="fa fa-check"></i><b>9</b> Ciência de Dados e Importação</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ds-import.html"><a href="ds-import.html#ciência-de-dados"><i class="fa fa-check"></i><b>9.1</b> Ciência de Dados</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="ds-import.html"><a href="ds-import.html#introdução-4"><i class="fa fa-check"></i><b>9.1.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.1.2" data-path="ds-import.html"><a href="ds-import.html#preparar"><i class="fa fa-check"></i><b>9.1.2</b> Preparar</a></li>
+<li class="chapter" data-level="9.1.3" data-path="ds-import.html"><a href="ds-import.html#entender-e-explorar"><i class="fa fa-check"></i><b>9.1.3</b> Entender e Explorar</a></li>
+<li class="chapter" data-level="9.1.4" data-path="ds-import.html"><a href="ds-import.html#communicating-and-executing"><i class="fa fa-check"></i><b>9.1.4</b> Communicating and Executing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>10</b> Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data.html"><a href="data.html#types-of-data"><i class="fa fa-check"></i><b>10.1</b> Types of Data</a></li>
+<li class="chapter" data-level="10.2" data-path="data.html"><a href="data.html#importing-with-readr"><i class="fa fa-check"></i><b>10.2</b> Importing with readr</a></li>
+<li class="chapter" data-level="10.3" data-path="data.html"><a href="data.html#data-visualization"><i class="fa fa-check"></i><b>10.3</b> Data Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="manipulation.html"><a href="manipulation.html"><i class="fa fa-check"></i><b>11</b> Manipulação de Dados</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="manipulation.html"><a href="manipulation.html#operações-de-manipulação"><i class="fa fa-check"></i><b>11.1</b> Operações de Manipulação</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="manipulation.html"><a href="manipulation.html#operações-em-observações"><i class="fa fa-check"></i><b>11.1.1</b> Operações em Observações</a></li>
+<li class="chapter" data-level="11.1.2" data-path="manipulation.html"><a href="manipulation.html#operações-em-variáveis"><i class="fa fa-check"></i><b>11.1.2</b> Operações em Variáveis</a></li>
+<li class="chapter" data-level="11.1.3" data-path="manipulation.html"><a href="manipulation.html#operações-em-células"><i class="fa fa-check"></i><b>11.1.3</b> Operações em Células</a></li>
+<li class="chapter" data-level="11.1.4" data-path="manipulation.html"><a href="manipulation.html#operações-em-grupos"><i class="fa fa-check"></i><b>11.1.4</b> Operações em Grupos</a></li>
+<li class="chapter" data-level="11.1.5" data-path="manipulation.html"><a href="manipulation.html#operações-de-união"><i class="fa fa-check"></i><b>11.1.5</b> Operações de União</a></li>
+<li class="chapter" data-level="11.1.6" data-path="manipulation.html"><a href="manipulation.html#operações-de-remodelação"><i class="fa fa-check"></i><b>11.1.6</b> Operações de Remodelação</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>12</b> Visualização Gráfica</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="visualization.html"><a href="visualization.html#introdução-à-visualização"><i class="fa fa-check"></i><b>12.1</b> Introdução à Visualização</a></li>
+<li class="chapter" data-level="12.2" data-path="visualization.html"><a href="visualization.html#layers"><i class="fa fa-check"></i><b>12.2</b> Layers</a></li>
+<li class="chapter" data-level="12.3" data-path="visualization.html"><a href="visualization.html#scales"><i class="fa fa-check"></i><b>12.3</b> Scales</a></li>
+<li class="chapter" data-level="12.4" data-path="visualization.html"><a href="visualization.html#grammar"><i class="fa fa-check"></i><b>12.4</b> Grammar</a></li>
+<li class="chapter" data-level="12.5" data-path="visualization.html"><a href="visualization.html#others"><i class="fa fa-check"></i><b>12.5</b> Others</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="strings-factors.html"><a href="strings-factors.html"><i class="fa fa-check"></i><b>13</b> Manipulação de Strings e Factors</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="strings-factors.html"><a href="strings-factors.html#strings"><i class="fa fa-check"></i><b>13.1</b> Strings</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="strings-factors.html"><a href="strings-factors.html#matches"><i class="fa fa-check"></i><b>13.1.1</b> Matches</a></li>
+<li class="chapter" data-level="13.1.2" data-path="strings-factors.html"><a href="strings-factors.html#mutate"><i class="fa fa-check"></i><b>13.1.2</b> Mutate</a></li>
+<li class="chapter" data-level="13.1.3" data-path="strings-factors.html"><a href="strings-factors.html#subset-1"><i class="fa fa-check"></i><b>13.1.3</b> Subset</a></li>
+<li class="chapter" data-level="13.1.4" data-path="strings-factors.html"><a href="strings-factors.html#join-and-split"><i class="fa fa-check"></i><b>13.1.4</b> Join and Split</a></li>
+<li class="chapter" data-level="13.1.5" data-path="strings-factors.html"><a href="strings-factors.html#lengths"><i class="fa fa-check"></i><b>13.1.5</b> Lengths</a></li>
+<li class="chapter" data-level="13.1.6" data-path="strings-factors.html"><a href="strings-factors.html#order"><i class="fa fa-check"></i><b>13.1.6</b> Order</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="strings-factors.html"><a href="strings-factors.html#factors-1"><i class="fa fa-check"></i><b>13.2</b> Factors</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="strings-factors.html"><a href="strings-factors.html#inspect"><i class="fa fa-check"></i><b>13.2.1</b> Inspect</a></li>
+<li class="chapter" data-level="13.2.2" data-path="strings-factors.html"><a href="strings-factors.html#combine"><i class="fa fa-check"></i><b>13.2.2</b> Combine</a></li>
+<li class="chapter" data-level="13.2.3" data-path="strings-factors.html"><a href="strings-factors.html#reorder"><i class="fa fa-check"></i><b>13.2.3</b> Reorder</a></li>
+<li class="chapter" data-level="13.2.4" data-path="strings-factors.html"><a href="strings-factors.html#revalue"><i class="fa fa-check"></i><b>13.2.4</b> Revalue</a></li>
+<li class="chapter" data-level="13.2.5" data-path="strings-factors.html"><a href="strings-factors.html#relevel"><i class="fa fa-check"></i><b>13.2.5</b> Relevel</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="functional.html"><a href="functional.html"><i class="fa fa-check"></i><b>14</b> Programação Funcional</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="functional.html"><a href="functional.html#map"><i class="fa fa-check"></i><b>14.1</b> Map</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="functional.html"><a href="functional.html#map-1"><i class="fa fa-check"></i><b>14.1.1</b> Map 1</a></li>
+<li class="chapter" data-level="14.1.2" data-path="functional.html"><a href="functional.html#map-2"><i class="fa fa-check"></i><b>14.1.2</b> Map 2</a></li>
+<li class="chapter" data-level="14.1.3" data-path="functional.html"><a href="functional.html#map-p"><i class="fa fa-check"></i><b>14.1.3</b> Map p</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="functional.html"><a href="functional.html#others-1"><i class="fa fa-check"></i><b>14.2</b> Others</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="functional.html"><a href="functional.html#modify"><i class="fa fa-check"></i><b>14.2.1</b> Modify</a></li>
+<li class="chapter" data-level="14.2.2" data-path="functional.html"><a href="functional.html#reduce"><i class="fa fa-check"></i><b>14.2.2</b> Reduce</a></li>
+<li class="chapter" data-level="14.2.3" data-path="functional.html"><a href="functional.html#predicates"><i class="fa fa-check"></i><b>14.2.3</b> Predicates</a></li>
+<li class="chapter" data-level="14.2.4" data-path="functional.html"><a href="functional.html#pluck"><i class="fa fa-check"></i><b>14.2.4</b> Pluck</a></li>
+<li class="chapter" data-level="14.2.5" data-path="functional.html"><a href="functional.html#reshape"><i class="fa fa-check"></i><b>14.2.5</b> Reshape</a></li>
+<li class="chapter" data-level="14.2.6" data-path="functional.html"><a href="functional.html#concatenate"><i class="fa fa-check"></i><b>14.2.6</b> Concatenate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>15</b> Manipulação de Datas e Séries de Tempo</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>15.1</b> Dates</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="time-series.html"><a href="time-series.html#parsing"><i class="fa fa-check"></i><b>15.1.1</b> Parsing</a></li>
+<li class="chapter" data-level="15.1.2" data-path="time-series.html"><a href="time-series.html#mutate-1"><i class="fa fa-check"></i><b>15.1.2</b> Mutate</a></li>
+<li class="chapter" data-level="15.1.3" data-path="time-series.html"><a href="time-series.html#time-zones"><i class="fa fa-check"></i><b>15.1.3</b> Time Zones</a></li>
+<li class="chapter" data-level="15.1.4" data-path="time-series.html"><a href="time-series.html#math"><i class="fa fa-check"></i><b>15.1.4</b> Math</a></li>
+<li class="chapter" data-level="15.1.5" data-path="time-series.html"><a href="time-series.html#periods-durations-e-intervals"><i class="fa fa-check"></i><b>15.1.5</b> Periods, Durations, e Intervals</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="time-series.html"><a href="time-series.html#time-series-1"><i class="fa fa-check"></i><b>15.2</b> Time Series</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="recapitulando-15.html"><a href="recapitulando-15.html"><i class="fa fa-check"></i>Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="parte-iii---aplicações-diversas.html"><a href="parte-iii---aplicações-diversas.html"><i class="fa fa-check"></i>Parte III - Aplicações Diversas</a></li>
+<li class="chapter" data-level="16" data-path="stats-prob.html"><a href="stats-prob.html"><i class="fa fa-check"></i><b>16</b> Probabilidade e Estatística</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="stats-prob.html"><a href="stats-prob.html#probability"><i class="fa fa-check"></i><b>16.1</b> Probability</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="stats-prob.html"><a href="stats-prob.html#random-numbers"><i class="fa fa-check"></i><b>16.1.1</b> Random Numbers</a></li>
+<li class="chapter" data-level="16.1.2" data-path="stats-prob.html"><a href="stats-prob.html#useful-measures"><i class="fa fa-check"></i><b>16.1.2</b> Useful Measures</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="stats-prob.html"><a href="stats-prob.html#statistics"><i class="fa fa-check"></i><b>16.2</b> Statistics</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="stats-prob.html"><a href="stats-prob.html#useful-measures-1"><i class="fa fa-check"></i><b>16.2.1</b> Useful Measures</a></li>
+<li class="chapter" data-level="16.2.2" data-path="stats-prob.html"><a href="stats-prob.html#hypothesis-testing"><i class="fa fa-check"></i><b>16.2.2</b> Hypothesis Testing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="exploration.html"><a href="exploration.html"><i class="fa fa-check"></i><b>17</b> Exploração de Dados</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="exploration.html"><a href="exploration.html#useful-visualizations"><i class="fa fa-check"></i><b>17.1</b> Useful Visualizations</a></li>
+<li class="chapter" data-level="17.2" data-path="exploration.html"><a href="exploration.html#useful-metrics"><i class="fa fa-check"></i><b>17.2</b> Useful Metrics</a></li>
+<li class="chapter" data-level="17.3" data-path="exploration.html"><a href="exploration.html#useful-graphs"><i class="fa fa-check"></i><b>17.3</b> Useful Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>18</b> Regressão</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="regression.html"><a href="regression.html#fundamentals"><i class="fa fa-check"></i><b>18.1</b> Fundamentals</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="regression.html"><a href="regression.html#data-1"><i class="fa fa-check"></i><b>18.1.1</b> Data</a></li>
+<li class="chapter" data-level="18.1.2" data-path="regression.html"><a href="regression.html#formulas"><i class="fa fa-check"></i><b>18.1.2</b> Formulas</a></li>
+<li class="chapter" data-level="18.1.3" data-path="regression.html"><a href="regression.html#fitting"><i class="fa fa-check"></i><b>18.1.3</b> Fitting</a></li>
+<li class="chapter" data-level="18.1.4" data-path="regression.html"><a href="regression.html#visualizing"><i class="fa fa-check"></i><b>18.1.4</b> Visualizing</a></li>
+<li class="chapter" data-level="18.1.5" data-path="regression.html"><a href="regression.html#testing"><i class="fa fa-check"></i><b>18.1.5</b> Testing</a></li>
+<li class="chapter" data-level="18.1.6" data-path="regression.html"><a href="regression.html#correcting"><i class="fa fa-check"></i><b>18.1.6</b> Correcting</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="regression.html"><a href="regression.html#linear-models"><i class="fa fa-check"></i><b>18.2</b> Linear Models</a></li>
+<li class="chapter" data-level="18.3" data-path="regression.html"><a href="regression.html#non-linear-models"><i class="fa fa-check"></i><b>18.3</b> Non-Linear Models</a></li>
+<li class="chapter" data-level="18.4" data-path="regression.html"><a href="regression.html#time-series-models"><i class="fa fa-check"></i><b>18.4</b> Time-Series Models</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>19</b> Aprendizado de Máquina</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="ml.html"><a href="ml.html#fundamentals-1"><i class="fa fa-check"></i><b>19.1</b> Fundamentals</a></li>
+<li class="chapter" data-level="19.2" data-path="ml.html"><a href="ml.html#ml-in-built-in-r"><i class="fa fa-check"></i><b>19.2</b> ML in Built-In R</a></li>
+<li class="chapter" data-level="19.3" data-path="ml.html"><a href="ml.html#ml-in-external-packages"><i class="fa fa-check"></i><b>19.3</b> ML in External Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="others3.html"><a href="others3.html"><i class="fa fa-check"></i><b>20</b> Outras Aplicações</a></li>
+<li class="chapter" data-level="" data-path="dict.html"><a href="dict.html"><i class="fa fa-check"></i>Dicionário de funções</a></li>
+<li class="chapter" data-level="" data-path="referências-19.html"><a href="referências-19.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R: Teoria e Aplicações</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-attrs" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Tipos de Dados e Atributos<a href="data-attrs.html#data-attrs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="warn">
+<p>este capítulo está em construção. O que segue abaixo é apenas um rascunho.</p>
+</div>
+<div id="famílias" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Famílias<a href="data-attrs.html#famílias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tipos-de-dados" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Tipos de Dados<a href="data-attrs.html#tipos-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>No R, os tipos de dados são organizados em “famílias”. Antes de entrar nesse mérito, abaixo estão os tipos mais importantes:</p>
+<ul>
+<li><em>Logicals</em> são os dados booleanos, podem ser <code class="sourceCode r"><span class="cn">TRUE</span></code> ou <code class="sourceCode r"><span class="cn">FALSE</span></code>. Podem ser abreviados para <code class="sourceCode r">T</code> e <code class="sourceCode r">F</code></li>
+<li><em>Characters</em> são os dados de texto (strings)</li>
+<li><em>Intergers</em> são números inteiros, e são escritos com um <code class="sourceCode r">L</code> no fim</li>
+<li><em>Doubles</em> são os números decimais, podem ser decimais <code class="sourceCode r"><span class="fl">1.245</span></code>, científicos <code class="sourceCode r"><span class="fl">1.23e4</span></code>, ou hexadecimais <code class="sourceCode r"><span class="dv">0xadfe</span></code>
+<ul>
+<li>Valores especiais: <code class="sourceCode r"><span class="cn">Inf</span></code>, <code class="sourceCode r"><span class="sc">-</span><span class="cn">Inf</span></code>, e <code class="sourceCode r"><span class="cn">NaN</span></code> (“not a number”, usado em indefinições matemáticas)</li>
+</ul></li>
+</ul>
+<p>Existem outros dois tipos menos utilizados: <em>raw</em> são os dados binários; <em>complex</em> são os números complexos</p>
+<p>Todos os tipos explicados assumem um valor especial, o “valor desconhecido”: <code class="sourceCode r"><span class="cn">NA</span></code> (<em>non aplicable</em>)</p>
+<ul>
+<li>A maioria das operações envolvendo <code class="sourceCode r"><span class="cn">NA</span></code>`s retorna um <code class="sourceCode r"><span class="cn">NA</span></code>: <code class="sourceCode r"><span class="dv">1</span> <span class="sc">+</span> <span class="cn">NA</span> <span class="co">#&gt; NA</span></code></li>
+<li>Como NA é um valor desconhecido, checar se um NA é igual ao outro não faz sentido <code class="sourceCode r"><span class="cn">NA</span> <span class="sc">==</span> <span class="cn">NA</span> <span class="co">#&gt; NA</span></code></li>
+<li>Por trás dos panos, existe um <code class="sourceCode r"><span class="cn">NA</span></code> diferente para cada tipo de vetor atômico (<code class="sourceCode r">NA_interger_</code>, etc.)</li>
+</ul>
+<p>Um dado “sozinho” (<code class="sourceCode r"><span class="dv">3</span></code>) é chamado de <strong>scalar</strong>. Mas o R também apresenta “coleções” de dados: <code class="sourceCode r">(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</code></p>
+<div class="block">
+<ul>
+<li>Uma coleção de escalares de um mesmo tipo é um <strong>atomic vector</strong></li>
+<li>Um escalar é uma “coleção de tamanho um”, e portanto, todo escalar é um vetor atômico</li>
+</ul>
+</div>
+<p>Logo, não existe um objeto “sem estar em um vetor”. <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="st">&quot;a&quot;</span></code> é um vetor atômico de tamanho 1</p>
+<p>Obs: os componentes de uma coleção são chamados de “elementos”</p>
+<div class="alert">
+<p>Vetores atômicos não aceitam elementos de tipos diferentes, e não aceitam elementos que tamanho maior que um</p>
+</div>
+<p>Porém, o R permite coleções com essas características, como <code class="sourceCode r">(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="cn">TRUE</span>, <span class="dv">1</span>)</code></p>
+<div id="definição" class="section level4 hasAnchor block" number="3.1.1.1">
+<h4><span class="header-section-number">3.1.1.1</span> Definição<a href="data-attrs.html#definição" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Uma coleção de vetores é um <strong>generic vector</strong>, ou, mais comumente, uma <strong>list</strong></li>
+<li>Um vetor genérico/lista também é um vetor, de modo que listas podem conter outras listas</li>
+<li>A lista tem seu próprio tipo, <em>list</em></li>
+</ul>
+</div>
+<p>Resumindo, temos:</p>
+<ul>
+<li>Os seis tipos “básicos” / tipos de escalares</li>
+<li>Vetores atômicos, coleções de escalares de mesmo tipo
+<ul>
+<li>Mesmo quando seu tamanho é unitário (os próprios escalares)</li>
+</ul></li>
+<li>Vetores genéricos, coleções de vetores
+<ul>
+<li>Não precisam ser atômicos, podem ter elementos de tipos diferentes</li>
+<li>Não precisam ser de escalares, podem ter elementos de tamanhos diferentes de 1</li>
+<li>Consequentemente, podem conter qualquer vetor, atômico ou genérico (si mesmos)</li>
+<li>Apresentam seu próprio tipo, <em>list</em></li>
+</ul></li>
+</ul>
+</div>
+<div id="famílias-1" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Famílias<a href="data-attrs.html#famílias-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Como disse, os tipos de dados no R são organizados em “famílias”. Existem duas:</p>
+<ul>
+<li><strong>Vector</strong> abrange os vetores atômicos e as listas. É a família dos dados “propriamente ditos”</li>
+<li><strong>Node</strong> é a família de “dados internos” do R (funções, ambientes, etc.)</li>
+</ul>
+<p>Adicionalmente, <code class="sourceCode r"><span class="cn">NULL</span></code>, um objeto especial, não é um vetor, mas pode ser entendido como a “ausência de dado”/“vetor de tamanho zero”</p>
+<p>A seguir, vamos entrar em detalhe sobre vetores</p>
+</div>
+</div>
+<div id="vetores-atômicos" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Vetores atômicos<a href="data-attrs.html#vetores-atômicos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Você já deveria saber que <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">3</span></code> está criando um vetor atômico. Mas e para criar vetores atômicos mais longos?</p>
+<p>A função <code class="sourceCode r"><span class="fu">c</span>()</code> combina (daí o nome) vetores em um mais longo. Ela serve com atômicos ou genéricos, mas por enquanto, vamos usá-la com atômicos:</p>
+<ul>
+<li><code class="sourceCode r"><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</code></li>
+<li><code class="sourceCode r"><span class="fu">c</span>(1L)</code></li>
+<li><code class="sourceCode r"><span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">3.5</span>, <span class="fl">1.23e4</span>)</code></li>
+<li><code class="sourceCode r"><span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;2&quot;</span>)</code></li>
+</ul>
+<p>Quando usada com vetores atômicos, <code class="sourceCode r"><span class="fu">c</span>()</code> coage os inputs a escalares do mesmo tipo, resultando em um outro atomic vector</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 3.1  </strong></span>Qual o resultado do exemplo abaixo?
+</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-attrs.html#cb10-1" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span></code></pre></div>
+<p>E abaixo?
+</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-attrs.html#cb11-1" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+</div>
+<p>Existe uma ordem de prioridade: se houver um <em>character</em>, tudo vira <em>character</em>, fora isso, tudo vira <em>double</em>, depois, <em>interger</em>, e por fim, <em>logical</em></p>
+<p>Podemos testar o tipo de um vetor com <code class="sourceCode r"><span class="fu">is.logical</span>()</code>, <code class="sourceCode r"><span class="fu">is.integer</span>()</code>, <code class="sourceCode r"><span class="fu">is.double</span>()</code>, e <code class="sourceCode r"><span class="fu">is.character</span>()</code></p>
+<ul>
+<li>Existem funções extras <code class="sourceCode r"><span class="fu">is.vector</span>()</code>, <code class="sourceCode r"><span class="fu">is.atomic</span>()</code>, e <code class="sourceCode r"><span class="fu">is.numeric</span>()</code>, mas são imprevisíveis</li>
+</ul>
+<p>Podemos transformar o tipo de um vetor com <code class="sourceCode r"><span class="fu">as.logical</span>()</code>, <code class="sourceCode r"><span class="fu">as.integer</span>()</code>, <code class="sourceCode r"><span class="fu">as.double</span>()</code>, ou <code class="sourceCode r"><span class="fu">as.character</span>()</code></p>
+<ul>
+<li>As mesmas contrapartes existem aqui</li>
+</ul>
+<p><code class="sourceCode r"><span class="fu">typeof</span>()</code> retorna o tipo de um vetor, <code class="sourceCode r"><span class="fu">length</span>()</code> retorna seu tamanho</p>
+<p>Obs: funções que pedem argumentos de um mesmo tipo normalmente os coagem caso eles não o sejam</p>
+</div>
+<div id="listas" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Listas<a href="data-attrs.html#listas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Características gerais:</p>
+<ul>
+<li>O <code class="sourceCode r"><span class="fu">typeof</span>()</code> de uma list é <code class="sourceCode r"><span class="st">&quot;list&quot;</span></code></li>
+<li>Diferentemente dos V.A., uma lista de tamanho 1 não é um escalar</li>
+<li><code class="sourceCode r"><span class="fu">list</span>()</code> cria uma nova lista</li>
+<li><code class="sourceCode r"><span class="fu">is.list</span>()</code> e <code class="sourceCode r"><span class="fu">as.list</span>()</code></li>
+<li><code class="sourceCode r"><span class="fu">unlist</span>()</code> transforma uma lista em um vetor atômico, mas de maneiras inesperadas</li>
+<li>No futuro, trataremos das funções do pacote purrr</li>
+</ul>
+<p>No tema de “Gerenciamento de memória” falaremos sobre como, por trás dos panos, listas são apenas referências aos objetos, de modo que <code class="sourceCode r"><span class="fu">list</span>(x, x)</code> ocupa bem menos que o dobro do espaço de <code class="sourceCode r"><span class="fu">list</span>(x)</code></p>
+<p><code class="sourceCode r"><span class="fu">c</span>()</code> também pode combinar listas</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 3.2  </strong></span>Analize, desenhe, e compare os objetos abaixo:
+</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-attrs.html#cb12-1" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">1</span>), <span class="fu">list</span>(<span class="dv">2</span>))</span>
+<span id="cb12-2"><a href="data-attrs.html#cb12-2" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">1</span>), <span class="dv">1</span>)</span>
+<span id="cb12-3"><a href="data-attrs.html#cb12-3" tabindex="-1"></a>l3 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb12-4"><a href="data-attrs.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="data-attrs.html#cb12-5" tabindex="-1"></a>l4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>), <span class="fu">list</span>(<span class="dv">2</span>))</span>
+<span id="cb12-6"><a href="data-attrs.html#cb12-6" tabindex="-1"></a>l5 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>), <span class="dv">2</span>)</span>
+<span id="cb12-7"><a href="data-attrs.html#cb12-7" tabindex="-1"></a>l6 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
+</div>
+<p>Basicamente, a função <code class="sourceCode r"><span class="fu">list</span>()</code> cria “caixinhas” para cada um de seus argumentos, enquanto a função <code class="sourceCode r"><span class="fu">c</span>()</code> não o faz</p>
+</div>
+<div id="atributos" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Atributos<a href="data-attrs.html#atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Os vetores podem carregar mais informações do que apenas os valores de seus elementos, eles podem carregar <em>metadados</em> (dados que informam algo sobre os elementos), os <strong>atributos</strong></p>
+<p>Existem três atributos principais:</p>
+<ul>
+<li><em>names</em>, um vetor character, que nomeia cada elemento</li>
+<li><em>dim</em> (diminutivo de <em>dimentions</em>), um vetor interger, que reorganiza vetores em matrizes e arrays (“matrizes multidimensionais”)</li>
+<li><em>class</em>, um vetor character, que indica um “tipo 2.0”, alterando o comportamento dos vetores</li>
+</ul>
+<div class="alert">
+<p>Atributos não afetam a estrutura básica (tipo) dos objetos, mas podem afetar seu comportamento</p>
+</div>
+<div id="nomes" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Nomes<a href="data-attrs.html#nomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Podemos nomear um vetor de várias formas:</p>
+<ul>
+<li><code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</code></li>
+<li><code class="sourceCode r"><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</code></li>
+<li><code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="fu">setNames</span>(x, <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))</code> (ou a função <code class="sourceCode r"><span class="fu">set_names</span>()</code> do pacote purrr)</li>
+</ul>
+<p>Podemos remover nomes com:</p>
+<ul>
+<li><code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="fu">unname</span>(x)</code></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 3.3  </strong></span>Que valor/objeto colocaríamos em <code class="sourceCode r">y</code> para remover os nomes?
+</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-attrs.html#cb13-1" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> y</span></code></pre></div>
+</div>
+<p>É fácil ver como a estrutura básica fica inalterada. Tente transpor essa ideia para os outros atributos mais complexos</p>
+</div>
+<div id="dimensões" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Dimensões<a href="data-attrs.html#dimensões" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Um vetor com o atributo dimensão é um vetor que deve ser interpretado como organizado em linhas e colunas (para matrizes):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-attrs.html#cb14-1" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">c</span>(T, F, T, T, F, T)</span>
+<span id="cb14-2"><a href="data-attrs.html#cb14-2" tabindex="-1"></a><span class="fu">dim</span>(m1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb14-3"><a href="data-attrs.html#cb14-3" tabindex="-1"></a><span class="co">#ou matrix(c(T, F, T, T, F, T), nrow = 2, ncol = 3)</span></span></code></pre></div>
+<p>Ou como organizado em matrizes multidimensionais (para arrays):</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-attrs.html#cb15-1" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb15-2"><a href="data-attrs.html#cb15-2" tabindex="-1"></a><span class="fu">dim</span>(a1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb15-3"><a href="data-attrs.html#cb15-3" tabindex="-1"></a><span class="co">#ou array(1:12, c(2, 3, 2))</span></span></code></pre></div>
+<p>Também podemos ter matrizes e arrays feitas com listas:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-attrs.html#cb16-1" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;c&quot;</span>, <span class="fu">list</span>(<span class="st">&quot;d&quot;</span>), <span class="cn">TRUE</span>, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb16-2"><a href="data-attrs.html#cb16-2" tabindex="-1"></a><span class="fu">dim</span>(m2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 3.4  </strong></span></p>
+<ul>
+<li>Que lista complexa! Como poderíamos desenhá-la? E sua versão de matriz?</li>
+<li>Uma matriz ou array sempre é atômica?</li>
+<li>O que aconteceria com os outros elementos se eu alterasse o primeiro elemento de <code class="sourceCode r">m1</code> para <code class="sourceCode r"><span class="st">&quot;a&quot;</span></code>? E se eu fizesse o mesmo com <code class="sourceCode r">m2</code>?</li>
+</ul>
+</div>
+<p>Como atributos não alteram a estrutura básica, as funções para vetores tem generalizações para matrizes e arrays:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Vector</th>
+<th align="center">Matrix</th>
+<th align="center">Array</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code class="sourceCode r"><span class="fu">names</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">rownames</span>()</code>, <code class="sourceCode r"><span class="fu">colnames</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">dimnames</span>()</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode r"><span class="fu">length</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">nrow</span>()</code>, <code class="sourceCode r"><span class="fu">ncol</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">dim</span>()</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode r"><span class="fu">c</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">rbind</span>()</code>, <code class="sourceCode r"><span class="fu">cbind</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">abind</span>()</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode r">is.vector</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">is.matrix</span>()</code></td>
+<td align="center"><code class="sourceCode r"><span class="fu">is.array</span>()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note que adicionar dimensões gerou algumas possibilidades</p>
+<ul>
+<li>Um tamanho e um atributo de nome para cada dimensão</li>
+<li>Maneiras diferentes de combinar objetos</li>
+<li>Operação de transposição (com <code class="sourceCode r"><span class="fu">t</span>()</code> e <code class="sourceCode r"><span class="fu">aperm</span>()</code>)</li>
+</ul>
+</div>
+<div id="classes" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Classes<a href="data-attrs.html#classes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Outro attributo importante é <em>class</em>, que permite a criação de vetores diferenciados, criados em cima dos tipos básicos</p>
+<p>Esse atributo empodera o sistema de programação orientada ao objeto S3. Nele, funções agem diferentemente a depender da classe do argumento que estão recebendo. Abaixo vão algumas:</p>
+<ul>
+<li><em>factor</em> são intergers para dados categóricos</li>
+<li><em>Date</em>, <em>POSIXct</em>, e <em>difftime</em> são doubles para datas</li>
+<li><em>data.frame</em> e <em>tibble</em> são lists para bases de dados</li>
+<li>Existem outros como <em>ts</em> para séries de tempo, uma classe para cada tipo de vetor estudado, entre outros</li>
+</ul>
+<p>Obs: existem outras famílias de classes</p>
+<div id="factors" class="section level4 hasAnchor" number="3.4.3.1">
+<h4><span class="header-section-number">3.4.3.1</span> Factors<a href="data-attrs.html#factors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>Factors</em> tem o atribuito class como <code class="sourceCode r"><span class="st">&quot;factor&quot;</span></code>, e um atributo <em>levels</em> que define os valores/categorias possíveis</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-attrs.html#cb17-1" tabindex="-1"></a><span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>),</span>
+<span id="cb17-2"><a href="data-attrs.html#cb17-2" tabindex="-1"></a>       <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;o&quot;</span>))</span>
+<span id="cb17-3"><a href="data-attrs.html#cb17-3" tabindex="-1"></a><span class="co">#&gt; [1] m f f m</span></span>
+<span id="cb17-4"><a href="data-attrs.html#cb17-4" tabindex="-1"></a><span class="co">#&gt; Levels: m f o</span></span></code></pre></div>
+<p>Cuidado, factors comumente geram erros</p>
+<p>Também existem os <em>ordered factors</em>, onde indicamos uma ordem para os <em>levels</em>, e costumam ser usados em funções de modelagem e visualização (vide <code class="sourceCode r"><span class="fu">ordered</span>()</code>)</p>
+</div>
+<div id="datas" class="section level4 hasAnchor" number="3.4.3.2">
+<h4><span class="header-section-number">3.4.3.2</span> Datas<a href="data-attrs.html#datas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Dates:</strong> são um <em>double</em> com o atributo class <code class="sourceCode r"><span class="st">&quot;Date&quot;</span></code>. Por trás dos panos são o número de dias desde 01/01/1970. Para criar: <code class="sourceCode r"><span class="fu">as.Date</span>(<span class="st">&quot;1970-02-01&quot;</span>)</code></p>
+<p><strong>Date-times:</strong> são um <em>double</em> com o atributo class <code class="sourceCode r"><span class="st">&quot;POSIXct&quot;</span></code>. Por trás dos panos são o número de segundos desde 01/01/1970. Para criar: <code class="sourceCode r"><span class="fu">as.POSIXct</span>(<span class="st">&quot;2018-08-01 22:00&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;UTC&quot;</span>)</code></p>
+<p><strong>Durations:</strong> são um <em>double</em> com o atributo class <code class="sourceCode r"><span class="st">&quot;difftime&quot;</span></code>, que conta a distância entre duas datas. Têm o atributo <code class="sourceCode r"><span class="st">&quot;units&quot;</span></code> que indica como o valor deve ser interpretado. Para criar: <code class="sourceCode r"><span class="fu">as.difftime</span>(<span class="dv">1</span>, <span class="at">units =</span> <span class="st">&quot;weeks&quot;</span>)</code></p>
+</div>
+<div id="data-frames" class="section level4 hasAnchor" number="3.4.3.3">
+<h4><span class="header-section-number">3.4.3.3</span> Data frames<a href="data-attrs.html#data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Um <em>data frame</em> é uma representação de uma tabela de dados. Basicamente, uma lista nomeada de vetores, normalmente atômicos, de mesmo tamanho:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-attrs.html#cb18-1" tabindex="-1"></a><span class="fu">list</span>(<span class="at">coluna1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb18-2"><a href="data-attrs.html#cb18-2" tabindex="-1"></a>     <span class="at">coluna2 =</span> <span class="fu">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;d&quot;</span>),</span>
+<span id="cb18-3"><a href="data-attrs.html#cb18-3" tabindex="-1"></a>     <span class="at">coluna3 =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">NA</span>))</span></code></pre></div>
+<p>Como sempre, ter isso em mente ajudará muito a transpor o conhecimento sobre listas para data frames</p>
+<p>Data frames têm os atributos <em>names</em> (nomes das “colunas”), <em>row.names</em> (nomes das “linhas”), e a <em>class</em> <code class="sourceCode r"><span class="st">&quot;data.frame&quot;</span></code></p>
+<p>Funções úteis:</p>
+<ul>
+<li>São criados com <code class="sourceCode r"><span class="fu">data.frame</span>()</code></li>
+<li>Um data frame tem <code class="sourceCode r"><span class="fu">nrow</span>()</code> linhas</li>
+<li>E <code class="sourceCode r"><span class="fu">ncol</span>()</code>/<code class="sourceCode r"><span class="fu">length</span>()</code> colunas</li>
+<li>Também existem as funções “is” e “as”</li>
+</ul>
+<p>Uma coluna de um data frame pode também ser uma matriz/array (se o número de linhas coincidir), ou uma lista (se o número de itens coincidir)</p>
+<p>Um <em>Tibble</em> é um sucessor data frame trazido pelo pacote “tibble” (parte do tidyverse). Tibbles são “preguiçosos e grosseiros: fazem menos e reclamam mais”:</p>
+<ul>
+<li>Tem a class <code class="sourceCode r"><span class="fu">c</span>(<span class="st">&quot;data.frame&quot;</span>, <span class="st">&quot;tbl_df&quot;</span>)</code></li>
+<li>Não geram vetores maiores a partir de vetores menores (<code class="sourceCode r"><span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</code>)</li>
+<li>Não mudam nomes não sintáticos</li>
+<li>Não aceitam <em>rownames</em> (“metadata is data”)</li>
+<li>Um subset de um tibble sempre é um tibble</li>
+<li>Não tem matching parcial nos nomes de colunas</li>
+<li>Permitem referenciar colunas na hora da criação (<code class="sourceCode r"><span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">y =</span> <span class="dv">2</span><span class="sc">*</span>x)</code>)</li>
+<li>Tem uma melhor visualização no console</li>
+</ul>
+<p>Algumas funções relacionadas à atributos:</p>
+<ul>
+<li><code class="sourceCode r"><span class="fu">atributes</span>(x)</code> retorna uma lista com os atributos de x</li>
+<li><code class="sourceCode r"><span class="fu">attr</span>(x, <span class="st">&quot;attr&quot;</span>)</code> retorna o valor do atributo <code class="sourceCode r"><span class="st">&quot;attr&quot;</span></code></li>
+<li>Atributos importantes têm funções próprias (<code class="sourceCode r"><span class="fu">names</span>()</code>, <code class="sourceCode r"><span class="fu">dim</span>()</code>, <code class="sourceCode r"><span class="fu">class</span>()</code>)
+<ul>
+<li><code class="sourceCode r"><span class="fu">unclass</span>(x)</code> remove a classe de <code class="sourceCode r">x</code>, retornando-o ao tipo base</li>
+</ul></li>
+<li><code class="sourceCode r"><span class="fu">structure</span>(x, <span class="st">&quot;attr&quot;</span> <span class="ot">=</span> valor)</code> adiciona os atributos especificados em <code class="sourceCode r">x</code></li>
+<li><code class="sourceCode r"><span class="fu">str</span>(x)</code> retorna uma visualização da estrutura de <code class="sourceCode r">x</code></li>
+</ul>
+<p>Obs: a maior parte pode ser usada para definir/alterar valores de atributos</p>
+<div class="double-hrule">
+
+</div>
+</div>
+</div>
+</div>
+<div id="complemento-1" class="section level2 unlisted unnumbered hasAnchor">
+<h2>Complemento<a href="data-attrs.html#complemento-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="recapitulando-1" class="section level3 unnumbered hasAnchor">
+<h3>Recapitulando<a href="data-attrs.html#recapitulando-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Como imputar valores</li>
+<li>“Definições” de expressão, função, e objeto (&amp; nome)</li>
+<li>Criação de variáveis
+<ul>
+<li>Operadores de definição <code class="sourceCode r"><span class="ot">=</span></code> e <code class="sourceCode r"><span class="ot">&lt;-</span></code></li>
+<li>Regras de nomenclatura</li>
+</ul></li>
+</ul>
+<p></p>
+<ul>
+<li>Definição. Metadados que alteram algo sobre o vetor
+<ul>
+<li><em>names</em> alter visualização e como referenciar os elementos</li>
+<li><em>dim</em> altera como o elemento é organizado, e é aplicável à todo tipo de vetor</li>
+</ul></li>
+</ul>
+<ul>
+<li><code class="sourceCode r"><span class="fu">typeof</span>()</code>/<code class="sourceCode r"><span class="fu">class</span>()</code> e funções “as” e “is” (extra: <code class="sourceCode r"><span class="fu">is.na</span>()</code>)</li>
+<li>Funções criadoras <code class="sourceCode r"><span class="fu">c</span>()</code>, <code class="sourceCode r"><span class="fu">list</span>()</code>, <code class="sourceCode r"><span class="fu">matrix</span>()</code>, <code class="sourceCode r"><span class="fu">array</span>()</code>, <code class="sourceCode r"><span class="fu">factor</span>()</code>, <code class="sourceCode r"><span class="fu">odered</span>()</code>, <code class="sourceCode r"><span class="fu">data.frame</span>()</code>, <code class="sourceCode r"><span class="fu">tibble</span>()</code>, <code class="sourceCode r"><span class="fu">unlist</span>()</code></li>
+<li>Funções combinadoras <code class="sourceCode r"><span class="fu">c</span>()</code>, <code class="sourceCode r"><span class="fu">cbind</span>()</code>, <code class="sourceCode r"><span class="fu">rbind</span>()</code>, e pacote “abind”</li>
+<li>Funções sobre <em>dim</em>: <code class="sourceCode r"><span class="fu">dim</span>()</code>, <code class="sourceCode r"><span class="fu">length</span>()</code>, <code class="sourceCode r"><span class="fu">nrow</span>()</code>, <code class="sourceCode r"><span class="fu">ncol</span>()</code></li>
+<li>Funções sobre <em>names</em>: <code class="sourceCode r">names</code>, <code class="sourceCode r"><span class="fu">colnames</span>()</code>, <code class="sourceCode r"><span class="fu">rownames</span>()</code>, <code class="sourceCode r"><span class="fu">dimnames</span>()</code>, <code class="sourceCode r"><span class="fu">setNames</span>()</code>/<code class="sourceCode r"><span class="fu">set_names</span>()</code>, <code class="sourceCode r"><span class="fu">unname</span>()</code></li>
+<li>Funções sobre <em>atributes</em>: <code class="sourceCode r"><span class="fu">str</span>()</code>, <code class="sourceCode r"><span class="fu">atributes</span>()</code>, <code class="sourceCode r"><span class="fu">attr</span>()</code>, <code class="sourceCode r"><span class="fu">structure</span>()</code>, <code class="sourceCode r"><span class="fu">unclass</span>()</code></li>
+<li>Outras: <code class="sourceCode r"><span class="fu">t</span>()</code>, <code class="sourceCode r"><span class="fu">I</span>()</code> (extra: <code class="sourceCode r">stringsAsFactors <span class="ot">=</span> <span class="cn">FALSE</span></code>)</li>
+</ul>
+<hr />
+</div>
+<div id="exercícios-1" class="section level3 unnumbered hasAnchor">
+<h3>Exercícios<a href="data-attrs.html#exercícios-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 3.5  </strong></span></p>
+<div id="vetores-atômicos-1" class="section level4 hasAnchor" number="3.4.3.4">
+<h4><span class="header-section-number">3.4.3.4</span> Vetores atômicos<a href="data-attrs.html#vetores-atômicos-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Porque <code class="sourceCode r"><span class="dv">1</span> <span class="sc">==</span> <span class="st">&quot;1&quot;</span></code> é verdadeiro? Porque <code class="sourceCode r"><span class="sc">-</span><span class="dv">1</span> <span class="sc">&lt;</span> <span class="cn">FALSE</span></code> é verdadeiro? Porque <code class="sourceCode r"><span class="st">&quot;one&quot;</span> <span class="sc">&lt;</span> <span class="dv">2</span></code> é falso?</li>
+<li>Agora com operações aritmétricas. 1 + “2” funciona? e TRUE + 1? Qual é a regra?</li>
+<li>Porque o <code class="sourceCode r"><span class="cn">NA</span></code> padrão é um vetor lógico? Pense no resultado de <code class="sourceCode r"><span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">NA_character_</span>)</code></li>
+<li>Trabalhamos exemplos envolvendo <code class="sourceCode r"><span class="fu">c</span>()</code> e listas. Busque na página de ajuda <code class="sourceCode r">?<span class="fu">c</span>()</code> pela ordem completa de coerção</li>
+<li>O que <code class="sourceCode r"><span class="st">&quot;a&quot;</span> <span class="sc">==</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>)</code> retorna? e <code class="sourceCode r"><span class="fu">identical</span>(<span class="st">&quot;a&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>))</code>?</li>
+<li>Estude o argumento <code class="sourceCode r">recursive <span class="ot">=</span> <span class="cn">TRUE</span></code> de <code class="sourceCode r"><span class="fu">c</span>()</code>. O que ele faria em: <code class="sourceCode r"><span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>), <span class="fu">list</span>(<span class="dv">2</span>))</code>, <code class="sourceCode r"><span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>), <span class="dv">2</span>)</code>, <code class="sourceCode r"><span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</code>, <code class="sourceCode r"><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)<span class="er">)</span></code>?</li>
+</ul>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 3.6  </strong></span></p>
+<div id="listas-1" class="section level4 hasAnchor" number="3.4.3.5">
+<h4><span class="header-section-number">3.4.3.5</span> Listas<a href="data-attrs.html#listas-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Estude os objetos abaixo. Desenhe-os:
+</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-attrs.html#cb19-1" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="fu">c</span>(T, F, T), <span class="fu">c</span>(<span class="fl">2.3</span>, <span class="fl">5.9</span>))</span>
+<span id="cb19-2"><a href="data-attrs.html#cb19-2" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">1</span>)))</span>
+<span id="cb19-3"><a href="data-attrs.html#cb19-3" tabindex="-1"></a>l3 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb19-4"><a href="data-attrs.html#cb19-4" tabindex="-1"></a>l4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span></code></pre></div>
+<ul>
+<li>Faça o mesmo, agora estudando o tipo e classe:
+</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-attrs.html#cb20-1" tabindex="-1"></a>l5 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="st">&quot;a&quot;</span>, <span class="fu">list</span>(<span class="st">&quot;a&quot;</span>), <span class="fu">matrix</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb20-2"><a href="data-attrs.html#cb20-2" tabindex="-1"></a>l6 <span class="ot">&lt;-</span> l5; <span class="fu">dim</span>(l6) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb20-3"><a href="data-attrs.html#cb20-3" tabindex="-1"></a>l7 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(l6)</span></code></pre></div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 3.7  </strong></span></p>
+<div id="atributos-1" class="section level4 hasAnchor" number="3.4.3.6">
+<h4><span class="header-section-number">3.4.3.6</span> Atributos<a href="data-attrs.html#atributos-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Como <code class="sourceCode r"><span class="fu">setNames</span>()</code> funciona? Como <code class="sourceCode r"><span class="fu">unname</span>()</code> funciona? Olhe o código fonte</li>
+<li>O que <code class="sourceCode r"><span class="fu">dim</span>()</code> retorna quando applicado a um vetor unidimensional? Quando <code class="sourceCode r"><span class="fu">NROW</span>()</code> e <code class="sourceCode r"><span class="fu">NCOL</span>()</code> podem ser úteis?</li>
+<li>Como você descreveria os objetos abaixo? Qual a diferença entre eles e <code class="sourceCode r"><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></code>?
+</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-attrs.html#cb21-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>))</span>
+<span id="cb21-2"><a href="data-attrs.html#cb21-2" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">1</span>))</span>
+<span id="cb21-3"><a href="data-attrs.html#cb21-3" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 3.8  </strong></span></p>
+<div id="vetores-atômicos-s3" class="section level4 hasAnchor" number="3.4.3.7">
+<h4><span class="header-section-number">3.4.3.7</span> Vetores atômicos S3<a href="data-attrs.html#vetores-atômicos-s3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>O que faz a função <code class="sourceCode r"><span class="fu">table</span>()</code>? Que objeto retorna? Qual seu tipo? Quais seus atributos? Como sua dimensão muda ao adicionar variáveis para tabular?</li>
+<li>O que acontece com um factor ao alterar seus níveis?
+</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-attrs.html#cb22-1" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(letters)</span>
+<span id="cb22-2"><a href="data-attrs.html#cb22-2" tabindex="-1"></a><span class="fu">levels</span>(f1) <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">levels</span>(f1))</span></code></pre></div>
+<ul>
+<li>O que o código abaixo faz? como <code class="sourceCode r">f2</code> e <code class="sourceCode r">f3</code> diferem de <code class="sourceCode r">f1</code>?
+</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-attrs.html#cb23-1" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">factor</span>(letters))</span>
+<span id="cb23-2"><a href="data-attrs.html#cb23-2" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">factor</span>(letters, <span class="at">levels =</span> <span class="fu">rev</span>(letters))</span></code></pre></div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 3.9  </strong></span></p>
+<div id="listas-s3" class="section level4 hasAnchor" number="3.4.3.8">
+<h4><span class="header-section-number">3.4.3.8</span> Listas S3<a href="data-attrs.html#listas-s3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Pode haver um data frame com zero linhas? E zero colunas?</li>
+<li>O que ocorre se você definir rownames não únicos?</li>
+<li>Se <code class="sourceCode r">df</code> é um data frame, o que é <code class="sourceCode r"><span class="fu">t</span>(df)</code>? Porque? E <code class="sourceCode r"><span class="fu">t</span>(<span class="fu">t</span>(df))</code>?</li>
+<li>O que <code class="sourceCode r"><span class="fu">as.matrix</span>()</code> faz quando aplicada a um data frame com colunas de tipos diferentes? Como isso difere de usar <code class="sourceCode r"><span class="fu">data.matrix</span>()</code>?</li>
+</ul>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 3.10  </strong></span></p>
+<div id="listas-s3-1" class="section level4 hasAnchor" number="3.4.3.9">
+<h4><span class="header-section-number">3.4.3.9</span> Listas S3<a href="data-attrs.html#listas-s3-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Estude o objeto abaixo. As colunas tem a mesma <em>length</em>? Existe alguma outra medida de dimensão igual? Isso faz sentido?
+</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-attrs.html#cb24-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb24-2"><a href="data-attrs.html#cb24-2" tabindex="-1"></a>x<span class="sc">$</span>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">matrix</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">matrix</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb24-3"><a href="data-attrs.html#cb24-3" tabindex="-1"></a>x<span class="sc">$</span>c <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">matrix</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">matrix</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb24-4"><a href="data-attrs.html#cb24-4" tabindex="-1"></a>x<span class="sc">$</span>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">c1 =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)))</span></code></pre></div>
+</div>
+</div>
+<hr />
+</div>
+<div id="dicionário-de-funções-1" class="section level3 unnumbered hasAnchor">
+<h3>Dicionário de Funções<a href="data-attrs.html#dicionário-de-funções-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+</div>
+<div id="referências-1" class="section level3 unnumbered hasAnchor">
+<h3>Referências<a href="data-attrs.html#referências-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="syntax-vars.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="subset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-data_attrs.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

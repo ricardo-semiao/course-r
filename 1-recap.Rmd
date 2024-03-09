@@ -1,6 +1,10 @@
 # Recapitulando {-}
 
-**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+Aqui, apresentarei o recapitulando da primeira parte, falando dos principais aprendizados sobre como o R funciona, e também relembrando os conceitos aprendidos.
 
 
 

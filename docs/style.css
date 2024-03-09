@@ -22,7 +22,7 @@ pre code {
     display: inline;
 }
 .result::before {
-  content: "Resultado - ";
+  content: "📝 Resultado - ";
   font-weight: bold;
 }
 .ex {
@@ -35,7 +35,7 @@ pre code {
     display: inline;
 }
 .ex::before {
-  content: "Exemplo: ";
+  content: "✏️ Exemplo: ";
   display: inline;
   font-weight: bold;
 }
@@ -59,7 +59,7 @@ a:link {
   color: #137458 !important;
 }
 a:visited {
-  color: #0D4D3B !important;
+  color: #135874 !important;
 }
 .obs {
     margin: 0 0 0 20px;
@@ -74,7 +74,7 @@ a:visited {
 	font-size: 90%;
 }
 .extra {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 18px;
 }
 .extra:before {
   content: "🔍 Extra: ";
@@ -82,4 +82,18 @@ a:visited {
 }
 .extra p{
     display: inline;
+}
+.warn {
+  background-color: #E4969F;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.warn p{
+    display: inline;
+}
+.warn::before {
+  content: "⚠️ Aviso: ";
+  display: inline;
+  font-weight: bold;
 }

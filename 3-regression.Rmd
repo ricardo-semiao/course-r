@@ -1,42 +1,42 @@
-# Programação Funcional {#functional}
+# Regressão {#regression}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, falarei sobre as aplicações da programação funcional com o pacote "purrr".
+Neste capítulo, apresentarei como realizar análises de regressões, com base nos vários modelos comuns inclusos no R.
 
 
-## Map
+## Fundamentals
 
-### Map 1
-
-
-### Map 2
+### Data
 
 
-### Map p
+### Formulas
+
+
+### Fitting
+
+
+### Visualizing
+
+
+### Testing
+
+
+### Correcting
 
 
 
-## Others
-
-### Modify
+## Linear Models
 
 
-### Reduce
+## Non-Linear Models
 
 
-### Predicates
+## Time-Series Models
 
 
-### Pluck
-
-
-### Reshape
-
-
-### Concatenate
 
 <div class="double-hrule"></div>
 

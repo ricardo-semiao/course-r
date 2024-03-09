@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 1 Introdução | R: Teoria e Aplicações</title>
+  <title>Capítulo 6 Funções e Ambientes | R: Teoria e Aplicações</title>
   <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 1 Introdução | R: Teoria e Aplicações" />
+  <meta property="og:title" content="Capítulo 6 Funções e Ambientes | R: Teoria e Aplicações" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="github-repo" content="ricardo-semiao/R-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 1 Introdução | R: Teoria e Aplicações" />
+  <meta name="twitter:title" content="Capítulo 6 Funções e Ambientes | R: Teoria e Aplicações" />
   
   <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="parte-i---r-base-1.html"/>
+<link rel="prev" href="control-conds.html"/>
+<link rel="next" href="paradigms.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -432,192 +432,382 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Introdução<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="história" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> História<a href="introduction.html#história" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>R é “uma linguagem de programação e um ambiente para computação estatística e gráfica”. Ela criada em 1993 por Ross Ihaka e Robert Gentleman da Universdade de Auckland, Nova Zelândia, com o apoio de John Chambers da Bell Laboratories. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R. Não, infelizmente, não é R de “Ricardo”.</p>
-<p>“Ambiente” no sentido de que é uma linguagem de programação formal, um “sistema totalmente planejado e coerente”. Mas ainda assim, sendo especializada, com ferramentas poderosas e acessíveis para computação e vizualização de projetos estatísticos ou da ciência de dados. Ao mesmo tempo, é fácilmente incrementável, com centenas de extensões para as mais diversas áreas.</p>
-<p>Entidades associadas ao desenvolvimento da linguagem:</p>
-<ul>
-<li>O <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) foi criado em 1997 por Kurt Hornik e Fritz Leisch para armazenar o código fonte, documentação, e pacotes do R.</li>
-<li>O <a href="https://www.r-project.org/contributors.html">R Core Team</a> foi formado em 1997 para desenvolver a linguagem</li>
-<li>A linguagem como projeto e homepage oficial é o <a href="https://www.r-project.org/">R Project</a>. Também existe a <a href="https://stat.ethz.ch/R-manual/">homepage</a> das versões em desenvolvimento do R.</li>
-<li>A <a href="https://www.r-project.org/foundation/">R Foundation</a> foi fundada em 2003 para guiar o R Project.</li>
-<li>O RStudio, agora <a href="https://posit.co/about/">Posit</a> foi fundado para expandir a qualidade do projeto, lançando um ambiente de desenvolvimento integrado em 2011, e oferecendo soluções para empresas.</li>
-<li>O <a href="https://journal.r-project.org/">R Journal</a> e <a href="https://blog.r-project.org/">R Blog</a>.</li>
-</ul>
-</div>
-<div id="características-da-linguagem-e-porque-r" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Características da Linguagem, e “Porque R?”<a href="introduction.html#características-da-linguagem-e-porque-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>O R é uma linguagem bem específica. Abaixo cito algumas de suas características, e porque elas podem motivar seu estudo.</p>
-<ul>
-<li><p>R está disponível como código aberto, com sua licença <a href="https://www.r-project.org/COPYING">GNU General Public License</a>. Adicionalmente, é acessível para a maioria das máquinas/sistemas operacionais. Isso faz com que projetos no R sejam facilmente replicados por outros, e aumenta sua popularidade.</p></li>
-<li><p>R é uma linguagem popular, ficou na posição 21 no <a href="https://www.tiobe.com/tiobe-index/">TIOBE Index</a> em fev/2024. Especialmente, ele conta com uma comunidade muito ativa e amigável, na <a href="https://twitter.com/search?q=%23rstats">#rstats</a> do Twitter, no <a href="https://stackoverflow.com/questions/tagged/r">StackOverflow</a>, no <a href="https://community.rstudio.com/">Posit Community</a>, e <a href="https://www.meetup.com/topics/r-programming-language/">pessoalmente</a>.</p></li>
-<li><p>Um produto dessa popularidade é a quantidade massiva de extensões, para toda sorte de tarefa.</p>
-<ul>
-<li>Existem múltiplas abordagens para manipulação de dados, modelagem, e criação de vizualizações.</li>
-<li>Poderosas ferramentas para comunicação, o RMarkdown (que foi utilizado para construir esse livro), e o Shiny, utilizado para construir Apps.</li>
-<li>Ferramentas na fronteira de pesquisa, uma vez que pesquisadores costumam criar pacotes no R para acompanhar sua pesquisa.</li>
-</ul></li>
-<li><p>Ocupa um espaço muito interessante na paisagem de softwares:</p>
-<ul>
-<li>É uma linguagem de programação verdadeira, permitindo soluções para problemas mais complexos, e dando mais flexibilidade ao usuário, quando comparado com outros softwares estatísticos não programáticos como o SAS, SPSS, Stata, Eviews, e GRETL.</li>
-<li>Mas é especializado, <em>intepretada</em>, e <em>high-level</em>, facilitando seu uso, e apresentando uma cuva de aprendizado mais rápida que linguagems mais complexas/generalistas como C, e talvez Python. <br></li>
-</ul></li>
-<li><p>A especialização em estatística faz com que ferramentas muito necessárias para análise de dados sejam de fácil acesso, como <em>data-frames</em> e <em>vetorização</em>. O usuário não precisa aprender extensões para realizar projetos em ciência de dados.</p></li>
-<li><p>Algumas características mais técnicas:</p>
-<ul>
-<li>Sua sintaxe é similar à C e Python, mas sua semântica é a de uma linguagem funcional, mais similar à Lisp e APL. Veremos que o estilo funcional é muito útil para projetos de ciência de dados.</li>
-<li>Além das funcionais, R tem capacidades incomuns de metaprogramação, permitindo códigos elegantes e succintos.</li>
-<li>Não é seu forte, mas também conta com algumas ferramentas de programação orientada ao objeto, facilitando a vida do usuário.</li>
-<li>O R usa código em C, C++, e Fortran para executar tarefas computacionalmente intensivas. Isso é algo que o usuário também pode explorar.</li>
-</ul></li>
-</ul>
-<p>Porém, nem tudo são flores. Muitas dessas características tem prós e contras, e a execução dessas ideias conta com heranças obsoletas e inconsistências. Neste livro, deixarei claro os pontos negativos mais importantes, e ensino a evitá-los.</p>
-</div>
-<div id="refs" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Literatura sobre R<a href="introduction.html#refs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A literatura base pode ser encontrada no <a href="https://cran.r-project.org/manuals.html">CRAN</a>. Ela é composta de, principalmente:</p>
-<ul>
-<li>O código fonte <span class="citation">(<a href="#ref-r-source">R Core Team 2024c</a>)</span>.</li>
-<li>O manual “R Language Definition” <span class="citation">(<a href="#ref-r-lang">R Core Team 2024e</a>)</span>, que descreve a linguagem em si.</li>
-<li>O manual “R Internals” <span class="citation">(<a href="#ref-r-int">R Core Team 2024d</a>)</span>, que descreve as estruturas internas do R, e a fundação do código em C.</li>
-<li>A documentação de ajuda para o R base e as extensões padrões <span class="citation">(<a href="#ref-r-helps">R Core Team 2024f</a>)</span>.</li>
-<li>A documentação de ajuda para as extensões externas <span class="citation">(<a href="#ref-r-packs">R Core Team 2024b</a>)</span>.</li>
-</ul>
-<p>Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de livros para R, tanto para ensinar a linguagem no geral, quanto para toda sorte de aplicações. Abaixo alguns exemplos mais recentes, divididos pela sua relação com cada parte deste livro.</p>
-<p><strong>Bibliografia base da parte I:</strong> o livro “Advanced R” (segunda edição) <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span>, junto com “R Language Definition”.</p>
-<ul>
-<li>Outros livros introdutórios:
-<ul>
-<li>“An Introduction to R” <span class="citation">(<a href="#ref-r-intro">R Core Team 2024a</a>)</span> (manual oficial).</li>
-<li>“Working with R” <span class="citation">(<a href="#ref-workr">Stephanie Locke 2017b</a>)</span>.</li>
-<li>“An Introduction to R” <span class="citation">(<a href="#ref-intror">Longhow Lam 2010</a>)</span>.</li>
-</ul></li>
-<li>Livro complementar, com abordagem “aprender fazendo”: “Hands on Programming with R” <span class="citation">(<a href="#ref-hopr">Garrett Grolemund 2014</a>)</span></li>
-</ul>
-<p><strong>Bibliografia base da parte II:</strong> o livro “R for Data Science” <span class="citation">(<a href="#ref-r4ds">Hadley Wickham 2024</a>)</span> e as documentações dos pacotes do tidyverse <span class="citation">(<a href="#ref-tidy"><span>“Tidyverse,”</span> n.d.</a>)</span>.</p>
-<ul>
-<li>Outros livros sobre manipulação e visualização de dados:
-<ul>
-<li>“Data Manipulation in R” <span class="citation">(<a href="#ref-mandata">Stephanie Locke 2017a</a>)</span>.</li>
-<li>“ggplot2: Elegant Graphics for Data Analysis” <span class="citation">(<a href="#ref-ggplot">Hadley Wickham 2010</a>)</span>.</li>
-<li>“Data Wrangling Recipes in R” <span class="citation">(<a href="#ref-wrandata">Hilary Watt, n.d.</a>)</span>.</li>
-</ul></li>
-<li>Livro complementar, com abordagem “aprender fazendo”: “Introduction to Data Exploration and Analysis with R” <span class="citation">(<a href="#ref-introdata">Michael Mahoney 2019</a>)</span>.</li>
-</ul>
-<p><strong>Bibliografia base da parte III:</strong> o livro “R Cookbook” (segunda edição) <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span>, e o livro “Big Book of R” <span class="citation">(<a href="#ref-bigr">Oscar Baruffa 2024</a>)</span>.</p>
-<ul>
-<li>Existem muitos outros livros e tutoriais dedicados a aplicações específicas. Algumas listas (incompletas) podem ser encontradas no <a href="https://www.r-project.org/doc/bib/R-jabref.html">arquivo do CRAN</a>.</li>
-</ul>
-</div>
-<div id="estilo-do-livro" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> Estilo do Livro<a href="introduction.html#estilo-do-livro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Antes de prosseguir, quero expor de antemão o estilo e organização dos capítulos.</p>
-<p>Este livro tem muito a cobrir, e tem um andamento acelerado. Para facilitar ao máximo a vida do leitor, o estilo dos capítulos foi definido para ajudar a direcionar a atenção para o que é mais importante, e menos atenção para o extra. Abaixo apresento alguns dos construtos utilizados para tal.</p>
-<p>Pequenos excertos de código são apresentados na linha <code class="sourceCode r"><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>, e blocos de código como abaixo.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb1-2"><a href="introduction.html#cb1-2" tabindex="-1"></a>x<span class="sc">*</span><span class="dv">2</span></span></code></pre></div>
-<div class="result">
-<p><strong>“Nome” do resultado</strong><br>
-Resultados importantes são expostos neste tipo de bloco. Note que nem todos os resultados serão simples de entender imediatamente, mas são expostos no momento em que é relevante para o estudo da linguagem.</p>
-</div>
-<p><strong>Palavras em negrito:</strong> normalmente indicam conceitos que serão definidos. Após sua apresentação, os conceitos costumam deixar de aparecer em negrito.</p>
-<p><em>Palavras em itálico</em> costumam ser palavras com utilizadas com um significado específico no contexto relevante, mas não necessariamente “conceitos”. Em contrapartida, as vezes uso aspas para indicar uma palavra sendo utilizada pelo seu significado em português, e não como um conceito da programação. Porém, cuidado, as vezes aspas tem seu uso padrão, e itálico é usado para palavras em inglês.</p>
-<div class="ex">
-<p>as vezes é importante apresentar um exemplo para esclarecer um conceito. Tendo a colocar exemplos apenas quando necessário, de modo que é importante entendê-los. Em contrapartida, não há muitos exemplos “complementares”. É natural que essa baixa frequência torne difícil a compreensão de alguns temas. Mas para isso existem os exercícios.</p>
-</div>
+<div id="funs-envs" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Funções e Ambientes<a href="funs-envs.html#funs-envs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="warn">
-<p>nesse bloco explicíto coisas que o leitor deve prestar atenção. Na maioria dos casos, apresento causas comuns de erros.</p>
+<p>este capítulo está em construção. O que segue abaixo é apenas um rascunho.</p>
 </div>
-<div class="obs">
-<p>observações deste tipo costumam ser sobre a organização do livro ou outros esclarecimentos menos importantes.</p>
-</div>
-<div class="extra">
-<p>nesse tipo de bloco apresento referências que tratam do tema relevante com mais calma, ou trazem tópicos adicionais para o leitor que queira expandir seus conhecimentos.</p>
-</div>
-<p>Ao final de cada capítulo existe uma seção de “Complemento”. Nele, há:</p>
+<div id="fundamentos" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Fundamentos<a href="funs-envs.html#fundamentos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introdução-3" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Introdução<a href="funs-envs.html#introdução-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Funções no R são expressões que salvamos como um objeto, para utilizá-las repetidas vezes, variando seus argumentos</p>
+<p>Elas são criadas com a seguinte sintaxe:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="funs-envs.html#cb46-1" tabindex="-1"></a>fun_name <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y } <span class="co">#ou</span></span>
+<span id="cb46-2"><a href="funs-envs.html#cb46-2" tabindex="-1"></a>fun_name <span class="ot">&lt;-</span> \(x, y) { x <span class="sc">+</span> y }</span>
+<span id="cb46-3"><a href="funs-envs.html#cb46-3" tabindex="-1"></a><span class="fu">fun_name</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co">#&gt; 3</span></span></code></pre></div>
+<p>Elas têm três componentes:</p>
 <ul>
-<li>Uma recapitulação dos conceitos apresentados.</li>
-<li>Uma lista de exercícios, que pode, inclusive, apresentar novos conceitos/funções.</li>
-<li>Uma lista de funções apresentadas no capítulo.</li>
-<li>Uma seção de referências, inclusive com links para conceitos deixados de lado no capítulo, para o leitor que quiser ir além.</li>
+<li>Seus argumentos (<code>x</code> e <code>y</code>), acessados com <code class="sourceCode r"><span class="fu">formals</span>(fun_name)</code></li>
+<li>Seu corpo (<code>x + y</code>), acessado com <code class="sourceCode r"><span class="fu">body</span>(fun_name)</code></li>
+<li>Seu <em>enviroment</em>, um objeto que determina onde a função deve procurar os valores das variáveis relevantes</li>
+</ul>
+<p>As únicas exceções existem no R base, e são escritas em C em vez de R, por performance. Elas são as <strong>funções primitivas</strong>, e não tem os componentes: <code>sum #&gt; .Primitive("sum")</code></p>
+<p>Como dito, as funções são objetos, criadas da mesma forma que <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">3</span></code>. Esse é o conceito de funções <strong>first-class</strong></p>
+<p>Como qualquer objeto:</p>
+<ul>
+<li>Elas tem um tipo. “closure”, ou para as primitivas “builtin” e “special”</li>
+<li>Podem ser passadas como argumentos para outras funções</li>
+<li>Podem ser salvas em listas</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="funs-envs.html#cb47-1" tabindex="-1"></a>funs <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">half =</span> <span class="cf">function</span>(x) x <span class="sc">/</span> <span class="dv">2</span>,</span>
+<span id="cb47-2"><a href="funs-envs.html#cb47-2" tabindex="-1"></a>             <span class="at">double =</span> <span class="cf">function</span>(x) x <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb47-3"><a href="funs-envs.html#cb47-3" tabindex="-1"></a>funs<span class="sc">$</span><span class="fu">double</span>(<span class="dv">10</span>) <span class="co">#&gt; [1] 20</span></span></code></pre></div>
+<p><strong>Funções anônimas:</strong> note que não precisamos atribuídas um nome à uma função. Muito comum ao passar funções à outras</p>
+<p><strong>Call’s alternativas:</strong> podemos passar os argumentos via uma lista com a função <code>do.call()</code>:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="funs-envs.html#cb48-1" tabindex="-1"></a><span class="fu">do.call</span>(fun_name, <span class="fu">list</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">2</span>)) <span class="co">#&gt; 3</span></span></code></pre></div>
+<p><strong>Recursividade:</strong> funções no R podem chamar elas mesmas. Vide o exemplo abaixo:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="funs-envs.html#cb49-1" tabindex="-1"></a>recursive_factorial <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb49-2"><a href="funs-envs.html#cb49-2" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="dv">1</span>)</span>
+<span id="cb49-3"><a href="funs-envs.html#cb49-3" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">return</span>(x <span class="sc">*</span> <span class="fu">recursive.factorial</span>(x <span class="sc">-</span> <span class="dv">1</span>)) }</span></code></pre></div>
+<p><strong>Argumentos padrão:</strong> podemos deixar um argumento pré-definido: <code>function(x, y = 1) ...</code></p>
+</div>
+<div id="formatos-e-combinações" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Formatos e combinações<a href="funs-envs.html#formatos-e-combinações" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>No R, “Everything that exists is an object. Everything that happens is a function call” -John Chambers</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 6.1  </strong></span></p>
+<div id="exemplo" class="section level4 hasAnchor" number="6.1.2.1">
+<h4><span class="header-section-number">6.1.2.1</span> Exemplo<a href="funs-envs.html#exemplo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Qual conceito visto hoje exemplifica a primeira parte do slogan acima?</p>
+</div>
+</div>
+<p>A segunda parte do slogan fica clara ao saber que operadores e keywords também são funções, apenas com outro formato</p>
+<p>A mais comum é o formato <em>prefix</em>: <code class="sourceCode r"><span class="fu">fun</span>(x, y, ...)</code>. Veremos que os outros três podem ser escritos assim</p>
+<ul>
+<li><strong>Infix</strong>: a função vai no meio de seus argumentos, <code>x + y</code>
+<ul>
+<li>Modo <em>prefix</em>: <code>`+`(x, y)</code></li>
+<li>Para definir use um nome que começe e termine com “%”: <code>%&amp;% &lt;- \(x, y) paste(x, y)</code></li>
+</ul></li>
+<li><strong>Replacement</strong>: funções que alterem valores de um objeto: <code>names(df) &lt;- ...</code>
+<ul>
+<li>Modo <em>prefix</em>: <code>`names&lt;-`(df, ...)</code></li>
+<li><a href="https://adv-r.hadley.nz/functions.html#replacement-functions">Como definir</a></li>
+</ul></li>
+<li><strong>Special</strong>: funções muito importantes para o R, cada uma com uma forma própria, como <code>[[</code>, <code>if</code>, and <code>for</code>
+<ul>
+<li><code>`if`(x &gt; 0, x, x * (-1))</code></li>
+<li><code>`for`(var, seq, action)</code></li>
+<li><code>`next`()</code>, e <code>`break`()</code></li>
+</ul></li>
+</ul>
+<p>Obs: use isso para achar a documentação de funções <code>?`[`</code></p>
+<p>Existem três formas de combinar funções:</p>
+<ul>
+<li><strong>Nesting</strong>: <code>g(f(x))</code>, <code>f</code> realiza sua operação em <code>x</code>, e o resultado vira argumento para <code>g</code>
+<ul>
+<li>É enxuto para pequenas expressões, mas pode ficar confuso em expressões muito longas</li>
+</ul></li>
+<li><strong>Objetos intermediários</strong>: <code>y &lt;- f(x); z &lt;- g(y)</code>
+<ul>
+<li>Bom quando os valores intermediários são importantes, mas desnecessário quando não são</li>
+</ul></li>
+<li><strong>Piping</strong>: os operadores <code>|&gt;</code> e <code>magrittr::`%&gt;%`</code> chamam “pipe” (cano). Eles transformam a avaliação de “dentro para fora” em “da esquerda pra direita”: <code>f(x) %&gt;% g()</code>
+<ul>
+<li>Facilita a leitura de expressões longas, mas só serve quando é apenas um objeto que irá “avançar” ao longo da função</li>
+</ul></li>
 </ul>
 </div>
-<div id="instalação-interface-e-ferramentas" class="section level2 hasAnchor" number="1.5">
-<h2><span class="header-section-number">1.5</span> Instalação, Interface, e Ferramentas<a href="introduction.html#instalação-interface-e-ferramentas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Antes de começar o aprendizado, é preciso instalar a linguagem (R), e se familizarizar com a interface do editor de código oficial (RStudio).</p>
-<p>Veja como instalar <a href="https://www.curso-de-programacao-em-r-para-jornalistas.com/2019/10/27/instalacao-r-e-rstudio/">neste tutorial</a> do curso “R Para Jornalistas”. PS: coincidentenmente, a maneira que jornalistas instalam o R serve para qualquer outra profissão também.</p>
-<p>Existêm vários tutoriais online explicando a interface, como o da <a href="https://www.datacamp.com/tutorial/r-studio-tutorial">Datacamp</a> (veja até “How to Write R Scripts in RStudio”) e este no video <a href="https://www.youtube.com/watch?v=FIrsOBy5k58">“RStudio for the Total Beginner”</a>.</p>
-<p>Além disso, existem três configurações mais comuns de serem alteradas: alterar onde os arquivos são salvos por padrão (figura 1, “browse”); impedir que os dados da última vez que você entrou no R sejam recarregados quando você voltar (figura 1, “workspace”); e alterar aparência (figura 2). Todas elas podem ser encontradas na tab <em>Tools &gt; Global Options</em>:</p>
-<p><img src="assets/Settings%20general.png" width="300" /> <img src="assets/Settings%20appearance.png" width="300" /></p>
-<div class="extra">
-<p>vide <span class="citation">(<a href="#ref-workr">Stephanie Locke 2017b</a>)</span>, capítulo “3 - Using RStudio”, e/ou <span class="citation">(<a href="#ref-cookr">James Long and Paul Teetor 2019</a>)</span>, <a href="https://rc2e.com/navigatingthesoftware">3 - “Navigatin the Software”</a>, para mais informações sobre a interface.</p>
 </div>
-<p>Até o momento, eu fui preguiçoso e não trouxe esse material para o livro. Ainda assim, veja as referências com calma, não deixe confusões com o software atrapalharem seu aprendizado.</p>
-<p>Última coisa, eu juro. O R provê alguns comandos para procurar por ajuda. A função <code>vignette()</code> abre uma lista de artigos de ajuda das extensões do R. Adicionalmente, se você quer saber informações sobre uma função chamada “acaba_pelo_amor_de_deus”, os códigos abaixo abrem suas documentações de ajuda. Vejam mais sobre <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/vignette.html">aqui</a>, e <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/help.html">aqui</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction.html#cb2-1" tabindex="-1"></a>?acaba_pelo_amor_de_deus</span>
-<span id="cb2-2"><a href="introduction.html#cb2-2" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;acaba_pelo_amor_de_deus&quot;</span>)</span></code></pre></div>
-<p>Agora sim, vamos começar. <strong>Boa sorte!</strong></p>
+<div id="ambientes" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Ambientes<a href="funs-envs.html#ambientes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="block">
+<p>Um <em>enviroment</em> é como uma lista nomeada, que associa nomes de variáveis aos seus valores. São neles que as funções buscarão os valores das variáveis</p>
+</div>
+<p><strong>Ambientes são objetos</strong> (como tudo que existe no R), com tipo “enviroment”, onde:</p>
+<ul>
+<li>Todos os nomes devem ser únicos</li>
+<li>Não existe uma ordem nos elementos</li>
+<li>Todo ambiente tem um um “ambiente pai”</li>
+<li>São o único tipo de objeto que não é <em>copied when modified</em></li>
+</ul>
+<div class="block">
+<p>No R, as funções salvam o ambiente onde foram criadas como parte de si, “they enclose their enviroments”, são <strong>closures</strong></p>
+<ul>
+<li>Portanto, o lugar onde buscam as variáveis não muda a depender de onde foram chamadas</li>
+</ul>
+</div>
+<p>Funções criam um ambiente próprio para serem executadas:</p>
+<ul>
+<li>Filho de onde foram criadas</li>
+<li>Contém os argumentos, e os valores criados em seu corpo</li>
+</ul>
+<p>As funções buscam valores nos ambientes, começando pelo próprio, e avançando para os ambientes-pai até encontrar a variável procurada</p>
+<!--
+\begin{figure}
+\centering
+\caption*{Simplificação dos ambientes:}
+\includegraphics[width=0.9\textwidth, keepaspectratio]{../Aula_i3/envs.png}
+\end{figure}
+-->
+<ol style="list-style-type: decimal">
+<li><em>base</em>: é o ambiente da pacote base do R, o pacote que carrega todos os outros</li>
+<li>Ambientes para pacotes: na ordem de chamada, pelo R (pacotes built-in), e depois pelo usuário (via <code>library()</code>)</li>
+<li>Ambiente global: o ambiente diretamente interativo</li>
+<li>Ambiente temporário: execução de funções</li>
+</ol>
+</div>
+<div id="scoping-e-evaluation" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Scoping e Evaluation<a href="funs-envs.html#scoping-e-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="scoping" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Scoping<a href="funs-envs.html#scoping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Agora sim podemos falar sobre como uma função busca por valores, a operação de <em>scoping</em></p>
+<div id="definição-1" class="section level4 hasAnchor block" number="6.3.1.1">
+<h4><span class="header-section-number">6.3.1.1</span> Definição<a href="funs-envs.html#definição-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>O método utilizado pelo R é o <em>lexical scoping</em> (<em>parse-time</em>) e segue quatro regras principais (abaixo)</p>
+</div>
+<ul>
+<li><strong>Name masking</strong>: nomes/objetos definidos dentro de uma função, e seus argumentos, “mascaram” nomes definidos fora da função
+<ul>
+<li>O R só buscará uma variável no ambiente-pai, se não encontrá-la no ambiente da função</li>
+</ul></li>
+<li>“Tudo que existe é um objeto”, logo a regra acima também vale para a <strong>busca de funções</strong>
+<ul>
+<li>Se uma função e um objeto tem mesmo nome, R interpreta <code>nome()</code> como sendo a função, e <code>nome</code> como o objeto</li>
+</ul></li>
+<li><strong>Início do zero</strong>: um novo ambiente temporário é criado a cada chamada
+<ul>
+<li>Não armazenamos informação de chamadas passadas, cada chamada é independente (a menos que explicitamente se defina o contrário)</li>
+</ul></li>
+<li><strong>Dynamic lookup</strong>: as funções buscam os valores na hora da chamada, não quando são criadas
+<ul>
+<li>O “onde” não muda (closures), mas o “quando” sim</li>
+<li>Resultados podem diferir antes e depois de se alterar uma variável relevante do ambiente global</li>
+</ul></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 6.2  </strong></span></p>
+<div id="name-masking" class="section level4 hasAnchor" number="6.3.1.2">
+<h4><span class="header-section-number">6.3.1.2</span> Name masking<a href="funs-envs.html#name-masking" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Qual será o resultado do código abaixo?
+</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="funs-envs.html#cb50-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span>; b <span class="ot">&lt;-</span> <span class="dv">2</span>; c <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb50-2"><a href="funs-envs.html#cb50-2" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="funs-envs.html#cb50-3" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b) {</span>
+<span id="cb50-4"><a href="funs-envs.html#cb50-4" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb50-5"><a href="funs-envs.html#cb50-5" tabindex="-1"></a>  <span class="fu">c</span>(a, b, c)</span>
+<span id="cb50-6"><a href="funs-envs.html#cb50-6" tabindex="-1"></a>}</span>
+<span id="cb50-7"><a href="funs-envs.html#cb50-7" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="funs-envs.html#cb50-8" tabindex="-1"></a><span class="fu">f</span>(<span class="at">b =</span> <span class="dv">20</span>)</span></code></pre></div>
+<p><strong>Resposta:</strong>
+</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="funs-envs.html#cb51-1" tabindex="-1"></a><span class="co">#&gt; [1] 10 20  3</span></span></code></pre></div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 6.3  </strong></span></p>
+<div id="name-masking-com-funções" class="section level4 hasAnchor" number="6.3.1.3">
+<h4><span class="header-section-number">6.3.1.3</span> Name masking com funções<a href="funs-envs.html#name-masking-com-funções" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Qual será o resultado do código abaixo?
+</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="funs-envs.html#cb52-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb52-2"><a href="funs-envs.html#cb52-2" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="funs-envs.html#cb52-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb52-4"><a href="funs-envs.html#cb52-4" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">100</span></span>
+<span id="cb52-5"><a href="funs-envs.html#cb52-5" tabindex="-1"></a>  <span class="fu">f</span>(<span class="dv">10</span>)</span>
+<span id="cb52-6"><a href="funs-envs.html#cb52-6" tabindex="-1"></a>}</span>
+<span id="cb52-7"><a href="funs-envs.html#cb52-7" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="funs-envs.html#cb52-8" tabindex="-1"></a><span class="fu">g</span>()</span></code></pre></div>
+<p><strong>Resposta:</strong>
+</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="funs-envs.html#cb53-1" tabindex="-1"></a><span class="co">#&gt; [1] 110</span></span></code></pre></div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 6.4  </strong></span></p>
+<div id="início-do-zero" class="section level4 hasAnchor" number="6.3.1.4">
+<h4><span class="header-section-number">6.3.1.4</span> Início do zero<a href="funs-envs.html#início-do-zero" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Qual será o resultado do código abaixo?
+</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="funs-envs.html#cb54-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb54-2"><a href="funs-envs.html#cb54-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span>; x</span>
+<span id="cb54-3"><a href="funs-envs.html#cb54-3" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="funs-envs.html#cb54-4" tabindex="-1"></a><span class="fu">f</span>()</span>
+<span id="cb54-5"><a href="funs-envs.html#cb54-5" tabindex="-1"></a><span class="fu">f</span>()</span>
+<span id="cb54-6"><a href="funs-envs.html#cb54-6" tabindex="-1"></a>x</span></code></pre></div>
+<p><strong>Resposta:</strong>
+</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="funs-envs.html#cb55-1" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span>
+<span id="cb55-2"><a href="funs-envs.html#cb55-2" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span>
+<span id="cb55-3"><a href="funs-envs.html#cb55-3" tabindex="-1"></a><span class="co">#&gt; [1] 1</span></span></code></pre></div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-26" class="example"><strong>Example 6.5  </strong></span></p>
+<div id="dynamic-lookup" class="section level4 hasAnchor" number="6.3.1.5">
+<h4><span class="header-section-number">6.3.1.5</span> Dynamic lookup<a href="funs-envs.html#dynamic-lookup" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Qual será o resultado do código abaixo?
+</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="funs-envs.html#cb56-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb56-2"><a href="funs-envs.html#cb56-2" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="funs-envs.html#cb56-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb56-4"><a href="funs-envs.html#cb56-4" tabindex="-1"></a><span class="fu">f</span>()</span>
+<span id="cb56-5"><a href="funs-envs.html#cb56-5" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="funs-envs.html#cb56-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb56-7"><a href="funs-envs.html#cb56-7" tabindex="-1"></a><span class="fu">f</span>()</span></code></pre></div>
+<p><strong>Resposta:</strong>
+</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="funs-envs.html#cb57-1" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span>
+<span id="cb57-2"><a href="funs-envs.html#cb57-2" tabindex="-1"></a><span class="co">#&gt; [1] 101</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="lazy-evaluation" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Lazy evaluation<a href="funs-envs.html#lazy-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Falamos sobre como os valores dos argumentos são buscados na hora da chamada, mas podemos ser mais específicos</p>
+<div id="definição-2" class="section level4 hasAnchor block" number="6.3.2.1">
+<h4><span class="header-section-number">6.3.2.1</span> Definição<a href="funs-envs.html#definição-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Os argumentos são <strong>lazily evaluated</strong>: só são avaliados quando “acessados”. Isso é feito via armazená-los em um tipo de dado chamado <strong>promessa</strong>, que tem três componentes:</p>
+<ul>
+<li>Uma expressão, que será calculada no futuro</li>
+<li>O ambiente onde ela deve ser avaliada</li>
+<li>Um valor, o resultado da expressão, que substitui a promessa após ser calculado</li>
+</ul>
+</div>
+<p>Isso permite incluir argumentos padrão que dependam de outros argumentos:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="funs-envs.html#cb58-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> x <span class="sc">*</span> <span class="dv">2</span>, <span class="at">z =</span> a <span class="sc">+</span> b) {</span>
+<span id="cb58-2"><a href="funs-envs.html#cb58-2" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="dv">3</span>; b <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb58-3"><a href="funs-envs.html#cb58-3" tabindex="-1"></a>  <span class="fu">c</span>(x, y, z)</span>
+<span id="cb58-4"><a href="funs-envs.html#cb58-4" tabindex="-1"></a>}</span></code></pre></div>
+<p>Além de incluir argumentos que possivelmente exigem muita computação, sem gerar custo quando não forem utilizados:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="funs-envs.html#cb59-1" tabindex="-1"></a>mean_unif <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, <span class="at">sim =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb59-2"><a href="funs-envs.html#cb59-2" tabindex="-1"></a>                      <span class="at">x =</span> <span class="fu">runif</span>(<span class="dv">1000</span>, a, b)) {</span>
+<span id="cb59-3"><a href="funs-envs.html#cb59-3" tabindex="-1"></a>  <span class="cf">if</span> (sim) <span class="fu">mean</span>(x) <span class="cf">else</span> (a <span class="sc">+</span> b)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb59-4"><a href="funs-envs.html#cb59-4" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</div>
+<div id="conceitos-adicionais" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Conceitos Adicionais<a href="funs-envs.html#conceitos-adicionais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dot-dot-dot" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Dot dot dot<a href="funs-envs.html#dot-dot-dot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Funções podem ter o argumento especial <code>...</code> pronunciado “dot-dot-dot”, mas muitas vezes chamado de “varargs” em outras linguagens</p>
+<p>Ele é útil se você não sabe listar todos os argumentos que sua função pode vir a receber:</p>
+<ul>
+<li>Em funções que recebem funções como argumento (como <code>lapply()</code>)</li>
+<li>Em funções genéricas (passar argumentos para métodos)</li>
+</ul>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="funs-envs.html#cb60-1" tabindex="-1"></a><span class="cf">function</span>(x, fun, ...) { <span class="fu">fun</span>(x, ...) }</span></code></pre></div>
+</div>
+<div id="resultados" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Resultados<a href="funs-envs.html#resultados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Todas as funções retornam algo:</p>
+<ul>
+<li><code>return()</code> é usado para definir o resultado explicitamente, e encerrar a execução da função
+<ul>
+<li>Útil em conjunto com if &amp; else</li>
+</ul></li>
+<li>caso contrário, a função retorna o valor de sua última linha</li>
+<li><code>invisible()</code> pode ser usado para retornar um valor sem imprimi-lo
+<ul>
+<li><code class="sourceCode r">(a <span class="ot">&lt;-</span> <span class="dv">2</span>) <span class="co">#&gt; [1] 2</span></code></li>
+</ul></li>
+</ul>
+</div>
+<div id="exit-handlers" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Exit Handlers<a href="funs-envs.html#exit-handlers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Você pode incluir avisos de erros em suas funções:</p>
+<ul>
+<li><code class="sourceCode r"><span class="fu">stop</span>(<span class="st">&quot;Erro: x deve ser numérico&quot;</span>)</code></li>
+<li><code class="sourceCode r"><span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(x))</code></li>
+</ul>
+<p>Podemos usar a função <code>on.exit()</code> para rodar uma expressão quando uma função finalizar, independente do motivo</p>
+</div>
+<div id="pacotes" class="section level3 hasAnchor" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> Pacotes<a href="funs-envs.html#pacotes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Um <em>package</em> é um conjunto de funções com um tema/objetivo específico. Eles contém uma documentação explicativa e as vezes datasets para exemplos</p>
+<p>O CRAN armazena pacotes que passam testes específicos, mas qualquer um pode criar e postar um pacote no GitHub. Vide <code>install.packages()</code> e o pacote “devtools”</p>
+<p>Após instalar, para carregar as funções do pacote na lista de ambientes, use <code>library(pkg_name)</code></p>
+<p>Para aprender como criar seu próprio pacote, vide <a href="https://web.mit.edu/insong/www/pdf/rpackage_instructions.pdf">este tutorial do MIT</a> e o livro <a href="https://r-pkgs.org/">R Packages, 2nd Edition</a>, também de Hadley Wickham</p>
+<p>O R base conta com 7 pacotes built-in:</p>
+<ul>
+<li>“base” (a fundação do R, que inicia todos os outros pacotes)</li>
+<li>“graphics” e “grDevices” (funções gráficas)</li>
+<li>“utils” (funções utilitárias)</li>
+<li>“methods” (funções para OOP)</li>
+<li>“datasets” (bases de dados para treino)</li>
+<li>“stats” (funções estatísticas)</li>
+</ul>
+<p>Aprender sobre algumas das funções built-in mais comuns ficará de exercício</p>
+<div class="double-hrule">
 
 </div>
 </div>
-<h3>Referências<a href="referências-19.html#referências-19" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-hopr" class="csl-entry">
-Garrett Grolemund. 2014. <em>Hands-<span>On</span> <span>Programming</span> with <span>R</span></em>. 1st ed. <a href="https://rstudio-education.github.io/hopr/">https://rstudio-education.github.io/hopr/</a>.
 </div>
-<div id="ref-ggplot" class="csl-entry">
-Hadley Wickham. 2010. <em>Ggplot2: <span>Elegant</span> <span>Graphics</span> for <span>Data</span> <span>Analysis</span></em>. 3rd ed. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>.
+<div id="complemento-4" class="section level2 unlisted unnumbered hasAnchor">
+<h2>Complemento<a href="funs-envs.html#complemento-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="recapitulando-4" class="section level3 unnumbered hasAnchor">
+<h3>Recapitulando<a href="funs-envs.html#recapitulando-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Sintaxe (de criação)</li>
+<li>Componentes (argumentos, corpo, e ambiente)
+<ul>
+<li>Exceção: funções primitivas</li>
+</ul></li>
+<li>Funções no R são first-class e closures</li>
+<li>Formas: prefix, infix, replacement, e special</li>
+<li>Combinação: nesting, objetos intermediários, e piping</li>
+<li>Outros: funções anônimas, <code>do.call()</code>, recursividade, e argumentos padrão</li>
+</ul>
+<ul>
+<li>São “listas nomeadas” onde as funções buscarão pelas variáveis</li>
+<li>Além de salvar o ambiente em que foram criadas, funções criam um ambiente filho para serem executadas</li>
+<li>Base <span class="math inline">\(\leftarrow\)</span> Pacotes <span class="math inline">\(\leftarrow\)</span> Global <span class="math inline">\(\leftarrow\)</span> Função (temporário)</li>
+</ul>
+<ul>
+<li>Name masking: nomes na função tem prioridade, inclusive funções</li>
+<li>Início do zero: um novo ambiente vazio é criado a cada chamada</li>
+<li>Dynamic lookup: os valores são buscados na hora da chamada</li>
+<li>Lazy evaluation: os argumentos só são avaliados quando acessados</li>
+<li>Promessas (expressão, ambiente, e valor)</li>
+</ul>
+<p><strong>OOP:</strong></p>
+<ul>
+<li>Classes, objetos, e métodos</li>
+<li>S3, R6, e S4</li>
+<li>Polimorfismo e funções genéricas</li>
+</ul>
+<p><strong>Conceitos adicionais:</strong></p>
+<ul>
+<li>Dot dot dot</li>
+<li>Resultados</li>
+<li>Exit handlers</li>
+<li>Pacotes</li>
+</ul>
+<ul>
+<li>Criação: <code>function()</code> e <code>\()</code></li>
+<li>Componentes: <code>formals()</code>, <code>body()</code>, e <code>environment()</code></li>
+<li><code>do.call()</code></li>
+<li>Pipes: <code>|&gt;</code> e <code>%&gt;%</code></li>
+<li>Resultados: <code>return()</code> e <code>invisible()</code></li>
+<li>Exit handlers: <code>stop()</code>, <code>stopifnot()</code>, e <code>on.exit()</code></li>
+<li>OOP: <code>UseMethod()</code>. Extra: use <code>sloop::s3_get_method()</code> para obter código fonte de métodos</li>
+<li>Pacotes: <code>install.packages()</code> e <code>library()</code>. Extra: vide <code>require()</code></li>
+</ul>
+<hr />
 </div>
-<div id="ref-advr" class="csl-entry">
-———. 2019. <em>Advanced <span>R</span></em>. 2nd ed. <a href="https://adv-r.hadley.nz/index.html">https://adv-r.hadley.nz/index.html</a>.
+<div id="exercícios-4" class="section level3 unnumbered hasAnchor">
+<h3>Exercícios<a href="funs-envs.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
 </div>
-<div id="ref-r4ds" class="csl-entry">
-———. 2024. <em>R for <span>Data</span> <span>Science</span></em>. 2nd ed. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+<div id="dicionário-de-funções-4" class="section level3 unnumbered hasAnchor">
+<h3>Dicionário de Funções<a href="funs-envs.html#dicionário-de-funções-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
 </div>
-<div id="ref-wrandata" class="csl-entry">
-Hilary Watt. n.d. <em>Data <span>Wrangling</span> <span>Recipes</span> in <span>R</span></em>. 1st ed. <a href="https://bookdown.org/hcwatt99/Data_Wrangling_Recipes_in_R/">https://bookdown.org/hcwatt99/Data_Wrangling_Recipes_in_R/</a>.
+<div id="referências-4" class="section level3 unnumbered hasAnchor">
+<h3>Referências<a href="funs-envs.html#referências-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
 </div>
-<div id="ref-cookr" class="csl-entry">
-James Long, and Paul Teetor. 2019. <em>R <span>Cookbook</span></em>. 2nd ed. <a href="https://rc2e.com/">https://rc2e.com/</a>.
-</div>
-<div id="ref-intror" class="csl-entry">
-Longhow Lam. 2010. <em>An Introduction to <span>R</span></em>. <a href="https://cran.r-project.org/doc/contrib/Lam-IntroductionToR_LHL.pdf">https://cran.r-project.org/doc/contrib/Lam-IntroductionToR_LHL.pdf</a>.
-</div>
-<div id="ref-introdata" class="csl-entry">
-Michael Mahoney. 2019. <em>Introduction to <span>Data</span> <span>Exploration</span> and <span>Analysis</span> with <span>R</span></em>. 1st ed. <a href="https://bookdown.org/mikemahoney218/IDEAR/">https://bookdown.org/mikemahoney218/IDEAR/</a>.
-</div>
-<div id="ref-bigr" class="csl-entry">
-Oscar Baruffa. 2024. <em>Big <span>Book</span> of <span>R</span></em>. 1st ed. <a href="https://www.bigbookofr.com/">https://www.bigbookofr.com/</a>.
-</div>
-<div id="ref-r-intro" class="csl-entry">
-R Core Team. 2024a. <span>“An <span>Introduction</span> to <span>R</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</a>.
-</div>
-<div id="ref-r-packs" class="csl-entry">
-———. 2024b. <span>“Contributed <span>Packages</span>.”</span> <a href="https://cran.r-project.org/web/packages/">https://cran.r-project.org/web/packages/</a>.
-</div>
-<div id="ref-r-source" class="csl-entry">
-———. 2024c. <span>“Index of /Src/Base.”</span> <a href="https://cran.r-project.org/src/base/">https://cran.r-project.org/src/base/</a>.
-</div>
-<div id="ref-r-int" class="csl-entry">
-———. 2024d. <span>“R <span>Internals</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.pdf">https://cran.r-project.org/doc/manuals/r-release/R-ints.pdf</a>.
-</div>
-<div id="ref-r-lang" class="csl-entry">
-———. 2024e. <span>“R <span>Language</span> <span>Definition</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf">https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf</a>.
-</div>
-<div id="ref-r-helps" class="csl-entry">
-———. 2024f. <span>“R: <span>Package</span> <span>Index</span>.”</span> <a href="https://stat.ethz.ch/R-manual/R-patched/doc/html/packages.html">https://stat.ethz.ch/R-manual/R-patched/doc/html/packages.html</a>.
-</div>
-<div id="ref-mandata" class="csl-entry">
-Stephanie Locke. 2017a. <em>Data <span>Manipulation</span> in <span>R</span></em>. 1st ed. <a href="https://itsalocke.com/files/DataManipulationinR.pdf">https://itsalocke.com/files/DataManipulationinR.pdf</a>.
-</div>
-<div id="ref-workr" class="csl-entry">
-———. 2017b. <em>Working with <span>R</span></em>. 1st ed. <a href="https://itsalocke.com/files/workingwithr.pdf">https://itsalocke.com/files/workingwithr.pdf</a>.
-</div>
-<div id="ref-tidy" class="csl-entry">
-<span>“Tidyverse.”</span> n.d. <a href="https://www.tidyverse.org/">https://www.tidyverse.org/</a>.
 </div>
 </div>
             </section>
@@ -625,8 +815,8 @@ Stephanie Locke. 2017a. <em>Data <span>Manipulation</span> in <span>R</span></em
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="parte-i---r-base-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="control-conds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paradigms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -647,7 +837,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/0-introduction.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-funs_envs.Rmd",
 "text": "Edit"
 },
 "history": {

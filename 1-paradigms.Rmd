@@ -1,6 +1,8 @@
 # Paradigmas de Programação {#paradigms}
 
-**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
 
 ## Programação Funcional
 
@@ -83,7 +85,7 @@ A diferença é flexibilidade. Qualquer um pode criar uma classe e adicionar um 
 
 ## Metaprogramação
 
-Apresentação das ideias gerais da metaprogramação. especialmente sobre as bases do tidyverse. A referência base são os capítulos [17, 18, 19, e 20, do "Advanced R"](https://adv-r.hadley.nz/metaprogramming.html).
+Apresentação das ideias gerais da metaprogramação. especialmente sobre as bases do tidyverse. A referência base são os capítulos [17, 18, 19, e 20, do "Advanced R"](https://adv-r.hadley.nz/metaprogramming.html). Apresento o pacote "rlang".
 
 
 

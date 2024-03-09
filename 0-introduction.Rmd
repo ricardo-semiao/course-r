@@ -106,6 +106,10 @@ _Palavras em itálico_ costumam ser palavras com utilizadas com um significado e
 as vezes é importante apresentar um exemplo para esclarecer um conceito. Tendo a colocar exemplos apenas quando necessário, de modo que é importante entendê-los. Em contrapartida, não há muitos exemplos "complementares". É natural que essa baixa frequência torne difícil a compreensão de alguns temas. Mas para isso existem os exercícios.
 :::
 
+:::{.warn}
+nesse bloco explicíto coisas que o leitor deve prestar atenção. Na maioria dos casos, apresento causas comuns de erros.
+:::
+
 :::{.obs}
 observações deste tipo costumam ser sobre a organização do livro ou outros esclarecimentos menos importantes.
 :::

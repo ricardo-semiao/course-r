@@ -1,29 +1,21 @@
-# Visualização Gráfica {#visualization}
+# Exploração de Dados {#exploration}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, descreverei os fundamentos da visualização de dados. Falo como aplicá-la usando o pacote "ggplot2".
+Neste capítulo, apresentarei como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter informações contidas em datasets.
 
 
-## Introdução à Visualização
-
-
-
-## Layers
+## Useful Visualizations
 
 
 
-## Scales
+## Useful Metrics
 
 
 
-## Grammar
-
-
-
-## Others
+## Useful Graphs
 
 
 
@@ -47,4 +39,5 @@ Neste capítulo, descreverei os fundamentos da visualização de dados. Falo com
 ---
 
 ### Referências {-}
+
 
