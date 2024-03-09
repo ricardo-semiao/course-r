@@ -10,7 +10,7 @@ Começo explicando como funcionam projetos de ciência de dados, muito com base 
 
 A seguir, apresento o tidyverse, que é um _frameworks_ para manipulação e visualização de dados. Escolhi falar sobre ele, em oposição à usar o R base, ou outro _framework_, porque ele é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Especialmente, os conceitos expostos na parte I farão com que sua compreensão seja muito mais simples. Aqui, a documentação oficial [@tidy] também é muito usada.
 
-Nessa segunda parte, começo a utilizar mais exemplos, uma vez que manipular dados é uma tarefa bastante aplicada. Ainda assim, não tantos quanto outros livros, e as considerações gerais sobre o estilo do presente material se mantem.
+Nessa segunda parte, começo a utilizar mais exemplos, uma vez que manipular dados é uma tarefa bastante aplicada. Ainda assim, não tantos quanto outros livros, e as considerações gerais sobre o estilo do presente material se mantêm.
 
 Os capítulos estão organizados por etapas de um projeto, e pacotes do tidyverse:
 

@@ -10,9 +10,9 @@ este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 ### Tipos de Dados
 No R, os tipos de dados são organizados em "famílias". Antes de entrar nesse mérito, abaixo estão os tipos mais importantes:
 
-- _Logicals_ são os dados booleanos, podem ser `TRUE`{.r} ou `FALSE`{.r}. Podem ser abreviados para `T`{.r} e `F`{.r}\footnote[frame]{Mas as estas não são palavras reservadas}\pause
+- _Logical_ são os dados booleanos, podem ser `TRUE`{.r} ou `FALSE`{.r}. Podem ser abreviados para `T`{.r} e `F`{.r}\footnote[frame]{Mas as estas não são palavras reservadas}\pause
 - _Characters_ são os dados de texto (strings)\pause
-- _Intergers_ são números inteiros, e são escritos com um `L`{.r} no fim\pause
+- _Integers_ são números inteiros, e são escritos com um `L`{.r} no fim\pause
 - _Doubles_ são os números decimais, podem ser decimais `1.245`{.r}, científicos `1.23e4`{.r}, ou hexadecimais `0xadfe`{.r}
   - Valores especiais: `Inf`{.r}, `-Inf`{.r}, e `NaN`{.r} ("not a number", usado em indefinições matemáticas)
 
@@ -24,7 +24,7 @@ Todos os tipos explicados assumem um valor especial, o "valor desconhecido": `NA
 
 - A maioria das operações envolvendo `NA`{.r}\`s retorna um `NA`{.r}: `1 + NA #> NA`{.r}
 - Como NA é um valor desconhecido, checar se um NA é igual ao outro não faz sentido `NA == NA #> NA`{.r}
-- Por trás dos panos, existe um `NA`{.r} diferente para cada tipo de vetor atômico (`NA_interger_`{.r}, etc.)
+- Por trás dos panos, existe um `NA`{.r} diferente para cada tipo de vetor atômico (`NA_integer_`{.r}, etc.)
 
 
 \framesubtitle{Vetores atômicos}
@@ -115,7 +115,7 @@ c(1, 2, "a", "b")
 :::
 \pause
 
-Existe uma ordem de prioridade: se houver um _character_, tudo vira _character_, fora isso, tudo vira _double_, depois, _interger_, e por fim, _logical_\footnote[frame]{Atenção: causa comum de erros}
+Existe uma ordem de prioridade: se houver um _character_, tudo vira _character_, fora isso, tudo vira _double_, depois, _integer_, e por fim, _logical_\footnote[frame]{Atenção: causa comum de erros}
 
 
 \framesubtitle{Funções úteis}
@@ -152,7 +152,7 @@ No tema de "Gerenciamento de memória" falaremos sobre como, por trás dos panos
 `c()`{.r} também pode combinar listas
 
 ::: {.example}
-Analize, desenhe, e compare os objetos abaixo:
+Analise, desenhe, e compare os objetos abaixo:
 \vspace{-1em}
 ```{r}
 l1 <- list(list(1), list(2))
@@ -178,7 +178,7 @@ Os vetores podem carregar mais informações do que apenas os valores de seus el
 Existem três atributos principais\footnote[frame]{Para qualquer outro metadado pode-se criar um atributo. Mais sobre isso na aula de OOP}:
 
 - _names_, um vetor character, que nomeia cada elemento
-- _dim_ (diminutivo de _dimentions_), um vetor interger, que reorganiza vetores em matrizes e arrays ("matrizes multidimensionais")
+- _dim_ (diminutivo de _dimensions_), um vetor integer, que reorganiza vetores em matrizes e arrays ("matrizes multidimensionais")
 - _class_, um vetor character, que indica um "tipo 2.0", alterando o comportamento dos vetores\pause
 
 
@@ -265,11 +265,11 @@ Note que adicionar dimensões gerou algumas possibilidades
 
 
 ### Classes
-Outro attributo importante é _class_, que permite a criação de vetores diferenciados, criados em cima dos tipos básicos\medskip
+Outro atributo importante é _class_, que permite a criação de vetores diferenciados, criados em cima dos tipos básicos\medskip
 
 Esse atributo empodera o sistema de programação orientada ao objeto S3. Nele, funções agem diferentemente a depender da classe do argumento que estão recebendo. Abaixo vão algumas:
 
-- _factor_ são intergers para dados categóricos
+- _factor_ são integers para dados categóricos
 - _Date_, _POSIXct_, e _difftime_ são doubles para datas
 - _data.frame_ e _tibble_ são lists para bases de dados
 - Existem outros como _ts_ para séries de tempo, uma classe para cada tipo de vetor estudado, entre outros
@@ -278,7 +278,7 @@ Obs: existem outras famílias de classes
 
 
 #### Factors
-_Factors_ tem o atribuito class como `"factor"`{.r}, e um atributo _levels_ que define os valores/categorias possíveis
+_Factors_ tem o atributo class como `"factor"`{.r}, e um atributo _levels_ que define os valores/categorias possíveis
 
 ```{r}
 factor(c("m", "f", "f", "m"),
@@ -388,7 +388,7 @@ Obs: a maior parte pode ser usada para definir/alterar valores de atributos
 \framesubtitle{Funções aprendidas}
 
 - `typeof()`{.r}/`class()`{.r} e funções "as" e "is" (extra: `is.na()`{.r})
-- Funções criadoras `c()`{.r}, `list()`{.r}, `matrix()`{.r}, `array()`{.r}, `factor()`{.r}, `odered()`{.r}, `data.frame()`{.r}, `tibble()`{.r}, `unlist()`{.r}
+- Funções criadoras `c()`{.r}, `list()`{.r}, `matrix()`{.r}, `array()`{.r}, `factor()`{.r}, `ordered()`{.r}, `data.frame()`{.r}, `tibble()`{.r}, `unlist()`{.r}
 - Funções combinadoras `c()`{.r}, `cbind()`{.r}, `rbind()`{.r}, e pacote "abind"
 - Funções sobre _dim_: `dim()`{.r}, `length()`{.r}, `nrow()`{.r}, `ncol()`{.r}
 - Funções sobre _names_: `names`{.r}, `colnames()`{.r}, `rownames()`{.r}, `dimnames()`{.r}, `setNames()`{.r}/`set_names()`{.r}, `unname()`{.r}
@@ -403,7 +403,7 @@ Obs: a maior parte pode ser usada para definir/alterar valores de atributos
 ::: {.example}
 #### Vetores atômicos
 - Porque `1 == "1"`{.r} é verdadeiro? Porque `-1 < FALSE`{.r} é verdadeiro? Porque `"one" < 2`{.r} é falso?
-- Agora com operações aritmétricas. 1 + "2" funciona? e TRUE + 1? Qual é a regra?
+- Agora com operações aritméticas. 1 + "2" funciona? e TRUE + 1? Qual é a regra?
 - Porque o `NA`{.r} padrão é um vetor lógico? Pense no resultado de `c(FALSE, NA_character_)`{.r}
 - Trabalhamos exemplos envolvendo `c()`{.r} e listas. Busque na página de ajuda `?c()`{.r} pela ordem completa de coerção
 - O que `"a" == c("a")`{.r} retorna? e `identical("a", c("a"))`{.r}?
@@ -436,7 +436,7 @@ l7 <- as.data.frame(l6)
 ::: {.example}
 #### Atributos
 - Como `setNames()`{.r} funciona? Como `unname()`{.r} funciona? Olhe o código fonte
-- O que `dim()`{.r} retorna quando applicado a um vetor unidimensional? Quando `NROW()`{.r} e `NCOL()`{.r} podem ser úteis?
+- O que `dim()`{.r} retorna quando aplicado a um vetor unidimensional? Quando `NROW()`{.r} e `NCOL()`{.r} podem ser úteis?
 - Como você descreveria os objetos abaixo? Qual a diferença entre eles e `1:5`{.r}?
 \vspace{-1em}
 ```{r}

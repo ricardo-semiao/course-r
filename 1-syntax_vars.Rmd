@@ -39,7 +39,7 @@ Como escrevemos essas palavras em um texto em R?
 - **Funções:** escreva o nome da função, e os argumentos que ela receberá entre parênteses `sum(1, 1)`{.r}. Não se preocupe muito com elas por agora.
   - **Operadores:** são imputados como `1 + 1`{.r}.
   - Parênteses podem ser utilizados em operações matemáticas: `(1+1)/2`{.r}.
-- **Comentários:** texto que não será avaliado como código. Use o símbolo `#`, que torna tudo após delena mesma linha, um comentário.
+- **Comentários:** texto que não será avaliado como código. Use o símbolo `#`, que torna tudo após dele, na mesma linha, um comentário.
 - **Variáveis:** já falei pra ter calma...
 
 [^special-chars]: Alguns caracteres de texto são especiais, e precisam ser precedidos por uma barra. Mais sobre isso no capítulo \@strings-factors.
@@ -63,7 +63,7 @@ sum(1, 1) + a
 
 Algumas frases são apenas um valor (`1`), o nome de uma variável (`a`), a chamada de uma função `sum(1, 1)`{r}, ou a combinação dessas coisas. Na seção seguinte irei apresentar um resultado sobre isso.
 
-E quanto a um código como `1 +`? Bom, esse código não é _sintáticamente correto_. Isso que estamos chamando de "frase", quando sintáticamente correto, recebe o termo _statement_ (declaração). A partir de agora, vou parar de usar "frase", e usar o termo mais formal, declaração.
+E quanto a um código como `1 +`? Bom, esse código não é _sintaticamente correto_. Isso que estamos chamando de "frase", quando sintaticamente correto, recebe o termo _statement_ (declaração). A partir de agora, vou parar de usar "frase", e usar o termo mais formal, declaração.
 
 
 ### Parágrafos
@@ -152,12 +152,12 @@ Ao rodar algo como `x <- 1`{.r}, o valor `1` é salvo na memória do computador,
 
 No capítulo \@ref(data-attrs), veremos que "tudo que existe no R é um objeto", isto é, esse conceito é muito abrangente.
 
-Por exemplo, na seção anterior, falei sobre as unidades que comõe declarações. Elas também são objetos.
+Por exemplo, na seção anterior, falei sobre as unidades que compõe declarações. Elas também são objetos.
 
 ::: {.result}
 **Objetos da linguagem**<br>
 
-Existem três tipos de objtos que compõe a linguagem R:
+Existem três tipos de objetos que compõe a linguagem R:
 
 - **_names_**, nomes de variáveis.
 - **_calls_**, chamadas de funções.
@@ -186,7 +186,7 @@ Em outras palavras:
 
 No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.
 
-Existem duas exeções: objetos com apenas uma referência, e _ambientes_[^envs]. Esses são alterados "na hora"/"no lugar", ou _modify-in-place_.
+Existem duas exceções: objetos com apenas uma referência, e _ambientes_[^envs]. Esses são alterados "na hora"/"no lugar", ou _modify-in-place_.
 :::
 
 [^envs]: Tratados no capítulo \@ref(funs-envs)
@@ -217,7 +217,7 @@ Nomes não sintáticos podem ser definidos, se escritos usando crases (_backtick
 
 Em muitos momentos, o R converte nomes não sintáticos utilizando a função `make.names()`. Você aprenderá sobre ela nos exercícios. É muito importante estar atento à esse comportamento, uma vez que é causa comum de erros.
 
-Você verá que isso é um tema comum: o R tenta fácilitar muitas tarefas, fazendo as coisas por você. Isso por um lado é o que o torna fácil de sair trabalhando, mas sempre é causa de inconsistências.
+Você verá que isso é um tema comum: o R tenta facilitar muitas tarefas, fazendo as coisas por você. Isso por um lado é o que o torna fácil de sair trabalhando, mas sempre é causa de inconsistências.
 
 
 
@@ -225,10 +225,10 @@ Você verá que isso é um tema comum: o R tenta fácilitar muitas tarefas, faze
 
 A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiquei com medo deles se sentirem excluídos.
 
-Abaixo estão os operadores relevantes para o momento, suas descições, e seu uso. Clique nos links dos operadores para abrir suas _páginas de ajuda_.
+Abaixo estão os operadores relevantes para o momento, suas descrições, e seu uso. Clique nos links dos operadores para abrir suas _páginas de ajuda_.
 
 ```{r, eval = TRUE, echo = FALSE}
-tabulate_funs("operadores", "1", c("aritmétrica", "comparação", "lógica"), "Capítulo")
+tabulate_funs("operadores", "1", c("aritmética", "comparação", "lógica"), "Capítulo")
 ```
 
 :::{.obs}
@@ -249,10 +249,10 @@ linhas com um "(*)" apresentam operadores que ainda não foram apresentados.
 :::{.ex}
 para deixar mais claro, na declaração `(3+6)/(1+2)/5^4` o seguinte ocorre:
 
-- `()` são analizados primeiro, porque tem precedência (estão acima na tabela).
+- `()` são analisados primeiro, porque tem precedência (estão acima na tabela).
   - Como é da direita pra esquerda, primeiro `(1+2)` vira `3`, e depois, `(3+6)` vira `9`.
-- `^` é analizado a seguir, logo, `5^4` vira `625`.
-- `/` é analizado a seguir.
+- `^` é analisado a seguir, logo, `5^4` vira `625`.
+- `/` é analisado a seguir.
   - Como é da esquerda pra direita, primeiro `9/3` vira `3`, e depois `3/625` vira `0.0048`.
 :::
 
@@ -294,8 +294,8 @@ Também demos uma atenção extra ao conceito de variável, nome, e objeto:
 Bem como alguns conceitos mais técnicos e avançados:
 
 - A dinâmica da memória no R é pautada pelo conceito de _copy-on-modify_. No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.
-  - As exeções são objetos com apenas uma referência, e ambientes, que usam _modify-in-place_ (são modificados "no lugar").
-- O conceito de objeto é muito geral. Inclusive, a prória linguagem R é composta por (apenas) três tipos de objetos: **_names_**, **_calls_**, e **_expressions_**. Expressões são algo mais geral, podendo ser compostas de **_names_** e **_calls_**.
+  - As exceções são objetos com apenas uma referência, e ambientes, que usam _modify-in-place_ (são modificados "no lugar").
+- O conceito de objeto é muito geral. Inclusive, a própria linguagem R é composta por (apenas) três tipos de objetos: **_names_**, **_calls_**, e **_expressions_**. Expressões são algo mais geral, podendo ser compostas de **_names_** e **_calls_**.
 
 
 #### Operadores {-}
@@ -348,8 +348,8 @@ make.names("`TRUE`")
 4. Parta de um número qualquer `x`, por exemplo, `x <- 5`. Use os ensinados operadores para criar:
 
 - Uma frase que retorne `TRUE` se `x` for múltiplo de 2.
-- Uma frase que retonre `TRUE` se `x` não for múltiplo nem de 3, nem de 5.
-- Uma frase que retonre `TRUE` se a parte inteira da divisão de `x` por 4 é igual a 2, ou se seu quadrado for maior ou igual à 10.
+- Uma frase que retorne `TRUE` se `x` não for múltiplo nem de 3, nem de 5.
+- Uma frase que retorne `TRUE` se a parte inteira da divisão de `x` por 4 é igual a 2, ou se seu quadrado for maior ou igual à 10.
 
 5. Liste a ordem das ações executadas no cálculo da expressão abaixo:
 
@@ -379,7 +379,7 @@ As referências principais deste capítulo são:
 
 - [@advr] capítulo ["2 - Names and Values"](https://adv-r.hadley.nz/names-values.html), excluindo as seções 2.4 e 2.6.
 - [@r-lang] seções ["2.1.3 - Language Objects"](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Language-objects-1) e ["2.1.3 - Expression Objects"](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Expression-objects-1).
-- [@r-intro] seções ["2.1 - Vectors and Assingment"](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vectors-and-assignment-1) e ["2.2 - Vector Arithmetic"](https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1).
+- [@r-intro] seções ["2.1 - Vectors and Assignment"](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vectors-and-assignment-1) e ["2.2 - Vector Arithmetic"](https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1).
 - [@r-int] seção ["2.1 - SEXPs"](https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1).
 - [@r-helps] os documentos de ajuda das funções aqui expostas.
 

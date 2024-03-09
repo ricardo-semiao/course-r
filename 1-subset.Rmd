@@ -33,7 +33,7 @@ Existem seis maneiras:
   - `x[1:3] #> 1.3 7.4 6.0`{.r}
   - `x[c(1,3)] #> 1.3 6.0`{.r}
   - Obs1: índices decimais são truncados: `x[1.7] == x[1]`{.r}
-  - Obs2: factors são tratados como intergers\pause
+  - Obs2: factors são tratados como integers\pause
 - **Inteiros negativos:** retornam todos os elementos menos os das posições
   - `x[-c(1,3)] #> 7.4 5.9`{.r}
 
@@ -118,7 +118,7 @@ Todos os operadores podem ser combinados com `<-`, numa operação chamada de su
 O formato geral é `x[i] <- valor`{.r}. Alguns comentários:
 
 - Cheque se `length(x[i]) == length(valor)`{.r}. Pode gerar erros ou resultados inesperados via reciclagem
-- Podemos reassinalar mais de um elemento por vez\pause
+- Podemos re-assinalar mais de um elemento por vez\pause
 - Com listas, lembre que `l[i]`{.r} sempre é uma lista
   - `l[i] <- list(valor)`{.r} é similar à `l[[i]] <- valor`{.r}
   - `l[[i]] <- NULL`{.r} remove o item da lista, enquanto `l[i] <- list(NULL)`{.r} altera o item para `NULL`{.r}
@@ -189,7 +189,7 @@ df[sample(nrow(df), 3, replace = TRUE), ]
 
 
 ::: {.example}
-#### Expandindo linhas identicas
+#### Expandindo linhas idênticas
 É comum data frames terem uma coluna de "quantas vezes uma observação aparece". A função `rep(x, y)`{.r} repete cada entrada i do vetor `x` `y[i]`{.r} vezes. Como podemos usá-la para expandir linhas?
 \vspace{-1em}
 ```{r}
@@ -247,8 +247,8 @@ Vimos que existem seis maneiras básicas de acessar elementos de um vetor com `[
 
 - **Inteiro positivo** com índices dos elementos quistos
 - **Inteiro negativo** com índices dos elementos à ignorar
-- **Vetore lógico** com `TRUE` nos índices dos elementos quistos
-- **Vetore de texto** com os nomes dos elementos quistos
+- **Vetor lógico** com `TRUE` nos índices dos elementos quistos
+- **Vetor de texto** com os nomes dos elementos quistos
 - **Nada**, `x[]`{.r}, retornando o vetor original
 - **Zero**, retornando um vetor de tamanho 0
 

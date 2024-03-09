@@ -23,7 +23,7 @@ Elas têm três componentes:
 
 - Seus argumentos (`x` e `y`), acessados com `formals(fun_name)`{.r}
 - Seu corpo (`x + y`), acessado com `body(fun_name)`{.r}
-- Seu _enviroment_, um objeto que determina onde a função deve procurar os valores das variáveis relevantes\footnote[frame]{Mais sobre em breve}
+- Seu _environment_, um objeto que determina onde a função deve procurar os valores das variáveis relevantes\footnote[frame]{Mais sobre em breve}
 
 
 \framesubtitle{Funções first-class}
@@ -83,7 +83,7 @@ A mais comum é o formato _prefix_: `fun(x, y, ...)`{.r}. Veremos que os outros 
 \framesubtitle{Outros formatos}
 - **Infix**: a função vai no meio de seus argumentos, `x + y`
   - Modo _prefix_: `` `+`(x, y) ``
-  - Para definir use um nome que começe e termine com "%": `%&% <- \(x, y) paste(x, y)`\pause
+  - Para definir use um nome que comece e termine com "%": `%&% <- \(x, y) paste(x, y)`\pause
 - **Replacement**: funções que alterem valores de um objeto: `names(df) <- ...`
   - Modo _prefix_: `` `names<-`(df, ...) ``
   - [Como definir](https://adv-r.hadley.nz/functions.html#replacement-functions)\pause
@@ -109,10 +109,10 @@ Existem três formas de combinar funções:
 ## Ambientes
 
 ::: block
-Um _enviroment_ é como uma lista nomeada, que associa nomes de variáveis aos seus valores. São neles que as funções buscarão os valores das variáveis
+Um _environment_ é como uma lista nomeada, que associa nomes de variáveis aos seus valores. São neles que as funções buscarão os valores das variáveis
 :::
 
-**Ambientes são objetos** (como tudo que existe no R), com tipo "enviroment", onde:
+**Ambientes são objetos** (como tudo que existe no R), com tipo "environment", onde:
 
 - Todos os nomes devem ser únicos
 - Não existe uma ordem nos elementos
@@ -121,7 +121,7 @@ Um _enviroment_ é como uma lista nomeada, que associa nomes de variáveis aos s
 
 
 ::: block
-No R, as funções salvam o ambiente onde foram criadas como parte de si, "they enclose their enviroments", são **closures**
+No R, as funções salvam o ambiente onde foram criadas como parte de si, "they enclose their environments", são **closures**
 
 - Portanto, o lugar onde buscam as variáveis não muda a depender de onde foram chamadas
 :::

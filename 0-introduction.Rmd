@@ -2,9 +2,9 @@
 
 ## História
 
-R é "uma linguagem de programação e um ambiente para computação estatística e gráfica". Ela criada em 1993 por Ross Ihaka e Robert Gentleman da Universdade de Auckland, Nova Zelândia, com o apoio de John Chambers da Bell Laboratories. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R. Não, infelizmente, não é R de "Ricardo".
+R é "uma linguagem de programação e um ambiente para computação estatística e gráfica". Ela criada em 1993 por Ross Ihaka e Robert Gentleman da Universidade de Auckland, Nova Zelândia, com o apoio de John Chambers da Bell Laboratories. Foi inspirada na linguagem S, e por ser sua sucessora (e pela inicial dos autores), recebeu o nome R. Não, infelizmente, não é R de "Ricardo".
 
-"Ambiente" no sentido de que é uma linguagem de programação formal, um "sistema totalmente planejado e coerente". Mas ainda assim, sendo especializada, com ferramentas poderosas e acessíveis para computação e vizualização de projetos estatísticos ou da ciência de dados. Ao mesmo tempo, é fácilmente incrementável, com centenas de extensões para as mais diversas áreas.
+"Ambiente" no sentido de que é uma linguagem de programação formal, um "sistema totalmente planejado e coerente". Mas ainda assim, sendo especializada, com ferramentas poderosas e acessíveis para computação e visualização de projetos estatísticos ou da ciência de dados. Ao mesmo tempo, é facilmente incrementável, com centenas de extensões para as mais diversas áreas.
 
 Entidades associadas ao desenvolvimento da linguagem:
 
@@ -26,18 +26,18 @@ O R é uma linguagem bem específica. Abaixo cito algumas de suas característic
 - R é uma linguagem popular, ficou na posição 21 no [TIOBE Index](https://www.tiobe.com/tiobe-index/) em fev/2024. Especialmente, ele conta com uma comunidade muito ativa e amigável, na [#rstats](https://twitter.com/search?q=%23rstats) do Twitter, no [StackOverflow](https://stackoverflow.com/questions/tagged/r), no [Posit Community](https://community.rstudio.com/), e [pessoalmente](https://www.meetup.com/topics/r-programming-language/).
 
 - Um produto dessa popularidade é a quantidade massiva de extensões, para toda sorte de tarefa.
-  - Existem múltiplas abordagens para manipulação de dados, modelagem, e criação de vizualizações.
+  - Existem múltiplas abordagens para manipulação de dados, modelagem, e criação de visualizações.
   - Poderosas ferramentas para comunicação, o RMarkdown (que foi utilizado para construir esse livro), e o Shiny, utilizado para construir Apps.
   - Ferramentas na fronteira de pesquisa, uma vez que pesquisadores costumam criar pacotes no R para acompanhar sua pesquisa.
   
 - Ocupa um espaço muito interessante na paisagem de softwares:
   - É uma linguagem de programação verdadeira, permitindo soluções para problemas mais complexos, e dando mais flexibilidade ao usuário, quando comparado com outros softwares estatísticos não programáticos como o SAS, SPSS, Stata, Eviews, e GRETL.
-  - Mas é especializado, _intepretada_, e _high-level_, facilitando seu uso, e apresentando uma cuva de aprendizado mais rápida que linguagems mais complexas/generalistas como C, e talvez Python. <br>
+  - Mas é especializado, _interpretada_, e _high-level_, facilitando seu uso, e apresentando uma cuva de aprendizado mais rápida que linguagens mais complexas/generalistas como C, e talvez Python. <br>
 - A especialização em estatística faz com que ferramentas muito necessárias para análise de dados sejam de fácil acesso, como _data-frames_ e _vetorização_. O usuário não precisa aprender extensões para realizar projetos em ciência de dados.
 
 - Algumas características mais técnicas:
   - Sua sintaxe é similar à C e Python, mas sua semântica é a de uma linguagem funcional, mais similar à Lisp e APL. Veremos que o estilo funcional é muito útil para projetos de ciência de dados.
-  - Além das funcionais, R tem capacidades incomuns de metaprogramação, permitindo códigos elegantes e succintos.
+  - Além das funcionais, R tem capacidades incomuns de metaprogramação, permitindo códigos elegantes e sucintos.
   - Não é seu forte, mas também conta com algumas ferramentas de programação orientada ao objeto, facilitando a vida do usuário.
   - O R usa código em C, C++, e Fortran para executar tarefas computacionalmente intensivas. Isso é algo que o usuário também pode explorar.
 
@@ -107,7 +107,7 @@ as vezes é importante apresentar um exemplo para esclarecer um conceito. Tendo 
 :::
 
 :::{.warn}
-nesse bloco explicíto coisas que o leitor deve prestar atenção. Na maioria dos casos, apresento causas comuns de erros.
+nesse bloco explicito coisas que o leitor deve prestar atenção. Na maioria dos casos, apresento causas comuns de erros.
 :::
 
 :::{.obs}
@@ -129,18 +129,18 @@ Ao final de cada capítulo existe uma seção de "Complemento". Nele, há:
 
 ## Instalação, Interface, e Ferramentas
 
-Antes de começar o aprendizado, é preciso instalar a linguagem (R), e se familizarizar com a interface do editor de código oficial (RStudio).
+Antes de começar o aprendizado, é preciso instalar a linguagem (R), e se familiarizar com a interface do editor de código oficial (RStudio).
 
-Veja como instalar [neste tutorial](https://www.curso-de-programacao-em-r-para-jornalistas.com/2019/10/27/instalacao-r-e-rstudio/) do curso "R Para Jornalistas". PS: coincidentenmente, a maneira que jornalistas instalam o R serve para qualquer outra profissão também.
+Veja como instalar [neste tutorial](https://www.curso-de-programacao-em-r-para-jornalistas.com/2019/10/27/instalacao-r-e-rstudio/) do curso "R Para Jornalistas". PS: coincidentemente, a maneira que jornalistas instalam o R serve para qualquer outra profissão também.
 
-Existêm vários tutoriais online explicando a interface, como o da [Datacamp](https://www.datacamp.com/tutorial/r-studio-tutorial) (veja até "How to Write R Scripts in RStudio") e este no video ["RStudio for the Total Beginner"](https://www.youtube.com/watch?v=FIrsOBy5k58).
+Existem vários tutoriais online explicando a interface, como o da [Datacamp](https://www.datacamp.com/tutorial/r-studio-tutorial) (veja até "How to Write R Scripts in RStudio") e este no video ["RStudio for the Total Beginner"](https://www.youtube.com/watch?v=FIrsOBy5k58).
 
 Além disso, existem três configurações mais comuns de serem alteradas: alterar onde os arquivos são salvos por padrão (figura 1, "browse"); impedir que os dados da última vez que você entrou no R sejam recarregados quando você voltar (figura 1, "workspace"); e alterar aparência (figura 2). Todas elas podem ser encontradas na tab _Tools > Global Options_:
 
 ![](assets/Settings general.png){width=300px} ![](assets/Settings appearance.png){width=300px}
 
 :::{.extra}
-vide [@workr], capítulo "3 - Using RStudio", e/ou [@cookr], [3 - "Navigatin the Software"](https://rc2e.com/navigatingthesoftware), para mais informações sobre a interface.
+vide [@workr], capítulo "3 - Using RStudio", e/ou [@cookr], [3 - "Navigating the Software"](https://rc2e.com/navigatingthesoftware), para mais informações sobre a interface.
 :::
 
 Até o momento, eu fui preguiçoso e não trouxe esse material para o livro. Ainda assim, veja as referências com calma, não deixe confusões com o software atrapalharem seu aprendizado.

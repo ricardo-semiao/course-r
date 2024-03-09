@@ -144,14 +144,14 @@ for (i in 1:10) {
 
 Dicas gerais:
 
-- Ao usar um loop para criar uma variável, crie o "conteiner" de antemão, pois é bem mais rápido:
+- Ao usar um loop para criar uma variável, crie o "contêiner" de antemão, pois é bem mais rápido:
 
 ```{r}
 x <- NULL; for(i in 1:5) x <- c(x, i)
 x <- NULL; for(i in 1:5) x[[i]] <- i
 ```
 
-- Prefira usar `seq_along(x)`{.r} no lugar de `1:legth(x)`{.r}
+- Prefira usar `seq_along(x)`{.r} no lugar de `1:length(x)`{.r}
 - Cuidado que loops costuma remover atributos. Use `seq_along()` e acesse os itens você mesmo
 ```{r}
 x <- as.Date(c("2020-01-01", "2010-01-01"))
@@ -160,7 +160,7 @@ for (i in x) print(i)
 
 
 ### Outros loops
-Se você não tem um veror de opções de antemão, não sabe sobre quais valores quer iterar, você pode:
+Se você não tem um vetor de opções de antemão, não sabe sobre quais valores quer iterar, você pode:
 
 - Usar um loop `while (condition) {...}`{.r}, que repete uma ação enquanto uma condição valer
 - Ou, ainda mais flexível, `repeat(...)`{.r}, que repete uma ação para sempre até encontrar um `break`

@@ -13,7 +13,7 @@ documentclass: book
 bibliography: book.bib #, packages.bib
 link-citations: yes
 github-repo: ricardo-semiao/R-course
-description: "Book for a course on the theory of R, and aplications for data scientists."
+description: "Book for a course on the theory of R, and applications for data scientists."
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 ---
@@ -35,7 +35,7 @@ tabulate_funs <- function(sheet, chap, cat, drop = "") {
 
 # Bem Vindo! {-}
 
-Este livro tem o objetivo de ensinar a liguagem R. O material tem duas especificidades principais: (i) é um livro para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e functionamento da linguagem, mas depois apresentando temas aplicados. Abaixo explico a motivação para esse estilo, bem como para quem ele pode ser útil.
+Este livro tem o objetivo de ensinar a linguagem R. O material tem duas especificidades principais: (i) é um livro para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e funcionamento da linguagem, mas depois apresentando temas aplicados. Abaixo explico a motivação para esse estilo, bem como para quem ele pode ser útil.
 
 
 
@@ -45,14 +45,14 @@ Existem diferentes estilos de aprendizagem, alguns preferem "aprender fazendo", 
 
 R é uma linguagem única, para o bem e para o mal:
 
-- Ela contém muitas exeções, particularidades, e heranças de outros tempos. Elas são causas comuns de erros e dificuldades de compreensão. Aprender a regra, a teoria, o contexto geral, facilita muito aprender a lidar com exeções da maneira menos dolorosa possível.
-- Ela contém ferramentas poderosas e incomuns. A especialização em estatísta motiva a existência de construtos nada óbvios, mas muito úteis. Existe uma variedade de estilos (funcionais, orientado ao objeto, metalinguísticos) igualmente importantes, mas difíceis de alcaçar sem um estudo mais teórico.
+- Ela contém muitas exceções, particularidades, e heranças de outros tempos. Elas são causas comuns de erros e dificuldades de compreensão. Aprender a regra, a teoria, o contexto geral, facilita muito aprender a lidar com exceções da maneira menos dolorosa possível.
+- Ela contém ferramentas poderosas e incomuns. A especialização em estatística motiva a existência de construtos nada óbvios, mas muito úteis. Existe uma variedade de estilos (funcionais, orientado ao objeto, metalinguísticos) igualmente importantes, mas difíceis de alcançar sem um estudo mais teórico.
 
 Mas claro que o conhecimento aplicado também é quisto (deixemos o estudo teórico em si mesmo para os _nerds_ da ciência da computação). Por isso, tento expor a parte teórica da maneira mais tranquila e enxuta possível, focando no essencial e deixando o extra como extra.
 
-Portanto, na segunda parte do livro, foco em aplicar o conhecimento recém adquirido para aprender a fazer as duas tarefas mais comums, presentes em basicamente todo projeto no R, a manipulação e visualização de dados. Mas sempre relacionando com os conceitos "teóricos" da ciência de dados.
+Portanto, na segunda parte do livro, foco em aplicar o conhecimento recém adquirido para aprender a fazer as duas tarefas mais comuns, presentes em basicamente todo projeto no R, a manipulação e visualização de dados. Mas sempre relacionando com os conceitos "teóricos" da ciência de dados.
 
-Por fim, na terceira parte, apresento aplicações variadas no estilo "livro de receitas". Aqui, existe muita intersecção com uma extensa litaratura já existente, mas creio que vale muito a pena aprender como aplicar todo o arcabouço visto antes em alguns dos tipos de projetos mais comuns.
+Por fim, na terceira parte, apresento aplicações variadas no estilo "livro de receitas". Aqui, existe muita intersecção com uma extensa literatura já existente, mas creio que vale muito a pena aprender como aplicar todo o arcabouço visto antes em alguns dos tipos de projetos mais comuns.
 
 Antes de seguir adiante, __uma palava motivacional__: as vezes uma pessoa passa mais tempo estudando um assunto do que deveria, e quanto mais fundo vai, mais difícil é parar de estudar. Esse é o meu caso, mas gostaria de ter companhia nessa situação (ninguém é de ferro). Foi com isso em mente que montei esse material, para dar a oportunidade do leitor fazer o mesmo, da forma mais eficiente possível. Espero que goste!
 
@@ -83,7 +83,7 @@ Os conceitos basilares do R costumam ser ensinados rapidamente, para dar priorid
 
 - Permite entender códigos mais complexos.
 - Permite aprender fontes comuns de erros e como evitá-las.
-- Permite escrever códigos mais elegantes e principalmente mais eficiêntes.
+- Permite escrever códigos mais elegantes e principalmente mais eficientes.
 - Facilitará a explicação dos conceitos que empoderam o _tidyverse_.
 
 Essa abordagem é algo como ter aulas formais de uma língua, em oposição a ensino para turismo. A utilidade dessa abordagem depende de seu objetivo, se ele é "conseguir aplicar rapidamente novos conhecimentos", outros livros serão mais úteis.
@@ -98,11 +98,11 @@ Vamos executar essas tarefas no R usando o _framework_ tidyverse. Escolhi falar 
 ### Parte II - Aplicações Diversas {-}
 A parte três mostra como aplicar os conhecimentos adquiridos nas outras duas partes, em temas comuns. Já existe uma literatura extensa com objetivos similares, portanto, foco em temas mais centrais, e/ou que tenham um alto ganho de serem abordados com os _frameworks_ e linguagem desenvolvida neste livro.
 
-Os temas são: problemas comuns da probabilidade e estatística, exploração de dados, modelagem de regressão, e modelagem de machine learning. Ao fim, listo referências para otras aplicações de possível interesse.
+Os temas são: problemas comuns da probabilidade e estatística, exploração de dados, modelagem de regressão, e modelagem de machine learning. Ao fim, listo referências para outras aplicações de possível interesse.
 
 
 
-## Licensa {-}
+## Licença {-}
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
