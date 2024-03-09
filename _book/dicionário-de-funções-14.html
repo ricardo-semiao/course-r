@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 9 Ciência de Dados e Importação | R: Teoria e Aplicações</title>
+  <title>Dicionário de funções | R: Teoria e Aplicações</title>
   <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 9 Ciência de Dados e Importação | R: Teoria e Aplicações" />
+  <meta property="og:title" content="Dicionário de funções | R: Teoria e Aplicações" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   <meta name="github-repo" content="ricardo-semiao/R-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 9 Ciência de Dados e Importação | R: Teoria e Aplicações" />
+  <meta name="twitter:title" content="Dicionário de funções | R: Teoria e Aplicações" />
   
   <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ciência-de-dados-com-o-tidyverse.html"/>
-<link rel="next" href="data.html"/>
+<link rel="prev" href="aplicações-diversas.html"/>
+<link rel="next" href="referências-14.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -326,57 +326,206 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ciência-de-dados-e-importação" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Capítulo 9</span> Ciência de Dados e Importação<a href="ciência-de-dados-e-importação.html#ciência-de-dados-e-importação" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>Aviso:</strong> este capítulo está em construção. O que segue abaixo é apenas um rascunho.</p>
-<div id="ciência-de-dados" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Ciência de Dados<a href="ciência-de-dados-e-importação.html#ciência-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="introdução-4" class="section level3 hasAnchor" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Introdução<a href="ciência-de-dados-e-importação.html#introdução-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Ciência de Dados:</strong> “a aplicação de métodos estatísticos e computacionais para a análise de dados”.</p>
-<p>Um projeto de ciência de dados normalmente segue o seguinte fluxo:</p>
-<!--
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth, keepaspectratio]{../Aula_ii1/data-science-explore.png}
-\caption*{Fonte: [R for Data Science, seção 1](https://r4ds.had.co.nz/introduction.html]}
-\end{figure}
--->
-</div>
-<div id="preparar" class="section level3 hasAnchor" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> Preparar<a href="ciência-de-dados-e-importação.html#preparar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><strong>Importar os dados:</strong> o passo inicial de qualquer projeto de ciência de dados. É necessário saber o tipo de arquivo, o tipo da fonte (arquivos, <em>databases</em>, <em>API</em>’s), e as ferramentas de importação disponíveis.</p></li>
-<li><p><strong>Arrumar (tidy) os dados:</strong> limpar e organizar os dados de acordo com o formato necessário. Em D.S., muitas vezes queremos o formato “tidy”, onde cada coluna representa uma variável e cada linha uma observação.</p></li>
-<li><p><strong>Transformar os dados:</strong> refinar seus dados para facilitar a uma visualização ou modelagem específica. Este passo envolve reduzir observações, criar novas variáveis e calcular estatísticas resumo.</p></li>
-</ul>
-<p>Esses três passo juntos são referidos como <em>data wrangling</em> (“preparação” de dados).</p>
-</div>
-<div id="entender-e-explorar" class="section level3 hasAnchor" number="9.1.3">
-<h3><span class="header-section-number">9.1.3</span> Entender e Explorar<a href="ciência-de-dados-e-importação.html#entender-e-explorar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><strong>Visualização:</strong> explorar os dados de maneiras mais interessantes visualmente. Boas visualizações podem revelar mais informação sobre o problema, levantar questões para se atentar, e demandas por mais dados e/ou outros modelos.</p></li>
-<li><p><strong>Modelagem:</strong> modelos são ferramentas para responder perguntas sobre o processo gerador dos dados. Eles são conjuntos de hipóteses sobre o problema em mãos, acompanhados por um método computacional para sua estimação. Cada modelo tem seu conjunto de hipóteses, e seus métodos de estimação.</p></li>
-<li><p><strong>Transformar os dados:</strong> após entender melhor as demandas do problema, é comum voltar ao passo de transformação dos dados, e repetir o ciclo, até que toda a informação quista seja obtida.</p></li>
-</ul>
-</div>
-<div id="communicating-and-executing" class="section level3 hasAnchor" number="9.1.4">
-<h3><span class="header-section-number">9.1.4</span> Communicating and Executing<a href="ciência-de-dados-e-importação.html#communicating-and-executing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><strong>Comunicação:</strong> após o problema ser analisado, é preciso reportar os resultados</p></li>
-<li><p><strong>Communication:</strong> Communication is integral to any data analysis project. It involves conveying your findings to others effectively. No matter how insightful your models or visualizations are, their value is limited if you cannot communicate results in a clear and understandable manner.</p></li>
-<li><p><strong>Programming:</strong> Programming is a pervasive tool in data science. While not mandatory to be an expert programmer, improving programming skills aids in automating tasks and tackling new challenges efficiently. Programming is a cross-cutting skill used throughout the entire data science project.</p></li>
-</ul>
-</div>
-</div>
+<div id="dicionário-de-funções-14" class="section level1 unnumbered hasAnchor">
+<h1>Dicionário de funções<a href="dicionário-de-funções-14.html#dicionário-de-funções-14" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Abaixo segue a lista de funções vistas neste livro.</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="13%" />
+<col width="16%" />
+<col width="33%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Capítulo</th>
+<th align="left">Categoria</th>
+<th align="left">Função</th>
+<th align="left">Descrição</th>
+<th align="left">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>+</code></a></td>
+<td align="left">soma</td>
+<td align="left"><code>num + num</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>-</code></a></td>
+<td align="left">subtração</td>
+<td align="left"><code>num - num</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>*</code></a></td>
+<td align="left">multiplicação</td>
+<td align="left"><code>num * num</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>/</code></a></td>
+<td align="left">divisão</td>
+<td align="left"><code>num / num</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>\^</code></a></td>
+<td align="left">exponenciação</td>
+<td align="left"><code>num ^ num</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>%%</code></a></td>
+<td align="left">divisão inteira</td>
+<td align="left"><code>num %% num</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">aritmétrica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>%/%</code></a></td>
+<td align="left">resto da divisão</td>
+<td align="left"><code>num %/% num</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">comparação</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>==</code></a></td>
+<td align="left">igual</td>
+<td align="left"><code>x == y</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">comparação</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>!=</code></a></td>
+<td align="left">diferente</td>
+<td align="left"><code>x !=  y</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">comparação</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&lt;</code></a></td>
+<td align="left">menor que</td>
+<td align="left"><code>num &lt; num</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">comparação</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&gt;</code></a></td>
+<td align="left">maior que</td>
+<td align="left"><code>num &gt; num</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">comparação</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&gt;=</code></a></td>
+<td align="left">maior igual</td>
+<td align="left"><code>num &gt;=  num</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">comparação</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&lt;=</code></a></td>
+<td align="left">menor igual</td>
+<td align="left"><code>num &lt;=  num</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">lógica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html"><code>!</code></a></td>
+<td align="left">“não” lógico</td>
+<td align="left"><code>! logi</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">lógica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html"><code>&amp;</code></a></td>
+<td align="left">“e” lógico</td>
+<td align="left"><code>logi &amp; logi</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">lógica</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html"><code>&amp;#124;</code></a></td>
+<td align="left">“ou” lógico</td>
+<td align="left"><code>logi &amp;#124; logi</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">agrupadores</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html"><code>{</code></a></td>
+<td align="left">agrupador chaves</td>
+<td align="left"><code>{ expr }</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">agrupadores</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html"><code>(</code></a></td>
+<td align="left">agrupador parênteses</td>
+<td align="left"><code>( expr )</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">definidores</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html"><code>&lt;-</code>, <code>-&gt;</code></a></td>
+<td align="left">definidores</td>
+<td align="left"><code>x &lt;- expr</code>, <code>x -&gt; expr</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">definidores</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html"><code>=</code></a></td>
+<td align="left">definidores</td>
+<td align="left"><code>x = expr</code></td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">outros</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/rm.html"><code>rm()</code></a></td>
+<td align="left">limpa objetos do ambiente</td>
+<td align="left"><code>rm(x)</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">nomes</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/make.names.html"><code>make.names()</code></a></td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">ajuda</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/help.html"><code>help()</code></a>, <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Question.html"><code>?</code></a></td>
+<td align="left">procurar ajuda na documentação</td>
+<td align="left"><code>help(x)</code>, <code>?x</code></td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">ajuda</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/vignette.html"><code>vignette()</code></a></td>
+<td align="left">procurar vignettes</td>
+<td align="left"><code>vignette(x)</code></td>
+</tr>
+</tbody>
+</table>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="ciência-de-dados-com-o-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="aplicações-diversas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referências-14.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -407,7 +556,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/2-ds_importing.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/0-dictionary.Rmd",
 "text": "Edit"
 },
 "history": {
