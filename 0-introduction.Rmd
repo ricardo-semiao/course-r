@@ -53,7 +53,7 @@ A literatura base pode ser encontrada no [CRAN](https://cran.r-project.org/manua
 - O manual "R Language Definition" [@r-lang], que descreve a linguagem em si.
 - O manual "R Internals" [@r-int], que descreve as estruturas internas do R, e a fundação do código em C.
 - A documentação de ajuda para o R base e as extensões padrões [@r-helps].
-- A [documentação de ajuda](https://cran.r-project.org/web/packages/available_packages_by_name.html) para as extensões externas.
+- A documentação de ajuda para as extensões externas [@r-packs].
 
 Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de livros para R, tanto para ensinar a linguagem no geral, quanto para toda sorte de aplicações. Abaixo alguns exemplos mais recentes, divididos pela sua relação com cada parte deste livro.
 
@@ -63,9 +63,7 @@ Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de liv
   - "An Introduction to R" [@r-intro] (manual oficial).
   - "Working with R" [@workr].
   - "An Introduction to R" [@intror].
-- Alguns livros complementares, que assumem uma abordagem "aprender fazendo":
-  - "Hands on Programming with R" [@hopr].
-  - "A Student's Guide to R" [@student].
+- Livro complementar, com abordagem "aprender fazendo": "Hands on Programming with R" [@hopr]
   
 **Bibliografia base da parte II:** o livro "R for Data Science" [@r4ds] e as documentações dos pacotes do tidyverse [@tidy].
 
@@ -73,9 +71,7 @@ Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de liv
   - "Data Manipulation in R" [@mandata].
   - "ggplot2: Elegant Graphics for Data Analysis" [@ggplot].
   - "Data Wrangling Recipes in R" [@wrandata].
-- Alguns livros complementares, que assumem uma abordagem "aprender fazendo":
-  - Introduction to Data Exploration and Analysis with R [@introdata].
-  - ["The R Primer"](https://www.rprimer.dk/).
+- Livro complementar, com abordagem "aprender fazendo": "Introduction to Data Exploration and Analysis with R" [@introdata].
 
 **Bibliografia base da parte III:** o livro "R Cookbook" (segunda edição) [@advr], e o livro "Big Book of R" [@bigr].
 
@@ -97,7 +93,7 @@ x*2
 ```
 
 
-:::{.my_result}
+:::{.result}
 **"Nome" do resultado**<br>
 Resultados importantes são expostos neste tipo de bloco. Note que nem todos os resultados serão simples de entender imediatamente, mas são expostos no momento em que é relevante para o estudo da linguagem.
 :::
@@ -106,11 +102,17 @@ Resultados importantes são expostos neste tipo de bloco. Note que nem todos os 
 
 _Palavras em itálico_ costumam ser palavras com utilizadas com um significado específico no contexto relevante, mas não necessariamente "conceitos". Em contrapartida, as vezes uso aspas para indicar uma palavra sendo utilizada pelo seu significado em português, e não como um conceito da programação. Porém, cuidado, as vezes aspas tem seu uso padrão, e itálico é usado para palavras em inglês.
 
-:::{.my_example}
+:::{.ex}
 as vezes é importante apresentar um exemplo para esclarecer um conceito. Tendo a colocar exemplos apenas quando necessário, de modo que é importante entendê-los. Em contrapartida, não há muitos exemplos "complementares". É natural que essa baixa frequência torne difícil a compreensão de alguns temas. Mas para isso existem os exercícios.
 :::
 
-- _Observação:_ observações deste tipo costumam ser sobre a organização do livro ou outros esclarecimentos menos importantes.
+:::{.obs}
+observações deste tipo costumam ser sobre a organização do livro ou outros esclarecimentos menos importantes.
+:::
+
+:::{.extra}
+nesse tipo de bloco apresento referências que tratam do tema relevante com mais calma, ou trazem tópicos adicionais para o leitor que queira expandir seus conhecimentos.
+:::
 
 Ao final de cada capítulo existe uma seção de "Complemento". Nele, há:
 
@@ -133,7 +135,9 @@ Além disso, existem três configurações mais comuns de serem alteradas: alter
 
 ![](assets/Settings general.png){width=300px} ![](assets/Settings appearance.png){width=300px}
 
-Mais informações úteis sobre a interface podem ser encontradas na Seção ["Navigating the Software"](https://rc2e.com/navigatingthesoftware) de [@cookr].
+:::{.extra}
+vide [@workr], capítulo "3 - Using RStudio", e/ou [@cookr], [3 - "Navigatin the Software"](https://rc2e.com/navigatingthesoftware), para mais informações sobre a interface.
+:::
 
 Até o momento, eu fui preguiçoso e não trouxe esse material para o livro. Ainda assim, veja as referências com calma, não deixe confusões com o software atrapalharem seu aprendizado.
 

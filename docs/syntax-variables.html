@@ -337,11 +337,11 @@ div.csl-indent {
 <p>A seguir, vamos descrever com mais calma esses conceitos de <em>tokens</em>, <em>statements</em>, <em>blocks</em>, e <em>script</em>.</p>
 <div id="palavras" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Palavras<a href="syntax-variables.html#palavras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="my_result">
+<div class="result">
 <p><strong>Vocabulário</strong><br></p>
 <p>Quais <strong>palavras</strong>, <strong><em>tokens</em></strong>, temos disponíveis na linguagem R?</p>
 <ul>
-<li><strong>Dados</strong>, que podem ser <em>strings</em> (palavras literais), números, valores booleanos (valores binários de verdadeiro ou falso), entre outros.
+<li><strong>Valores</strong>, que podem ser <em>strings</em> (palavras literais), números, valores booleanos (valores binários de verdadeiro ou falso), entre outros.
 <ul>
 <li>Também podemos ter “coleções” desses dados (ex: vários números em uma “lista”).</li>
 </ul></li>
@@ -363,21 +363,19 @@ div.csl-indent {
 <li><strong>Números:</strong> simplesmente escreva-os: <code>1</code>. Use um ponto <code>.</code> como o separador decimal <code>0.01</code>.</li>
 <li><strong>Valores booleanos:</strong> escreva as palavras especiais <code>TRUE</code> e <code>FALSE</code>.</li>
 <li><strong>Coleções:</strong> calma, tudo em seu tempo.</li>
-<li><strong>Funções:</strong> escreva o nome da função, e os arumentos que ela receberá entre parênteses <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>)</code>. Não se preocupe muito com elas por agora.
+<li><strong>Funções:</strong> escreva o nome da função, e os argumentos que ela receberá entre parênteses <code class="sourceCode r"><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>)</code>. Não se preocupe muito com elas por agora.
 <ul>
 <li><strong>Operadores:</strong> são imputados como <code class="sourceCode r"><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>.</li>
 <li>Parênteses podem ser utilizados em operações matemáticas: <code class="sourceCode r">(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span></code>.</li>
 </ul></li>
 <li><strong>Comentários:</strong> texto que não será avaliado como código. Use o símbolo <code>#</code>, que torna tudo após delena mesma linha, um comentário.</li>
-</ul>
-<ul>
-<li><em>Observação:</em> nos exemplos deste livro, um comentário no formato <code class="sourceCode r"><span class="co">#&gt; ...</span></code> indica o resultado esperado da expressão que o precede.</li>
+<li><strong>Variáveis:</strong> já falei pra ter calma…</li>
 </ul>
 </div>
 <div id="frases" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Frases<a href="syntax-variables.html#frases" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Como dito, as <strong>frases</strong> no R serão combinações de <em>tokens</em>. Qualquer combinação.</p>
-<div class="my_example">
+<div class="ex">
 <p>cada linha do código abaixo é uma frase:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="syntax-variables.html#cb3-1" tabindex="-1"></a><span class="dv">1</span></span>
 <span id="cb3-2"><a href="syntax-variables.html#cb3-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
@@ -386,53 +384,54 @@ div.csl-indent {
 <span id="cb3-5"><a href="syntax-variables.html#cb3-5" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb3-6"><a href="syntax-variables.html#cb3-6" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">+</span> a</span></code></pre></div>
 </div>
-<p>Algumas frases são apenas o nome de uma variável (<code>a</code>), algumas são a chamada de uma função <code>sum(1, 1)</code>{r}, algumas são algo mais geral. Cada uma dessas tem um nome especial. Vou ensiná-los abaixo, mas não se preocupe demais, suas definições formais serão expostas no tema de “Metaprogramming”.</p>
-<div class="my_result">
-<p><strong>“Frases” da linguagem</strong><br></p>
-<p>Existem três tipos de “frases” que compõe a linguagem R, <strong><em>names</em></strong>, <strong><em>calls</em></strong>, e <strong><em>expressions</em></strong> (respectivamente). Note que <em>expressions</em> são algo mais geral, podendo ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</p>
-</div>
-<ul>
-<li><p>O uso de aspas em “frases” é proposital. Eu menti um pouco aqui, mas irei corrigir esse resultado na seção de variáveis.</p></li>
-<li><p>Com essa definição, parece que o que estamos chamando de “frase” é sinônimo de “expressão”. Veremos no tema de “Metaprogramming” que isso não é 100% preciso.</p></li>
-</ul>
-<p>E quanto a um código como <code>1 +</code>? Bom, esse código não é <em>sintáticamente correto</em>. Tendemos a não chamar isso de frase/<em>statement</em>, mas formalmente, ele pode ser uma <em>expression</em>.</p>
+<p>Algumas frases são apenas um valor (<code>1</code>), o nome de uma variável (<code>a</code>), a chamada de uma função <code>sum(1, 1)</code>{r}, ou a combinação dessas coisas. Na seção seguinte irei apresentar um resultado sobre isso.</p>
+<p>E quanto a um código como <code>1 +</code>? Bom, esse código não é <em>sintáticamente correto</em>. Isso que estamos chamando de “frase”, quando sintáticamente correto, recebe o termo <em>statement</em> (declaração). A partir de agora, vou parar de usar “frase”, e usar o termo mais formal, declaração.</p>
 </div>
 <div id="parágrafos" class="section level3 hasAnchor" number="2.1.3">
 <h3><span class="header-section-number">2.1.3</span> Parágrafos<a href="syntax-variables.html#parágrafos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Como delimitamos frases em <strong>parágrafos</strong>?</p>
+<p>Como delimitamos declaração em <strong>parágrafos</strong>?</p>
 <ul>
-<li><p>Por padrão, uma expressão acaba na quebra de linha.</p></li>
-<li><p>Se a expressão terminar inacabada (como no exemplo <code>1 +</code>), o R ignora a quebra de linha, e tenta completar a expressão com a linha seguinte.</p></li>
-<li><p>Um ponto e vírgula pode ser usado para delimitar uma expressão explicitamente: <code>1 + 1; 2 + 2</code>. Mas seu uso não é uma comum nem recomendável.</p></li>
-<li><p>Várias frases podem ser agregadas em grupos ou <em>blocks</em> usando chaves <code>{}</code>. Um grupo de frases é avaliado apenas após seu fim.</p></li>
-<li><p><em>Observação:</em> a partir de aqui, “frase” ou “statement” se refere a uma unidade ou a um grupo de frases.</p></li>
+<li>Por padrão, uma declaração acaba na quebra de linha.</li>
+<li>Se a declaração terminar inacabada (como no exemplo <code>1 +</code>), o R ignora a quebra de linha, e tenta completar a declaração com a linha seguinte.</li>
+<li>Um ponto e vírgula pode ser usado para delimitar uma declarações explicitamente: <code>1 + 1; 2 + 2</code>. Mas seu uso não é uma comum nem recomendável.</li>
+<li>Várias declarações podem ser agregadas em grupos ou <em>blocks</em> usando chaves <code>{}</code>. Um grupo de declarações é avaliado apenas após seu fim.</li>
 </ul>
-<div class="my_example">
-<p>veja alguns exemplos de frases. note que frases podem ser compostas de outras frases:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="syntax-variables.html#cb4-1" tabindex="-1"></a>a <span class="co">#é uma frase</span></span>
-<span id="cb4-2"><a href="syntax-variables.html#cb4-2" tabindex="-1"></a><span class="dv">1</span> <span class="co">#é uma frase</span></span>
-<span id="cb4-3"><a href="syntax-variables.html#cb4-3" tabindex="-1"></a>{<span class="dv">1</span>} <span class="co">#é a mesma frase que a anterior</span></span>
+<div class="ex">
+<p>veja alguns exemplos de declarações. note que frases podem ser compostas de outras declarações:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="syntax-variables.html#cb4-1" tabindex="-1"></a>a <span class="co">#é uma declaração</span></span>
+<span id="cb4-2"><a href="syntax-variables.html#cb4-2" tabindex="-1"></a><span class="dv">1</span> <span class="co">#é uma declaração</span></span>
+<span id="cb4-3"><a href="syntax-variables.html#cb4-3" tabindex="-1"></a>{<span class="dv">1</span>} <span class="co">#é a mesma declaração que a anterior</span></span>
 <span id="cb4-4"><a href="syntax-variables.html#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="syntax-variables.html#cb4-5" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co">#é uma frase, uma operação &quot;+&quot; sobre dois &quot;1&quot;&#39;s</span></span>
+<span id="cb4-5"><a href="syntax-variables.html#cb4-5" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co">#é uma declaração, uma operação &quot;+&quot; sobre dois &quot;1&quot;&#39;s</span></span>
 <span id="cb4-6"><a href="syntax-variables.html#cb4-6" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="syntax-variables.html#cb4-7" tabindex="-1"></a>{</span>
 <span id="cb4-8"><a href="syntax-variables.html#cb4-8" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb4-9"><a href="syntax-variables.html#cb4-9" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb4-10"><a href="syntax-variables.html#cb4-10" tabindex="-1"></a>} <span class="co">#é uma frase, compostas por duas frases (meio estranho, eu sei)</span></span>
-<span id="cb4-11"><a href="syntax-variables.html#cb4-11" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>; <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="co">#é a mesma frase que a anterior</span></span></code></pre></div>
+<span id="cb4-10"><a href="syntax-variables.html#cb4-10" tabindex="-1"></a>} <span class="co">#é um bloco de declarações</span></span>
+<span id="cb4-11"><a href="syntax-variables.html#cb4-11" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>; <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="co">#é a mesma declaração que a anterior</span></span></code></pre></div>
+</div>
+<div class="obs">
+<p>a partir de aqui, “declaração” ou “statement” se refere a uma unidade ou a um grupo de declarações.</p>
 </div>
 <p>Nada disso deve fazer muito sentido em termos práticos ainda, tudo bem, apenas é preciso já ir se acostumando com a estrutura geral de um programa.</p>
-<p>Antes de avançar, vou mentir um pouco e dar uma definição simplificada de função, mas que será melhor detalhada no capítulo <a href="functions-environments.html#functions-environments">6</a>.</p>
-<div class="my_result">
-<p><strong>Função</strong><br></p>
-<p>É uma expressão, que depende de variáveis, associada à um nome. Utilizar esse nome, indicando os valores das variáveis envolvidas (entre parênteses <code>()</code>), avalia a expressão, retornando seu resultado.</p>
+<p>Antes de avançar, vou mentir um pouco e dar duas definições, mas que serão melhor detalhadas no futuro.</p>
+<div class="result">
+<p><strong>Expressão</strong><br></p>
+<p>É uma declaração <em>não avaliada</em>, “congelada”, que o R não rodou.</p>
 </div>
-<div class="my_example">
+<div class="result">
+<p><strong>Função</strong><br></p>
+<p>É uma expressão, que depende de variáveis, associada à um nome. Utilizar esse nome, indicando os valores das variáveis envolvidas (entre parênteses <code>()</code>), avalia a declaração, retornando seu resultado.</p>
+</div>
+<div class="ex">
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="syntax-variables.html#cb5-1" tabindex="-1"></a>liar <span class="ot">&lt;-</span> {x <span class="sc">+</span> y} <span class="co">#meramente ilustrativo, a sintaxe real é mais complexa</span></span>
 <span id="cb5-2"><a href="syntax-variables.html#cb5-2" tabindex="-1"></a><span class="fu">liar</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">2</span>) <span class="co">#&gt; 3</span></span>
-<span id="cb5-3"><a href="syntax-variables.html#cb5-3" tabindex="-1"></a><span class="fu">liar</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co">#equivalente à expressão anterior</span></span></code></pre></div>
+<span id="cb5-3"><a href="syntax-variables.html#cb5-3" tabindex="-1"></a><span class="fu">liar</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co">#equivalente à declaração anterior</span></span></code></pre></div>
 </div>
-<p>Com essa definição em mente, vale incluir funções na nossa analogia de parágrafos, também as usamos para organizar o texto.</p>
+<div class="obs">
+<p>nos exemplos deste livro, um comentário no formato <code class="sourceCode r"><span class="co">#&gt; ...</span></code> indica o resultado esperado da declaração que o precede.</p>
+</div>
+<p>Com essa definição em mente, vale incluir funções na nossa analogia de parágrafos, uma vez que também as usamos para organizar o texto.</p>
 <ul>
 <li>No capítulo <a href="functions-environments.html#functions-environments">6</a>, veremos que operadores são funções como qualquer outra, que apenas apresentam uma sintaxe diferente.</li>
 </ul>
@@ -443,8 +442,9 @@ div.csl-indent {
 <p>Um dos tipos de palavras, as variáveis, merecem mais da nossa atenção. Mas não é para elas se acharem demais, dados e funções terão seus próprios capítulos.</p>
 <div id="definindo-variáveis" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Definindo Variáveis<a href="syntax-variables.html#definindo-variáveis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Para definir variáveis, escrevemos seu nome, <code>=</code> ou <code>&lt;-</code>, e a frase que definirá seu valor: <code class="sourceCode r">x <span class="ot">=</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>, <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>.</p>
-<div class="my_result">
+<p>Para definir variáveis, escrevemos seu nome, <code>=</code> ou <code>&lt;-</code>, e a declaração que definirá seu valor: <code class="sourceCode r">x <span class="ot">=</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>, <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>.</p>
+<p>Também podemos usar a função <code class="sourceCode r"><span class="fu">assign</span>()</code>: <code class="sourceCode r"><span class="fu">assign</span>(<span class="st">&quot;x&quot;</span>, <span class="dv">1</span>)</code>.</p>
+<div class="result">
 <p><strong>Variáveis, nomes, e objetos</strong><br></p>
 <p>Ao rodar algo como <code class="sourceCode r">x <span class="ot">&lt;-</span> <span class="dv">1</span></code>, o valor <code>1</code> é salvo na memória do computador, e associado ao nome <code>x</code>. Note que temos três parcelas:</p>
 <ul>
@@ -453,12 +453,18 @@ div.csl-indent {
 <li><strong>Variável</strong> se refere ao conjunto nome-objeto.</li>
 </ul>
 </div>
-<p>No capítulo <a href="data-attributes.html#data-attributes">3</a>, veremos que “objeto” é algo muito geral. Especialmente, <em>names</em>, <em>calls</em>, e <em>expressions</em> também são objetos.</p>
-<p>O leitor ainda não deve ter o contexto suficiente pra essa frase fazer tanto sentido, e tudo bem. Ainda assim, já vale para eu me retratar:</p>
-<div class="my_result">
+<p>No capítulo <a href="data-attributes.html#data-attributes">3</a>, veremos que “tudo que existe no R é um objeto”, isto é, esse conceito é muito abrangente.</p>
+<p>Por exemplo, na seção anterior, falei sobre as unidades que comõe declarações. Elas também são objetos.</p>
+<div class="result">
 <p><strong>Objetos da linguagem</strong><br></p>
-<p>Existem três tipos de objtos que compõe a linguagem R, <strong><em>names</em></strong>, <strong><em>calls</em></strong>, e <strong><em>expressions</em></strong> (respectivamente). Note que <em>expressions</em> são algo mais geral, podendo ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</p>
+<p>Existem três tipos de objtos que compõe a linguagem R:</p>
+<ul>
+<li><strong><em>names</em></strong>, nomes de variáveis.</li>
+<li><strong><em>calls</em></strong>, chamadas de funções.</li>
+<li><strong><em>expressions</em></strong> declarações não avaliadas. Note que expressões podem ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</li>
+</ul>
 </div>
+<p>Pense que valores, “objetos sem nome”, são efêmeros, por isso que não entram na lista acima.</p>
 <p>No futuro, ficará claro que termos tão poucos objetos compondo a linguagem é algo distintivo do R, e gerará resultados que, eu pelo menos, considero muito bonitos (e gosto não se discute).</p>
 </div>
 <div id="copy-on-modify" class="section level3 hasAnchor" number="2.2.2">
@@ -471,10 +477,13 @@ div.csl-indent {
 <p>No R, a realidade é a primeira opção. Porém, se <code>y</code> for alterado, <code>x</code> não é (e vice versa). O que ocorre é que uma nova posição na memória é criada para armazenar (ao menos parte da) informação do novo <code>y</code>. Esse processo, de apenas “separar”/“copiar” objetos quando modificados, é chamado de <strong>copy-on-modify</strong>.</p>
 <p>Diferentes tipos de dados terão diferentes relações com esse processo, mas vou poupá-los disso. O importante é saber que não temos os objetos são copiados quando modificados, alterar <code>y</code> não altera <code>x</code> e vice versa, independente da complexidade do objeto.</p>
 <p>Em outras palavras:</p>
-<div class="my_result">
+<div class="result">
 <p><strong>Copy-on-modify</strong><br></p>
 <p>No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.</p>
 <p>Existem duas exeções: objetos com apenas uma referência, e <em>ambientes</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Esses são alterados “na hora”/“no lugar”, ou <em>modify-in-place</em>.</p>
+</div>
+<div class="extra">
+<p>este tema é complexo, e foi bastante simplificado. Vide <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span>, seções <a href="https://adv-r.hadley.nz/names-values.html#copy-on-modify">“2.3 - Copy-on-modify”</a> e <a href="https://adv-r.hadley.nz/names-values.html#modify-in-place">“2.5 - Modify-in-place”</a>. Os exemplos utilizando a função <a href="https://adv-r.hadley.nz/names-values.html#tracemem"><code class="sourceCode r"><span class="fu">tracemem</span>()</code></a> são especialmente úteis.</p>
 </div>
 </div>
 <div id="outras-características" class="section level3 hasAnchor" number="2.2.3">
@@ -615,15 +624,15 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<ul>
-<li><em>Observação:</em> na coluna de “Uso”, “logi” se refere a qualquer valor que se comporte como um valor booleano, “num” a qualquer valor que se comporte como número, “expr” à qualquer expressão, e “x”/“y” à valores mais genéricos, ou à nomes de variáveis.</li>
-</ul>
+<div class="obs">
+<p>na coluna de “Uso”, “logi” se refere a qualquer valor que se comporte como um valor booleano, “num” a qualquer valor que se comporte como número, “expr” à qualquer expressão, e “x”/“y” à valores mais genéricos, ou à nomes de variáveis.</p>
+</div>
 <p>Agora vou apresentar a ordem de precedência da aplicação dos operadores. Associatividade se refere à como são resolvidos “empates”, “direita pra esquerda” significa que o operador mais à direita é analisado antes. Tudo ficará mais claro no exemplo seguinte.</p>
 <table>
 <colgroup>
-<col width="29%" />
-<col width="45%" />
-<col width="25%" />
+<col width="36%" />
+<col width="40%" />
+<col width="23%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -634,102 +643,102 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">(), {}</td>
+<td align="left"><code>()</code>, <code>{}</code></td>
 <td align="left">agrupadores</td>
 <td align="left">direita pra esquerda</td>
 </tr>
 <tr class="even">
-<td align="left">::, :::</td>
+<td align="left"><code>::</code>, <code>:::</code></td>
 <td align="left">acessar <em>namespaces</em> (*)</td>
 <td align="left">direita pra esquerda</td>
 </tr>
 <tr class="odd">
-<td align="left">$, @</td>
+<td align="left"><code>$</code>, <code>@</code></td>
 <td align="left">extração de <em>components</em>/<em>slots</em> (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">[, [[</td>
+<td align="left"><code>[</code>, <code>[[</code></td>
 <td align="left">indexação (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">^</td>
+<td align="left"><code>^</code></td>
 <td align="left">exponenciação</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">-, + (unary)</td>
+<td align="left"><code>-</code>, <code>+</code> (unário)</td>
 <td align="left">mais e menos unários</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">:</td>
+<td align="left"><code>:</code></td>
 <td align="left">sequências (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">%%, %/%, %xyz%, |&gt;</td>
+<td align="left"><code>%%</code>, <code>%/%</code>, <code>%xyz%</code>, <code>&amp;#124;&gt;</code></td>
 <td align="left">operadores especiais (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">*, /</td>
+<td align="left"><code>*</code>, <code>/</code></td>
 <td align="left">multiplicação, divisão</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">+, - (binary)</td>
+<td align="left"><code>+</code>, <code>-</code> (binário)</td>
 <td align="left">adição, subtração</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">&gt;, &gt;=, &lt;, &lt;=, ==, !=</td>
+<td align="left"><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code></td>
 <td align="left">comparações</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">!</td>
+<td align="left"><code>!</code></td>
 <td align="left">“não” lógico</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">&amp;, &amp;&amp;</td>
+<td align="left"><code>&amp;</code>, <code>&amp;&amp;</code></td>
 <td align="left">“e” lógico (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">|, ||</td>
+<td align="left"><code>&amp;#124;</code>, <code>&amp;#124;&amp;#124;</code></td>
 <td align="left">“ou” lógico (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">~ (unary and binary)</td>
+<td align="left"><code>~</code> (unário e binário)</td>
 <td align="left">fórmula (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="even">
-<td align="left">-&gt;, -&gt;&gt;</td>
+<td align="left"><code>-&gt;</code>, <code>-&gt;&gt;</code></td>
 <td align="left">definição pra direita (*)</td>
 <td align="left">esquerda pra direita</td>
 </tr>
 <tr class="odd">
-<td align="left">&lt;- ,&lt;&lt;-</td>
+<td align="left"><code>&lt;-</code>, <code>&lt;&lt;-</code></td>
 <td align="left">definição pra esquerda (*)</td>
 <td align="left">direita pra esquerda</td>
 </tr>
 <tr class="even">
-<td align="left">= (definidor)</td>
+<td align="left"><code>=</code> (definidor)</td>
 <td align="left">definição pra esquerda</td>
 <td align="left">direita pra esquerda</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><em>Observação:</em> linhas com um “(*)” apresentam operadores que ainda não foram apresentados.</li>
-</ul>
-<div class="my_example">
-<p>para deixar mais claro, na expressão <code>(3+6)/(1+2)/5^4</code> o seguinte ocorre:</p>
+<div class="obs">
+<p>linhas com um “(*)” apresentam operadores que ainda não foram apresentados.</p>
+</div>
+<div class="ex">
+<p>para deixar mais claro, na declaração <code>(3+6)/(1+2)/5^4</code> o seguinte ocorre:</p>
 <ul>
 <li><code>()</code> são analizados primeiro, porque tem precedência (estão acima na tabela).
 <ul>
@@ -741,6 +750,9 @@ div.csl-indent {
 <li>Como é da esquerda pra direita, primeiro <code>9/3</code> vira <code>3</code>, e depois <code>3/625</code> vira <code>0.0048</code>.</li>
 </ul></li>
 </ul>
+</div>
+<div class="extra">
+<p>Vide <span class="citation">(<a href="#ref-workr">Stephanie Locke 2017b</a>)</span>, capítulo “6 - Basic Operations” para mais detalhes e exemplos. Cuidado, alguns conceitos utilizados lá não foram vistos ainda.</p>
 </div>
 <div class="double-hrule">
 
@@ -754,20 +766,22 @@ div.csl-indent {
 <h4>Sintaxe<a href="syntax-variables.html#sintaxe-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Neste capítulo, vimos a estrutura geral de um programa:</p>
 <ul>
-<li>As palavras do programa, podem ser valores, variáveis, ou funções.
+<li>As palavras do programa, podem ser <em>valores</em>, <em>variáveis</em>, ou <em>funções</em>.
 <ul>
-<li>Valores serão o tema do próximo capítulo.</li>
+<li>Valores serão o tema do próximo capítulo, e funções, do capítulo @(functions-environments).</li>
 <li>Vimos como imputar cada tipo de palavra.</li>
 </ul></li>
-<li>As frases do programa são combinações de palavras.
+<li>As frases (<em>declarações</em>) do programa são combinações de palavras.
 <ul>
-<li>Podem ser delimitadas por quebras de linha ou chaves.</li>
-<li>Podem ser organizadas em parágrafos vias chaves, ou “nomeadas” via funções.
+<li>Costumam ser delimitadas por quebras de linha.</li>
+<li>Podem ser organizadas em parágrafos vias chaves, ou “nomeadas” via funções.</li>
+</ul></li>
+<li><em>Scripts</em>, os programas escritos no R, são sequências de frases.</li>
+</ul>
+<p>Vimos definições inciais para dois conceitos importantes:</p>
 <ul>
-<li>Inclusive, vimos que uma função, de modo simplista, é uma expressão, que depende de variáveis, associada à um nome.</li>
-</ul></li>
-</ul></li>
-<li><em>Scripts</em> são sequências de frases.</li>
+<li>Uma <em>expressão</em> é uma declaração ainda não avaliada.</li>
+<li>Uma <em>função</em> é uma expressão, que depende de variáveis, associada à um nome.</li>
 </ul>
 </div>
 <div id="variáveis-1" class="section level4 unnumbered hasAnchor">
@@ -782,22 +796,22 @@ div.csl-indent {
 <ul>
 <li>A dinâmica da memória no R é pautada pelo conceito de <em>copy-on-modify</em>. No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.
 <ul>
-<li>As exeções são objetos com apenas uma referência, e ambientes, que usam <em>modify-in-place</em>.</li>
+<li>As exeções são objetos com apenas uma referência, e ambientes, que usam <em>modify-in-place</em> (são modificados “no lugar”).</li>
 </ul></li>
-<li>O conceito de objeto é muito geral. Inclusive, a prória linguagem R é composta por (apenas) três tipos de objetos: <strong><em>names</em></strong>, <strong><em>calls</em></strong>, e <strong><em>expressions</em></strong>. <em>Expressions</em> são algo mais geral, podendo ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</li>
+<li>O conceito de objeto é muito geral. Inclusive, a prória linguagem R é composta por (apenas) três tipos de objetos: <strong><em>names</em></strong>, <strong><em>calls</em></strong>, e <strong><em>expressions</em></strong>. Expressões são algo mais geral, podendo ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</li>
 </ul>
 </div>
 <div id="operadores-1" class="section level4 unnumbered hasAnchor">
 <h4>Operadores<a href="syntax-variables.html#operadores-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Por fim, apresentamos os operadores básicos, seu uso, e ordem de preferência. Também vimos que operadores são funções, apenas com sintaxe diferente.</p>
+<p>Por fim, apresentamos os operadores básicos, seu uso, e ordem de preferência. Foi dito que operadores são funções, apenas com sintaxe diferente.</p>
 <hr />
 </div>
 </div>
 <div id="exercícios" class="section level3 unnumbered hasAnchor">
 <h3>Exercícios<a href="syntax-variables.html#exercícios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><em>Obsservação:</em> os exercícios usam variáveis de mesmo nome. Lembre-se de limpar as definições de variáveis após completar um exercício, rodando a frase <code>rm(list = ls())</code>.</li>
-</ul>
+<div class="obs">
+<p>os exercícios usam variáveis de mesmo nome. Lembre-se de limpar as definições de variáveis após completar um exercício, rodando a frase <code>rm(list = ls())</code>.</p>
+</div>
 <div id="variáveis-2" class="section level4 unnumbered hasAnchor">
 <h4>Variáveis<a href="syntax-variables.html#variáveis-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
@@ -815,9 +829,9 @@ div.csl-indent {
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="syntax-variables.html#cb7-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb7-2"><a href="syntax-variables.html#cb7-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">list</span>(a, a)</span>
 <span id="cb7-3"><a href="syntax-variables.html#cb7-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> a <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
-<ul>
-<li><em>Obsservação:</em> você verá a função <code>list()</code> no próximo capítulo, mas saiba que ela cria uma lista, uma coleção, dos elementos que a são passados como argumentos.</li>
-</ul>
+<div class="obs">
+<p>você verá a função <code>list()</code> no próximo capítulo, mas saiba que ela cria uma lista, uma coleção, dos elementos que a são passados como argumentos.</p>
+</div>
 <ol start="3" style="list-style-type: decimal">
 <li>Leia a página de ajuda da função <code>make.names()</code> para aprender as regras completas de definição de nomes, sobre como o R converte nomes não sintáticos. Preveja qual será o resultado das chamadas abaixo.</li>
 </ol>
@@ -983,24 +997,30 @@ div.csl-indent {
 <td align="left"><code>x = expr</code></td>
 </tr>
 <tr class="odd">
+<td align="left">definidores</td>
+<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/assign.html"><code>assign()</code></a></td>
+<td align="left">definidores</td>
+<td align="left"><code>assign("x", expr)</code></td>
+</tr>
+<tr class="even">
 <td align="left">outros</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/rm.html"><code>rm()</code></a></td>
 <td align="left">limpa objetos do ambiente</td>
 <td align="left"><code>rm(x)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">nomes</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/make.names.html"><code>make.names()</code></a></td>
 <td align="left">NA</td>
 <td align="left">NA</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">ajuda</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/help.html"><code>help()</code></a>, <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Question.html"><code>?</code></a></td>
 <td align="left">procurar ajuda na documentação</td>
 <td align="left"><code>help(x)</code>, <code>?x</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">ajuda</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/vignette.html"><code>vignette()</code></a></td>
 <td align="left">procurar vignettes</td>
@@ -1012,8 +1032,40 @@ div.csl-indent {
 </div>
 <div id="referências" class="section level3 unnumbered hasAnchor">
 <h3>Referências<a href="syntax-variables.html#referências" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As referências principais deste capítulo são:</p>
+<ul>
+<li><span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span> capítulo <a href="https://adv-r.hadley.nz/names-values.html">“2 - Names and Values”</a>, excluindo as seções 2.4 e 2.6.</li>
+<li><span class="citation">(<a href="#ref-r-lang">R Core Team 2024e</a>)</span> seções <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Language-objects-1">“2.1.3 - Language Objects”</a> e <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Expression-objects-1">“2.1.3 - Expression Objects”</a>.</li>
+<li><span class="citation">(<a href="#ref-r-intro">R Core Team 2024a</a>)</span> seções <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vectors-and-assignment-1">“2.1 - Vectors and Assingment”</a> e <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1">“2.2 - Vector Arithmetic”</a>.</li>
+<li><span class="citation">(<a href="#ref-r-int">R Core Team 2024d</a>)</span> seção <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1">“2.1 - SEXPs”</a>.</li>
+<li><span class="citation">(<a href="#ref-r-helps">R Core Team 2024f</a>)</span> os documentos de ajuda das funções aqui expostas.</li>
+</ul>
+<div class="extra">
+<p>Vide <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span> seções <a href="https://adv-r.hadley.nz/names-values.html#object-size">“2.4 - Object Size”</a> e <a href="https://adv-r.hadley.nz/names-values.html#gc">“2.6 - Unbinding and the Garbage Collector”</a>.</p>
+</div>
 
 </div>
+</div>
+</div>
+<h3>Referências<a href="referências-14.html#referências-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-advr" class="csl-entry">
+Hadley Wickham. 2019. <em>Advanced <span>R</span></em>. 2nd ed. <a href="https://adv-r.hadley.nz/index.html">https://adv-r.hadley.nz/index.html</a>.
+</div>
+<div id="ref-r-intro" class="csl-entry">
+R Core Team. 2024a. <span>“An <span>Introduction</span> to <span>R</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</a>.
+</div>
+<div id="ref-r-int" class="csl-entry">
+———. 2024d. <span>“R <span>Internals</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.pdf">https://cran.r-project.org/doc/manuals/r-release/R-ints.pdf</a>.
+</div>
+<div id="ref-r-lang" class="csl-entry">
+———. 2024e. <span>“R <span>Language</span> <span>Definition</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf">https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf</a>.
+</div>
+<div id="ref-r-helps" class="csl-entry">
+———. 2024f. <span>“R: <span>Package</span> <span>Index</span>.”</span> <a href="https://stat.ethz.ch/R-manual/R-patched/doc/html/packages.html">https://stat.ethz.ch/R-manual/R-patched/doc/html/packages.html</a>.
+</div>
+<div id="ref-workr" class="csl-entry">
+———. 2017b. <em>Working with <span>R</span></em>. 1st ed. <a href="https://itsalocke.com/files/workingwithr.pdf">https://itsalocke.com/files/workingwithr.pdf</a>.
 </div>
 </div>
 <div class="footnotes">
@@ -1043,17 +1095,7 @@ div.csl-indent {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
+"sharing": null,
 "fontsettings": {
 "theme": "white",
 "family": "sans",

@@ -12,29 +12,29 @@ pre {
 pre code {
   white-space: inherit;
 }
-.my_result {
-  background-color: #EEDCCA;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-.my_result p{
-    display: inline;
-}
-.my_result::before {
-  content: "Resultado - ";
-  font-weight: bold;
-}
-.my_example {
+.result {
   background-color: #DCF0DC;
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
 }
-.my_example p{
+.result p{
     display: inline;
 }
-.my_example::before {
+.result::before {
+  content: "Resultado - ";
+  font-weight: bold;
+}
+.ex {
+  background-color: #EEDCCA;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.ex p{
+    display: inline;
+}
+.ex::before {
   content: "Exemplo: ";
   display: inline;
   font-weight: bold;
@@ -54,4 +54,32 @@ li > p:not(:last-child) {
 }
 li > ul:last-child {
   margin-bottom: 1em !important;
+}
+a:link {
+  color: #137458 !important;
+}
+a:visited {
+  color: #0D4D3B !important;
+}
+.obs {
+    margin: 0 0 0 20px;
+}
+.obs:before {
+  content: "💬 Observação: ";
+  font-size: 90%;
+  font-style: italic;
+}
+.obs p{
+    display: inline;
+	font-size: 90%;
+}
+.extra {
+    margin: 0 0 0 20px;
+}
+.extra:before {
+  content: "🔍 Extra: ";
+  font-style: italic;
+}
+.extra p{
+    display: inline;
 }

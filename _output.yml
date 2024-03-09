@@ -1,7 +1,7 @@
-output_dir: "docs"
 bookdown::gitbook:
   css: style.css
   config:
+    sharing: null
     toc:
       collapse: section
       before: |
