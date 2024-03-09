@@ -1,1 +1,27 @@
 # Manipulação de Dados
+
+**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

@@ -1,7 +1,6 @@
-# Visualização Gráfica
+# Outras Aplicações
 
 **Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
-
 
 
 <div class="double-hrule"></div>

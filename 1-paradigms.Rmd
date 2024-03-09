@@ -1,7 +1,110 @@
 # Paradigmas de Programação {#paradigms}
 
+**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+
 ## Programação Funcional
+
+Apresentação das ideias gerais da programação funcional. O grosso da aplicação será deixada para a segunda parte do livro, durante a explicação do pacote _purrr_. A referência base são os capítulos [9, 10, e 11, do "Advanced R"](https://adv-r.hadley.nz/fp.html).
+
+
 
 ## Programação Orientada ao Objeto
 
+OOP centra a maneira de resolver problemas em objetos métodos para os manipular\medskip
+
+O R é uma linguagem funcional (orientada à funções), mas tem pacotes que incluem funcionalidades de OOP\medskip\pause
+
+::: block
+#### Definição
+OOP no R é bem diferente de em outras linguagens mas a ideia básica é a mesma:
+
+- Cada objeto tem uma classe _class_ (o atributo)
+- Cada classe tem _methods_ "funções" que se aplicam a uma classe específica
+- Classes podem ser criadas com base em outras, herdando os métodos de sua "classe pai"
+:::
+
+
+### Sistemas de OOP
+No R, existem três sistemas principais:
+
+- S3, o primeiro, usado no R base. É bastante flexível mas pouco rigoroso
+- R6, que estende a característica _modify-in-place_ dos ambientes para outros tipos de objetos
+- S4, uma versão mais rigorosa do S3, útil para grandes projetos
+
+Neste curso, vamos falar apenas sobre o sistema S3\medskip
+
+
+### Polimorfismo
+A principal aplicação de OOP no R é o uso de polimorfismo, funções assumirem diferentes formas dependendo da classe de seu (primeiro) argumento:
+
+```{r}
+x <- sample(1:10, 20, TRUE)
+
+summary(as.numeric(x))
+#   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.  
+#   1.00    3.75    6.50    6.10    9.00   10.00 
+
+summary(as.factor(x))
+#   1  3  4  5  6  7  8  9 10 
+#   2  3  1  1  3  3  1  5  1 
+```
+
+Chamamos essas funções de funções genéricas/_generics_
+
+
+### Funções genéricas
+Funções genéricas são um intermediário. Elas observam a classe do argumento passado, descobrem qual é o método correto a ser executado:\medskip
+
+- Chamamos a função (genérica) -- `fun_name(x)`{.r}\pause
+- A função usa procura o método correto com base na classe de `x` -- `UseMethod("fun_name")`{.r} 
+  - O nome desse processo é _method dispatch_\pause
+- É encontrado o método, uma "função filho" -- `fun_name.class_of_x(x)`{.r} 
+
+Todas as funções genéricas tem um método _default_ `fun_name.default()`, caso não exista um método para uma classe específica
+
+
+Intuitivamente, é similar usar um _if else_:
+
+```{r}
+fun_name.factor <- function(x) ...
+fun_name.numeric <- function(x) ...
+fun_name.default <- function(x) ...
+
+fun_name <- function(x) {
+  if(is.factor(x)) { fun_name.factor(x)
+  } else if(is.numeric(x)) { fun_name.numeric(x)
+  } else { fun_name.default(x) }
+}
+```
+
+A diferença é flexibilidade. Qualquer um pode criar uma classe e adicionar um método à uma função genérica, sem precisar alterar o "código base" da função
+
+
+
 ## Metaprogramação
+
+Apresentação das ideias gerais da metaprogramação. especialmente sobre as bases do tidyverse. A referência base são os capítulos [17, 18, 19, e 20, do "Advanced R"](https://adv-r.hadley.nz/metaprogramming.html).
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

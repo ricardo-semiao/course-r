@@ -1,5 +1,7 @@
 # Outros Tópicos {#other-topics}
 
+**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+
 ## Projetos, Github, e Addins
 
 ## Debbuging
@@ -11,3 +13,27 @@
 ## Organização de Código e Boas Práticas
 
 (tidyverse style), lintr, e o outro pacote lá
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

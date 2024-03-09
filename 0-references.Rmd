@@ -1,1 +1,5 @@
-`r if (knitr::is_html_output()) '# References {-}'`
+# Referências {-}
+
+<!-- `r if (knitr::is_html_output()) ''` -->
+
+<div id="refs"></div>

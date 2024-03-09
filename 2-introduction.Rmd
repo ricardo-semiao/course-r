@@ -1,1 +1,3 @@
 # Ciência de Dados com o Tidyverse {-}
+
+**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.

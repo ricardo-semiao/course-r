@@ -1,11 +1,434 @@
 # Funções e Ambientes {#functions-environments}
 
+**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+
 ## Fundamentos
+
+### Introdução
+
+Funções no R são expressões que salvamos como um objeto, para utilizá-las repetidas vezes, variando seus argumentos\medskip
+
+Elas são criadas com a seguinte sintaxe:
+
+```{r}
+fun_name <- function(x, y) { x + y } #ou
+fun_name <- \(x, y) { x + y }
+fun_name(1, 2) #> 3
+```
+\pause
+
+Elas têm três componentes:
+
+- Seus argumentos (`x` e `y`), acessados com `formals(fun_name)`{.r}
+- Seu corpo (`x + y`), acessado com `body(fun_name)`{.r}
+- Seu _enviroment_, um objeto que determina onde a função deve procurar os valores das variáveis relevantes\footnote[frame]{Mais sobre em breve}
+
+
+\framesubtitle{Funções first-class}
+As únicas exceções existem no R base, e são escritas em C em vez de R, por performance. Elas são as **funções primitivas**, e não tem os componentes: `sum #> .Primitive("sum")`\medskip
+
+Como dito, as funções são objetos, criadas da mesma forma que `x <- 3`{.r}. Esse é o conceito de funções **first-class**\medskip\pause
+
+Como qualquer objeto:
+
+- Elas tem um tipo. "closure", ou para as primitivas "builtin" e "special"
+- Podem ser passadas como argumentos para outras funções
+- Podem ser salvas em listas
+
+```{r}
+funs <- list(half = function(x) x / 2,
+             double = function(x) x * 2)
+funs$double(10) #> [1] 20
+```
+
+
+\framesubtitle{Outras características}
+**Funções anônimas:** note que não precisamos atribuídas um nome à uma função. Muito comum ao passar funções à outras\medskip\pause
+
+**Call's alternativas:** podemos passar os argumentos via uma lista com a função `do.call()`:
+
+```{r}
+do.call(fun_name, list(x = 1, y = 2)) #> 3
+```
+\pause
+
+**Recursividade:** funções no R podem chamar elas mesmas. Vide o exemplo abaixo:
+
+```{r}
+recursive_factorial <- function(x) {
+  if (x == 0) return(1)
+  else return(x * recursive.factorial(x - 1)) }
+```
+
+**Argumentos padrão:** podemos deixar um argumento pré-definido: `function(x, y = 1) ...`
+
+
+### Formatos e combinações
+
+No R, "Everything that exists is an object. Everything that happens is a function call" -John Chambers\medskip
+
+::: {.example}
+#### Exemplo
+Qual conceito visto hoje exemplifica a primeira parte do slogan acima?
+:::
+
+\pause
+A segunda parte do slogan fica clara ao saber que operadores e keywords também são funções, apenas com outro formato\medskip
+
+A mais comum é o formato _prefix_: `fun(x, y, ...)`{.r}. Veremos que os outros três podem ser escritos assim
+
+
+\framesubtitle{Outros formatos}
+- **Infix**: a função vai no meio de seus argumentos, `x + y`
+  - Modo _prefix_: `` `+`(x, y) ``
+  - Para definir use um nome que começe e termine com "%": `%&% <- \(x, y) paste(x, y)`\pause
+- **Replacement**: funções que alterem valores de um objeto: `names(df) <- ...`
+  - Modo _prefix_: `` `names<-`(df, ...) ``
+  - [Como definir](https://adv-r.hadley.nz/functions.html#replacement-functions)\pause
+- **Special**: funções muito importantes para o R, cada uma com uma forma própria, como `[[`, `if`, and `for`
+  - `` `if`(x > 0, x, x * (-1))``
+  - `` `for`(var, seq, action) ``
+  - `` `next`() ``, e `` `break`() ``
+  
+Obs: use isso para achar a documentação de funções `` ?`[` ``
+
+
+Existem três formas de combinar funções:
+
+- **Nesting**: `g(f(x))`, `f` realiza sua operação em `x`, e o resultado vira argumento para `g`
+  - É enxuto para pequenas expressões, mas pode ficar confuso em expressões muito longas\pause
+- **Objetos intermediários**: `y <- f(x); z <- g(y)`
+  - Bom quando os valores intermediários são importantes, mas desnecessário quando não são\pause
+- **Piping**: os operadores `|>` e `` magrittr::`%>%` `` chamam "pipe" (cano). Eles transformam a avaliação de "dentro para fora" em "da esquerda pra direita": `f(x) %>% g()`
+  - Facilita a leitura de expressões longas, mas só serve quando é apenas um objeto que irá "avançar" ao longo da função
+
+
 
 ## Ambientes
 
+::: block
+Um _enviroment_ é como uma lista nomeada, que associa nomes de variáveis aos seus valores. São neles que as funções buscarão os valores das variáveis
+:::
+
+**Ambientes são objetos** (como tudo que existe no R), com tipo "enviroment", onde:
+
+- Todos os nomes devem ser únicos
+- Não existe uma ordem nos elementos
+- Todo ambiente tem um um "ambiente pai"\footnote[frame]{Como uma lista dentro de outra}
+- São o único tipo de objeto que não é _copied when modified_
+
+
+::: block
+No R, as funções salvam o ambiente onde foram criadas como parte de si, "they enclose their enviroments", são **closures**
+
+- Portanto, o lugar onde buscam as variáveis não muda a depender de onde foram chamadas
+:::
+
+Funções criam um ambiente próprio para serem executadas:
+
+- Filho de onde foram criadas
+- Contém os argumentos, e os valores criados em seu corpo
+
+As funções buscam valores nos ambientes, começando pelo próprio, e avançando para os ambientes-pai até encontrar a variável procurada
+
+<!--
+\begin{figure}
+\centering
+\caption*{Simplificação dos ambientes:}
+\includegraphics[width=0.9\textwidth, keepaspectratio]{../Aula_i3/envs.png}
+\end{figure}
+-->
+
+1. _base_: é o ambiente da pacote base do R, o pacote que carrega todos os outros
+2. Ambientes para pacotes: na ordem de chamada, pelo R (pacotes built-in), e depois pelo usuário (via `library()`)
+3. Ambiente global: o ambiente diretamente interativo
+4. Ambiente temporário: execução de funções
+
+
+
 ## Scoping e Evaluation
 
-## OOP: Funções Genéricas
+### Scoping
+Agora sim podemos falar sobre como uma função busca por valores, a operação de _scoping_\medskip
+
+::: block
+#### Definição
+O método utilizado pelo R é o _lexical scoping_ (_parse-time_) e segue quatro regras principais (abaixo)
+:::
+\pause
+
+- **Name masking**: nomes/objetos definidos dentro de uma função, e seus argumentos, "mascaram" nomes definidos fora da função
+  - O R só buscará uma variável no ambiente-pai, se não encontrá-la no ambiente da função\pause
+- "Tudo que existe é um objeto", logo a regra acima também vale para a **busca de funções**
+  - Se uma função e um objeto tem mesmo nome, R interpreta `nome()` como sendo a função, e `nome` como o objeto
+
+- **Início do zero**: um novo ambiente temporário é criado a cada chamada
+  - Não armazenamos informação de chamadas passadas, cada chamada é independente (a menos que explicitamente se defina o contrário)\pause
+- **Dynamic lookup**: as funções buscam os valores na hora da chamada, não quando são criadas
+  - O "onde" não muda (closures), mas o "quando" sim
+  - Resultados podem diferir antes e depois de se alterar uma variável relevante do ambiente global
+  
+  
+\framesubtitle{Exemplos}
+::: {.example}
+#### Name masking
+Qual será o resultado do código abaixo?
+\vspace{-1em}
+```{r}
+a <- 1; b <- 2; c <- 3
+
+f <- function(b) {
+  a <- 10
+  c(a, b, c)
+}
+
+f(b = 20)
+```
+\pause
+**Resposta:**
+\vspace{-1em}
+```{r}
+#> [1] 10 20  3
+```
+\vspace{-1em}
+:::
+
+
+\framesubtitle{Exemplos}
+::: {.example}
+#### Name masking com funções
+Qual será o resultado do código abaixo?
+\vspace{-1em}
+```{r}
+f <- function(x) x + 1
+
+g <- function() {
+  f <- function(x) x + 100
+  f(10)
+}
+
+g()
+```
+\pause
+**Resposta:**
+\vspace{-1em}
+```{r}
+#> [1] 110
+```
+\vspace{-1em}
+:::
+
+
+\framesubtitle{Exemplos}
+::: {.example}
+#### Início do zero
+Qual será o resultado do código abaixo?
+\vspace{-1em}
+```{r}
+x <- 1
+f <- function() x <- x + 1; x
+
+f()
+f()
+x
+```
+\pause
+**Resposta:**
+\vspace{-1em}
+```{r}
+#> [1] 2
+#> [1] 2
+#> [1] 1
+```
+\vspace{-1em}
+:::
+
+
+\framesubtitle{Exemplos}
+::: {.example}
+#### Dynamic lookup
+Qual será o resultado do código abaixo?
+\vspace{-1em}
+```{r}
+f <- function() x + 1
+
+x <- 1
+f()
+
+x <- 100
+f()
+
+```
+\pause
+**Resposta:**
+\vspace{-1em}
+```{r}
+#> [1] 2
+#> [1] 101
+```
+\vspace{-1em}
+:::
+
+
+### Lazy evaluation
+
+Falamos sobre como os valores dos argumentos são buscados na hora da chamada, mas podemos ser mais específicos\medskip
+
+::: block
+#### Definição
+Os argumentos são **lazily evaluated**: só são avaliados quando "acessados". Isso é feito via armazená-los em um tipo de dado chamado **promessa**, que tem três componentes:
+
+- Uma expressão, que será calculada no futuro
+- O ambiente onde ela deve ser avaliada
+- Um valor, o resultado da expressão, que substitui a promessa após ser calculado
+:::
+
+
+Isso permite incluir argumentos padrão que dependam de outros argumentos:
+
+```{r}
+f <- function(x = 1, y = x * 2, z = a + b) {
+  a <- 3; b <- 4
+  c(x, y, z)
+}
+```
+
+Além de incluir argumentos que possivelmente exigem muita computação, sem gerar custo quando não forem utilizados:
+
+```{r}
+mean_unif <- function(a, b, sim = FALSE,
+                      x = runif(1000, a, b)) {
+  if (sim) mean(x) else (a + b)/2
+}
+```
+
+
 
 ## Conceitos Adicionais
+
+### Dot dot dot
+Funções podem ter o argumento especial `...` pronunciado "dot-dot-dot", mas muitas vezes chamado de "varargs" em outras linguagens\medskip
+
+Ele é útil se você não sabe listar todos os argumentos que sua função pode vir a receber:
+
+- Em funções que recebem funções como argumento (como `lapply()`)
+- Em funções genéricas (passar argumentos para métodos)
+
+```{r}
+function(x, fun, ...) { fun(x, ...) }
+```
+
+
+### Resultados
+Todas as funções retornam algo:
+
+- `return()` é usado para definir o resultado explicitamente, e encerrar a execução da função
+  - Útil em conjunto com if & else
+- caso contrário, a função retorna o valor de sua última linha
+- `invisible()` pode ser usado para retornar um valor sem imprimi-lo
+  - `(a <- 2) #> [1] 2`{.r}
+
+
+### Exit Handlers
+Você pode incluir avisos de erros em suas funções:
+
+- `stop("Erro: x deve ser numérico")`{.r}
+- `stopifnot(is.numeric(x))`{.r}
+
+Podemos usar a função `on.exit()` para rodar uma expressão quando uma função finalizar, independente do motivo
+
+
+### Pacotes
+Um _package_ é um conjunto de funções com um tema/objetivo específico. Eles contém uma documentação explicativa e as vezes datasets para exemplos\medskip
+
+O CRAN armazena pacotes que passam testes específicos, mas qualquer um pode criar e postar um pacote no GitHub. Vide `install.packages()` e o pacote "devtools"\medskip
+
+Após instalar, para carregar as funções do pacote na lista de ambientes, use `library(pkg_name)`\medskip
+
+Para aprender como criar seu próprio pacote, vide [este tutorial do MIT](https://web.mit.edu/insong/www/pdf/rpackage_instructions.pdf) e o livro [R Packages, 2nd Edition](https://r-pkgs.org/), também de Hadley Wickham
+
+
+\framesubtitle{Pacotes built-in}
+O R base conta com 7 pacotes built-in:
+
+- "base" (a fundação do R, que inicia todos os outros pacotes)
+- "graphics" e "grDevices" (funções gráficas)
+- "utils" (funções utilitárias)
+- "methods" (funções para OOP)
+- "datasets" (bases de dados para treino)
+- "stats" (funções estatísticas)
+
+Aprender sobre algumas das funções built-in mais comuns ficará de exercício
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+\framesubtitle{Funções}
+- Sintaxe (de criação)
+- Componentes (argumentos, corpo, e ambiente)
+  - Exceção: funções primitivas
+- Funções no R são first-class e closures
+- Formas: prefix, infix, replacement, e special
+- Combinação: nesting, objetos intermediários, e piping
+- Outros: funções anônimas, `do.call()`, recursividade, e argumentos padrão
+
+
+\framesubtitle{Ambientes}
+- São "listas nomeadas" onde as funções buscarão pelas variáveis
+- Além de salvar o ambiente em que foram criadas, funções criam um ambiente filho para serem executadas
+- Base $\leftarrow$ Pacotes $\leftarrow$ Global $\leftarrow$ Função (temporário)
+
+
+\framesubtitle{Lexical scoping e lazy evaluation}
+- Name masking: nomes na função tem prioridade, inclusive funções
+- Início do zero: um novo ambiente vazio é criado a cada chamada
+- Dynamic lookup: os valores são buscados na hora da chamada
+- Lazy evaluation: os argumentos só são avaliados quando acessados
+- Promessas (expressão, ambiente, e valor)
+
+
+\framesubtitle{Outros temas}
+**OOP:**
+
+- Classes, objetos, e métodos
+- S3, R6, e S4
+- Polimorfismo e funções genéricas
+
+**Conceitos adicionais:**
+
+- Dot dot dot
+- Resultados
+- Exit handlers
+- Pacotes
+
+
+\framesubtitle{Funções aprendidas}
+
+- Criação: `function()` e `\()`
+- Componentes: `formals()`, `body()`, e `environment()`
+- `do.call()`
+- Pipes: `|>` e `%>%`
+- Resultados: `return()` e `invisible()`
+- Exit handlers: `stop()`, `stopifnot()`, e `on.exit()`
+- OOP: `UseMethod()`. Extra: use `sloop::s3_get_method()` para obter código fonte de métodos
+- Pacotes: `install.packages()` e `library()`. Extra: vide `require()`
+  
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
