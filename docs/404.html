@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page not found | R: Teoria e Aplicações</title>
+  <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Page not found | R: Teoria e Aplicações" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="github-repo" content="ricardo-semiao/R-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Page not found | R: Teoria e Aplicações" />
+  
+  <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  
+
+<meta name="author" content="Ricardo Semião" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R: Teoria e Aplicações</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem Vindo!</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#por-que-este-livro"><i class="fa fa-check"></i>Por que Este Livro?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organização-do-livro"><i class="fa fa-check"></i>Organização do Livro</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introdução"><i class="fa fa-check"></i>Introdução</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-i---r-base"><i class="fa fa-check"></i>Parte I - R base</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-ii---ciência-de-dados-com-o-tidyverse"><i class="fa fa-check"></i>Parte II - Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-ii---aplicações-diversas"><i class="fa fa-check"></i>Parte II - Aplicações Diversas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licensa"><i class="fa fa-check"></i>Licensa</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contato"><i class="fa fa-check"></i>Contato</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#história"><i class="fa fa-check"></i><b>1.1</b> História</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#características-da-linguagem-e-porque-r"><i class="fa fa-check"></i><b>1.2</b> Características da Linguagem, e “Porque R?”</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#refs"><i class="fa fa-check"></i><b>1.3</b> Literatura sobre R</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#estilo-do-livro"><i class="fa fa-check"></i><b>1.4</b> Estilo do Livro</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#instalação-interface-e-ferramentas"><i class="fa fa-check"></i><b>1.5</b> Instalação, Interface, e Ferramentas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html"><i class="fa fa-check"></i>R Base</a></li>
+<li class="chapter" data-level="2" data-path="syntax-variables.html"><a href="syntax-variables.html"><i class="fa fa-check"></i><b>2</b> Sintaxe e Variáveis</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syntax-variables.html"><a href="syntax-variables.html#sintaxe"><i class="fa fa-check"></i><b>2.1</b> Sintaxe</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="syntax-variables.html"><a href="syntax-variables.html#palavras"><i class="fa fa-check"></i><b>2.1.1</b> Palavras</a></li>
+<li class="chapter" data-level="2.1.2" data-path="syntax-variables.html"><a href="syntax-variables.html#frases"><i class="fa fa-check"></i><b>2.1.2</b> Frases</a></li>
+<li class="chapter" data-level="2.1.3" data-path="syntax-variables.html"><a href="syntax-variables.html#parágrafos"><i class="fa fa-check"></i><b>2.1.3</b> Parágrafos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="syntax-variables.html"><a href="syntax-variables.html#variáveis"><i class="fa fa-check"></i><b>2.2</b> Variáveis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="syntax-variables.html"><a href="syntax-variables.html#definindo-variáveis"><i class="fa fa-check"></i><b>2.2.1</b> Definindo Variáveis</a></li>
+<li class="chapter" data-level="2.2.2" data-path="syntax-variables.html"><a href="syntax-variables.html#copy-on-modify"><i class="fa fa-check"></i><b>2.2.2</b> Copy on Modify</a></li>
+<li class="chapter" data-level="2.2.3" data-path="syntax-variables.html"><a href="syntax-variables.html#outras-características"><i class="fa fa-check"></i><b>2.2.3</b> Outras Características</a></li>
+<li class="chapter" data-level="2.2.4" data-path="syntax-variables.html"><a href="syntax-variables.html#regras-de-nomenclatura"><i class="fa fa-check"></i><b>2.2.4</b> Regras de Nomenclatura</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="syntax-variables.html"><a href="syntax-variables.html#operadores"><i class="fa fa-check"></i><b>2.3</b> Operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-attributes.html"><a href="data-attributes.html"><i class="fa fa-check"></i><b>3</b> Tipos de Dados e Atributos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-attributes.html"><a href="data-attributes.html#famílias"><i class="fa fa-check"></i><b>3.1</b> Famílias</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="data-attributes.html"><a href="data-attributes.html#tipos-de-dados"><i class="fa fa-check"></i><b>3.1.1</b> Tipos de Dados</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-attributes.html"><a href="data-attributes.html#famílias-1"><i class="fa fa-check"></i><b>3.1.2</b> Famílias</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-attributes.html"><a href="data-attributes.html#vetores-atômicos"><i class="fa fa-check"></i><b>3.2</b> Vetores atômicos</a></li>
+<li class="chapter" data-level="3.3" data-path="data-attributes.html"><a href="data-attributes.html#listas"><i class="fa fa-check"></i><b>3.3</b> Listas</a></li>
+<li class="chapter" data-level="3.4" data-path="data-attributes.html"><a href="data-attributes.html#atributos"><i class="fa fa-check"></i><b>3.4</b> Atributos</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-attributes.html"><a href="data-attributes.html#nomes"><i class="fa fa-check"></i><b>3.4.1</b> Nomes</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-attributes.html"><a href="data-attributes.html#dimensões"><i class="fa fa-check"></i><b>3.4.2</b> Dimensões</a></li>
+<li class="chapter" data-level="3.4.3" data-path="data-attributes.html"><a href="data-attributes.html#classes"><i class="fa fa-check"></i><b>3.4.3</b> Classes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="subsetting.html"><a href="subsetting.html#introdução-1"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="subsetting.html"><a href="subsetting.html#operador"><i class="fa fa-check"></i><b>4.2</b> Operador [</a></li>
+<li class="chapter" data-level="4.3" data-path="subsetting.html"><a href="subsetting.html#operador-e"><i class="fa fa-check"></i><b>4.3</b> Operador [[ e $</a></li>
+<li class="chapter" data-level="4.4" data-path="subsetting.html"><a href="subsetting.html#atribuição"><i class="fa fa-check"></i><b>4.4</b> Atribuição</a></li>
+<li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#aplicações"><i class="fa fa-check"></i><b>4.5</b> Aplicações</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-conditions.html"><a href="control-conditions.html"><i class="fa fa-check"></i><b>5</b> Control Flow e Condições</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-conditions.html"><a href="control-conditions.html#introdução-2"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="control-conditions.html"><a href="control-conditions.html#choices"><i class="fa fa-check"></i><b>5.2</b> Choices</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="control-conditions.html"><a href="control-conditions.html#if-else"><i class="fa fa-check"></i><b>5.2.1</b> If &amp; else</a></li>
+<li class="chapter" data-level="5.2.2" data-path="control-conditions.html"><a href="control-conditions.html#and-and-e-or-or"><i class="fa fa-check"></i><b>5.2.2</b> And and e or or</a></li>
+<li class="chapter" data-level="5.2.3" data-path="control-conditions.html"><a href="control-conditions.html#switch"><i class="fa fa-check"></i><b>5.2.3</b> Switch</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="control-conditions.html"><a href="control-conditions.html#loops"><i class="fa fa-check"></i><b>5.3</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="control-conditions.html"><a href="control-conditions.html#loops-for"><i class="fa fa-check"></i><b>5.3.1</b> Loops For</a></li>
+<li class="chapter" data-level="5.3.2" data-path="control-conditions.html"><a href="control-conditions.html#outros-loops"><i class="fa fa-check"></i><b>5.3.2</b> Outros loops</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="control-conditions.html"><a href="control-conditions.html#condições"><i class="fa fa-check"></i><b>5.4</b> Condições</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions-environments.html"><a href="functions-environments.html"><i class="fa fa-check"></i><b>6</b> Funções e Ambientes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="functions-environments.html"><a href="functions-environments.html#fundamentos"><i class="fa fa-check"></i><b>6.1</b> Fundamentos</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="functions-environments.html"><a href="functions-environments.html#introdução-3"><i class="fa fa-check"></i><b>6.1.1</b> Introdução</a></li>
+<li class="chapter" data-level="6.1.2" data-path="functions-environments.html"><a href="functions-environments.html#formatos-e-combinações"><i class="fa fa-check"></i><b>6.1.2</b> Formatos e combinações</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="functions-environments.html"><a href="functions-environments.html#ambientes"><i class="fa fa-check"></i><b>6.2</b> Ambientes</a></li>
+<li class="chapter" data-level="6.3" data-path="functions-environments.html"><a href="functions-environments.html#scoping-e-evaluation"><i class="fa fa-check"></i><b>6.3</b> Scoping e Evaluation</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="functions-environments.html"><a href="functions-environments.html#scoping"><i class="fa fa-check"></i><b>6.3.1</b> Scoping</a></li>
+<li class="chapter" data-level="6.3.2" data-path="functions-environments.html"><a href="functions-environments.html#lazy-evaluation"><i class="fa fa-check"></i><b>6.3.2</b> Lazy evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="functions-environments.html"><a href="functions-environments.html#conceitos-adicionais"><i class="fa fa-check"></i><b>6.4</b> Conceitos Adicionais</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="functions-environments.html"><a href="functions-environments.html#dot-dot-dot"><i class="fa fa-check"></i><b>6.4.1</b> Dot dot dot</a></li>
+<li class="chapter" data-level="6.4.2" data-path="functions-environments.html"><a href="functions-environments.html#resultados"><i class="fa fa-check"></i><b>6.4.2</b> Resultados</a></li>
+<li class="chapter" data-level="6.4.3" data-path="functions-environments.html"><a href="functions-environments.html#exit-handlers"><i class="fa fa-check"></i><b>6.4.3</b> Exit Handlers</a></li>
+<li class="chapter" data-level="6.4.4" data-path="functions-environments.html"><a href="functions-environments.html#pacotes"><i class="fa fa-check"></i><b>6.4.4</b> Pacotes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="paradigms.html"><a href="paradigms.html"><i class="fa fa-check"></i><b>7</b> Paradigmas de Programação</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="paradigms.html"><a href="paradigms.html#programação-funcional"><i class="fa fa-check"></i><b>7.1</b> Programação Funcional</a></li>
+<li class="chapter" data-level="7.2" data-path="paradigms.html"><a href="paradigms.html#programação-orientada-ao-objeto"><i class="fa fa-check"></i><b>7.2</b> Programação Orientada ao Objeto</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="paradigms.html"><a href="paradigms.html#sistemas-de-oop"><i class="fa fa-check"></i><b>7.2.1</b> Sistemas de OOP</a></li>
+<li class="chapter" data-level="7.2.2" data-path="paradigms.html"><a href="paradigms.html#polimorfismo"><i class="fa fa-check"></i><b>7.2.2</b> Polimorfismo</a></li>
+<li class="chapter" data-level="7.2.3" data-path="paradigms.html"><a href="paradigms.html#funções-genéricas"><i class="fa fa-check"></i><b>7.2.3</b> Funções genéricas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="paradigms.html"><a href="paradigms.html#metaprogramação"><i class="fa fa-check"></i><b>7.3</b> Metaprogramação</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="other-topics.html"><a href="other-topics.html"><i class="fa fa-check"></i><b>8</b> Outros Tópicos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="other-topics.html"><a href="other-topics.html#projetos-github-e-addins"><i class="fa fa-check"></i><b>8.1</b> Projetos, Github, e Addins</a></li>
+<li class="chapter" data-level="8.2" data-path="other-topics.html"><a href="other-topics.html#debbuging"><i class="fa fa-check"></i><b>8.2</b> Debbuging</a></li>
+<li class="chapter" data-level="8.3" data-path="other-topics.html"><a href="other-topics.html#gerenciamento-de-memória"><i class="fa fa-check"></i><b>8.3</b> Gerenciamento de Memória</a></li>
+<li class="chapter" data-level="8.4" data-path="other-topics.html"><a href="other-topics.html#performance"><i class="fa fa-check"></i><b>8.4</b> Performance</a></li>
+<li class="chapter" data-level="8.5" data-path="other-topics.html"><a href="other-topics.html#organização-de-código-e-boas-práticas"><i class="fa fa-check"></i><b>8.5</b> Organização de Código e Boas Práticas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="recapitulando-7.html"><a href="recapitulando-7.html"><i class="fa fa-check"></i>Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="ciência-de-dados-com-o-tidyverse.html"><a href="ciência-de-dados-com-o-tidyverse.html"><i class="fa fa-check"></i>Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="9" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html"><i class="fa fa-check"></i><b>9</b> Ciência de Dados e Importação</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html#ciência-de-dados"><i class="fa fa-check"></i><b>9.1</b> Ciência de Dados</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html#introdução-4"><i class="fa fa-check"></i><b>9.1.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.1.2" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html#preparar"><i class="fa fa-check"></i><b>9.1.2</b> Preparar</a></li>
+<li class="chapter" data-level="9.1.3" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html#entender-e-explorar"><i class="fa fa-check"></i><b>9.1.3</b> Entender e Explorar</a></li>
+<li class="chapter" data-level="9.1.4" data-path="ciência-de-dados-e-importação.html"><a href="ciência-de-dados-e-importação.html#communicating-and-executing"><i class="fa fa-check"></i><b>9.1.4</b> Communicating and Executing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>10</b> Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data.html"><a href="data.html#types-of-data"><i class="fa fa-check"></i><b>10.1</b> Types of Data</a></li>
+<li class="chapter" data-level="10.2" data-path="data.html"><a href="data.html#importing-with-readr"><i class="fa fa-check"></i><b>10.2</b> Importing with readr</a></li>
+<li class="chapter" data-level="10.3" data-path="data.html"><a href="data.html#data-visualization"><i class="fa fa-check"></i><b>10.3</b> Data Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="manipulação-de-dados.html"><a href="manipulação-de-dados.html"><i class="fa fa-check"></i><b>11</b> Manipulação de Dados</a></li>
+<li class="chapter" data-level="12" data-path="strings-factors.html"><a href="strings-factors.html"><i class="fa fa-check"></i><b>12</b> Manipulação de Strings e Factors</a></li>
+<li class="chapter" data-level="13" data-path="visualização-gráfica.html"><a href="visualização-gráfica.html"><i class="fa fa-check"></i><b>13</b> Visualização Gráfica</a></li>
+<li class="chapter" data-level="14" data-path="programação-funcional-1.html"><a href="programação-funcional-1.html"><i class="fa fa-check"></i><b>14</b> Programação Funcional</a></li>
+<li class="chapter" data-level="15" data-path="manipulação-de-séries-de-tempo.html"><a href="manipulação-de-séries-de-tempo.html"><i class="fa fa-check"></i><b>15</b> Manipulação de Séries de Tempo</a></li>
+<li class="chapter" data-level="" data-path="aplicações-diversas.html"><a href="aplicações-diversas.html"><i class="fa fa-check"></i>Aplicações Diversas</a></li>
+<li class="chapter" data-level="" data-path="dicionário-de-funções-14.html"><a href="dicionário-de-funções-14.html"><i class="fa fa-check"></i>Dicionário de funções</a></li>
+<li class="chapter" data-level="" data-path="referências-14.html"><a href="referências-14.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R: Teoria e Aplicações</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/%s",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
