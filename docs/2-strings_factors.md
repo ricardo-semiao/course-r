@@ -1,0 +1,69 @@
+# Manipulação de Strings e Factors {#strings-factors}
+
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+Neste capítulo, falarei mais sobre _strings_ e _factors_ no R. Apresento as ferramentas de manipulação nos pacotes "stringr", "forecats", e "glue".
+
+
+## Strings
+
+### Matches
+
+
+### Mutate
+
+
+### Subset
+
+
+### Join and Split
+
+
+### Lengths
+
+
+### Order
+
+
+
+## Factors
+
+### Inspect
+
+
+### Combine
+
+
+### Reorder
+
+
+### Revalue
+
+
+### Relevel
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 Sintaxe e Variáveis | R: Teoria e Aplicações</title>
-  <meta name="description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="description" content="Este livro tem o objetivo de ensinar a linguagem R. Ele (i) é feito para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e funcionamento da linguagem, mas depois apresentando temas aplicados." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 Sintaxe e Variáveis | R: Teoria e Aplicações" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta property="og:description" content="Este livro tem o objetivo de ensinar a linguagem R. Ele (i) é feito para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e funcionamento da linguagem, mas depois apresentando temas aplicados." />
   <meta name="github-repo" content="ricardo-semiao/R-course" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 2 Sintaxe e Variáveis | R: Teoria e Aplicações" />
   
-  <meta name="twitter:description" content="Book for a course on the theory of R, and aplications for data scientists." />
+  <meta name="twitter:description" content="Este livro tem o objetivo de ensinar a linguagem R. Ele (i) é feito para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e funcionamento da linguagem, mas depois apresentando temas aplicados." />
   
 
 <meta name="author" content="Ricardo Semião" />
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="parte-i---r-base-1.html"/>
+<link rel="prev" href="intro1.html"/>
 <link rel="next" href="data-attrs.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -51,6 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
 
 
 <style type="text/css">
@@ -171,18 +172,18 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-ii---ciência-de-dados-com-o-tidyverse"><i class="fa fa-check"></i>Parte II - Ciência de Dados com o Tidyverse</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#parte-ii---aplicações-diversas"><i class="fa fa-check"></i>Parte II - Aplicações Diversas</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licensa"><i class="fa fa-check"></i>Licensa</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licença"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contato"><i class="fa fa-check"></i>Contato</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#história"><i class="fa fa-check"></i><b>1.1</b> História</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#características-da-linguagem-e-porque-r"><i class="fa fa-check"></i><b>1.2</b> Características da Linguagem, e “Porque R?”</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#refs"><i class="fa fa-check"></i><b>1.3</b> Literatura sobre R</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#biblio"><i class="fa fa-check"></i><b>1.3</b> Literatura sobre R</a></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#estilo-do-livro"><i class="fa fa-check"></i><b>1.4</b> Estilo do Livro</a></li>
 <li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#instalação-interface-e-ferramentas"><i class="fa fa-check"></i><b>1.5</b> Instalação, Interface, e Ferramentas</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="parte-i---r-base-1.html"><a href="parte-i---r-base-1.html"><i class="fa fa-check"></i>Parte I - R Base</a></li>
+<li class="chapter" data-level="" data-path="intro1.html"><a href="intro1.html"><i class="fa fa-check"></i>Parte I - R Base</a></li>
 <li class="chapter" data-level="2" data-path="syntax-vars.html"><a href="syntax-vars.html"><i class="fa fa-check"></i><b>2</b> Sintaxe e Variáveis</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="syntax-vars.html"><a href="syntax-vars.html#sintaxe"><i class="fa fa-check"></i><b>2.1</b> Sintaxe</a>
@@ -279,8 +280,8 @@ div.csl-indent {
 <li class="chapter" data-level="8.3" data-path="others1.html"><a href="others1.html#gerenciamento-de-memória-e-performance"><i class="fa fa-check"></i><b>8.3</b> Gerenciamento de Memória e Performance</a></li>
 <li class="chapter" data-level="8.4" data-path="others1.html"><a href="others1.html#organização-de-código-e-boas-práticas"><i class="fa fa-check"></i><b>8.4</b> Organização de Código e Boas Práticas</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="recapitulando-7.html"><a href="recapitulando-7.html"><i class="fa fa-check"></i>Recapitulando</a></li>
-<li class="chapter" data-level="" data-path="parte-ii---ciência-de-dados-com-o-tidyverse-1.html"><a href="parte-ii---ciência-de-dados-com-o-tidyverse-1.html"><i class="fa fa-check"></i>Parte II - Ciência de Dados com o Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="recap1.html"><a href="recap1.html"><i class="fa fa-check"></i>Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="intro2.html"><a href="intro2.html"><i class="fa fa-check"></i>Parte II - Ciência de Dados com o Tidyverse</a></li>
 <li class="chapter" data-level="9" data-path="ds-import.html"><a href="ds-import.html"><i class="fa fa-check"></i><b>9</b> Ciência de Dados e Importação</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="ds-import.html"><a href="ds-import.html#ciência-de-dados"><i class="fa fa-check"></i><b>9.1</b> Ciência de Dados</a>
@@ -291,127 +292,121 @@ div.csl-indent {
 <li class="chapter" data-level="9.1.4" data-path="ds-import.html"><a href="ds-import.html#communicating-and-executing"><i class="fa fa-check"></i><b>9.1.4</b> Communicating and Executing</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>10</b> Data</a>
+<li class="chapter" data-level="10" data-path="manipulation.html"><a href="manipulation.html"><i class="fa fa-check"></i><b>10</b> Manipulação de Dados</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="data.html"><a href="data.html#types-of-data"><i class="fa fa-check"></i><b>10.1</b> Types of Data</a></li>
-<li class="chapter" data-level="10.2" data-path="data.html"><a href="data.html#importing-with-readr"><i class="fa fa-check"></i><b>10.2</b> Importing with readr</a></li>
-<li class="chapter" data-level="10.3" data-path="data.html"><a href="data.html#data-visualization"><i class="fa fa-check"></i><b>10.3</b> Data Visualization</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="manipulation.html"><a href="manipulation.html"><i class="fa fa-check"></i><b>11</b> Manipulação de Dados</a>
+<li class="chapter" data-level="10.1" data-path="manipulation.html"><a href="manipulation.html#operações-de-manipulação"><i class="fa fa-check"></i><b>10.1</b> Operações de Manipulação</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="manipulation.html"><a href="manipulation.html#operações-de-manipulação"><i class="fa fa-check"></i><b>11.1</b> Operações de Manipulação</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="manipulation.html"><a href="manipulation.html#operações-em-observações"><i class="fa fa-check"></i><b>11.1.1</b> Operações em Observações</a></li>
-<li class="chapter" data-level="11.1.2" data-path="manipulation.html"><a href="manipulation.html#operações-em-variáveis"><i class="fa fa-check"></i><b>11.1.2</b> Operações em Variáveis</a></li>
-<li class="chapter" data-level="11.1.3" data-path="manipulation.html"><a href="manipulation.html#operações-em-células"><i class="fa fa-check"></i><b>11.1.3</b> Operações em Células</a></li>
-<li class="chapter" data-level="11.1.4" data-path="manipulation.html"><a href="manipulation.html#operações-em-grupos"><i class="fa fa-check"></i><b>11.1.4</b> Operações em Grupos</a></li>
-<li class="chapter" data-level="11.1.5" data-path="manipulation.html"><a href="manipulation.html#operações-de-união"><i class="fa fa-check"></i><b>11.1.5</b> Operações de União</a></li>
-<li class="chapter" data-level="11.1.6" data-path="manipulation.html"><a href="manipulation.html#operações-de-remodelação"><i class="fa fa-check"></i><b>11.1.6</b> Operações de Remodelação</a></li>
+<li class="chapter" data-level="10.1.1" data-path="manipulation.html"><a href="manipulation.html#operações-em-observações"><i class="fa fa-check"></i><b>10.1.1</b> Operações em Observações</a></li>
+<li class="chapter" data-level="10.1.2" data-path="manipulation.html"><a href="manipulation.html#operações-em-variáveis"><i class="fa fa-check"></i><b>10.1.2</b> Operações em Variáveis</a></li>
+<li class="chapter" data-level="10.1.3" data-path="manipulation.html"><a href="manipulation.html#operações-em-células"><i class="fa fa-check"></i><b>10.1.3</b> Operações em Células</a></li>
+<li class="chapter" data-level="10.1.4" data-path="manipulation.html"><a href="manipulation.html#operações-em-grupos"><i class="fa fa-check"></i><b>10.1.4</b> Operações em Grupos</a></li>
+<li class="chapter" data-level="10.1.5" data-path="manipulation.html"><a href="manipulation.html#operações-de-união"><i class="fa fa-check"></i><b>10.1.5</b> Operações de União</a></li>
+<li class="chapter" data-level="10.1.6" data-path="manipulation.html"><a href="manipulation.html#operações-de-remodelação"><i class="fa fa-check"></i><b>10.1.6</b> Operações de Remodelação</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>12</b> Visualização Gráfica</a>
+<li class="chapter" data-level="11" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>11</b> Visualização Gráfica</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="visualization.html"><a href="visualization.html#introdução-à-visualização"><i class="fa fa-check"></i><b>12.1</b> Introdução à Visualização</a></li>
-<li class="chapter" data-level="12.2" data-path="visualization.html"><a href="visualization.html#layers"><i class="fa fa-check"></i><b>12.2</b> Layers</a></li>
-<li class="chapter" data-level="12.3" data-path="visualization.html"><a href="visualization.html#scales"><i class="fa fa-check"></i><b>12.3</b> Scales</a></li>
-<li class="chapter" data-level="12.4" data-path="visualization.html"><a href="visualization.html#grammar"><i class="fa fa-check"></i><b>12.4</b> Grammar</a></li>
-<li class="chapter" data-level="12.5" data-path="visualization.html"><a href="visualization.html#others"><i class="fa fa-check"></i><b>12.5</b> Others</a></li>
+<li class="chapter" data-level="11.1" data-path="visualization.html"><a href="visualization.html#introdução-à-visualização"><i class="fa fa-check"></i><b>11.1</b> Introdução à Visualização</a></li>
+<li class="chapter" data-level="11.2" data-path="visualization.html"><a href="visualization.html#layers"><i class="fa fa-check"></i><b>11.2</b> Layers</a></li>
+<li class="chapter" data-level="11.3" data-path="visualization.html"><a href="visualization.html#scales"><i class="fa fa-check"></i><b>11.3</b> Scales</a></li>
+<li class="chapter" data-level="11.4" data-path="visualization.html"><a href="visualization.html#grammar"><i class="fa fa-check"></i><b>11.4</b> Grammar</a></li>
+<li class="chapter" data-level="11.5" data-path="visualization.html"><a href="visualization.html#others"><i class="fa fa-check"></i><b>11.5</b> Others</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="strings-factors.html"><a href="strings-factors.html"><i class="fa fa-check"></i><b>13</b> Manipulação de Strings e Factors</a>
+<li class="chapter" data-level="12" data-path="strings-factors.html"><a href="strings-factors.html"><i class="fa fa-check"></i><b>12</b> Manipulação de Strings e Factors</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="strings-factors.html"><a href="strings-factors.html#strings"><i class="fa fa-check"></i><b>13.1</b> Strings</a>
+<li class="chapter" data-level="12.1" data-path="strings-factors.html"><a href="strings-factors.html#strings"><i class="fa fa-check"></i><b>12.1</b> Strings</a>
 <ul>
-<li class="chapter" data-level="13.1.1" data-path="strings-factors.html"><a href="strings-factors.html#matches"><i class="fa fa-check"></i><b>13.1.1</b> Matches</a></li>
-<li class="chapter" data-level="13.1.2" data-path="strings-factors.html"><a href="strings-factors.html#mutate"><i class="fa fa-check"></i><b>13.1.2</b> Mutate</a></li>
-<li class="chapter" data-level="13.1.3" data-path="strings-factors.html"><a href="strings-factors.html#subset-1"><i class="fa fa-check"></i><b>13.1.3</b> Subset</a></li>
-<li class="chapter" data-level="13.1.4" data-path="strings-factors.html"><a href="strings-factors.html#join-and-split"><i class="fa fa-check"></i><b>13.1.4</b> Join and Split</a></li>
-<li class="chapter" data-level="13.1.5" data-path="strings-factors.html"><a href="strings-factors.html#lengths"><i class="fa fa-check"></i><b>13.1.5</b> Lengths</a></li>
-<li class="chapter" data-level="13.1.6" data-path="strings-factors.html"><a href="strings-factors.html#order"><i class="fa fa-check"></i><b>13.1.6</b> Order</a></li>
+<li class="chapter" data-level="12.1.1" data-path="strings-factors.html"><a href="strings-factors.html#matches"><i class="fa fa-check"></i><b>12.1.1</b> Matches</a></li>
+<li class="chapter" data-level="12.1.2" data-path="strings-factors.html"><a href="strings-factors.html#mutate"><i class="fa fa-check"></i><b>12.1.2</b> Mutate</a></li>
+<li class="chapter" data-level="12.1.3" data-path="strings-factors.html"><a href="strings-factors.html#subset-1"><i class="fa fa-check"></i><b>12.1.3</b> Subset</a></li>
+<li class="chapter" data-level="12.1.4" data-path="strings-factors.html"><a href="strings-factors.html#join-and-split"><i class="fa fa-check"></i><b>12.1.4</b> Join and Split</a></li>
+<li class="chapter" data-level="12.1.5" data-path="strings-factors.html"><a href="strings-factors.html#lengths"><i class="fa fa-check"></i><b>12.1.5</b> Lengths</a></li>
+<li class="chapter" data-level="12.1.6" data-path="strings-factors.html"><a href="strings-factors.html#order"><i class="fa fa-check"></i><b>12.1.6</b> Order</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="strings-factors.html"><a href="strings-factors.html#factors-1"><i class="fa fa-check"></i><b>13.2</b> Factors</a>
+<li class="chapter" data-level="12.2" data-path="strings-factors.html"><a href="strings-factors.html#factors-1"><i class="fa fa-check"></i><b>12.2</b> Factors</a>
 <ul>
-<li class="chapter" data-level="13.2.1" data-path="strings-factors.html"><a href="strings-factors.html#inspect"><i class="fa fa-check"></i><b>13.2.1</b> Inspect</a></li>
-<li class="chapter" data-level="13.2.2" data-path="strings-factors.html"><a href="strings-factors.html#combine"><i class="fa fa-check"></i><b>13.2.2</b> Combine</a></li>
-<li class="chapter" data-level="13.2.3" data-path="strings-factors.html"><a href="strings-factors.html#reorder"><i class="fa fa-check"></i><b>13.2.3</b> Reorder</a></li>
-<li class="chapter" data-level="13.2.4" data-path="strings-factors.html"><a href="strings-factors.html#revalue"><i class="fa fa-check"></i><b>13.2.4</b> Revalue</a></li>
-<li class="chapter" data-level="13.2.5" data-path="strings-factors.html"><a href="strings-factors.html#relevel"><i class="fa fa-check"></i><b>13.2.5</b> Relevel</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="functional.html"><a href="functional.html"><i class="fa fa-check"></i><b>14</b> Programação Funcional</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="functional.html"><a href="functional.html#map"><i class="fa fa-check"></i><b>14.1</b> Map</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="functional.html"><a href="functional.html#map-1"><i class="fa fa-check"></i><b>14.1.1</b> Map 1</a></li>
-<li class="chapter" data-level="14.1.2" data-path="functional.html"><a href="functional.html#map-2"><i class="fa fa-check"></i><b>14.1.2</b> Map 2</a></li>
-<li class="chapter" data-level="14.1.3" data-path="functional.html"><a href="functional.html#map-p"><i class="fa fa-check"></i><b>14.1.3</b> Map p</a></li>
-</ul></li>
-<li class="chapter" data-level="14.2" data-path="functional.html"><a href="functional.html#others-1"><i class="fa fa-check"></i><b>14.2</b> Others</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="functional.html"><a href="functional.html#modify"><i class="fa fa-check"></i><b>14.2.1</b> Modify</a></li>
-<li class="chapter" data-level="14.2.2" data-path="functional.html"><a href="functional.html#reduce"><i class="fa fa-check"></i><b>14.2.2</b> Reduce</a></li>
-<li class="chapter" data-level="14.2.3" data-path="functional.html"><a href="functional.html#predicates"><i class="fa fa-check"></i><b>14.2.3</b> Predicates</a></li>
-<li class="chapter" data-level="14.2.4" data-path="functional.html"><a href="functional.html#pluck"><i class="fa fa-check"></i><b>14.2.4</b> Pluck</a></li>
-<li class="chapter" data-level="14.2.5" data-path="functional.html"><a href="functional.html#reshape"><i class="fa fa-check"></i><b>14.2.5</b> Reshape</a></li>
-<li class="chapter" data-level="14.2.6" data-path="functional.html"><a href="functional.html#concatenate"><i class="fa fa-check"></i><b>14.2.6</b> Concatenate</a></li>
+<li class="chapter" data-level="12.2.1" data-path="strings-factors.html"><a href="strings-factors.html#inspect"><i class="fa fa-check"></i><b>12.2.1</b> Inspect</a></li>
+<li class="chapter" data-level="12.2.2" data-path="strings-factors.html"><a href="strings-factors.html#combine"><i class="fa fa-check"></i><b>12.2.2</b> Combine</a></li>
+<li class="chapter" data-level="12.2.3" data-path="strings-factors.html"><a href="strings-factors.html#reorder"><i class="fa fa-check"></i><b>12.2.3</b> Reorder</a></li>
+<li class="chapter" data-level="12.2.4" data-path="strings-factors.html"><a href="strings-factors.html#revalue"><i class="fa fa-check"></i><b>12.2.4</b> Revalue</a></li>
+<li class="chapter" data-level="12.2.5" data-path="strings-factors.html"><a href="strings-factors.html#relevel"><i class="fa fa-check"></i><b>12.2.5</b> Relevel</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>15</b> Manipulação de Datas e Séries de Tempo</a>
+<li class="chapter" data-level="13" data-path="functional.html"><a href="functional.html"><i class="fa fa-check"></i><b>13</b> Programação Funcional</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>15.1</b> Dates</a>
+<li class="chapter" data-level="13.1" data-path="functional.html"><a href="functional.html#map"><i class="fa fa-check"></i><b>13.1</b> Map</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="time-series.html"><a href="time-series.html#parsing"><i class="fa fa-check"></i><b>15.1.1</b> Parsing</a></li>
-<li class="chapter" data-level="15.1.2" data-path="time-series.html"><a href="time-series.html#mutate-1"><i class="fa fa-check"></i><b>15.1.2</b> Mutate</a></li>
-<li class="chapter" data-level="15.1.3" data-path="time-series.html"><a href="time-series.html#time-zones"><i class="fa fa-check"></i><b>15.1.3</b> Time Zones</a></li>
-<li class="chapter" data-level="15.1.4" data-path="time-series.html"><a href="time-series.html#math"><i class="fa fa-check"></i><b>15.1.4</b> Math</a></li>
-<li class="chapter" data-level="15.1.5" data-path="time-series.html"><a href="time-series.html#periods-durations-e-intervals"><i class="fa fa-check"></i><b>15.1.5</b> Periods, Durations, e Intervals</a></li>
+<li class="chapter" data-level="13.1.1" data-path="functional.html"><a href="functional.html#map-1"><i class="fa fa-check"></i><b>13.1.1</b> Map 1</a></li>
+<li class="chapter" data-level="13.1.2" data-path="functional.html"><a href="functional.html#map-2"><i class="fa fa-check"></i><b>13.1.2</b> Map 2</a></li>
+<li class="chapter" data-level="13.1.3" data-path="functional.html"><a href="functional.html#map-p"><i class="fa fa-check"></i><b>13.1.3</b> Map p</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="time-series.html"><a href="time-series.html#time-series-1"><i class="fa fa-check"></i><b>15.2</b> Time Series</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="recapitulando-15.html"><a href="recapitulando-15.html"><i class="fa fa-check"></i>Recapitulando</a></li>
-<li class="chapter" data-level="" data-path="parte-iii---aplicações-diversas.html"><a href="parte-iii---aplicações-diversas.html"><i class="fa fa-check"></i>Parte III - Aplicações Diversas</a></li>
-<li class="chapter" data-level="16" data-path="stats-prob.html"><a href="stats-prob.html"><i class="fa fa-check"></i><b>16</b> Probabilidade e Estatística</a>
+<li class="chapter" data-level="13.2" data-path="functional.html"><a href="functional.html#others-1"><i class="fa fa-check"></i><b>13.2</b> Others</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="stats-prob.html"><a href="stats-prob.html#probability"><i class="fa fa-check"></i><b>16.1</b> Probability</a>
-<ul>
-<li class="chapter" data-level="16.1.1" data-path="stats-prob.html"><a href="stats-prob.html#random-numbers"><i class="fa fa-check"></i><b>16.1.1</b> Random Numbers</a></li>
-<li class="chapter" data-level="16.1.2" data-path="stats-prob.html"><a href="stats-prob.html#useful-measures"><i class="fa fa-check"></i><b>16.1.2</b> Useful Measures</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="stats-prob.html"><a href="stats-prob.html#statistics"><i class="fa fa-check"></i><b>16.2</b> Statistics</a>
-<ul>
-<li class="chapter" data-level="16.2.1" data-path="stats-prob.html"><a href="stats-prob.html#useful-measures-1"><i class="fa fa-check"></i><b>16.2.1</b> Useful Measures</a></li>
-<li class="chapter" data-level="16.2.2" data-path="stats-prob.html"><a href="stats-prob.html#hypothesis-testing"><i class="fa fa-check"></i><b>16.2.2</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="13.2.1" data-path="functional.html"><a href="functional.html#modify"><i class="fa fa-check"></i><b>13.2.1</b> Modify</a></li>
+<li class="chapter" data-level="13.2.2" data-path="functional.html"><a href="functional.html#reduce"><i class="fa fa-check"></i><b>13.2.2</b> Reduce</a></li>
+<li class="chapter" data-level="13.2.3" data-path="functional.html"><a href="functional.html#predicates"><i class="fa fa-check"></i><b>13.2.3</b> Predicates</a></li>
+<li class="chapter" data-level="13.2.4" data-path="functional.html"><a href="functional.html#pluck"><i class="fa fa-check"></i><b>13.2.4</b> Pluck</a></li>
+<li class="chapter" data-level="13.2.5" data-path="functional.html"><a href="functional.html#reshape"><i class="fa fa-check"></i><b>13.2.5</b> Reshape</a></li>
+<li class="chapter" data-level="13.2.6" data-path="functional.html"><a href="functional.html#concatenate"><i class="fa fa-check"></i><b>13.2.6</b> Concatenate</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="exploration.html"><a href="exploration.html"><i class="fa fa-check"></i><b>17</b> Exploração de Dados</a>
+<li class="chapter" data-level="14" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>14</b> Manipulação de Datas e Séries de Tempo</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="exploration.html"><a href="exploration.html#useful-visualizations"><i class="fa fa-check"></i><b>17.1</b> Useful Visualizations</a></li>
-<li class="chapter" data-level="17.2" data-path="exploration.html"><a href="exploration.html#useful-metrics"><i class="fa fa-check"></i><b>17.2</b> Useful Metrics</a></li>
-<li class="chapter" data-level="17.3" data-path="exploration.html"><a href="exploration.html#useful-graphs"><i class="fa fa-check"></i><b>17.3</b> Useful Graphs</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>18</b> Regressão</a>
+<li class="chapter" data-level="14.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>14.1</b> Dates</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="regression.html"><a href="regression.html#fundamentals"><i class="fa fa-check"></i><b>18.1</b> Fundamentals</a>
+<li class="chapter" data-level="14.1.1" data-path="time-series.html"><a href="time-series.html#parsing"><i class="fa fa-check"></i><b>14.1.1</b> Parsing</a></li>
+<li class="chapter" data-level="14.1.2" data-path="time-series.html"><a href="time-series.html#mutate-1"><i class="fa fa-check"></i><b>14.1.2</b> Mutate</a></li>
+<li class="chapter" data-level="14.1.3" data-path="time-series.html"><a href="time-series.html#time-zones"><i class="fa fa-check"></i><b>14.1.3</b> Time Zones</a></li>
+<li class="chapter" data-level="14.1.4" data-path="time-series.html"><a href="time-series.html#math"><i class="fa fa-check"></i><b>14.1.4</b> Math</a></li>
+<li class="chapter" data-level="14.1.5" data-path="time-series.html"><a href="time-series.html#periods-durations-e-intervals"><i class="fa fa-check"></i><b>14.1.5</b> Periods, Durations, e Intervals</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="time-series.html"><a href="time-series.html#time-series-1"><i class="fa fa-check"></i><b>14.2</b> Time Series</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="recap2.html"><a href="recap2.html"><i class="fa fa-check"></i>Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="intro3.html"><a href="intro3.html"><i class="fa fa-check"></i>Parte III - Aplicações Diversas</a></li>
+<li class="chapter" data-level="15" data-path="stats-prob.html"><a href="stats-prob.html"><i class="fa fa-check"></i><b>15</b> Probabilidade e Estatística</a>
 <ul>
-<li class="chapter" data-level="18.1.1" data-path="regression.html"><a href="regression.html#data-1"><i class="fa fa-check"></i><b>18.1.1</b> Data</a></li>
-<li class="chapter" data-level="18.1.2" data-path="regression.html"><a href="regression.html#formulas"><i class="fa fa-check"></i><b>18.1.2</b> Formulas</a></li>
-<li class="chapter" data-level="18.1.3" data-path="regression.html"><a href="regression.html#fitting"><i class="fa fa-check"></i><b>18.1.3</b> Fitting</a></li>
-<li class="chapter" data-level="18.1.4" data-path="regression.html"><a href="regression.html#visualizing"><i class="fa fa-check"></i><b>18.1.4</b> Visualizing</a></li>
-<li class="chapter" data-level="18.1.5" data-path="regression.html"><a href="regression.html#testing"><i class="fa fa-check"></i><b>18.1.5</b> Testing</a></li>
-<li class="chapter" data-level="18.1.6" data-path="regression.html"><a href="regression.html#correcting"><i class="fa fa-check"></i><b>18.1.6</b> Correcting</a></li>
-</ul></li>
-<li class="chapter" data-level="18.2" data-path="regression.html"><a href="regression.html#linear-models"><i class="fa fa-check"></i><b>18.2</b> Linear Models</a></li>
-<li class="chapter" data-level="18.3" data-path="regression.html"><a href="regression.html#non-linear-models"><i class="fa fa-check"></i><b>18.3</b> Non-Linear Models</a></li>
-<li class="chapter" data-level="18.4" data-path="regression.html"><a href="regression.html#time-series-models"><i class="fa fa-check"></i><b>18.4</b> Time-Series Models</a></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>19</b> Aprendizado de Máquina</a>
+<li class="chapter" data-level="15.1" data-path="stats-prob.html"><a href="stats-prob.html#probability"><i class="fa fa-check"></i><b>15.1</b> Probability</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="ml.html"><a href="ml.html#fundamentals-1"><i class="fa fa-check"></i><b>19.1</b> Fundamentals</a></li>
-<li class="chapter" data-level="19.2" data-path="ml.html"><a href="ml.html#ml-in-built-in-r"><i class="fa fa-check"></i><b>19.2</b> ML in Built-In R</a></li>
-<li class="chapter" data-level="19.3" data-path="ml.html"><a href="ml.html#ml-in-external-packages"><i class="fa fa-check"></i><b>19.3</b> ML in External Packages</a></li>
+<li class="chapter" data-level="15.1.1" data-path="stats-prob.html"><a href="stats-prob.html#random-numbers"><i class="fa fa-check"></i><b>15.1.1</b> Random Numbers</a></li>
+<li class="chapter" data-level="15.1.2" data-path="stats-prob.html"><a href="stats-prob.html#useful-measures"><i class="fa fa-check"></i><b>15.1.2</b> Useful Measures</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="others3.html"><a href="others3.html"><i class="fa fa-check"></i><b>20</b> Outras Aplicações</a></li>
+<li class="chapter" data-level="15.2" data-path="stats-prob.html"><a href="stats-prob.html#statistics"><i class="fa fa-check"></i><b>15.2</b> Statistics</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="stats-prob.html"><a href="stats-prob.html#useful-measures-1"><i class="fa fa-check"></i><b>15.2.1</b> Useful Measures</a></li>
+<li class="chapter" data-level="15.2.2" data-path="stats-prob.html"><a href="stats-prob.html#hypothesis-testing"><i class="fa fa-check"></i><b>15.2.2</b> Hypothesis Testing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="exploration.html"><a href="exploration.html"><i class="fa fa-check"></i><b>16</b> Exploração de Dados</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="exploration.html"><a href="exploration.html#useful-visualizations"><i class="fa fa-check"></i><b>16.1</b> Useful Visualizations</a></li>
+<li class="chapter" data-level="16.2" data-path="exploration.html"><a href="exploration.html#useful-metrics"><i class="fa fa-check"></i><b>16.2</b> Useful Metrics</a></li>
+<li class="chapter" data-level="16.3" data-path="exploration.html"><a href="exploration.html#useful-graphs"><i class="fa fa-check"></i><b>16.3</b> Useful Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>17</b> Regressão</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="regression.html"><a href="regression.html#fundamentals"><i class="fa fa-check"></i><b>17.1</b> Fundamentals</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="regression.html"><a href="regression.html#data"><i class="fa fa-check"></i><b>17.1.1</b> Data</a></li>
+<li class="chapter" data-level="17.1.2" data-path="regression.html"><a href="regression.html#formulas"><i class="fa fa-check"></i><b>17.1.2</b> Formulas</a></li>
+<li class="chapter" data-level="17.1.3" data-path="regression.html"><a href="regression.html#fitting"><i class="fa fa-check"></i><b>17.1.3</b> Fitting</a></li>
+<li class="chapter" data-level="17.1.4" data-path="regression.html"><a href="regression.html#visualizing"><i class="fa fa-check"></i><b>17.1.4</b> Visualizing</a></li>
+<li class="chapter" data-level="17.1.5" data-path="regression.html"><a href="regression.html#testing"><i class="fa fa-check"></i><b>17.1.5</b> Testing</a></li>
+<li class="chapter" data-level="17.1.6" data-path="regression.html"><a href="regression.html#correcting"><i class="fa fa-check"></i><b>17.1.6</b> Correcting</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="regression.html"><a href="regression.html#linear-models"><i class="fa fa-check"></i><b>17.2</b> Linear Models</a></li>
+<li class="chapter" data-level="17.3" data-path="regression.html"><a href="regression.html#non-linear-models"><i class="fa fa-check"></i><b>17.3</b> Non-Linear Models</a></li>
+<li class="chapter" data-level="17.4" data-path="regression.html"><a href="regression.html#time-series-models"><i class="fa fa-check"></i><b>17.4</b> Time-Series Models</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>18</b> Aprendizado de Máquina</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="ml.html"><a href="ml.html#fundamentals-1"><i class="fa fa-check"></i><b>18.1</b> Fundamentals</a></li>
+<li class="chapter" data-level="18.2" data-path="ml.html"><a href="ml.html#ml-in-built-in-r"><i class="fa fa-check"></i><b>18.2</b> ML in Built-In R</a></li>
+<li class="chapter" data-level="18.3" data-path="ml.html"><a href="ml.html#ml-in-external-packages"><i class="fa fa-check"></i><b>18.3</b> ML in External Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="others3.html"><a href="others3.html"><i class="fa fa-check"></i><b>19</b> Outras Aplicações</a></li>
 <li class="chapter" data-level="" data-path="dict.html"><a href="dict.html"><i class="fa fa-check"></i>Dicionário de funções</a></li>
-<li class="chapter" data-level="" data-path="referências-19.html"><a href="referências-19.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="chapter" data-level="" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Publicado com bookdown</a></li>
 
@@ -474,7 +469,7 @@ div.csl-indent {
 <li><strong>Operadores:</strong> são imputados como <code class="sourceCode r"><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></code>.</li>
 <li>Parênteses podem ser utilizados em operações matemáticas: <code class="sourceCode r">(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span></code>.</li>
 </ul></li>
-<li><strong>Comentários:</strong> texto que não será avaliado como código. Use o símbolo <code>#</code>, que torna tudo após delena mesma linha, um comentário.</li>
+<li><strong>Comentários:</strong> texto que não será avaliado como código. Use o símbolo <code>#</code>, que torna tudo após dele, na mesma linha, um comentário.</li>
 <li><strong>Variáveis:</strong> já falei pra ter calma…</li>
 </ul>
 </div>
@@ -491,7 +486,7 @@ div.csl-indent {
 <span id="cb3-6"><a href="syntax-vars.html#cb3-6" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">+</span> a</span></code></pre></div>
 </div>
 <p>Algumas frases são apenas um valor (<code>1</code>), o nome de uma variável (<code>a</code>), a chamada de uma função <code>sum(1, 1)</code>{r}, ou a combinação dessas coisas. Na seção seguinte irei apresentar um resultado sobre isso.</p>
-<p>E quanto a um código como <code>1 +</code>? Bom, esse código não é <em>sintáticamente correto</em>. Isso que estamos chamando de “frase”, quando sintáticamente correto, recebe o termo <em>statement</em> (declaração). A partir de agora, vou parar de usar “frase”, e usar o termo mais formal, declaração.</p>
+<p>E quanto a um código como <code>1 +</code>? Bom, esse código não é <em>sintaticamente correto</em>. Isso que estamos chamando de “frase”, quando sintaticamente correto, recebe o termo <em>statement</em> (declaração). A partir de agora, vou parar de usar “frase”, e usar o termo mais formal, declaração.</p>
 </div>
 <div id="parágrafos" class="section level3 hasAnchor" number="2.1.3">
 <h3><span class="header-section-number">2.1.3</span> Parágrafos<a href="syntax-vars.html#parágrafos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -560,10 +555,10 @@ div.csl-indent {
 </ul>
 </div>
 <p>No capítulo <a href="data-attrs.html#data-attrs">3</a>, veremos que “tudo que existe no R é um objeto”, isto é, esse conceito é muito abrangente.</p>
-<p>Por exemplo, na seção anterior, falei sobre as unidades que comõe declarações. Elas também são objetos.</p>
+<p>Por exemplo, na seção anterior, falei sobre as unidades que compõe declarações. Elas também são objetos.</p>
 <div class="result">
 <p><strong>Objetos da linguagem</strong><br></p>
-<p>Existem três tipos de objtos que compõe a linguagem R:</p>
+<p>Existem três tipos de objetos que compõe a linguagem R:</p>
 <ul>
 <li><strong><em>names</em></strong>, nomes de variáveis.</li>
 <li><strong><em>calls</em></strong>, chamadas de funções.</li>
@@ -586,7 +581,7 @@ div.csl-indent {
 <div class="result">
 <p><strong>Copy-on-modify</strong><br></p>
 <p>No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.</p>
-<p>Existem duas exeções: objetos com apenas uma referência, e <em>ambientes</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Esses são alterados “na hora”/“no lugar”, ou <em>modify-in-place</em>.</p>
+<p>Existem duas exceções: objetos com apenas uma referência, e <em>ambientes</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Esses são alterados “na hora”/“no lugar”, ou <em>modify-in-place</em>.</p>
 </div>
 <div class="extra">
 <p>este tema é complexo, e foi bastante simplificado. Vide <span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span>, seções <a href="https://adv-r.hadley.nz/names-values.html#copy-on-modify">“2.3 - Copy-on-modify”</a> e <a href="https://adv-r.hadley.nz/names-values.html#modify-in-place">“2.5 - Modify-in-place”</a>. Os exemplos utilizando a função <a href="https://adv-r.hadley.nz/names-values.html#tracemem"><code class="sourceCode r"><span class="fu">tracemem</span>()</code></a> são especialmente úteis.</p>
@@ -609,19 +604,19 @@ div.csl-indent {
 </ul>
 <p>Nomes não sintáticos podem ser definidos, se escritos usando crases (<em>backticks</em>) “`”: `<code>_x` &lt;- 1</code>. Você provavelmente encontrará isso ao importar dados que não foram criados no R.</p>
 <p>Em muitos momentos, o R converte nomes não sintáticos utilizando a função <code>make.names()</code>. Você aprenderá sobre ela nos exercícios. É muito importante estar atento à esse comportamento, uma vez que é causa comum de erros.</p>
-<p>Você verá que isso é um tema comum: o R tenta fácilitar muitas tarefas, fazendo as coisas por você. Isso por um lado é o que o torna fácil de sair trabalhando, mas sempre é causa de inconsistências.</p>
+<p>Você verá que isso é um tema comum: o R tenta facilitar muitas tarefas, fazendo as coisas por você. Isso por um lado é o que o torna fácil de sair trabalhando, mas sempre é causa de inconsistências.</p>
 </div>
 </div>
 <div id="operadores" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Operadores<a href="syntax-vars.html#operadores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiquei com medo deles se sentirem excluídos.</p>
-<p>Abaixo estão os operadores relevantes para o momento, suas descições, e seu uso. Clique nos links dos operadores para abrir suas <em>páginas de ajuda</em>.</p>
+<p>Abaixo estão os operadores relevantes para o momento, suas descrições, e seu uso. Clique nos links dos operadores para abrir suas <em>páginas de ajuda</em>.</p>
 <table>
 <colgroup>
 <col width="21%" />
-<col width="15%" />
-<col width="29%" />
-<col width="33%" />
+<col width="17%" />
+<col width="25%" />
+<col width="36%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -633,96 +628,54 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>+</code></a></td>
-<td align="left">soma</td>
-<td align="left"><code>num + num</code></td>
-</tr>
-<tr class="even">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>-</code></a></td>
-<td align="left">subtração</td>
-<td align="left"><code>num - num</code></td>
-</tr>
-<tr class="odd">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>*</code></a></td>
-<td align="left">multiplicação</td>
-<td align="left"><code>num * num</code></td>
-</tr>
-<tr class="even">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>/</code></a></td>
-<td align="left">divisão</td>
-<td align="left"><code>num / num</code></td>
-</tr>
-<tr class="odd">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>\^</code></a></td>
-<td align="left">exponenciação</td>
-<td align="left"><code>num ^ num</code></td>
-</tr>
-<tr class="even">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>%%</code></a></td>
-<td align="left">divisão inteira</td>
-<td align="left"><code>num %% num</code></td>
-</tr>
-<tr class="odd">
-<td align="left">aritmétrica</td>
-<td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html"><code>%/%</code></a></td>
-<td align="left">resto da divisão</td>
-<td align="left"><code>num %/% num</code></td>
-</tr>
-<tr class="even">
 <td align="left">comparação</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>==</code></a></td>
 <td align="left">igual</td>
 <td align="left"><code>x == y</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">comparação</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>!=</code></a></td>
 <td align="left">diferente</td>
 <td align="left"><code>x !=  y</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">comparação</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&lt;</code></a></td>
 <td align="left">menor que</td>
 <td align="left"><code>num &lt; num</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">comparação</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&gt;</code></a></td>
 <td align="left">maior que</td>
 <td align="left"><code>num &gt; num</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">comparação</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&gt;=</code></a></td>
 <td align="left">maior igual</td>
 <td align="left"><code>num &gt;=  num</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">comparação</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html"><code>&lt;=</code></a></td>
 <td align="left">menor igual</td>
 <td align="left"><code>num &lt;=  num</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">lógica</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html"><code>!</code></a></td>
 <td align="left">“não” lógico</td>
 <td align="left"><code>! logi</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">lógica</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html"><code>&amp;</code></a></td>
 <td align="left">“e” lógico</td>
 <td align="left"><code>logi &amp; logi</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">lógica</td>
 <td align="left"><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html"><code>&amp;#124;</code></a></td>
 <td align="left">“ou” lógico</td>
@@ -846,12 +799,12 @@ div.csl-indent {
 <div class="ex">
 <p>para deixar mais claro, na declaração <code>(3+6)/(1+2)/5^4</code> o seguinte ocorre:</p>
 <ul>
-<li><code>()</code> são analizados primeiro, porque tem precedência (estão acima na tabela).
+<li><code>()</code> são analisados primeiro, porque tem precedência (estão acima na tabela).
 <ul>
 <li>Como é da direita pra esquerda, primeiro <code>(1+2)</code> vira <code>3</code>, e depois, <code>(3+6)</code> vira <code>9</code>.</li>
 </ul></li>
-<li><code>^</code> é analizado a seguir, logo, <code>5^4</code> vira <code>625</code>.</li>
-<li><code>/</code> é analizado a seguir.
+<li><code>^</code> é analisado a seguir, logo, <code>5^4</code> vira <code>625</code>.</li>
+<li><code>/</code> é analisado a seguir.
 <ul>
 <li>Como é da esquerda pra direita, primeiro <code>9/3</code> vira <code>3</code>, e depois <code>3/625</code> vira <code>0.0048</code>.</li>
 </ul></li>
@@ -902,9 +855,9 @@ div.csl-indent {
 <ul>
 <li>A dinâmica da memória no R é pautada pelo conceito de <em>copy-on-modify</em>. No R, um mesmo objeto pode ter ser referenciado a mais de um nome. Modificar algum deles não modifica o objeto original, e sim copia-o, criando um novo objeto. Isso é, os objetos são copiados-após-mudanças.
 <ul>
-<li>As exeções são objetos com apenas uma referência, e ambientes, que usam <em>modify-in-place</em> (são modificados “no lugar”).</li>
+<li>As exceções são objetos com apenas uma referência, e ambientes, que usam <em>modify-in-place</em> (são modificados “no lugar”).</li>
 </ul></li>
-<li>O conceito de objeto é muito geral. Inclusive, a prória linguagem R é composta por (apenas) três tipos de objetos: <strong><em>names</em></strong>, <strong><em>calls</em></strong>, e <strong><em>expressions</em></strong>. Expressões são algo mais geral, podendo ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</li>
+<li>O conceito de objeto é muito geral. Inclusive, a própria linguagem R é composta por (apenas) três tipos de objetos: <strong><em>names</em></strong>, <strong><em>calls</em></strong>, e <strong><em>expressions</em></strong>. Expressões são algo mais geral, podendo ser compostas de <strong><em>names</em></strong> e <strong><em>calls</em></strong>.</li>
 </ul>
 </div>
 <div id="operadores-1" class="section level4 unnumbered hasAnchor">
@@ -953,8 +906,8 @@ div.csl-indent {
 </ol>
 <ul>
 <li>Uma frase que retorne <code>TRUE</code> se <code>x</code> for múltiplo de 2.</li>
-<li>Uma frase que retonre <code>TRUE</code> se <code>x</code> não for múltiplo nem de 3, nem de 5.</li>
-<li>Uma frase que retonre <code>TRUE</code> se a parte inteira da divisão de <code>x</code> por 4 é igual a 2, ou se seu quadrado for maior ou igual à 10.</li>
+<li>Uma frase que retorne <code>TRUE</code> se <code>x</code> não for múltiplo nem de 3, nem de 5.</li>
+<li>Uma frase que retorne <code>TRUE</code> se a parte inteira da divisão de <code>x</code> por 4 é igual a 2, ou se seu quadrado for maior ou igual à 10.</li>
 </ul>
 <ol start="5" style="list-style-type: decimal">
 <li>Liste a ordem das ações executadas no cálculo da expressão abaixo:</li>
@@ -1142,7 +1095,7 @@ div.csl-indent {
 <ul>
 <li><span class="citation">(<a href="#ref-advr">Hadley Wickham 2019</a>)</span> capítulo <a href="https://adv-r.hadley.nz/names-values.html">“2 - Names and Values”</a>, excluindo as seções 2.4 e 2.6.</li>
 <li><span class="citation">(<a href="#ref-r-lang">R Core Team 2024e</a>)</span> seções <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Language-objects-1">“2.1.3 - Language Objects”</a> e <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Expression-objects-1">“2.1.3 - Expression Objects”</a>.</li>
-<li><span class="citation">(<a href="#ref-r-intro">R Core Team 2024a</a>)</span> seções <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vectors-and-assignment-1">“2.1 - Vectors and Assingment”</a> e <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1">“2.2 - Vector Arithmetic”</a>.</li>
+<li><span class="citation">(<a href="#ref-r-intro">R Core Team 2024a</a>)</span> seções <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vectors-and-assignment-1">“2.1 - Vectors and Assignment”</a> e <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1">“2.2 - Vector Arithmetic”</a>.</li>
 <li><span class="citation">(<a href="#ref-r-int">R Core Team 2024d</a>)</span> seção <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs-1">“2.1 - SEXPs”</a>.</li>
 <li><span class="citation">(<a href="#ref-r-helps">R Core Team 2024f</a>)</span> os documentos de ajuda das funções aqui expostas.</li>
 </ul>
@@ -1153,7 +1106,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<h3>Referências<a href="referências-19.html#referências-19" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3>Referências<a href="refs.html#refs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-advr" class="csl-entry">
 ———. 2019. <em>Advanced <span>R</span></em>. 2nd ed. <a href="https://adv-r.hadley.nz/index.html">https://adv-r.hadley.nz/index.html</a>.
@@ -1186,7 +1139,7 @@ R Core Team. 2024a. <span>“An <span>Introduction</span> to <span>R</span>.”<
           </div>
         </div>
       </div>
-<a href="parte-i---r-base-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="data-attrs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -1208,8 +1161,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-syntax_vars.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
@@ -1219,7 +1172,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": ["_main.pdf"],
 "search": {
 "engine": "fuse",
 "options": null

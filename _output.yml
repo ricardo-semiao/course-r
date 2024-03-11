@@ -1,4 +1,12 @@
+bookdown::bs4_book:
+  css: style.css
+  repo: https://github.com/ricardo-semiao/R-course
+  includes:
+    in_header: [script.html]
+
 bookdown::gitbook:
+  lib_dir: "libs"
+  citation_package: biblatex
   css: style.css
   config:
     sharing: null
@@ -8,12 +16,15 @@ bookdown::gitbook:
         <li><a href="./">R: Teoria e Aplicações</a></li>
       after: |
         <li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Publicado com bookdown</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
-    download: ["pdf", "epub"]
+    download: "pdf"
+  includes:
+    in_header: [script.html]
+
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+
 bookdown::epub_book: default

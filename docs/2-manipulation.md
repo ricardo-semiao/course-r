@@ -1,0 +1,51 @@
+# Manipulação de Dados {#manipulation}
+
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+Neste capítulo, descreverei os fundamentos e operações da manipulação de dados. Falo como aplicá-las usando os pacotes "dplyr" e "tidyr".
+
+
+## Operações de Manipulação
+
+### Operações em Observações
+
+
+### Operações em Variáveis
+
+
+### Operações em Células
+
+
+### Operações em Grupos
+
+
+### Operações de União
+
+
+### Operações de Remodelação
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

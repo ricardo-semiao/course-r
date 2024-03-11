@@ -27,7 +27,7 @@ exm:unlabeled-div-26
 introduction
 história
 características-da-linguagem-e-porque-r
-refs
+biblio
 estilo-do-livro
 instalação-interface-e-ferramentas
 syntax-vars
@@ -70,7 +70,7 @@ aplicações
 lookup-vectors
 lookup-tables
 amostragem-aleatória
-expandindo-linhas-identicas
+expandindo-linhas-idênticas
 seleção-negativa-com-characters
 filtragem-de-datasets-com-condições
 control-conds
@@ -122,10 +122,6 @@ introdução-4
 preparar
 entender-e-explorar
 communicating-and-executing
-data
-types-of-data
-importing-with-readr
-data-visualization
 manipulation
 operações-de-manipulação
 operações-em-observações
@@ -187,7 +183,7 @@ useful-metrics
 useful-graphs
 regression
 fundamentals
-data-1
+data
 formulas
 fitting
 visualizing

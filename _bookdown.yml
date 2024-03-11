@@ -1,3 +1,4 @@
+new_session: yes
 delete_merged_file: true
 output_dir: "docs"
 language:
@@ -6,6 +7,7 @@ language:
 rmd_files: [
   "index.Rmd",
   "0-introduction.Rmd",
+  
   "1-intro.Rmd",
   "1-syntax_vars.Rmd",
   "1-data_attrs.Rmd",
@@ -15,6 +17,7 @@ rmd_files: [
   "1-paradigms.Rmd",
   "1-others.Rmd",
   "1-recap.Rmd",
+  
   "2-intro.Rmd",
   "2-ds_import.Rmd",
   "2-manipulation.Rmd",
@@ -23,12 +26,14 @@ rmd_files: [
   "2-functional.Rmd",
   "2-time_series.Rmd",
   "2-recap.Rmd",
+  
   "3-intro.Rmd",
   "3-stats_prob.Rmd",
   "3-exploration.Rmd",
   "3-regression.Rmd",
   "3-ml.Rmd",
   "3-others.Rmd",
+  
   "0-dict.Rmd",
   "0-refs.Rmd"
   ]

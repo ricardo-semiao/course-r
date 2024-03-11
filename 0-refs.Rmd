@@ -1,4 +1,8 @@
-# Referências {-}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Referências {#refs .unnumbered}
 
 Abaixo seguem as principais referências deste livro.
 
