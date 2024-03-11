@@ -1,4 +1,4 @@
-# Parte II - Ciência de Dados com o Tidyverse {-}
+# Parte II - Ciência de Dados com o Tidyverse {#intro2 .unnumbered}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.

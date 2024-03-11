@@ -1,6 +1,13 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
 # Control Flow e Condições {#control-conds}
 
-**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
 
 ## Introdução
 

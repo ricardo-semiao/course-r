@@ -1,3 +1,14 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+
+tabulate_funs <- function(sheet, chap, cat, drop = "") {
+  readxl::read_excel("assets/functions_list.xlsx", sheet = sheet) |>
+  dplyr::filter(`Capítulo` %in% chap & `Categoria` %in% cat) |>
+  dplyr::select(-any_of(drop)) |>
+  kableExtra::kable()
+}
+```
+
 # Sintaxe e Variáveis {#syntax-vars}
 
 ## Sintaxe
@@ -238,8 +249,8 @@ na coluna de "Uso", "logi" se refere a qualquer valor que se comporte como um va
 Agora vou apresentar a ordem de precedência da aplicação dos operadores. Associatividade se refere à como são resolvidos "empates", "direita pra esquerda" significa que o operador mais à direita é analisado antes. Tudo ficará mais claro no exemplo seguinte.
 
 ```{r, eval = TRUE, echo = FALSE}
-readxl::read_excel("assets/functions_list.xlsx", sheet = "precedência") %>%
-  kable()
+readxl::read_excel("assets/functions_list.xlsx", sheet = "precedência") |>
+  kableExtra::kable()
 ```
 
 :::{.obs}
@@ -365,9 +376,9 @@ x <- FALSE | !5.2 %% 2*7*4 - -3 <= 100 & TRUE
 Abaixo segue a lista de funções vistas neste capítulo.
 
 ```{r, eval = TRUE, echo = FALSE}
-readxl::read_excel("assets/functions_list.xlsx", sheet = "lista") %>%
-  select(-Capítulo) %>%
-  kable()
+readxl::read_excel("assets/functions_list.xlsx", sheet = "lista") |>
+  dplyr::select(-Capítulo) |>
+  kableExtra::kable()
 ```
 
 

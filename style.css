@@ -62,7 +62,7 @@ a:visited {
   color: #4D7413 !important;
 }
 .obs {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 16px;
 }
 .obs:before {
   content: "💬 Observação: ";
@@ -74,7 +74,7 @@ a:visited {
 	font-size: 90%;
 }
 .extra {
-    margin: 0 0 0 18px;
+    margin: 0 0 0 16px;
 }
 .extra:before {
   content: "🔍 Extra: ";

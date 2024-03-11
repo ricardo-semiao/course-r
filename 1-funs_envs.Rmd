@@ -1,8 +1,13 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
 # Funções e Ambientes {#funs-envs}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
+
 
 ## Fundamentos
 

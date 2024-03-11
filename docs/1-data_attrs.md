@@ -1,0 +1,518 @@
+
+
+# Tipos de Dados e Atributos {#data-attrs}
+
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+
+## Famílias
+
+### Tipos de Dados
+No R, os tipos de dados são organizados em "famílias". Antes de entrar nesse mérito, abaixo estão os tipos mais importantes:
+
+- _Logical_ são os dados booleanos, podem ser `TRUE`{.r} ou `FALSE`{.r}. Podem ser abreviados para `T`{.r} e `F`{.r}\footnote[frame]{Mas as estas não são palavras reservadas}\pause
+- _Characters_ são os dados de texto (strings)\pause
+- _Integers_ são números inteiros, e são escritos com um `L`{.r} no fim\pause
+- _Doubles_ são os números decimais, podem ser decimais `1.245`{.r}, científicos `1.23e4`{.r}, ou hexadecimais `0xadfe`{.r}
+  - Valores especiais: `Inf`{.r}, `-Inf`{.r}, e `NaN`{.r} ("not a number", usado em indefinições matemáticas)
+
+Existem outros dois tipos menos utilizados: _raw_ são os dados binários; _complex_ são os números complexos
+
+
+\framesubtitle{Valores NA}
+Todos os tipos explicados assumem um valor especial, o "valor desconhecido": `NA`{.r} (_non aplicable_)
+
+- A maioria das operações envolvendo `NA`{.r}\`s retorna um `NA`{.r}: `1 + NA #> NA`{.r}
+- Como NA é um valor desconhecido, checar se um NA é igual ao outro não faz sentido `NA == NA #> NA`{.r}
+- Por trás dos panos, existe um `NA`{.r} diferente para cada tipo de vetor atômico (`NA_integer_`{.r}, etc.)
+
+
+\framesubtitle{Vetores atômicos}
+
+Um dado "sozinho" (`3`{.r}) é chamado de **scalar**. Mas o R também apresenta "coleções" de dados: `(1, 2, 3, 4, 5)`{.r}\footnote[frame]{Sintaxe ilustrativa}
+
+::: block
+- Uma coleção de escalares de um mesmo tipo é um **atomic vector**
+- Um escalar é uma "coleção de tamanho um", e portanto, todo escalar é um vetor atômico
+:::
+\pause
+
+Logo, não existe um objeto "sem estar em um vetor". `x <- "a"`{.r} é um vetor atômico de tamanho 1\medskip
+
+Obs: os componentes de uma coleção são chamados de "elementos"
+
+
+\framesubtitle{Vetores genéricos}
+
+::: {.alert}
+Vetores atômicos não aceitam elementos de tipos diferentes, e não aceitam elementos que tamanho maior que um
+:::
+
+Porém, o R permite coleções com essas características, como `(1, "a", (1, 2, 3), TRUE, 1)`{.r}\footnote[frame]{Sintaxe ilustrativa}\pause
+
+::: block
+#### Definição
+- Uma coleção de vetores é um **generic vector**, ou, mais comumente, uma **list**
+- Um vetor genérico/lista também é um vetor, de modo que listas podem conter outras listas
+- A lista tem seu próprio tipo, _list_
+:::
+
+
+\framesubtitle{Vetores}
+
+Resumindo, temos:
+
+- Os seis tipos "básicos" / tipos de escalares
+- Vetores atômicos, coleções de escalares de mesmo tipo
+  - Mesmo quando seu tamanho é unitário (os próprios escalares)
+- Vetores genéricos, coleções de vetores
+  - Não precisam ser atômicos, podem ter elementos de tipos diferentes
+  - Não precisam ser de escalares, podem ter elementos de tamanhos diferentes de 1
+  - Consequentemente, podem conter qualquer vetor, atômico ou genérico (si mesmos)
+  - Apresentam seu próprio tipo, _list_
+
+
+### Famílias
+Como disse, os tipos de dados no R são organizados em "famílias". Existem duas:
+
+- **Vector** abrange os vetores atômicos e as listas. É a família dos dados "propriamente ditos"
+- **Node** é a família de "dados internos" do R (funções, ambientes, etc.\footnote[frame]{Sim, esses são objetos, salvos como dados. Mais sobre isso no futuro.})
+
+Adicionalmente, `NULL`{.r}, um objeto especial, não é um vetor, mas pode ser entendido como a "ausência de dado"/"vetor de tamanho zero"\medskip
+
+A seguir, vamos entrar em detalhe sobre vetores
+
+
+
+## Vetores atômicos
+\framesubtitle{Criação de vetores atômicos}
+
+Você já deveria saber que `x <- 3`{.r} está criando um vetor atômico. Mas e para criar vetores atômicos mais longos?\medskip
+
+A função `c()`{.r} combina (daí o nome) vetores em um mais longo. Ela serve com atômicos ou genéricos, mas por enquanto, vamos usá-la com atômicos:
+
+- `c(TRUE, FALSE)`{.r}
+- `c(1L)`{.r}
+- `c(1, 3.5, 1.23e4)`{.r}
+- `c("a", "2")`{.r}
+
+\framesubtitle{Coerção}
+Quando usada com vetores atômicos, `c()`{.r} coage os inputs a escalares do mesmo tipo, resultando em um outro atomic vector
+
+::: {.example}
+Qual o resultado do exemplo abaixo?
+\vspace{-1em}
+
+```r
+c(c(1, 2), c(3, 4))
+```
+\vspace{-1em}
+E abaixo?
+\vspace{-1em}
+
+```r
+c(1, 2, "a", "b")
+```
+\vspace{-1em}
+:::
+\pause
+
+Existe uma ordem de prioridade: se houver um _character_, tudo vira _character_, fora isso, tudo vira _double_, depois, _integer_, e por fim, _logical_\footnote[frame]{Atenção: causa comum de erros}
+
+
+\framesubtitle{Funções úteis}
+Podemos testar o tipo de um vetor com `is.logical()`{.r}, `is.integer()`{.r}, `is.double()`{.r}, e `is.character()`{.r}\footnote[frame]{Também existe `is.na()`{.r}}
+
+- Existem funções extras `is.vector()`{.r}, `is.atomic()`{.r}, e `is.numeric()`{.r}, mas são imprevisíveis\pause
+
+Podemos transformar o tipo de um vetor com `as.logical()`{.r}, `as.integer()`{.r}, `as.double()`{.r}, ou `as.character()`{.r}
+
+- As mesmas contrapartes existem aqui\pause
+
+`typeof()`{.r} retorna o tipo de um vetor, `length()`{.r} retorna seu tamanho\medskip
+
+Obs: funções que pedem argumentos de um mesmo tipo normalmente os coagem caso eles não o sejam
+
+
+
+## Listas
+
+Características gerais:
+
+- O `typeof()`{.r} de uma list é `"list"`{.r}
+- Diferentemente dos V.A., uma lista de tamanho 1 não é um escalar
+- `list()`{.r} cria uma nova lista
+- `is.list()`{.r} e `as.list()`{.r}
+- `unlist()`{.r} transforma uma lista em um vetor atômico, mas de maneiras inesperadas
+- No futuro, trataremos das funções do pacote purrr
+
+No tema de "Gerenciamento de memória" falaremos sobre como, por trás dos panos, listas são apenas referências aos objetos, de modo que `list(x, x)`{.r} ocupa bem menos que o dobro do espaço de `list(x)`{.r}
+
+
+\framesubtitle{Coerção}
+
+`c()`{.r} também pode combinar listas
+
+::: {.example}
+Analise, desenhe, e compare os objetos abaixo:
+\vspace{-1em}
+
+```r
+l1 <- list(list(1), list(2))
+l2 <- list(list(1), 1)
+l3 <- list(list(1,2,3), c(1,2,3))
+
+l4 <- c(list(1), list(2))
+l5 <- c(list(1), 2)
+l6 <- c(list(1,2,3), c(1,2,3))
+```
+\vspace{-1em}
+:::
+\pause
+
+Basicamente, a função `list()`{.r} cria "caixinhas" para cada um de seus argumentos, enquanto a função `c()`{.r} não o faz
+
+
+
+## Atributos
+
+Os vetores podem carregar mais informações do que apenas os valores de seus elementos, eles podem carregar _metadados_ (dados que informam algo sobre os elementos), os **atributos**\medskip\pause
+
+Existem três atributos principais\footnote[frame]{Para qualquer outro metadado pode-se criar um atributo. Mais sobre isso na aula de OOP}:
+
+- _names_, um vetor character, que nomeia cada elemento
+- _dim_ (diminutivo de _dimensions_), um vetor integer, que reorganiza vetores em matrizes e arrays ("matrizes multidimensionais")
+- _class_, um vetor character, que indica um "tipo 2.0", alterando o comportamento dos vetores\pause
+
+
+::: {.alert}
+Atributos não afetam a estrutura básica (tipo) dos objetos, mas podem afetar seu comportamento
+:::
+
+
+### Nomes
+Podemos nomear um vetor de várias formas:
+
+- `x <- c(a = 1, b = 2, c = 3)`{.r}
+- `names(x) <- c("a", "b", "c")`{.r}
+- `x <- setNames(x, c("a", "b", "c"))`{.r} (ou a função `set_names()`{.r} do pacote purrr)\pause
+
+Podemos remover nomes com:
+
+- `x <- unname(x)`{.r}
+
+::: {.example}
+Que valor/objeto colocaríamos em `y`{.r} para remover os nomes?
+\vspace{-2.5em}
+
+```r
+names(x) <- y
+```
+\vspace{-1em}
+:::
+
+É fácil ver como a estrutura básica fica inalterada. Tente transpor essa ideia para os outros atributos mais complexos
+
+
+
+### Dimensões
+\framesubtitle{Em vetores atômicos}
+Um vetor com o atributo dimensão é um vetor que deve ser interpretado como organizado em linhas e colunas (para matrizes):
+
+
+```r
+m1 <- c(T, F, T, T, F, T)
+dim(m1) <- c(2, 3)
+#ou matrix(c(T, F, T, T, F, T), nrow = 2, ncol = 3)
+```
+
+Ou como organizado em matrizes multidimensionais (para arrays):
+
+
+```r
+a1 <- c()
+dim(a1) <- c(2, 3, 2)
+#ou array(1:12, c(2, 3, 2))
+```
+
+
+\framesubtitle{Em listas}
+Também podemos ter matrizes e arrays feitas com listas:
+
+
+```r
+m2 <- list(1, 2, "c", list("d"), TRUE, c(3, 4))
+dim(m2) <- c(2, 3)
+```
+
+::: {.example}
+- Que lista complexa! Como poderíamos desenhá-la? E sua versão de matriz?
+- Uma matriz ou array sempre é atômica?
+- O que aconteceria com os outros elementos se eu alterasse\footnote[frame]{Aprenderemos como no futuro} o primeiro elemento de `m1`{.r} para `"a"`{.r}? E se eu fizesse o mesmo com `m2`{.r}?
+:::
+
+
+\framesubtitle{Funções úteis}
+
+Como atributos não alteram a estrutura básica, as funções para vetores tem generalizações para matrizes e arrays:
+
+ Vector            Matrix                               Array            
+----------------- ------------------------------------ ------------------
+ `names()`{.r}     `rownames()`{.r}, `colnames()`{.r}   `dimnames()`{.r} 
+ `length()`{.r}    `nrow()`{.r}, `ncol()`{.r}           `dim()`{.r}      
+ `c()`{.r}         `rbind()`{.r}, `cbind()`{.r}         `abind()`{.r}    
+ `is.vector`{.r}   `is.matrix()`{.r}                    `is.array()`{.r}
+----------------- ------------------------------------ ------------------
+
+Note que adicionar dimensões gerou algumas possibilidades
+
+- Um tamanho e um atributo de nome para cada dimensão
+- Maneiras diferentes de combinar objetos
+- Operação de transposição (com `t()`{.r} e `aperm()`{.r})
+
+
+### Classes
+Outro atributo importante é _class_, que permite a criação de vetores diferenciados, criados em cima dos tipos básicos\medskip
+
+Esse atributo empodera o sistema de programação orientada ao objeto S3. Nele, funções agem diferentemente a depender da classe do argumento que estão recebendo. Abaixo vão algumas:
+
+- _factor_ são integers para dados categóricos
+- _Date_, _POSIXct_, e _difftime_ são doubles para datas
+- _data.frame_ e _tibble_ são lists para bases de dados
+- Existem outros como _ts_ para séries de tempo, uma classe para cada tipo de vetor estudado, entre outros
+
+Obs: existem outras famílias de classes
+
+
+#### Factors
+_Factors_ tem o atributo class como `"factor"`{.r}, e um atributo _levels_ que define os valores/categorias possíveis
+
+
+```r
+factor(c("m", "f", "f", "m"),
+       levels = c("m", "f", "o"))
+#> [1] m f f m
+#> Levels: m f o
+```
+
+Cuidado, factors comumente geram erros\footnote[frame]{Parecem strings, mas não são, cuidado com manipulações de texto}\footnote[frame]{Vide também \href{https://notstatschat.tumblr.com/post/124987394001/stringsasfactors-sigh}{stringsAsFactors = sigh}}\medskip
+
+Também existem os _ordered factors_, onde indicamos uma ordem para os _levels_, e costumam ser usados em funções de modelagem e visualização (vide `ordered()`{.r})
+
+
+#### Datas
+**Dates:** são um _double_ com o atributo class `"Date"`{.r}. Por trás dos panos são o número de dias desde 01/01/1970. Para criar: `as.Date("1970-02-01")`{.r}\medskip
+
+**Date-times:** são um _double_ com o atributo class `"POSIXct"`{.r}\footnote[frame]{Também existe o "POSIXlt"}. Por trás dos panos são o número de segundos desde 01/01/1970. Para criar: `as.POSIXct("2018-08-01 22:00", tz = "UTC")`{.r}\medskip
+
+**Durations:** são um _double_ com o atributo class `"difftime"`{.r}, que conta a distância entre duas datas. Têm o atributo `"units"`{.r} que indica como o valor deve ser interpretado. Para criar: `as.difftime(1, units = "weeks")`{.r}\medskip
+
+
+#### Data frames
+Um _data frame_ é uma representação de uma tabela de dados. Basicamente, uma lista nomeada de vetores, normalmente atômicos, de mesmo tamanho:
+
+
+```r
+list(coluna1 = c(1, 2, 3),
+     coluna2 = c("c", "b", "d"),
+     coluna3 = c(TRUE, FALSE, NA))
+```
+
+Como sempre, ter isso em mente ajudará muito a transpor o conhecimento sobre listas para data frames
+
+
+Data frames têm os atributos _names_ (nomes das "colunas"), _row.names_ (nomes das "linhas"), e a _class_ `"data.frame"`{.r}\medskip
+
+Funções úteis:
+
+- São criados com `data.frame()`{.r}
+- Um data frame tem `nrow()`{.r} linhas
+- E `ncol()`{.r}/`length()`{.r} colunas
+- Também existem as funções "is" e "as"
+
+Uma coluna de um data frame pode também ser uma matriz/array (se o número de linhas coincidir), ou uma lista (se o número de itens coincidir)\footnote[frame]{Para criar, use a função `I()`{.r}: `data.frame(x = I(list(...)))`{.r}}
+
+
+Um _Tibble_ é um sucessor data frame trazido pelo pacote "tibble" (parte do tidyverse). Tibbles são “preguiçosos e grosseiros: fazem menos e reclamam mais”:
+
+- Tem a class `c("data.frame", "tbl_df")`{.r}
+- Não geram vetores maiores a partir de vetores menores (`data.frame(x = 1:4, y = 1:2)`{.r})
+- Não mudam nomes não sintáticos
+- Não aceitam _rownames_ ("metadata is data")
+- Um subset de um tibble sempre é um tibble
+- Não tem matching parcial nos nomes de colunas\footnote[frame]{Veja a opção `options(warnPartialMatchDollar = TRUE)`{.r}}
+- Permitem referenciar colunas na hora da criação (`tibble(x = 1:4, y = 2*x)`{.r})
+- Tem uma melhor visualização no console
+
+
+\framesubtitle{Funções úteis}
+
+Algumas funções relacionadas à atributos:
+
+- `atributes(x)`{.r} retorna uma lista com os atributos de x
+- `attr(x, "attr")`{.r} retorna o valor do atributo `"attr"`{.r}
+- Atributos importantes têm funções próprias (`names()`{.r}, `dim()`{.r}, `class()`{.r})
+  - `unclass(x)`{.r} remove a classe de `x`{.r}, retornando-o ao tipo base
+- `structure(x, "attr" = valor)`{.r} adiciona os atributos especificados em `x`{.r}
+- `str(x)`{.r} retorna uma visualização da estrutura de `x`{.r}
+
+Obs: a maior parte pode ser usada para definir/alterar valores de atributos
+
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+\framesubtitle{Sintaxe}
+
+- Como imputar valores
+- "Definições" de expressão, função, e objeto (& nome)
+- Criação de variáveis
+  - Operadores de definição `=`{.r} e `<-`{.r}
+  - Regras de nomenclatura
+
+
+\framesubtitle{Tipos de dados}
+
+\begin{figure}
+\centering
+\caption*{Resumo dos tipos:}
+\includegraphics[width=0.9\textwidth, keepaspectratio]{../Aula_i1/tipos_de_dados.png}
+\end{figure}
+
+\footnote[frame]{Existem outras famílias de classes; existem classes S3 para cada tipo de V.A.}
+
+
+\framesubtitle{Atributos}
+
+- Definição. Metadados que alteram algo sobre o vetor
+  - _names_ alter visualização e como referenciar os elementos
+  - _dim_ altera como o elemento é organizado, e é aplicável à todo tipo de vetor
+
+
+\framesubtitle{Funções aprendidas}
+
+- `typeof()`{.r}/`class()`{.r} e funções "as" e "is" (extra: `is.na()`{.r})
+- Funções criadoras `c()`{.r}, `list()`{.r}, `matrix()`{.r}, `array()`{.r}, `factor()`{.r}, `ordered()`{.r}, `data.frame()`{.r}, `tibble()`{.r}, `unlist()`{.r}
+- Funções combinadoras `c()`{.r}, `cbind()`{.r}, `rbind()`{.r}, e pacote "abind"
+- Funções sobre _dim_: `dim()`{.r}, `length()`{.r}, `nrow()`{.r}, `ncol()`{.r}
+- Funções sobre _names_: `names`{.r}, `colnames()`{.r}, `rownames()`{.r}, `dimnames()`{.r}, `setNames()`{.r}/`set_names()`{.r}, `unname()`{.r}
+- Funções sobre _atributes_: `str()`{.r}, `atributes()`{.r}, `attr()`{.r}, `structure()`{.r}, `unclass()`{.r}
+- Outras: `t()`{.r}, `I()`{.r} (extra: `stringsAsFactors = FALSE`{.r})
+
+
+---
+
+### Exercícios {-}
+
+::: {.example}
+#### Vetores atômicos
+- Porque `1 == "1"`{.r} é verdadeiro? Porque `-1 < FALSE`{.r} é verdadeiro? Porque `"one" < 2`{.r} é falso?
+- Agora com operações aritméticas. 1 + "2" funciona? e TRUE + 1? Qual é a regra?
+- Porque o `NA`{.r} padrão é um vetor lógico? Pense no resultado de `c(FALSE, NA_character_)`{.r}
+- Trabalhamos exemplos envolvendo `c()`{.r} e listas. Busque na página de ajuda `?c()`{.r} pela ordem completa de coerção
+- O que `"a" == c("a")`{.r} retorna? e `identical("a", c("a"))`{.r}?
+- Estude o argumento `recursive = TRUE`{.r} de `c()`{.r}. O que ele faria em: `c(list(1), list(2))`{.r}, `c(list(1), 2)`{.r}, `c(list(1,2,3)`{.r}, `c(1,2,3))`{.r}?
+:::
+
+
+::: {.example}
+#### Listas
+- Estude os objetos abaixo. Desenhe-os:
+\vspace{-1em}
+
+```r
+l1 <- list(1:3, "a", c(T, F, T), c(2.3, 5.9))
+l2 <- list(list(list(1)))
+l3 <- list(list(1, 2), c(3, 4))
+l4 <- c(list(1, 2), c(3, 4))
+```
+\vspace{-1em}
+- Faça o mesmo, agora estudando o tipo e classe:
+\vspace{-1em}
+
+```r
+l5 <- list(1:4, "a", list("a"), matrix(1,2,3))
+l6 <- l5; dim(l6) <- c(2,2)
+l7 <- as.data.frame(l6)
+```
+\vspace{-1em}
+:::
+
+
+::: {.example}
+#### Atributos
+- Como `setNames()`{.r} funciona? Como `unname()`{.r} funciona? Olhe o código fonte
+- O que `dim()`{.r} retorna quando aplicado a um vetor unidimensional? Quando `NROW()`{.r} e `NCOL()`{.r} podem ser úteis?
+- Como você descreveria os objetos abaixo? Qual a diferença entre eles e `1:5`{.r}?
+\vspace{-1em}
+
+```r
+x1 <- array(1:5, c(1, 1, 5))
+x2 <- array(1:5, c(1, 5, 1))
+x3 <- array(1:5, c(5, 1, 1))
+```
+\vspace{-1em}
+:::
+
+
+::: {.example}
+#### Vetores atômicos S3
+- O que faz a função `table()`{.r}? Que objeto retorna? Qual seu tipo? Quais seus atributos? Como sua dimensão muda ao adicionar variáveis para tabular?
+- O que acontece com um factor ao alterar seus níveis?
+\vspace{-1em}
+
+```r
+f1 <- factor(letters)
+levels(f1) <- rev(levels(f1))
+```
+\vspace{-1em}
+- O que o código abaixo faz? como `f2`{.r} e `f3`{.r} diferem de `f1`{.r}?
+\vspace{-1em}
+
+```r
+f2 <- rev(factor(letters))
+f3 <- factor(letters, levels = rev(letters))
+```
+\vspace{-1em}
+:::
+
+
+::: {.example}
+#### Listas S3
+- Pode haver um data frame com zero linhas? E zero colunas?
+- O que ocorre se você definir rownames não únicos?
+- Se `df`{.r} é um data frame, o que é `t(df)`{.r}? Porque? E `t(t(df))`{.r}?
+- O que `as.matrix()`{.r} faz quando aplicada a um data frame com colunas de tipos diferentes? Como isso difere de usar `data.matrix()`{.r}?
+:::
+
+
+::: {.example}
+#### Listas S3
+- Estude o objeto abaixo. As colunas tem a mesma _length_? Existe alguma outra medida de dimensão igual? Isso faz sentido?
+\vspace{-1em}
+
+```r
+x <- data.frame(a = 1:2)
+x$b <- c(matrix(1, 1, 1), matrix(2, 1, 1))
+x$c <- list(matrix(1, 1, 1), matrix(2, 1, 1))
+x$d <- data.frame(c1 = factor(c("a", "b")))
+```
+\vspace{-1em}
+:::
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}

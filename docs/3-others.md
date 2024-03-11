@@ -1,0 +1,38 @@
+# Outras Aplicações {#others3}
+
+**Aviso:** este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+
+Neste capítulo, listarei outras aplicações de possível interesse, especialmente aquelas com relação aos conceitos deste livro.
+
+Alguns dos temas:
+
+- Economia e finanças com tidyquant.
+- Modelagem com tidymodels.
+- Comunicação com RMarkdown, stargazer, broom, e Shiny.
+- Otimização.
+- Bioestatística e estatística geoespacial.
+- Pacotes.
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

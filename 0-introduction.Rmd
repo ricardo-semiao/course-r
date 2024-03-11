@@ -1,3 +1,7 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
 # Introdução {#introduction}
 
 ## História
@@ -45,7 +49,7 @@ Porém, nem tudo são flores. Muitas dessas características tem prós e contras
 
 
 
-## Literatura sobre R {#refs}
+## Literatura sobre R {#biblio}
 
 A literatura base pode ser encontrada no [CRAN](https://cran.r-project.org/manuals.html). Ela é composta de, principalmente:
 

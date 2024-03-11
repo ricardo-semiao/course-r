@@ -1,0 +1,34 @@
+
+
+# Dicionário de funções {#dict .unnumbered}
+
+Abaixo segue a lista de funções vistas neste livro.
+
+
+| Capítulo|Categoria   |Função         |Descrição                      |Uso                      |
+|--------:|:-----------|:--------------|:------------------------------|:------------------------|
+|        1|aritmétrica |[`+`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|soma                           |`num + num`              |
+|        1|aritmétrica |[`-`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|subtração                      |`num - num`              |
+|        1|aritmétrica |[`*`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|multiplicação                  |`num * num`              |
+|        1|aritmétrica |[`/`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|divisão                        |`num / num`              |
+|        1|aritmétrica |[`\^`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|exponenciação                  |`num ^ num`              |
+|        1|aritmétrica |[`%%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|divisão inteira                |`num %% num`             |
+|        1|aritmétrica |[`%/%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html)|resto da divisão               |`num %/% num`            |
+|        1|comparação  |[`==`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html)|igual                          |`x == y`                 |
+|        1|comparação  |[`!=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html)|diferente                      |`x !=  y`                |
+|        1|comparação  |[`<`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html)|menor que                      |`num < num`              |
+|        1|comparação  |[`>`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html)|maior que                      |`num > num`              |
+|        1|comparação  |[`>=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html)|maior igual                    |`num >=  num`            |
+|        1|comparação  |[`<=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html)|menor igual                    |`num <=  num`            |
+|        1|lógica      |[`!`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html)|"não" lógico                   |`! logi`                 |
+|        1|lógica      |[`&`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html)|"e" lógico                     |`logi & logi`            |
+|        1|lógica      |[`&#124;`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html)|"ou" lógico                    |`logi &#124; logi`       |
+|        1|agrupadores |[`{`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html)|agrupador chaves               |`{ expr }`               |
+|        1|agrupadores |[`(`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html)|agrupador parênteses           |`( expr )`               |
+|        1|definidores |[`<-`, `->`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html)|definidores                    |`x <- expr`, `x -> expr` |
+|        1|definidores |[`=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html)|definidores                    |`x = expr`               |
+|        1|definidores |[`assign()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/assign.html)|definidores                    |`assign("x", expr)`      |
+|        1|outros      |[`rm()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/rm.html)|limpa objetos do ambiente      |`rm(x)`                  |
+|        1|nomes       |[`make.names()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/make.names.html)|NA                             |NA                       |
+|        1|ajuda       |[`help()`](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/help.html), [`?`](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Question.html)|procurar ajuda na documentação |`help(x)`, `?x`          |
+|        1|ajuda       |[`vignette()`](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/vignette.html)|procurar vignettes             |`vignette(x)`            |
