@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 7 Paradigmas de Programação | R: Teoria e Aplicações</title>
+<meta name="author" content="Ricardo Semião">
+<meta name="description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho.  7.1 Programação Funcional Apresentação das ideias gerais da programação funcional. O grosso da aplicação será deixada...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Capítulo 7 Paradigmas de Programação | R: Teoria e Aplicações">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://ricardo-semiao.github.io/R-course/paradigms.html">
+<meta property="og:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho.  7.1 Programação Funcional Apresentação das ideias gerais da programação funcional. O grosso da aplicação será deixada...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 7 Paradigmas de Programação | R: Teoria e Aplicações">
+<meta name="twitter:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho.  7.1 Programação Funcional Apresentação das ideias gerais da programação funcional. O grosso da aplicação será deixada...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">R: Teoria e Aplicações</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Bem Vindo!</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introdução</a></li>
+<li><a class="" href="intro1.html">Parte I - R Base</a></li>
+<li><a class="" href="syntax-vars.html"><span class="header-section-number">2</span> Sintaxe e Variáveis</a></li>
+<li><a class="" href="data-attrs.html"><span class="header-section-number">3</span> Tipos de Dados e Atributos</a></li>
+<li><a class="" href="subset.html"><span class="header-section-number">4</span> Subsetting</a></li>
+<li><a class="" href="control-conds.html"><span class="header-section-number">5</span> Control Flow e Condições</a></li>
+<li><a class="" href="funs-envs.html"><span class="header-section-number">6</span> Funções e Ambientes</a></li>
+<li><a class="active" href="paradigms.html"><span class="header-section-number">7</span> Paradigmas de Programação</a></li>
+<li><a class="" href="others1.html"><span class="header-section-number">8</span> Outros Tópicos</a></li>
+<li><a class="" href="recap1.html">Recapitulando</a></li>
+<li><a class="" href="intro2.html">Parte II - Ciência de Dados com o Tidyverse</a></li>
+<li><a class="" href="ds-import.html"><span class="header-section-number">9</span> Ciência de Dados e Importação</a></li>
+<li><a class="" href="manipulation.html"><span class="header-section-number">10</span> Manipulação de Dados</a></li>
+<li><a class="" href="visualization.html"><span class="header-section-number">11</span> Visualização Gráfica</a></li>
+<li><a class="" href="strings-factors.html"><span class="header-section-number">12</span> Manipulação de Strings e Factors</a></li>
+<li><a class="" href="functional.html"><span class="header-section-number">13</span> Programação Funcional</a></li>
+<li><a class="" href="time-series.html"><span class="header-section-number">14</span> Manipulação de Datas e Séries de Tempo</a></li>
+<li><a class="" href="recap2.html">Recapitulando</a></li>
+<li><a class="" href="intro3.html">Parte III - Aplicações Diversas</a></li>
+<li><a class="" href="stats-prob.html"><span class="header-section-number">15</span> Probabilidade e Estatística</a></li>
+<li><a class="" href="exploration.html"><span class="header-section-number">16</span> Exploração de Dados</a></li>
+<li><a class="" href="regression.html"><span class="header-section-number">17</span> Regressão</a></li>
+<li><a class="" href="ml.html"><span class="header-section-number">18</span> Aprendizado de Máquina</a></li>
+<li><a class="" href="others3.html"><span class="header-section-number">19</span> Outras Aplicações</a></li>
+<li><a class="" href="dict.html">Dicionário de funções</a></li>
+<li><a class="" href="refs.html">Referências</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/ricardo-semiao/R-course">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="paradigms" class="section level1" number="7">
+<h1>
+<span class="header-section-number">Capítulo 7</span> Paradigmas de Programação<a class="anchor" aria-label="anchor" href="#paradigms"><i class="fas fa-link"></i></a>
+</h1>
+<div class="warn">
+<p>este capítulo está em construção. O que segue abaixo é apenas um rascunho.</p>
+</div>
+<div id="programação-funcional" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Programação Funcional<a class="anchor" aria-label="anchor" href="#programa%C3%A7%C3%A3o-funcional"><i class="fas fa-link"></i></a>
+</h2>
+<p>Apresentação das ideias gerais da programação funcional. O grosso da aplicação será deixada para a segunda parte do livro, durante a explicação do pacote <em>purrr</em>. A referência base são os capítulos <a href="https://adv-r.hadley.nz/fp.html">9, 10, e 11, do “Advanced R”</a>.</p>
+</div>
+<div id="programação-orientada-ao-objeto" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Programação Orientada ao Objeto<a class="anchor" aria-label="anchor" href="#programa%C3%A7%C3%A3o-orientada-ao-objeto"><i class="fas fa-link"></i></a>
+</h2>
+<p>OOP centra a maneira de resolver problemas em objetos métodos para os manipular</p>
+<p>O R é uma linguagem funcional (orientada à funções), mas tem pacotes que incluem funcionalidades de OOP</p>
+<div id="definição-3" class="section level4 block" number="7.2.0.1">
+<h4>
+<span class="header-section-number">7.2.0.1</span> Definição<a class="anchor" aria-label="anchor" href="#defini%C3%A7%C3%A3o-3"><i class="fas fa-link"></i></a>
+</h4>
+<p>OOP no R é bem diferente de em outras linguagens mas a ideia básica é a mesma:</p>
+<ul>
+<li>Cada objeto tem uma classe <em>class</em> (o atributo)</li>
+<li>Cada classe tem <em>methods</em> “funções” que se aplicam a uma classe específica</li>
+<li>Classes podem ser criadas com base em outras, herdando os métodos de sua “classe pai”</li>
+</ul>
+</div>
+<div id="sistemas-de-oop" class="section level3" number="7.2.1">
+<h3>
+<span class="header-section-number">7.2.1</span> Sistemas de OOP<a class="anchor" aria-label="anchor" href="#sistemas-de-oop"><i class="fas fa-link"></i></a>
+</h3>
+<p>No R, existem três sistemas principais:</p>
+<ul>
+<li>S3, o primeiro, usado no R base. É bastante flexível mas pouco rigoroso</li>
+<li>R6, que estende a característica <em>modify-in-place</em> dos ambientes para outros tipos de objetos</li>
+<li>S4, uma versão mais rigorosa do S3, útil para grandes projetos</li>
+</ul>
+<p>Neste curso, vamos falar apenas sobre o sistema S3</p>
+</div>
+<div id="polimorfismo" class="section level3" number="7.2.2">
+<h3>
+<span class="header-section-number">7.2.2</span> Polimorfismo<a class="anchor" aria-label="anchor" href="#polimorfismo"><i class="fas fa-link"></i></a>
+</h3>
+<p>A principal aplicação de OOP no R é o uso de polimorfismo, funções assumirem diferentes formas dependendo da classe de seu (primeiro) argumento:</p>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.  </span></span>
+<span><span class="co">#   1.00    3.75    6.50    6.10    9.00   10.00 </span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#   1  3  4  5  6  7  8  9 10 </span></span>
+<span><span class="co">#   2  3  1  1  3  3  1  5  1 </span></span></code></pre></div>
+<p>Chamamos essas funções de funções genéricas/<em>generics</em></p>
+</div>
+<div id="funções-genéricas" class="section level3" number="7.2.3">
+<h3>
+<span class="header-section-number">7.2.3</span> Funções genéricas<a class="anchor" aria-label="anchor" href="#fun%C3%A7%C3%B5es-gen%C3%A9ricas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Funções genéricas são um intermediário. Elas observam a classe do argumento passado, descobrem qual é o método correto a ser executado:</p>
+<ul>
+<li>Chamamos a função (genérica) – <code class="sourceCode r"><span class="fu">fun_name</span>(x)</code>
+</li>
+<li>A função usa procura o método correto com base na classe de <code>x</code> – <code class="sourceCode r"><span class="fu">UseMethod</span>(<span class="st">"fun_name"</span>)</code>
+<ul>
+<li>O nome desse processo é <em>method dispatch</em>
+</li>
+</ul>
+</li>
+<li>É encontrado o método, uma “função filho” – <code class="sourceCode r"><span class="fu">fun_name.class_of_x</span>(x)</code>
+</li>
+</ul>
+<p>Todas as funções genéricas tem um método <em>default</em> <code>fun_name.default()</code>, caso não exista um método para uma classe específica</p>
+<p>Intuitivamente, é similar usar um <em>if else</em>:</p>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fun_name.factor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">...</span></span>
+<span><span class="va">fun_name.numeric</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">...</span></span>
+<span><span class="va">fun_name.default</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">...</span></span>
+<span></span>
+<span><span class="va">fun_name</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">is.factor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span> <span class="fu">fun_name.factor</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span> <span class="fu">fun_name.numeric</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span> <span class="fu">fun_name.default</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>A diferença é flexibilidade. Qualquer um pode criar uma classe e adicionar um método à uma função genérica, sem precisar alterar o “código base” da função</p>
+</div>
+</div>
+<div id="metaprogramação" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Metaprogramação<a class="anchor" aria-label="anchor" href="#metaprograma%C3%A7%C3%A3o"><i class="fas fa-link"></i></a>
+</h2>
+<p>Apresentação das ideias gerais da metaprogramação. especialmente sobre as bases do tidyverse. A referência base são os capítulos <a href="https://adv-r.hadley.nz/metaprogramming.html">17, 18, 19, e 20, do “Advanced R”</a>. Apresento o pacote “rlang”.</p>
+<div class="double-hrule">
+
+</div>
+</div>
+<div id="complemento-5" class="section level2 unlisted unnumbered">
+<h2>Complemento<a class="anchor" aria-label="anchor" href="#complemento-5"><i class="fas fa-link"></i></a>
+</h2>
+<div id="recapitulando-5" class="section level3 unnumbered">
+<h3>Recapitulando<a class="anchor" aria-label="anchor" href="#recapitulando-5"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+<div id="exercícios-5" class="section level3 unnumbered">
+<h3>Exercícios<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-5"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+<div id="dicionário-de-funções-5" class="section level3 unnumbered">
+<h3>Dicionário de Funções<a class="anchor" aria-label="anchor" href="#dicion%C3%A1rio-de-fun%C3%A7%C3%B5es-5"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+<div id="referências-5" class="section level3 unnumbered">
+<h3>Referências<a class="anchor" aria-label="anchor" href="#refer%C3%AAncias-5"><i class="fas fa-link"></i></a>
+</h3>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="funs-envs.html"><span class="header-section-number">6</span> Funções e Ambientes</a></div>
+<div class="next"><a href="others1.html"><span class="header-section-number">8</span> Outros Tópicos</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#paradigms"><span class="header-section-number">7</span> Paradigmas de Programação</a></li>
+<li><a class="nav-link" href="#programa%C3%A7%C3%A3o-funcional"><span class="header-section-number">7.1</span> Programação Funcional</a></li>
+<li>
+<a class="nav-link" href="#programa%C3%A7%C3%A3o-orientada-ao-objeto"><span class="header-section-number">7.2</span> Programação Orientada ao Objeto</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sistemas-de-oop"><span class="header-section-number">7.2.1</span> Sistemas de OOP</a></li>
+<li><a class="nav-link" href="#polimorfismo"><span class="header-section-number">7.2.2</span> Polimorfismo</a></li>
+<li><a class="nav-link" href="#fun%C3%A7%C3%B5es-gen%C3%A9ricas"><span class="header-section-number">7.2.3</span> Funções genéricas</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#metaprograma%C3%A7%C3%A3o"><span class="header-section-number">7.3</span> Metaprogramação</a></li>
+<li>
+<a class="nav-link" href="#complemento-5">Complemento</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#recapitulando-5">Recapitulando</a></li>
+<li><a class="nav-link" href="#exerc%C3%ADcios-5">Exercícios</a></li>
+<li><a class="nav-link" href="#dicion%C3%A1rio-de-fun%C3%A7%C3%B5es-5">Dicionário de Funções</a></li>
+<li><a class="nav-link" href="#refer%C3%AAncias-5">Referências</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/ricardo-semiao/R-course/blob/master/1-paradigms.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/ricardo-semiao/R-course/edit/master/1-paradigms.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>R: Teoria e Aplicações</strong>" was written by Ricardo Semião. It was last built on 03/2024.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -4,15 +4,15 @@ author: "Ricardo Semião"
 date: "03/2024"
 site: bookdown::bookdown_site
 bibliography: book.bib
-documentclass: book
-link-citations: yes
+# documentclass: book
+# link-citations: yes
 github-repo: ricardo-semiao/R-course
 description: "Este livro tem o objetivo de ensinar a linguagem R. Ele (i) é feito para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e funcionamento da linguagem, mas depois apresentando temas aplicados."
 url: https://ricardo-semiao.github.io/R-course/
 # cover-image: path to the social sharing image like images/cover.jpg
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
@@ -22,7 +22,7 @@ Este livro tem o objetivo de ensinar a linguagem R. O material tem duas especifi
 
 :::{.warn}
 este livro está em construção. O material aqui presente ainda é um rascunho, o estilo do livro pode vir a sofrer mudanças drásticas. Adicionalmente, a precisão dos conceitos não está garantida.<br>
-No momento, o iníco do livro, até o capítulo \@(sintax-vars), está relativamente em ordem.
+No momento, o iníco do livro, até o capítulo \@ref(syntax-vars), está relativamente em ordem.
 :::
 
 ## Por que Este Livro? {-}
@@ -92,13 +92,13 @@ Os temas são: problemas comuns da probabilidade e estatística, exploração de
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-Esse material, como um todo, está licenciado com a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Esse material, como um todo, está licenciado pela [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 
 
 ## Contato {-}
 
-Meu nome é Ricardo Semião, sou mestrando em economia da FGV-EESP, e _sou fã_ de R. Se tiver algum comentário sobre este material, por favor mande em meu email ricardo.semiao@outlook.com. Minhas outras redes são:
+Meu nome é Ricardo Semião, sou mestrando em economia na FGV-EESP, e _sou fã_ de R. Se tiver algum comentário sobre este material, por favor mande em meu email ricardo.semiao@outlook.com. Minhas outras redes são:
 
 - [Github](https://github.com/ricardo-semiao).
 - [Linkedin](https://www.linkedin.com/in/ricardo-semiao/).

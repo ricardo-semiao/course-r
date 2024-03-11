@@ -59,7 +59,7 @@ a:link {
   color: #137458 !important;
 }
 a:visited {
-  color: #4D7413 !important;
+  color: #137458 !important;
 }
 .obs {
     margin: 0 0 0 16px;
@@ -96,4 +96,7 @@ a:visited {
   content: "⚠️ Aviso: ";
   display: inline;
   font-weight: bold;
+}
+#book-edit {
+  display: none;
 }

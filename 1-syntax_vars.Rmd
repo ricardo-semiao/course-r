@@ -1,4 +1,4 @@
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
 
 tabulate_funs <- function(sheet, chap, cat, drop = "") {
@@ -239,7 +239,10 @@ A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiq
 Abaixo estão os operadores relevantes para o momento, suas descrições, e seu uso. Clique nos links dos operadores para abrir suas _páginas de ajuda_.
 
 ```{r, eval = TRUE, echo = FALSE}
-tabulate_funs("operadores", "1", c("aritmética", "comparação", "lógica"), "Capítulo")
+readxl::read_excel("assets/functions_list.xlsx", sheet = "operadores") |>
+  dplyr::filter(`Capítulo` %in% "1" & `Categoria` %in% c("aritmética", "comparação", "lógica")) |>
+  dplyr::select(-any_of("Capítulo")) |>
+  kableExtra::kable()
 ```
 
 :::{.obs}

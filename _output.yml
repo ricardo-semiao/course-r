@@ -3,6 +3,13 @@ bookdown::bs4_book:
   repo: https://github.com/ricardo-semiao/R-course
   includes:
     in_header: [script.html]
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">R: Teoria e Aplicações</a></li>
+      after: |
+        <li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Publicado com bookdown</a></li>
 
 bookdown::gitbook:
   lib_dir: "libs"
