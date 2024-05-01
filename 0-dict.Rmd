@@ -6,7 +6,10 @@ knitr::opts_chunk$set(eval = FALSE)
 
 Abaixo segue a lista de funções vistas neste livro.
 
-```{r, eval = TRUE, echo = FALSE}
-readxl::read_excel("assets/functions_list.xlsx", sheet = "lista") |>
-  kableExtra::kable()
+```{r, eval=TRUE, echo=FALSE}
+opts <- list(
+  paging = FALSE
+)
+readRDS("assets/funs_dict.RDS") |>
+  DT::datatable(escape = FALSE, filter = "top", rownames = FALSE, options = opts)
 ```

@@ -1,7 +1,3 @@
-```{r, include=FALSE}
-knitr::opts_chunk$set(eval = FALSE)
-```
-
 # Parte I - R Base {#intro1 .unnumbered}
 
 Bem vindo à primeira parte deste livro, onde estudaremos os conceitos na base do R. Partirei do zero absoluto, de modo que é possível que o leitor tenha algum nível de familiaridade com os temas, mas provavelmente, não na profundidade aqui abordada.

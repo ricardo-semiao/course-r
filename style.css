@@ -1,3 +1,4 @@
+/* Predefined styles */
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -12,91 +13,111 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* Custom blocks */
 .result {
-  background-color: #DCF0DC;
+  background-color: #DCF0DC;/*#C7F5E8*/
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
 }
-.result p{
-    display: inline;
+.result p {
+  display: inline;
 }
 .result::before {
   content: "📝 Resultado - ";
   font-weight: bold;
 }
 .ex {
-  background-color: #EEDCCA;
+  background-color: #EEDCCA;/*#FEC28C*/
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
 }
-.ex p{
-    display: inline;
+.ex p {
+  display: inline;
 }
 .ex::before {
   content: "✏️ Exemplo: ";
   display: inline;
   font-weight: bold;
 }
-.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n){background-color:#E4C8AC}
-.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n-1){background-color:#EEDCCA}
-.book .book-body .page-wrapper .page-inner section.normal table th{background-color:#DAB48E}
-.double-hrule {
-  border-top: 3px solid #000;
-  border-bottom: 3px solid #000;
-  height: 8px;
-  margin: 50px 0 0px;
-  border-color: #E7E7E7;
-}
-li > p:not(:last-child) {
-  margin: 0 !important;
-}
-li > ul:last-child {
-  margin-bottom: 1em !important;
-}
-a:link {
-  color: #137458 !important;
-}
-a:visited {
-  color: #137458 !important;
-}
-.obs {
-    margin: 0 0 0 16px;
-}
-.obs:before {
-  content: "💬 Observação: ";
-  font-size: 90%;
-  font-style: italic;
-}
-.obs p{
-    display: inline;
-	font-size: 90%;
-}
-.extra {
-    margin: 0 0 0 16px;
-}
-.extra:before {
-  content: "🔍 Extra: ";
-  font-style: italic;
-}
-.extra p{
-    display: inline;
-}
 .warn {
-  background-color: #E4969F;
+  background-color: #F1E39F;/*#FEEB8C*/
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
 }
-.warn p{
-    display: inline;
+.warn p {
+  display: inline;
 }
 .warn::before {
   content: "⚠️ Aviso: ";
   display: inline;
   font-weight: bold;
 }
-#book-edit {
+
+/* Custom items */
+.obs {
+  margin: 0 0 8px 16px;
+}
+.obs:before {
+  content: "💬 Observação: ";
+  font-size: 90%;
+  font-style: italic;
+}
+.obs p {
+  display: inline;
+  font-size: 90%;
+}
+.extra {
+  margin: 0 0 8px 16px;
+}
+.extra:before {
+  content: "🔍 Extra: ";
+  font-style: italic;
+  font-size: 90%;
+}
+.extra p {
+  display: inline;
+  font-size: 90%;
+}
+
+/* Custom table colors */
+.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n) {
+  background-color: #E4C8AC;
+}
+.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n-1) {
+  background-color: #EEDCCA;
+}
+.book .book-body .page-wrapper .page-inner section.normal table th {
+  background-color: #DAB48E;
+}
+
+/* Links */
+a:link {
+  color: #137458 !important;
+}
+a:visited {
+  color: #137458 !important;
+}
+
+/* Lists */
+li > p:not(:last-child) {
+  margin: 0 !important;
+}
+li > ul:last-child {
+  margin-bottom: 1em !important;
+}
+
+/* Others */
+#book-edit {/* remove book-edit element */
   display: none;
+}
+.double-hrule {/* custom hrule */
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  height: 8px;
+  margin: 50px 0 0px;
+  border-color: #E7E7E7;
 }

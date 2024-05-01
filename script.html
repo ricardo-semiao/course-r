@@ -5,12 +5,25 @@ document.addEventListener("DOMContentLoaded", function() {
   if (bookSourceLink) {
     bookSourceLink.innerHTML = 'Ver código <i class="fab fa-github" aria-hidden="true"></i>';
   }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
+  
   var bookRepoLink = document.getElementById("book-repo");
   if (bookRepoLink) {
     bookRepoLink.innerHTML = 'Ver código-fonte do livro <i class="fab fa-github" aria-hidden="true"></i>';
+  }
+  
+  var tableOfContents = document.querySelector('nav[aria-label="Table of contents"] h2');
+  if (tableOfContents) {
+    tableOfContents.textContent = 'Índice';
+  }
+
+  var onThisPage = document.querySelector('nav#toc h2');
+  if (onThisPage) {
+    onThisPage.textContent = 'Nesta página';
+  }
+  
+  var searchInput = document.getElementById('search');
+  if (searchInput) {
+    searchInput.placeholder = 'Buscar';
   }
 });
 </script>

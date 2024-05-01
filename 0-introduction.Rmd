@@ -67,11 +67,13 @@ Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de liv
   - "An Introduction to R" [@r-intro] (manual oficial).
   - "Working with R" [@workr].
   - "An Introduction to R" [@intror].
+- Livros para ciência de dados, mas com introdução extensa: "R Programming for Data Science", "Modern R with the Tidyverse".
 - Livro complementar, com abordagem "aprender fazendo": "Hands on Programming with R" [@hopr]
   
 **Bibliografia base da parte II:** o livro "R for Data Science" [@r4ds] e as documentações dos pacotes do tidyverse [@tidy].
 
 - Outros livros sobre manipulação e visualização de dados:
+  - "STAT 545".
   - "Data Manipulation in R" [@mandata].
   - "ggplot2: Elegant Graphics for Data Analysis" [@ggplot].
   - "Data Wrangling Recipes in R" [@wrandata].
@@ -93,9 +95,10 @@ Pequenos excertos de código são apresentados na linha `1 + 1`{.r}, e blocos de
 
 ```{r}
 x <- 1 + 1
-x*2
+x*2 #> 4
 ```
 
+Nos exemplos deste livro, um comentário no formato `#> ...`{.r} indica o resultado esperado da declaração que o precede.
 
 :::{.result}
 **"Nome" do resultado**<br>
@@ -111,7 +114,7 @@ as vezes é importante apresentar um exemplo para esclarecer um conceito. Tendo 
 :::
 
 :::{.warn}
-nesse bloco explicito coisas que o leitor deve prestar atenção. Na maioria dos casos, apresento causas comuns de erros.
+nesse bloco explicito pontos que o leitor deve prestar atenção. Na maioria dos casos, apresento causas comuns de erros.
 :::
 
 :::{.obs}
@@ -121,6 +124,8 @@ observações deste tipo costumam ser sobre a organização do livro ou outros e
 :::{.extra}
 nesse tipo de bloco apresento referências que tratam do tema relevante com mais calma, ou trazem tópicos adicionais para o leitor que queira expandir seus conhecimentos.
 :::
+
+- Itens de lista isolados costumam trazer comentários menos importantes.
 
 Ao final de cada capítulo existe uma seção de "Complemento". Nele, há:
 

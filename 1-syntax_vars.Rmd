@@ -1,12 +1,5 @@
 ```{r, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
-
-tabulate_funs <- function(sheet, chap, cat, drop = "") {
-  readxl::read_excel("assets/functions_list.xlsx", sheet = sheet) |>
-  dplyr::filter(`Capítulo` %in% chap & `Categoria` %in% cat) |>
-  dplyr::select(-any_of(drop)) |>
-  kableExtra::kable()
-}
 ```
 
 # Sintaxe e Variáveis {#syntax-vars}
@@ -131,10 +124,6 @@ liar(1, 2) #equivalente à declaração anterior
 ```
 :::
 
-:::{.obs}
-nos exemplos deste livro, um comentário no formato `#> ...`{.r} indica o resultado esperado da declaração que o precede.
-:::
-
 Com essa definição em mente, vale incluir funções na nossa analogia de parágrafos, uma vez que também as usamos para organizar o texto.
 
 - No capítulo \@ref(funs-envs), veremos que operadores são funções como qualquer outra, que apenas apresentam uma sintaxe diferente.
@@ -239,10 +228,10 @@ A princípio, deixaria os detalhes sobre operadores para os exercícios, mas fiq
 Abaixo estão os operadores relevantes para o momento, suas descrições, e seu uso. Clique nos links dos operadores para abrir suas _páginas de ajuda_.
 
 ```{r, eval = TRUE, echo = FALSE}
-readxl::read_excel("assets/functions_list.xlsx", sheet = "operadores") |>
+readRDS("assets/operators.RDS") |>
   dplyr::filter(`Capítulo` %in% "1" & `Categoria` %in% c("aritmética", "comparação", "lógica")) |>
   dplyr::select(-any_of("Capítulo")) |>
-  kableExtra::kable()
+  knitr::kable()
 ```
 
 :::{.obs}
@@ -252,8 +241,8 @@ na coluna de "Uso", "logi" se refere a qualquer valor que se comporte como um va
 Agora vou apresentar a ordem de precedência da aplicação dos operadores. Associatividade se refere à como são resolvidos "empates", "direita pra esquerda" significa que o operador mais à direita é analisado antes. Tudo ficará mais claro no exemplo seguinte.
 
 ```{r, eval = TRUE, echo = FALSE}
-readxl::read_excel("assets/functions_list.xlsx", sheet = "precedência") |>
-  kableExtra::kable()
+readRDS("assets/precedence.RDS") |>
+  knitr::kable()
 ```
 
 :::{.obs}
@@ -379,9 +368,9 @@ x <- FALSE | !5.2 %% 2*7*4 - -3 <= 100 & TRUE
 Abaixo segue a lista de funções vistas neste capítulo.
 
 ```{r, eval = TRUE, echo = FALSE}
-readxl::read_excel("assets/functions_list.xlsx", sheet = "lista") |>
+readRDS("assets/funs_dict.RDS") |>
   dplyr::select(-Capítulo) |>
-  kableExtra::kable()
+  knitr::kable()
 ```
 
 
