@@ -1,0 +1,19 @@
+Operador;Descição;Associatividade
+`()`, `{}`;agrupadores;direita pra esquerda
+`::`, `:::`;acessar _namespaces_ (*);direita pra esquerda
+`$`, `@`;extração de _components_/_slots_ (*);esquerda pra direita
+`[`, `[[`;indexação (*);esquerda pra direita
+`^`;exponenciação;esquerda pra direita
+`-`, `+` (unário);mais e menos unários;esquerda pra direita
+`:`;sequências (*);esquerda pra direita
+`%%`, `%/%`, `%xyz%`, `|>`;operadores especiais (*);esquerda pra direita
+`*`, `/`;multiplicação, divisão;esquerda pra direita
+`+`, `-` (binário);adição, subtração;esquerda pra direita
+`>`, `>=`, `<`, `<=`, `==`, `!=`;comparações;esquerda pra direita
+`!`;"não" lógico;esquerda pra direita
+`&`, `&&`;"e" lógico (*);esquerda pra direita
+`│`, `││`;"ou" lógico (*);esquerda pra direita
+`~` (unário e binário);fórmula (*);esquerda pra direita
+`->`, `->>`;definição pra direita (*);esquerda pra direita
+`<-`, `<<-`;definição pra esquerda (*);direita pra esquerda
+`=` (definidor);definição pra esquerda;direita pra esquerda

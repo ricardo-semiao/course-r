@@ -1,0 +1,30 @@
+Capítulo;Categoria;Operador;Descrição;Uso
+1;aritmétrica;[`+`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);soma;`num + num`
+1;aritmétrica;[`-`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);subtração;`num - num`
+1;aritmétrica;[`*`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);multiplicação;`num * num`
+1;aritmétrica;[`/`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);divisão;`num / num`
+1;aritmétrica;[`\^`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);exponenciação;`num ^ num`
+1;aritmétrica;[`%%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);divisão inteira;`num %% num`
+1;aritmétrica;[`%/%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html);resto da divisão;`num %/% num`
+1;comparação;[`==`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html);igual;`x == y`
+1;comparação;[`!=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html);diferente;`x !=  y`
+1;comparação;[`<`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html);menor que;`num < num`
+1;comparação;[`>`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html);maior que;`num > num`
+1;comparação;[`>=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html);maior igual;`num >=  num`
+1;comparação;[`<=`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html);menor igual;`num <=  num`
+1;lógica;[`!`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html);"não" lógico;`! logi`
+1;lógica;[`&`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html);"e" lógico;`logi & logi`
+1;lógica;[`│`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html);"ou" lógico;`logi | logi`
+1;agrupadores;[`{`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html);agrupador chaves;`{ expr }`
+1;agrupadores;[`(`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html);agrupador parênteses;`( expr )`
+;;[`&&`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html);"e" lógico singular;logi `&&` logi
+;;[`││`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html);"ou" lógico singular;logi `||` logi
+;comparação;[`%in%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/match.html);pertence/está contido;vector %in% vector
+;;[`~`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/tilde.html);operador til;
+;matrix;[`%*%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/matmult.html);Matrix Multiplication;matrix %*% matrix
+;matrix;[`%o%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/outer.html);Outer Product of Arrays;matrix %o% matrix
+;matrix;[`%x%`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/kronecker.html);Kronecker Products on Arrays;matrix %x% matrix
+;;[`|>`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/pipeOp.html);Forward Pipe Operator;call |> call
+;;[`:`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Colon.html);Colon Operator;num:num
+;;[`::`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/ns-dblcolon.html);Double Colon and Triple Colon Operators;pkg::fun
+;;[`:::`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/ns-dblcolon.html);Double Colon and Triple Colon Operators;pkg:::fun

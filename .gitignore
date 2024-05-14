@@ -1,6 +1,9 @@
+course-r.code-workspace
+course-r.Rproj
 .Rproj.user
 .Rhistory
 .Rdata
 .httr-oauth
 .DS_Store
 .quarto
+personal/
