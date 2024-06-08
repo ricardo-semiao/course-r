@@ -13,4 +13,4 @@ Os capítulos estão organizados por etapas de um projeto de ciência de dados:
 - Capítulo \@ref(manipulate): descrevo outras manipulações que dados já arrumados podem exigir.
 - Capítulo \@ref(unite): descrevo unir (_merge_) várias bases de dados em uma só.
 - Capítulo \@ref(visualizate): descrevo os fundamentos da visualização de dados, e como explorar dados para adquirir intuições.
-- Recapitulado \@ref(recap3): seção para retomar os conteúdos aprendidos.
+- Recapitulado: seção para retomar os conteúdos aprendidos.

@@ -50,7 +50,7 @@ O livro é dividido em quatro partes: "I - Fundamentos: R Base", "II - Fundament
 
 As bases desse material estão descritas na seção \@(biblio), já adianto o **_disclaimer_: boa parte do conteúdo deste livro é uma curadoria, adaptação, e tradução dos materiais abaixo**.
 
-- Parte I - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R, 2nd Edition](https://adv-r.hadley.nz/).
+- Parte I - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R (2e)](https://adv-r.hadley.nz/).
 - Parte II - [tidyverse documentation](https://www.tidyverse.org/), e [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/).
 - Parte III - [R for Data Science (2e)](https://r4ds.hadley.nz/).
 - Parte IV - R4DS, e [R Cookbook (2e)](https://rc2e.com/).

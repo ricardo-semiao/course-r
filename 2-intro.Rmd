@@ -15,4 +15,4 @@ Começo explicando essa filosfia e sintaxe, pois é a intuição trazida por ela
 - Capítulo \@ref(purrr): falo sobre as aplicações da programação funcional com o pacote "purrr".
 - Capítulo \@ref(time-series): falo sobre manipulação de datas e séries de tempo com pacotes adicionais, como "lubridate", e [pacote a definir].
 - Capítulo \@ref(others2): falo sobre outros pacotes adicionais, como o framework "tidymodels".
-- Recapitulado \@ref(recap2): seção para retomar os conteúdos aprendidos.
+- Recapitulado: seção para retomar os conteúdos aprendidos.

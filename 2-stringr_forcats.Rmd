@@ -1,4 +1,4 @@
-# stringr e forcats {#philosophy}
+# stringr e forcats {#stringr-forcats}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.

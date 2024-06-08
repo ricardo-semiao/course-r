@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Dicionário de funções | R: Teoria e Aplicações</title>
+<title>Dicionário de funções | R: Fundamentos e Ciência de Dados</title>
 <meta name="author" content="Ricardo Semião">
 <meta name="description" content='Abaixo segue a lista de funções vistas neste livro. {"x":{"filter":"top","vertical":false,"filterHTML":"&lt;tr&gt;\n &lt;td data-type=\"character\" style=\"vertical-align: top;\"&gt;\n  &lt;div...'>
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Dicionário de funções | R: Teoria e Aplicações">
+<meta property="og:title" content="Dicionário de funções | R: Fundamentos e Ciência de Dados">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://ricardo-semiao.github.io/R-course/dict.html">
+<meta property="og:url" content="https://ricardo-semiao.github.io/rfcd/dict.html">
 <meta property="og:description" content='Abaixo segue a lista de funções vistas neste livro. {"x":{"filter":"top","vertical":false,"filterHTML":"&lt;tr&gt;\n &lt;td data-type=\"character\" style=\"vertical-align: top;\"&gt;\n  &lt;div...'>
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dicionário de funções | R: Teoria e Aplicações">
+<meta name="twitter:title" content="Dicionário de funções | R: Fundamentos e Ciência de Dados">
 <meta name="twitter:description" content='Abaixo segue a lista de funções vistas neste livro. {"x":{"filter":"top","vertical":false,"filterHTML":"&lt;tr&gt;\n &lt;td data-type=\"character\" style=\"vertical-align: top;\"&gt;\n  &lt;div...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -61,6 +61,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -88,7 +89,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">R: Teoria e Aplicações</a>
+        <a href="index.html" title="">R: Fundamentos e Ciência de Dados</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -102,7 +103,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Bem Vindo!</a></li>
 <li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introdução</a></li>
-<li><a class="" href="intro1.html">Parte I - R Base</a></li>
+<li><a class="" href="intro1.html">Parte I - Fundamentos: R Base</a></li>
 <li><a class="" href="syntax-vars.html"><span class="header-section-number">2</span> Sintaxe e Variáveis</a></li>
 <li><a class="" href="data-attrs.html"><span class="header-section-number">3</span> Tipos de Dados e Atributos</a></li>
 <li><a class="" href="subset.html"><span class="header-section-number">4</span> Subsetting</a></li>
@@ -111,26 +112,34 @@
 <li><a class="" href="paradigms.html"><span class="header-section-number">7</span> Paradigmas de Programação</a></li>
 <li><a class="" href="others1.html"><span class="header-section-number">8</span> Outros Tópicos</a></li>
 <li><a class="" href="recap1.html">Recapitulando</a></li>
-<li><a class="" href="intro2.html">Parte II - Ciência de Dados com o Tidyverse</a></li>
-<li><a class="" href="ds-import.html"><span class="header-section-number">9</span> Ciência de Dados e Importação</a></li>
-<li><a class="" href="manipulation.html"><span class="header-section-number">10</span> Manipulação de Dados</a></li>
-<li><a class="" href="visualization.html"><span class="header-section-number">11</span> Visualização Gráfica</a></li>
-<li><a class="" href="strings-factors.html"><span class="header-section-number">12</span> Manipulação de Strings e Factors</a></li>
-<li><a class="" href="functional.html"><span class="header-section-number">13</span> Programação Funcional</a></li>
-<li><a class="" href="time-series.html"><span class="header-section-number">14</span> Manipulação de Datas e Séries de Tempo</a></li>
+<li><a class="" href="intro2.html">Parte II - Fundamentos: Tidyverse</a></li>
+<li><a class="" href="philosophy.html"><span class="header-section-number">9</span> Filosofia, readr, tibble</a></li>
+<li><a class="" href="stringr-forcats.html"><span class="header-section-number">10</span> stringr e forcats</a></li>
+<li><a class="" href="tidyr-dplyr.html"><span class="header-section-number">11</span> tidyr e dplyr</a></li>
+<li><a class="" href="ggplot.html"><span class="header-section-number">12</span> ggplot2</a></li>
+<li><a class="" href="purrr.html"><span class="header-section-number">13</span> purrr</a></li>
+<li><a class="" href="time-series.html"><span class="header-section-number">14</span> Datas e Séries de Tempo</a></li>
+<li><a class="" href="others2.html"><span class="header-section-number">15</span> Outros</a></li>
 <li><a class="" href="recap2.html">Recapitulando</a></li>
-<li><a class="" href="intro3.html">Parte III - Aplicações Diversas</a></li>
-<li><a class="" href="stats-prob.html"><span class="header-section-number">15</span> Probabilidade e Estatística</a></li>
-<li><a class="" href="exploration.html"><span class="header-section-number">16</span> Exploração de Dados</a></li>
-<li><a class="" href="regression.html"><span class="header-section-number">17</span> Regressão</a></li>
-<li><a class="" href="ml.html"><span class="header-section-number">18</span> Aprendizado de Máquina</a></li>
-<li><a class="" href="others3.html"><span class="header-section-number">19</span> Outras Aplicações</a></li>
+<li><a class="" href="intro3.html">Parte III - Ciência de Dados: Processar e Visualizar</a></li>
+<li><a class="" href="ds.html"><span class="header-section-number">16</span> Ciência de Dados</a></li>
+<li><a class="" href="import-tidy.html"><span class="header-section-number">17</span> Importar e Arrumar</a></li>
+<li><a class="" href="manipulate.html"><span class="header-section-number">18</span> Manipular</a></li>
+<li><a class="" href="unite.html"><span class="header-section-number">19</span> Unir</a></li>
+<li><a class="" href="visualizate.html"><span class="header-section-number">20</span> Visualizar</a></li>
+<li><a class="" href="recap3.html">Recapitulando</a></li>
+<li><a class="" href="intro4.html">Parte IV - Ciência de Dados: Modelagem</a></li>
+<li><a class="" href="stats-prob.html"><span class="header-section-number">21</span> Probabilidade e Estatística</a></li>
+<li><a class="" href="regression.html"><span class="header-section-number">22</span> Regressão</a></li>
+<li><a class="" href="ml.html"><span class="header-section-number">23</span> Aprendizado de Máquina</a></li>
+<li><a class="" href="others4.html"><span class="header-section-number">24</span> Outras Aplicações</a></li>
+<li><a class="" href="recap4.html">Recapitulando</a></li>
 <li><a class="active" href="dict.html">Dicionário de funções</a></li>
 <li><a class="" href="refs.html">Referências</a></li>
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/ricardo-semiao/R-course">View book source <i class="fab fa-github"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/ricardo-semiao/rfcd">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -142,7 +151,7 @@
 <script type="application/json" data-for="htmlwidget-cf6007f70aeb7f930255">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"],["aritmétrica","aritmétrica","aritmétrica","aritmétrica","aritmétrica","aritmétrica","aritmétrica","comparação","comparação","comparação","comparação","comparação","comparação","lógica","lógica","lógica","agrupadores","agrupadores","definidores","definidores","definidores","outros","nomes","ajuda","ajuda"],["<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>+<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>-<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>*<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>/<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>\\^<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>%%<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html\"><code>%/%<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html\"><code>==<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html\"><code>!=<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html\"><code>&lt;<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html\"><code>&gt;<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html\"><code>&gt;=<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Comparison.html\"><code>&lt;=<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html\"><code>!<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html\"><code>&amp;<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html\"><code>│<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html\"><code>{<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/Paren.html\"><code>(<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html\"><code>&lt;-<\/code>,<code>-&gt;<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html\"><code>=<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/assign.html\"><code>assign()<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/rm.html\"><code>rm()<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/base/html/make.names.html\"><code>make.names()<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/utils/html/help.html\"><code>help()<\/code><\/a>,<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Question.html\"><code>?<\/code><\/a>","<a href=\"https://stat.ethz.ch/R-manual/R-devel/library/utils/html/vignette.html\"><code>vignette()<\/code><\/a>"],["soma","subtração","multiplicação","divisão","exponenciação","divisão inteira","resto da divisão","igual","diferente","menor que","maior que","maior igual","menor igual","não lógico","e lógico","ou lógico","agrupador chaves","agrupador parênteses","definidores","definidores","definidores","limpa objetos do ambiente","","procurar ajuda na documentação","procurar vignettes"],["<code>num + num<\/code>","<code>num - num<\/code>","<code>num * num<\/code>","<code>num / num<\/code>","<code>num ^ num<\/code>","<code>num %% num<\/code>","<code>num %/% num<\/code>","<code>x == y<\/code>","<code>x !=  y<\/code>","<code>num &lt; num<\/code>","<code>num &gt; num<\/code>","<code>num &gt;=  num<\/code>","<code>num &lt;=  num<\/code>","<code>! logi<\/code>","<code>logi &amp; logi<\/code>","<code>logi &amp;#124; logi<\/code>","<code>{ expr }<\/code>","<code>( expr )<\/code>","<code>x &lt;- expr<\/code>,<code>x -&gt; expr<\/code>","<code>x = expr<\/code>","<code>assign(x, expr)<\/code>","<code>rm(x)<\/code>","","<code>help(x)<\/code>, <code>?x<\/code>","<code>vignette(x)<\/code>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Capítulo<\/th>\n      <th>Categoria<\/th>\n      <th>Função<\/th>\n      <th>Descrição<\/th>\n      <th>Uso<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[{"name":"Capítulo","targets":0},{"name":"Categoria","targets":1},{"name":"Função","targets":2},{"name":"Descrição","targets":3},{"name":"Uso","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="others3.html"><span class="header-section-number">19</span> Outras Aplicações</a></div>
+<div class="prev"><a href="recap4.html">Recapitulando</a></div>
 <div class="next"><a href="refs.html">Referências</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
@@ -150,8 +159,8 @@
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/ricardo-semiao/R-course/blob/master/0-dict.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/ricardo-semiao/R-course/edit/master/0-dict.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/ricardo-semiao/rfcd/blob/master/0-dict.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/ricardo-semiao/rfcd/edit/master/0-dict.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -163,7 +172,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>R: Teoria e Aplicações</strong>" was written by Ricardo Semião. It was last built on 03/2024.</p>
+    <p>"<strong>R: Fundamentos e Ciência de Dados</strong>" was written by Ricardo Semião. It was last built on 06/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

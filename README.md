@@ -10,7 +10,7 @@ O livro tem o objetivo de ensinar a linguagem R. O material tem duas especificid
 
 As bases desse material estão descritas na seção "Literatura sobre R", mas adianto o **_disclaimer_:** boa parte do conteúdo deste livro é uma curadoria, simplificação, e adaptação dos materiais abaixo (organizados por parte):
 
-- Parte I - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R, 2nd Edition](https://adv-r.hadley.nz/).
+- Parte I - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R (2e)](https://adv-r.hadley.nz/).
 - Parte II - [tidyverse documentation](https://www.tidyverse.org/), e [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/).
 - Parte III - [R for Data Science (2e)](https://r4ds.hadley.nz/).
 - Parte IV - R4DS, e [R Cookbook (2e)](https://rc2e.com/).

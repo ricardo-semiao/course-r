@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Parte I - Fundamentos: R Base | R: Fundamentos e Ciência de Dados</title>
+<title>Capítulo 20 Visualizar | R: Fundamentos e Ciência de Dados</title>
 <meta name="author" content="Ricardo Semião">
-<meta name="description" content="Bem vindo à primeira parte deste livro, onde estudaremos os conceitos na base do R. Partirei do zero absoluto, de modo que é possível que o leitor tenha algum nível de familiaridade com os temas,...">
+<meta name="description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Neste capítulo, apresentarei como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Parte I - Fundamentos: R Base | R: Fundamentos e Ciência de Dados">
+<meta property="og:title" content="Capítulo 20 Visualizar | R: Fundamentos e Ciência de Dados">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://ricardo-semiao.github.io/rfcd/intro1.html">
-<meta property="og:description" content="Bem vindo à primeira parte deste livro, onde estudaremos os conceitos na base do R. Partirei do zero absoluto, de modo que é possível que o leitor tenha algum nível de familiaridade com os temas,...">
+<meta property="og:url" content="https://ricardo-semiao.github.io/rfcd/visualizate.html">
+<meta property="og:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Neste capítulo, apresentarei como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Parte I - Fundamentos: R Base | R: Fundamentos e Ciência de Dados">
-<meta name="twitter:description" content="Bem vindo à primeira parte deste livro, onde estudaremos os conceitos na base do R. Partirei do zero absoluto, de modo que é possível que o leitor tenha algum nível de familiaridade com os temas,...">
+<meta name="twitter:title" content="Capítulo 20 Visualizar | R: Fundamentos e Ciência de Dados">
+<meta name="twitter:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Neste capítulo, apresentarei como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -103,7 +103,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Bem Vindo!</a></li>
 <li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introdução</a></li>
-<li><a class="active" href="intro1.html">Parte I - Fundamentos: R Base</a></li>
+<li><a class="" href="intro1.html">Parte I - Fundamentos: R Base</a></li>
 <li><a class="" href="syntax-vars.html"><span class="header-section-number">2</span> Sintaxe e Variáveis</a></li>
 <li><a class="" href="data-attrs.html"><span class="header-section-number">3</span> Tipos de Dados e Atributos</a></li>
 <li><a class="" href="subset.html"><span class="header-section-number">4</span> Subsetting</a></li>
@@ -126,7 +126,7 @@
 <li><a class="" href="import-tidy.html"><span class="header-section-number">17</span> Importar e Arrumar</a></li>
 <li><a class="" href="manipulate.html"><span class="header-section-number">18</span> Manipular</a></li>
 <li><a class="" href="unite.html"><span class="header-section-number">19</span> Unir</a></li>
-<li><a class="" href="visualizate.html"><span class="header-section-number">20</span> Visualizar</a></li>
+<li><a class="active" href="visualizate.html"><span class="header-section-number">20</span> Visualizar</a></li>
 <li><a class="" href="recap3.html">Recapitulando</a></li>
 <li><a class="" href="intro4.html">Parte IV - Ciência de Dados: Modelagem</a></li>
 <li><a class="" href="stats-prob.html"><span class="header-section-number">21</span> Probabilidade e Estatística</a></li>
@@ -143,35 +143,81 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="intro1" class="section level1 unnumbered">
-<h1>Parte I - Fundamentos: R Base<a class="anchor" aria-label="anchor" href="#intro1"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="visualizate" class="section level1" number="20">
+<h1>
+<span class="header-section-number">Capítulo 20</span> Visualizar<a class="anchor" aria-label="anchor" href="#visualizate"><i class="fas fa-link"></i></a>
 </h1>
-<p>Bem vindo à primeira parte deste livro, onde estudaremos os conceitos na base do R. Partirei do zero absoluto, de modo que é possível que o leitor tenha algum nível de familiaridade com os temas, mas provavelmente, não na profundidade aqui abordada.</p>
-<p>Nessa parte mais “teórica”, é difícil de traçar o limite no nível de complexidade ideal. Por conta disso, muitos conceitos tiveram de ser introduzidos rapidamente. Mas não se assuste, muitas vezes, meu objetivo maior é passar uma intuição geral de como o R funciona, e dar um primeiro contato com os temas mais complexos. Tento ao máximo deixar claro onde gastar seu cérebro e onde nem tanto.</p>
-<p>Meu foco é mostrar a lógica do R, a “sintaxe e semântica” da linguagem. A “gramática/vocabulário”, isto é, funções, truques, e aplicações específicas, serão ensinadas de passagem e via exercícios. Mas no final, a ideia é ter apresentado a maioria das funções comumente relevantes, construindo uma lista de referência para futuras consultas.</p>
-<p>Os capítulos dessa seção estão organizados da seguinte maneira:</p>
-<ul>
-<li>Capítulo <a href="syntax-vars.html#syntax-vars">2</a>: aqui aprenderemos o básico sobre a sintaxe do R. Como imputar números e texto, o que são expressões e variáveis, e como realizar operações básicas. No geral, um capítulo bastante simples.</li>
-<li>Capítulo <a href="data-attrs.html#data-attrs">3</a>: a organização de tipos de dados no R é elegantemente simples, incluindo complexidade através da existência de metadados. A principal conclusão será entender a relação entre os diferentes tipos, porque esse conhecimento torna mais fácil pensar como uma mesma operação é aplicada em cada tipo de dado.</li>
-<li>Capítulo <a href="subset.html#subset">4</a>: nessa altura do campeonato, capaz que você esteja cansado de ver apenas teoria, esse capítulo é o mais “gramatical” de todos. Aprenderemos o que é a operação de selecionar e alterar partes de uma variável. Aqui, já fica claro o benefício de entender a organização dos tipos de dados.</li>
-<li>Capítulo <a href="control-conds.html#control-conds">5</a>: aprenderemos a controlar o fluxo de um programa, isto é, como fazer um programa tomar decisões e repetir operações. Aprenderemos também a lidar com erros e avisos.</li>
-<li>Capítulo <a href="funs-envs.html#funs-envs">6</a>: em oposição ao capítulo 3, agora é hora de dar atenção aos sentimentos do R. Estávamos utilizando-as, mas não explicamos o que são as funções. Esse é o capítulo mais desafiador, mas boa parte da dificuldade pode ser deixada de lado, com perdas reduzidas ao leitor.</li>
-<li>Capítulo <a href="paradigms.html#paradigms">7</a>: aqui, aprenderemos sobre os paradigmas/estilos de programação funcional, orientada ao objeto, e meta, especificamente sobre sua abordagem no R. A programação funcional é uma ferramenta com ligação direta nos projetos de ciência de dados; Entender o básico de POO no R é importante para entender o uso de funções[^Se chutou “objetos”, chutou errado.]; Metaprogramação é um assunto útil em si mesmo, mas especialmente importante para entender as bases do tidyverse na segunda parte do livro.</li>
-<li>Capítulo <a href="others1.html#others1">8</a>: por fim, temos algum outros tópicos úteis, mas não essenciais para o seguimento do livro. Aqui, aprenderemos sobre algumas ferramentas de melhoria de vida que o RStudio provê, e alguns temas avançados sobre gerenciamento de memória, performance, e organização.</li>
-<li>Recapitulado: não só em cada capítulo, mas cada parte deste livro, existe uma seção para retomar os conteúdos, especialmente o que será mais útil para a próxima parte.</li>
-</ul>
+<div class="warn">
+<p>este capítulo está em construção. O que segue abaixo é apenas um rascunho.</p>
+</div>
+<p>Neste capítulo, apresentarei como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter informações contidas em datasets.</p>
+<div id="useful-visualizations" class="section level2" number="20.1">
+<h2>
+<span class="header-section-number">20.1</span> Useful Visualizations<a class="anchor" aria-label="anchor" href="#useful-visualizations"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="useful-metrics" class="section level2" number="20.2">
+<h2>
+<span class="header-section-number">20.2</span> Useful Metrics<a class="anchor" aria-label="anchor" href="#useful-metrics"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="useful-graphs" class="section level2" number="20.3">
+<h2>
+<span class="header-section-number">20.3</span> Useful Graphs<a class="anchor" aria-label="anchor" href="#useful-graphs"><i class="fas fa-link"></i></a>
+</h2>
+<div class="double-hrule">
+
+</div>
+</div>
+<div id="complemento-19" class="section level2 unlisted unnumbered">
+<h2>Complemento<a class="anchor" aria-label="anchor" href="#complemento-19"><i class="fas fa-link"></i></a>
+</h2>
+<div id="recapitulando-19" class="section level3 unnumbered">
+<h3>Recapitulando<a class="anchor" aria-label="anchor" href="#recapitulando-19"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+<div id="exercícios-19" class="section level3 unnumbered">
+<h3>Exercícios<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-19"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+<div id="dicionário-de-funções-19" class="section level3 unnumbered">
+<h3>Dicionário de Funções<a class="anchor" aria-label="anchor" href="#dicion%C3%A1rio-de-fun%C3%A7%C3%B5es-19"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+<div id="referências-19" class="section level3 unnumbered">
+<h3>Referências<a class="anchor" aria-label="anchor" href="#refer%C3%AAncias-19"><i class="fas fa-link"></i></a>
+</h3>
+
+</div>
+</div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="introduction.html"><span class="header-section-number">1</span> Introdução</a></div>
-<div class="next"><a href="syntax-vars.html"><span class="header-section-number">2</span> Sintaxe e Variáveis</a></div>
+<div class="prev"><a href="unite.html"><span class="header-section-number">19</span> Unir</a></div>
+<div class="next"><a href="recap3.html">Recapitulando</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#intro1">Parte I - Fundamentos: R Base</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#visualizate"><span class="header-section-number">20</span> Visualizar</a></li>
+<li><a class="nav-link" href="#useful-visualizations"><span class="header-section-number">20.1</span> Useful Visualizations</a></li>
+<li><a class="nav-link" href="#useful-metrics"><span class="header-section-number">20.2</span> Useful Metrics</a></li>
+<li><a class="nav-link" href="#useful-graphs"><span class="header-section-number">20.3</span> Useful Graphs</a></li>
+<li>
+<a class="nav-link" href="#complemento-19">Complemento</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#recapitulando-19">Recapitulando</a></li>
+<li><a class="nav-link" href="#exerc%C3%ADcios-19">Exercícios</a></li>
+<li><a class="nav-link" href="#dicion%C3%A1rio-de-fun%C3%A7%C3%B5es-19">Dicionário de Funções</a></li>
+<li><a class="nav-link" href="#refer%C3%AAncias-19">Referências</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/ricardo-semiao/rfcd/blob/master/1-intro.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/ricardo-semiao/rfcd/edit/master/1-intro.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/ricardo-semiao/rfcd/blob/master/3-visualizate.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/ricardo-semiao/rfcd/edit/master/3-visualizate.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

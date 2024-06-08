@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Parte II - Ciência de Dados com o Tidyverse | R: Teoria e Aplicações</title>
+<title>Parte II - Fundamentos: Tidyverse | R: Fundamentos e Ciência de Dados</title>
 <meta name="author" content="Ricardo Semião">
-<meta name="description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Bem vindo à segunda parte deste livro. Aqui, foco em ensinar sobre duas das tarefas mais comuns em aplicações do R,...">
+<meta name="description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Bem vindo à segunda parte deste livro. Aqui, foco em ensinar o Tidyverse. O Tidyverse é um conjunto de pacotes para o R,...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Parte II - Ciência de Dados com o Tidyverse | R: Teoria e Aplicações">
+<meta property="og:title" content="Parte II - Fundamentos: Tidyverse | R: Fundamentos e Ciência de Dados">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://ricardo-semiao.github.io/R-course/intro2.html">
-<meta property="og:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Bem vindo à segunda parte deste livro. Aqui, foco em ensinar sobre duas das tarefas mais comuns em aplicações do R,...">
+<meta property="og:url" content="https://ricardo-semiao.github.io/rfcd/intro2.html">
+<meta property="og:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Bem vindo à segunda parte deste livro. Aqui, foco em ensinar o Tidyverse. O Tidyverse é um conjunto de pacotes para o R,...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Parte II - Ciência de Dados com o Tidyverse | R: Teoria e Aplicações">
-<meta name="twitter:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Bem vindo à segunda parte deste livro. Aqui, foco em ensinar sobre duas das tarefas mais comuns em aplicações do R,...">
+<meta name="twitter:title" content="Parte II - Fundamentos: Tidyverse | R: Fundamentos e Ciência de Dados">
+<meta name="twitter:description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Bem vindo à segunda parte deste livro. Aqui, foco em ensinar o Tidyverse. O Tidyverse é um conjunto de pacotes para o R,...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,6 +61,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -88,7 +89,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">R: Teoria e Aplicações</a>
+        <a href="index.html" title="">R: Fundamentos e Ciência de Dados</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -102,7 +103,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Bem Vindo!</a></li>
 <li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introdução</a></li>
-<li><a class="" href="intro1.html">Parte I - R Base</a></li>
+<li><a class="" href="intro1.html">Parte I - Fundamentos: R Base</a></li>
 <li><a class="" href="syntax-vars.html"><span class="header-section-number">2</span> Sintaxe e Variáveis</a></li>
 <li><a class="" href="data-attrs.html"><span class="header-section-number">3</span> Tipos de Dados e Atributos</a></li>
 <li><a class="" href="subset.html"><span class="header-section-number">4</span> Subsetting</a></li>
@@ -111,61 +112,67 @@
 <li><a class="" href="paradigms.html"><span class="header-section-number">7</span> Paradigmas de Programação</a></li>
 <li><a class="" href="others1.html"><span class="header-section-number">8</span> Outros Tópicos</a></li>
 <li><a class="" href="recap1.html">Recapitulando</a></li>
-<li><a class="active" href="intro2.html">Parte II - Ciência de Dados com o Tidyverse</a></li>
-<li><a class="" href="ds-import.html"><span class="header-section-number">9</span> Ciência de Dados e Importação</a></li>
-<li><a class="" href="manipulation.html"><span class="header-section-number">10</span> Manipulação de Dados</a></li>
-<li><a class="" href="visualization.html"><span class="header-section-number">11</span> Visualização Gráfica</a></li>
-<li><a class="" href="strings-factors.html"><span class="header-section-number">12</span> Manipulação de Strings e Factors</a></li>
-<li><a class="" href="functional.html"><span class="header-section-number">13</span> Programação Funcional</a></li>
-<li><a class="" href="time-series.html"><span class="header-section-number">14</span> Manipulação de Datas e Séries de Tempo</a></li>
+<li><a class="active" href="intro2.html">Parte II - Fundamentos: Tidyverse</a></li>
+<li><a class="" href="philosophy.html"><span class="header-section-number">9</span> Filosofia, readr, tibble</a></li>
+<li><a class="" href="stringr-forcats.html"><span class="header-section-number">10</span> stringr e forcats</a></li>
+<li><a class="" href="tidyr-dplyr.html"><span class="header-section-number">11</span> tidyr e dplyr</a></li>
+<li><a class="" href="ggplot.html"><span class="header-section-number">12</span> ggplot2</a></li>
+<li><a class="" href="purrr.html"><span class="header-section-number">13</span> purrr</a></li>
+<li><a class="" href="time-series.html"><span class="header-section-number">14</span> Datas e Séries de Tempo</a></li>
+<li><a class="" href="others2.html"><span class="header-section-number">15</span> Outros</a></li>
 <li><a class="" href="recap2.html">Recapitulando</a></li>
-<li><a class="" href="intro3.html">Parte III - Aplicações Diversas</a></li>
-<li><a class="" href="stats-prob.html"><span class="header-section-number">15</span> Probabilidade e Estatística</a></li>
-<li><a class="" href="exploration.html"><span class="header-section-number">16</span> Exploração de Dados</a></li>
-<li><a class="" href="regression.html"><span class="header-section-number">17</span> Regressão</a></li>
-<li><a class="" href="ml.html"><span class="header-section-number">18</span> Aprendizado de Máquina</a></li>
-<li><a class="" href="others3.html"><span class="header-section-number">19</span> Outras Aplicações</a></li>
+<li><a class="" href="intro3.html">Parte III - Ciência de Dados: Processar e Visualizar</a></li>
+<li><a class="" href="ds.html"><span class="header-section-number">16</span> Ciência de Dados</a></li>
+<li><a class="" href="import-tidy.html"><span class="header-section-number">17</span> Importar e Arrumar</a></li>
+<li><a class="" href="manipulate.html"><span class="header-section-number">18</span> Manipular</a></li>
+<li><a class="" href="unite.html"><span class="header-section-number">19</span> Unir</a></li>
+<li><a class="" href="visualizate.html"><span class="header-section-number">20</span> Visualizar</a></li>
+<li><a class="" href="recap3.html">Recapitulando</a></li>
+<li><a class="" href="intro4.html">Parte IV - Ciência de Dados: Modelagem</a></li>
+<li><a class="" href="stats-prob.html"><span class="header-section-number">21</span> Probabilidade e Estatística</a></li>
+<li><a class="" href="regression.html"><span class="header-section-number">22</span> Regressão</a></li>
+<li><a class="" href="ml.html"><span class="header-section-number">23</span> Aprendizado de Máquina</a></li>
+<li><a class="" href="others4.html"><span class="header-section-number">24</span> Outras Aplicações</a></li>
+<li><a class="" href="recap4.html">Recapitulando</a></li>
 <li><a class="" href="dict.html">Dicionário de funções</a></li>
 <li><a class="" href="refs.html">Referências</a></li>
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/ricardo-semiao/R-course">View book source <i class="fab fa-github"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/ricardo-semiao/rfcd">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="intro2" class="section level1 unnumbered">
-<h1>Parte II - Ciência de Dados com o Tidyverse<a class="anchor" aria-label="anchor" href="#intro2"><i class="fas fa-link"></i></a>
+<h1>Parte II - Fundamentos: Tidyverse<a class="anchor" aria-label="anchor" href="#intro2"><i class="fas fa-link"></i></a>
 </h1>
 <div class="warn">
 <p>este capítulo está em construção. O que segue abaixo é apenas um rascunho.</p>
 </div>
-<p>Bem vindo à segunda parte deste livro. Aqui, foco em ensinar sobre duas das tarefas mais comuns em aplicações do R, manipulação e visualização de dados. Porém, ensino esses conceitas com base na “teoria” por trás de projetos de ciência de dados.</p>
-<p>Começo explicando como funcionam projetos de ciência de dados, muito com base em <span class="citation">(Hadley Wickham and Garrett Grolemund 2024)</span>.</p>
-<p>A seguir, apresento o tidyverse, que é um <em>frameworks</em> para manipulação e visualização de dados. Escolhi falar sobre ele, em oposição à usar o R base, ou outro <em>framework</em>, porque ele é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Especialmente, os conceitos expostos na parte I farão com que sua compreensão seja muito mais simples. Aqui, a documentação oficial <span class="citation">(<span>“Tidyverse,”</span> n.d.)</span> também é muito usada.</p>
-<p>Nessa segunda parte, começo a utilizar mais exemplos, uma vez que manipular dados é uma tarefa bastante aplicada. Ainda assim, não tantos quanto outros livros, e as considerações gerais sobre o estilo do presente material se mantêm.</p>
-<p>Os capítulos estão organizados por etapas de um projeto, e pacotes do tidyverse:</p>
+<p>Bem vindo à segunda parte deste livro. Aqui, foco em ensinar o Tidyverse. O Tidyverse é um conjunto de pacotes para o R, que seguem uma mesma filosofia e sintaxe, e disponibilizam ferramentas poderosas para a maior parte das tarefas essencias em projetos no R.</p>
+<p>Começo explicando essa filosfia e sintaxe, pois é a intuição trazida por elas que fazem esse universo ser tão simples de aprender. A seguir, ensino cada um dos pacotes base:</p>
 <ul>
-<li>Capítulo <a href="ds-import.html#ds-import">9</a>: descrevo os fundamentos e etapas de um projeto de ciência de dados. Também adianto como importar diferentes tipos de arquivos para o R usando o pacote “readr”.</li>
-<li>Capítulo <a href="manipulation.html#manipulation">10</a>: descrevo os fundamentos e operações da manipulação de dados. Falo como aplicá-las usando os pacotes “dplyr” e “tidyr”.</li>
-<li>Capítulo <a href="visualization.html#visualization">11</a>: descrevo os fundamentos da visualização de dados. Falo como aplicá-la usando o pacote “ggplot2”.</li>
-<li>Capítulo <a href="strings-factors.html#strings-factors">12</a>: falo mais sobre <em>strings</em> e <em>factors</em> no R. Apresento as ferramentas de manipulação nos pacotes “stringr”, “forecats”, e “glue”.</li>
-<li>Capítulo <a href="functional.html#functional">13</a>: falo sobre as aplicações da programação funcional com o pacote “purrr”.</li>
-<li>Capítulo <a href="time-series.html#time-series">14</a>: falo sobre manipulação de datas e séries de tempo com o pacote “lubridate”, e (pacote a definir).</li>
+<li>Capítulo <a href="philosophy.html#philosophy">9</a>: descrevo os fundamentos e etapas de um projeto de ciência de dados. Também adianto como importar diferentes tipos de arquivos para o R usando o pacote “readr”.</li>
+<li>Capítulo <a href="stringr-forcats.html#stringr-forcats">10</a>: apresento as ferramentas de manipulação de strings em “stringr”, e factors em “forcats”.</li>
+<li>Capítulo <a href="tidyr-dplyr.html#tidyr-dplyr">11</a>: descrevo os fundamentos e operações da manipulação de dados com os pacotes “dplyr” e “tidyr”.</li>
+<li>Capítulo <a href="ggplot.html#ggplot">12</a>: descrevo os fundamentos da visualização de dados com o pacote “ggplot2”.</li>
+<li>Capítulo <a href="purrr.html#purrr">13</a>: falo sobre as aplicações da programação funcional com o pacote “purrr”.</li>
+<li>Capítulo <a href="time-series.html#time-series">14</a>: falo sobre manipulação de datas e séries de tempo com pacotes adicionais, como “lubridate”, e [pacote a definir].</li>
+<li>Capítulo <a href="others2.html#others2">15</a>: falo sobre outros pacotes adicionais, como o framework “tidymodels”.</li>
 <li>Recapitulado: seção para retomar os conteúdos aprendidos.</li>
 </ul>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="recap1.html">Recapitulando</a></div>
-<div class="next"><a href="ds-import.html"><span class="header-section-number">9</span> Ciência de Dados e Importação</a></div>
+<div class="next"><a href="philosophy.html"><span class="header-section-number">9</span> Filosofia, readr, tibble</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#intro2">Parte II - Ciência de Dados com o Tidyverse</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#intro2">Parte II - Fundamentos: Tidyverse</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/ricardo-semiao/R-course/blob/master/2-intro.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/ricardo-semiao/R-course/edit/master/2-intro.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/ricardo-semiao/rfcd/blob/master/2-intro.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/ricardo-semiao/rfcd/edit/master/2-intro.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -177,7 +184,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>R: Teoria e Aplicações</strong>" was written by Ricardo Semião. It was last built on 03/2024.</p>
+    <p>"<strong>R: Fundamentos e Ciência de Dados</strong>" was written by Ricardo Semião. It was last built on 06/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

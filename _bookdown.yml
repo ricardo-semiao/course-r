@@ -20,7 +20,7 @@ rmd_files: [
   
   "2-intro.Rmd",
   "2-philosophy.Rmd",
-  "2-strings_forcats.Rmd",
+  "2-stringr_forcats.Rmd",
   "2-tidyr_dplyr.Rmd",
   "2-ggplot.Rmd",
   "2-purrr.Rmd",
@@ -38,7 +38,6 @@ rmd_files: [
   
   "4-intro.Rmd",
   "4-stats_prob.Rmd",
-  "4-exploration.Rmd",
   "4-regression.Rmd",
   "4-ml.Rmd",
   "4-others.Rmd",
