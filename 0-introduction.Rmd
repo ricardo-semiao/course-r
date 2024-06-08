@@ -37,7 +37,7 @@ O R é uma linguagem bem específica. Abaixo cito algumas de suas característic
 - Ocupa um espaço muito interessante na paisagem de softwares:
   - É uma linguagem de programação verdadeira, permitindo soluções para problemas mais complexos, e dando mais flexibilidade ao usuário, quando comparado com outros softwares estatísticos não programáticos como o SAS, SPSS, Stata, Eviews, e GRETL.
   - Mas é especializado, _interpretada_, e _high-level_, facilitando seu uso, e apresentando uma cuva de aprendizado mais rápida que linguagens mais complexas/generalistas como C, e talvez Python. <br>
-- A especialização em estatística faz com que ferramentas muito necessárias para análise de dados sejam de fácil acesso, como _data-frames_ e _vetorização_. O usuário não precisa aprender extensões para realizar projetos em ciência de dados.
+- A especialização em estatística faz com que ferramentas muito necessárias para análise de dados sejam de fácil acesso, como _data frames_ e _vetorização_. O usuário não precisa aprender extensões para realizar projetos em ciência de dados.
 
 - Algumas características mais técnicas:
   - Sua sintaxe é similar à C e Python, mas sua semântica é a de uma linguagem funcional, mais similar à Lisp e APL. Veremos que o estilo funcional é muito útil para projetos de ciência de dados.
@@ -68,20 +68,24 @@ Nenhuma dessas é exatamente didática, mas existe uma vasta bibliografia de liv
   - "Working with R" [@workr].
   - "An Introduction to R" [@intror].
 - Livros para ciência de dados, mas com introdução extensa: "R Programming for Data Science", "Modern R with the Tidyverse".
-- Livro complementar, com abordagem "aprender fazendo": "Hands on Programming with R" [@hopr]
-  
-**Bibliografia base da parte II:** o livro "R for Data Science" [@r4ds] e as documentações dos pacotes do tidyverse [@tidy].
+- Livro complementar, com abordagem "aprender fazendo": "Hands on Programming with R" [@hopr].
+
+**Bibliografia base da parte II:** as documentações dos pacotes do tidyverse [@tidy], e "ggplot2: Elegant Graphics for Data Analysis" (3e) [@ggplot].
+
+**Bibliografia base da parte III:** o livro "R for Data Science" [@r4ds].
 
 - Outros livros sobre manipulação e visualização de dados:
-  - "STAT 545".
   - "Data Manipulation in R" [@mandata].
-  - "ggplot2: Elegant Graphics for Data Analysis" [@ggplot].
+  - "STAT 545" [@stat545].
+  - "Statistical Inference via Data Science" [@moderndive].
   - "Data Wrangling Recipes in R" [@wrandata].
 - Livro complementar, com abordagem "aprender fazendo": "Introduction to Data Exploration and Analysis with R" [@introdata].
 
-**Bibliografia base da parte III:** o livro "R Cookbook" (segunda edição) [@advr], e o livro "Big Book of R" [@bigr].
+**Bibliografia base da parte IV:** o livro "R Cookbook" (2e) [@advr], e o "R for Data Science".
 
-- Existem muitos outros livros e tutoriais dedicados a aplicações específicas. Algumas listas (incompletas) podem ser encontradas no [arquivo do CRAN](https://www.r-project.org/doc/bib/R-jabref.html).
+- Outros livros com aplicações diversas:
+  - "Big Book of R" [@bigr].
+  - Existem muitos outros livros e tutoriais dedicados a aplicações específicas. Algumas listas (incompletas) podem ser encontradas no [arquivo do CRAN](https://www.r-project.org/doc/bib/R-jabref.html).
 
 
 

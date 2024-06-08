@@ -1,10 +1,11 @@
-# Ciência de Dados e Importação {#ds-import}
+# Ciência de Dados {#ds}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, descreverei os fundamentos e etapas de um projeto de ciência de dados. Também adianto como importar diferentes tipos de arquivos para o R usando o pacote "readr".
+Neste capítulo, descreverei os fundamentos e etapas de um projeto de ciência de dados, e como é o formato de _tidy data_.
+
 
 ## Ciência de Dados
 

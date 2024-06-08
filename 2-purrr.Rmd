@@ -1,23 +1,42 @@
-# Exploração de Dados {#exploration}
+# purrr {#purrr}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, apresentarei como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter informações contidas em datasets.
+Neste capítulo, falarei sobre as aplicações da programação funcional com o pacote "purrr".
 
 
-## Useful Visualizations
+## Map
+
+### Map 1
+
+
+### Map 2
+
+
+### Map p
 
 
 
-## Useful Metrics
+## Others
+
+### Modify
 
 
+### Reduce
 
-## Useful Graphs
+
+### Predicates
 
 
+### Pluck
+
+
+### Reshape
+
+
+### Concatenate
 
 <div class="double-hrule"></div>
 
@@ -39,5 +58,4 @@ Neste capítulo, apresentarei como aplicar as habilidades de manipulação e vis
 ---
 
 ### Referências {-}
-
 

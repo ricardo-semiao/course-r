@@ -1,8 +1,9 @@
-# Manipulação de Dados {#manipulation}
+# tidyr e dplyr {#tidyr-dplyr}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
+
 
 Neste capítulo, descreverei os fundamentos e operações da manipulação de dados. Falo como aplicá-las usando os pacotes "dplyr" e "tidyr".
 

@@ -1,0 +1,7 @@
+# Recapitulando {#recap3 .unnumbered}
+
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+Aqui, apresentarei o recapitulando da terceira parte, falando dos fundamentos da ciência de dados e suas etapas iniciais.

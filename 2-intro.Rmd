@@ -1,23 +1,18 @@
-# Parte II - Ciência de Dados com o Tidyverse {#intro2 .unnumbered}
+# Parte II - Fundamentos: Tidyverse {#intro2 .unnumbered}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Bem vindo à segunda parte deste livro. Aqui, foco em ensinar sobre duas das tarefas mais comuns em aplicações do R, manipulação e visualização de dados. Porém, ensino esses conceitas com base na "teoria" por trás de projetos de ciência de dados.
+Bem vindo à segunda parte deste livro. Aqui, foco em ensinar o Tidyverse. O Tidyverse é um conjunto de pacotes para o R, que seguem uma mesma filosofia e sintaxe, e disponibilizam ferramentas poderosas para a maior parte das tarefas essencias em projetos no R.
 
-Começo explicando como funcionam projetos de ciência de dados, muito com base em [@r4ds].
+Começo explicando essa filosfia e sintaxe, pois é a intuição trazida por elas que fazem esse universo ser tão simples de aprender. A seguir, ensino cada um dos pacotes base:
 
-A seguir, apresento o tidyverse, que é um _frameworks_ para manipulação e visualização de dados. Escolhi falar sobre ele, em oposição à usar o R base, ou outro _framework_, porque ele é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Especialmente, os conceitos expostos na parte I farão com que sua compreensão seja muito mais simples. Aqui, a documentação oficial [@tidy] também é muito usada.
-
-Nessa segunda parte, começo a utilizar mais exemplos, uma vez que manipular dados é uma tarefa bastante aplicada. Ainda assim, não tantos quanto outros livros, e as considerações gerais sobre o estilo do presente material se mantêm.
-
-Os capítulos estão organizados por etapas de um projeto, e pacotes do tidyverse:
-
-- Capítulo \@ref(ds-import): descrevo os fundamentos e etapas de um projeto de ciência de dados. Também adianto como importar diferentes tipos de arquivos para o R usando o pacote "readr".
-- Capítulo \@ref(manipulation): descrevo os fundamentos e operações da manipulação de dados. Falo como aplicá-las usando os pacotes "dplyr" e "tidyr".
-- Capítulo \@ref(visualization): descrevo os fundamentos da visualização de dados. Falo como aplicá-la usando o pacote "ggplot2".
-- Capítulo \@ref(strings-factors): falo mais sobre _strings_ e _factors_ no R. Apresento as ferramentas de manipulação nos pacotes "stringr", "forecats", e "glue".
-- Capítulo \@ref(functional): falo sobre as aplicações da programação funcional com o pacote "purrr".
-- Capítulo \@ref(time-series): falo sobre manipulação de datas e séries de tempo com o pacote "lubridate", e (pacote a definir).
-- Recapitulado: seção para retomar os conteúdos aprendidos.
+- Capítulo \@ref(philosophy): descrevo os fundamentos e etapas de um projeto de ciência de dados. Também adianto como importar diferentes tipos de arquivos para o R usando o pacote "readr".
+- Capítulo \@ref(stringr-forcats): apresento as ferramentas de manipulação de strings em "stringr", e factors em "forcats".
+- Capítulo \@ref(tidyr-dplyr): descrevo os fundamentos e operações da manipulação de dados com os pacotes "dplyr" e "tidyr".
+- Capítulo \@ref(ggplot): descrevo os fundamentos da visualização de dados com o pacote "ggplot2".
+- Capítulo \@ref(purrr): falo sobre as aplicações da programação funcional com o pacote "purrr".
+- Capítulo \@ref(time-series): falo sobre manipulação de datas e séries de tempo com pacotes adicionais, como "lubridate", e [pacote a definir].
+- Capítulo \@ref(others2): falo sobre outros pacotes adicionais, como o framework "tidymodels".
+- Recapitulado \@ref(recap2): seção para retomar os conteúdos aprendidos.

@@ -1,0 +1,31 @@
+# Manipular {#manipulate}
+
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+Neste capítulo, descreverei as alterações que podemos queere fazer em um dataser já arrumado.
+
+
+
+<div class="double-hrule"></div>
+
+## Complemento {.unlisted .unnumbered}
+
+### Recapitulando {-}
+
+
+---
+
+### Exercícios {-}
+
+
+---
+
+### Dicionário de Funções {-}
+
+
+---
+
+### Referências {-}
+

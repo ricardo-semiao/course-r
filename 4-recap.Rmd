@@ -1,0 +1,7 @@
+# Parte III - Aplicações Diversas {#recap4 .unnumbered}
+
+:::{.warn}
+este capítulo está em construção. O que segue abaixo é apenas um rascunho.
+:::
+
+Aqui, apresentarei o recapitulando da quarta parte, falando dos fundamentos da modelagem e aplicações importantes.

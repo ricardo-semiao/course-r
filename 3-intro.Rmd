@@ -1,17 +1,16 @@
-# Parte III - Aplicações Diversas {#intro3 .unnumbered}
+# Parte III - Ciência de Dados: Processar e Visualizar {#intro3 .unnumbered}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Bem vindo à terceira parte deste livro. Aqui, o objetivo é mostrar como aplicar os conhecimentos adquiridos nas outras duas partes, em temas comuns. Já existe uma literatura extensa com objetivos similares, portanto, foco em temas mais centrais, e/ou que tenham um alto ganho de serem abordados com os _frameworks_ e linguagem desenvolvida neste livro.
+Bem vindo à segunda parte deste livro. Aqui, foco em ensinar sobre o que é ciência de dados, e o formato de _tidy data_. Ensino também o processo de obter esse formato: importar, arrumar, manipular, e unir bases de dados. Por fim, vamos descobrir como habilidades de visualização de dados para explorá-los, obtendo intuições para a etapa da modelagem.
 
-Agora sim, o estilo do livro é bem mais mostrar as capacidades do R através de exemplos, do que o estudo teórico das outras seções.
+Os capítulos estão organizados por etapas de um projeto de ciência de dados:
 
-Os temas são:
-
-- Capítulo \@ref(stats-prob): apresento como resolver problemas comuns em probabilidade e estatística, o assunto central do R.
-- Capítulo \@ref(exploration): apresento como aplicar as habilidades de manipulação e visualização de dados, para explorar e obter informações contidas em datasets.
-- Capítulo \@ref(regression): apresento como realizar análises de regressões, com base nos vários modelos comuns inclusos no R.
-- Capítulo \@ref(ml): complementar à regressões, apresento rapidamente alguns _frameworks_ para modelos mais complexos de _machine learning_.
-- Capítulo \@ref(others): para servir de referência, listo outras aplicações de possível interesse, especialmente aquelas com relação aos conceitos deste livro.
+- Capítulo \@ref(ds): descrevo os fundamentos e etapas de um projeto de ciência de dados e o que é _tidy data_.
+- Capítulo \@ref(import-tidy): descrevo como importar e arrumar dados.
+- Capítulo \@ref(manipulate): descrevo outras manipulações que dados já arrumados podem exigir.
+- Capítulo \@ref(unite): descrevo unir (_merge_) várias bases de dados em uma só.
+- Capítulo \@ref(visualizate): descrevo os fundamentos da visualização de dados, e como explorar dados para adquirir intuições.
+- Recapitulado \@ref(recap3): seção para retomar os conteúdos aprendidos.

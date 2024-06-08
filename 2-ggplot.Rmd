@@ -1,33 +1,29 @@
-# Datas e Séries de Tempo {#time-series}
+# ggplot2 {#ggplot}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, falarei sobre manipulação de datas e séries de tempo com o pacote "lubridate", e [pacote a definir].
+Neste capítulo, descreverei os fundamentos da visualização de dados. Falo como aplicá-la usando o pacote "ggplot2".
 
 
-## Dates
-
-### Parsing
-
-
-### Mutate
-
-
-### Time Zones
-
-
-### Math
-
-
-### Periods, Durations, e Intervals
+## Introdução à Visualização
 
 
 
-## Time Series
+## Layers
 
-_Framework_ a ser definido
+
+
+## Scales
+
+
+
+## Grammar
+
+
+
+## Others
 
 
 

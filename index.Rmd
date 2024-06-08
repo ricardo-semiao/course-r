@@ -1,14 +1,14 @@
 --- 
-title: "R: Teoria e Aplicações"
+title: "R: Fundamentos e Ciência de Dados"
 author: "Ricardo Semião"
-date: "03/2024"
+date: "06/2024"
 site: bookdown::bookdown_site
 bibliography: book.bib
 # documentclass: book
 # link-citations: yes
-github-repo: ricardo-semiao/R-course
+github-repo: ricardo-semiao/rfcd
 description: "Este livro tem o objetivo de ensinar a linguagem R. Ele (i) é feito para níveis diversos de experiência, é introdutório, mas expõe conceitos avançados e com profundidade; (ii) tem uma abordagem mista, primeiro focando na teoria, fundamentos, e funcionamento da linguagem, mas depois apresentando temas aplicados."
-url: https://ricardo-semiao.github.io/R-course/
+url: https://ricardo-semiao.github.io/rfcd/
 # cover-image: path to the social sharing image like images/cover.jpg
 ---
 
@@ -25,6 +25,8 @@ este livro está em construção. O material aqui presente ainda é um rascunho,
 No momento, o iníco do livro, até o capítulo \@ref(syntax-vars), está relativamente em ordem.
 :::
 
+
+
 ## Por que Este Livro? {-}
 
 Existem diferentes estilos de aprendizagem, alguns preferem "aprender fazendo", outros preferem "aprender estudando". Este livro é, em sua maior parte, signatário do segundo. Porém, mesmo se esse não for seu estilo preferido, argumento que ele combina com o estudo de R.
@@ -34,11 +36,9 @@ R é uma linguagem única, para o bem e para o mal:
 - Ela contém muitas exceções, particularidades, e heranças de outros tempos. Elas são causas comuns de erros e dificuldades de compreensão. Aprender a regra, a teoria, o contexto geral, facilita muito aprender a lidar com exceções da maneira menos dolorosa possível.
 - Ela contém ferramentas poderosas e incomuns. A especialização em estatística motiva a existência de construtos nada óbvios, mas muito úteis. Existe uma variedade de estilos (funcionais, orientado ao objeto, metalinguísticos) igualmente importantes, mas difíceis de alcançar sem um estudo mais teórico.
 
-Mas claro que o conhecimento aplicado também é quisto (deixemos o estudo teórico em si mesmo para os _nerds_ da ciência da computação). Por isso, tento expor a parte teórica da maneira mais tranquila e enxuta possível, focando no essencial e deixando o extra como extra.
+Essas especificidades são exploradas na primeira metade do livro, "Fundamentos". A ideia é que o leitor fique confiante de saber "como o R funciona", e não apenas "saber escrever códigos", mas sem investir tempo nas complexidades não-essenciais. Adicionalmente, introduzo o [tidyverse](https://www.tidyverse.org/), que dispõe ferramentas poderosas mas acessíveis, graças à sua filosofia e sintaxe intuitiva.
 
-Portanto, na segunda parte do livro, foco em aplicar o conhecimento recém adquirido para aprender a fazer as duas tarefas mais comuns, presentes em basicamente todo projeto no R, a manipulação e visualização de dados. Mas sempre relacionando com os conceitos "teóricos" da ciência de dados.
-
-Por fim, na terceira parte, apresento aplicações variadas no estilo "livro de receitas". Aqui, existe muita intersecção com uma extensa literatura já existente, mas creio que vale muito a pena aprender como aplicar todo o arcabouço visto antes em alguns dos tipos de projetos mais comuns.
+Mas claro que o conhecimento aplicado também é quisto (deixemos o estudo puramente teórico para os _nerds_ da ciência da computação). Portanto, na segunda metade do livro, "Ciência de Dados", foco em aplicar o conhecimento recém adquirido para aprender algumas das tarefas mais comuns em projetos no R: arrumação, manipulação, visualização, e modelagem de dados. Aqui, os conhecimentos da primeira metade permitem um aprendizado mais rápido e profundo.
 
 Antes de seguir adiante, __uma palava motivacional__: as vezes uma pessoa passa mais tempo estudando um assunto do que deveria, e quanto mais fundo vai, mais difícil é parar de estudar. Esse é o meu caso, mas gostaria de ter companhia nessa situação (ninguém é de ferro). Foi com isso em mente que montei esse material, para dar a oportunidade do leitor fazer o mesmo, da forma mais eficiente possível. Espero que goste!
 
@@ -46,17 +46,18 @@ Antes de seguir adiante, __uma palava motivacional__: as vezes uma pessoa passa 
 
 ## Organização do Livro {-}
 
-O livro é dividido em três partes: "R base", "Ciência de Dados com o Tidyverse", e "Aplicações Diversas".
+O livro é dividido em quatro partes: "I - Fundamentos: R Base", "II - Fundamentos: Tidyverse", "III - Ciência de Dados: Processar e Visualizar", e "IV - Ciência de Dados: modelar".
 
-As bases desse material estão descritas na seção \@(biblio), mas adianto o **_disclaimer_:** boa parte do conteúdo deste livro é uma curadoria, simplificação, e adaptação dos materiais abaixo (organizados por parte):
+As bases desse material estão descritas na seção \@(biblio), já adianto o **_disclaimer_: boa parte do conteúdo deste livro é uma curadoria, adaptação, e tradução dos materiais abaixo**.
 
-- Primeira parte - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R, 2nd Edition](https://adv-r.hadley.nz/).
-- Segunda parte - [R for Data Science, 2nd Edition](https://r4ds.hadley.nz/), e [tidyverse documentation](https://www.tidyverse.org/).
-- Terceira parte - [R Cookbook, 2nd Edition](https://rc2e.com/), e [Big Book of R](https://www.bigbookofr.com/).
+- Parte I - [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf), e [Advanced R, 2nd Edition](https://adv-r.hadley.nz/).
+- Parte II - [tidyverse documentation](https://www.tidyverse.org/), e [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/).
+- Parte III - [R for Data Science (2e)](https://r4ds.hadley.nz/).
+- Parte IV - R4DS, e [R Cookbook (2e)](https://rc2e.com/).
 
 
 ### Introdução {-}
-Para começar exponho alguns temas iniciais:
+Para começar, exponho alguns temas iniciais:
 
 - A história da linguagem, suas características gerais, porque aprender R.
 - A literatura sobre R, e as referências deste livro.
@@ -64,27 +65,31 @@ Para começar exponho alguns temas iniciais:
 - A instalação e explicação da interface do RStudio (de uma maneira bastante preguiçosa).
 
 
-### Parte I - R base {-}
+### Parte I - Fundamentos: R base {-}
 Os conceitos basilares do R costumam ser ensinados rapidamente, para dar prioridade na manipulação de dados e aplicações. Esse curso não fará isso, iremos passar com bastante calma por essa dimensão, tanto porque existem menos tutoriais que fazem isso, mas principalmente, porque aprender sobre como o R funciona com detalhe gera uma série de benefícios:
 
 - Permite entender códigos mais complexos.
 - Permite aprender fontes comuns de erros e como evitá-las.
 - Permite escrever códigos mais elegantes e principalmente mais eficientes.
-- Facilitará a explicação dos conceitos que empoderam o _tidyverse_.
+- Facilitará a explicação dos conceitos que empoderam o tidyverse.
 
 Essa abordagem é algo como ter aulas formais de uma língua, em oposição a ensino para turismo. A utilidade dessa abordagem depende de seu objetivo, se ele é "conseguir aplicar rapidamente novos conhecimentos", outros livros serão mais úteis.
 
 
-### Parte II - Ciência de Dados com o Tidyverse {-}
-Na segunda parte, iremos aplicar os conhecimentos obtidos e a linguagem desenvolvida para aprender sobre duas das tarefas mais comuns em aplicações do R, manipulação e visualização de dados. Porém, ensino esses conceitas com base na "teoria" por trás de projetos de ciência de dados.
+### Parte II - Fundamentos: Tidyverse {-}
+O tidyverse é um conjunto incrível de pacotes, com uma filosofia e sintaxe unificada e intuitiva, que apresenta ferramentas poderosas para a maior parte das tarefas essencias em projetos no R.
 
-Vamos executar essas tarefas no R usando o _framework_ tidyverse. Escolhi falar sobre ele, em oposição à usar o R base, ou outro _framework_, porque ele é um dos agregados de pacotes mais bem trabalhados, com uma sintaxe simples de entender, e que abrange todas as etapas da manipulação de dados. Especialmente, os conceitos expostos na parte I farão com que sua compreensão seja muito mais simples.
+Nessa parte, explicarei seus fundamentos, relacionando com os conceitos da Parte I, e darei rápidos tutoriais sobre as ferramentas nele contidas. Todas serão de suma importância para a parte seguinte.
 
 
-### Parte II - Aplicações Diversas {-}
-A parte três mostra como aplicar os conhecimentos adquiridos nas outras duas partes, em temas comuns. Já existe uma literatura extensa com objetivos similares, portanto, foco em temas mais centrais, e/ou que tenham um alto ganho de serem abordados com os _frameworks_ e linguagem desenvolvida neste livro.
+### Parte III - Ciência de Dados: Processar e Visualizar {-}
+Aqui começa a segunda metade do livro. Inicio respondendo "o que é ciência de dados?", e em qual formato queremos esse tal de "dados". A partir daí, o objetivo é aprender a obter, arrumar, manipular, e unir bases de dados, de modo a alcançar esse formato quisto.
 
-Os temas são: problemas comuns da probabilidade e estatística, exploração de dados, modelagem de regressão, e modelagem de machine learning. Ao fim, listo referências para outras aplicações de possível interesse.
+Uma vez com os dados prontos, vamos utilizar as habilidades de visualização de dados para explorá-los, obtendo intuições para a etapa da modelagem.
+
+
+### Parte IV - Ciência de Dados: Modelagem {-}
+Falando nela, a última parte do livro foca em como descrever dados com base em um modelo. Irei explicar o que é um modelo, e apresentar algumas estratégias e _frameworks_ disponíveis. Ao fim, listo referências para outras aplicações de possível interesse.
 
 
 
@@ -100,6 +105,7 @@ Esse material, como um todo, está licenciado pela [Creative Commons Attribution
 
 Meu nome é Ricardo Semião, sou mestrando em economia na FGV-EESP, e _sou fã_ de R. Se tiver algum comentário sobre este material, por favor mande em meu email ricardo.semiao@outlook.com. Minhas outras redes são:
 
+- [Site pessoal](https://ricardo-semiao.github.io/).
 - [Github](https://github.com/ricardo-semiao).
 - [Linkedin](https://www.linkedin.com/in/ricardo-semiao/).
 - [StackOverflow](https://stackoverflow.com/users/13048728/ricardo-semi%c3%a3o-e-castro).

@@ -1,42 +1,17 @@
-# Programação Funcional {#functional}
+# Importar e Arrumar {#import-tidy}
 
 :::{.warn}
 este capítulo está em construção. O que segue abaixo é apenas um rascunho.
 :::
 
-Neste capítulo, falarei sobre as aplicações da programação funcional com o pacote "purrr".
+Neste capítulo, descreverei como obter o formato "arrumado" de dados, utilizando os pacotes tidyr e dplyr.
 
 
-## Map
-
-### Map 1
+## Importar
 
 
-### Map 2
+## Arrumar
 
-
-### Map p
-
-
-
-## Others
-
-### Modify
-
-
-### Reduce
-
-
-### Predicates
-
-
-### Pluck
-
-
-### Reshape
-
-
-### Concatenate
 
 <div class="double-hrule"></div>
 
