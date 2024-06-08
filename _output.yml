@@ -1,6 +1,6 @@
 bookdown::bs4_book:
   css: style.css
-  repo: https://github.com/ricardo-semiao/R-course
+  repo: https://github.com/ricardo-semiao/rfcd
   includes:
     in_header: [script.html]
 
@@ -13,9 +13,9 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><a href="./">R: Teoria e Aplicações</a></li>
+        <li><a href="./">R: Fundamentos e Ciência de Dados</a></li>
       after: |
-        <li><a href="https://github.com/ricardo-semiao/R-course" target="blank">Ver código-fonte <i class="fab fa-github"></i></a></li>
+        <li><a href="https://github.com/ricardo-semiao/rfcd" target="blank">Ver código-fonte <i class="fab fa-github"></i></a></li>
 
     download: "pdf"
   includes:
