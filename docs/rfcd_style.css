@@ -96,10 +96,10 @@ pre code {
 
 /* Links */
 a:link {
-  color: var(--green);
+  color: #137458 !important;
 }
 a:visited {
-  color: var(--green);
+  color: #137458 !important;
 }
 
 /* Lists */
