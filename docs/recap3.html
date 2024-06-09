@@ -5,6 +5,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Recapitulando | R: Fundamentos e Ciência de Dados</title>
+<link rel="stylesheet" href="../site_structure.css">
+<link rel="stylesheet" href="../site_style.css">
+<link rel="stylesheet" href="rfcd_style.css">
 <meta name="author" content="Ricardo Semião">
 <meta name="description" content="este capítulo está em construção. O que segue abaixo é apenas um rascunho. Aqui, apresentarei o recapitulando da terceira parte, falando dos fundamentos da ciência de dados e suas etapas iniciais.">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
@@ -24,35 +27,7 @@
 <script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
 <script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script><link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
 <script src="libs/selectize-0.12.0/selectize.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var bookSourceLink = document.getElementById("book-source");
-      if (bookSourceLink) {
-        bookSourceLink.innerHTML = 'Ver código <i class="fab fa-github" aria-hidden="true"></i>';
-      }
-      
-      var bookRepoLink = document.getElementById("book-repo");
-      if (bookRepoLink) {
-        bookRepoLink.innerHTML = 'Ver código-fonte do livro <i class="fab fa-github" aria-hidden="true"></i>';
-      }
-      
-      var tableOfContents = document.querySelector('nav[aria-label="Table of contents"] h2');
-      if (tableOfContents) {
-        tableOfContents.textContent = 'Índice';
-      }
-
-      var onThisPage = document.querySelector('nav#toc h2');
-      if (onThisPage) {
-        onThisPage.textContent = 'Nesta página';
-      }
-      
-      var searchInput = document.getElementById('search');
-      if (searchInput) {
-        searchInput.placeholder = 'Buscar';
-      }
-    });
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -79,9 +54,10 @@
       margin-left: 2em;
     }
   </style>
-<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
+
+<div id="site-header-container"></div>
 
 <div class="container-fluid">
 <div class="row">
@@ -171,7 +147,11 @@
 </div>
 </div> <!-- .container -->
 
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+<div id="site-footer-container"></div>
+
+<!-- 
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong>R: Fundamentos e Ciência de Dados</strong>" was written by Ricardo Semião. It was last built on 06/2024.</p>
@@ -180,9 +160,13 @@
   <div class="col-12 col-md-6 mt-3">
     <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
   </div>
+  
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+</footer>
+-->
+
+<script src="../site_structure.js"></script><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";

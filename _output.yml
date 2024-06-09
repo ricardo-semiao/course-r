@@ -1,8 +1,6 @@
 bookdown::bs4_book:
-  css: style.css
   repo: https://github.com/ricardo-semiao/rfcd
-  includes:
-    in_header: [script.html]
+  template: book_template.html
 
 bookdown::gitbook:
   lib_dir: "libs"

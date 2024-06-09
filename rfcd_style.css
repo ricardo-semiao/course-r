@@ -1,3 +1,50 @@
+/* Content width */
+:root {
+  --main-width: 65%;
+}
+
+/* Basic */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+h1 {
+  text-align: center;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+a {
+  color: #1B9E77;
+}
+a:visited {
+  color: #1B9E77;
+}
+
+/* Navbar and footer */
+div.navbar {
+  width: var(--main-width);
+  margin: auto;
+}
+nav li {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: larger;
+}
+.current-page {
+  font-weight: bold;
+}
+nav ul {
+  padding: 0;
+}
+footer.div {
+  background-color: #09392b;
+  padding: 15px 0 10px 0;
+}
+footer.a {
+  color: #c0dad2 !important;
+}
+
 /* Predefined styles */
 p.caption {
   color: #777;

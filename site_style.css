@@ -1,0 +1,74 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+    --main-width: 65%;
+    --orange: hsl(26, 98%, 45%);
+    --green: #1B9E77;
+    --darkgreen: #09392b;
+    --gray: #f2f2f2;
+    --darkgray: #ccc;
+}
+@media (max-width: 920px) { :root {--main-width: 80%;} }
+@media (max-width: 740px) { :root {--main-width: 95%;} }
+
+/* Basic */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+a {
+    color: var(--green);
+}
+a:visited {
+    color: var(--green);
+}
+
+/* Home and CV */
+#titlecard {
+    background-color: var(--orange);
+    height: 124px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#titlecard h1 {
+    margin: 0;
+}
+
+main#home, main#cv {
+    width: var(--main-width);
+    margin: auto;
+    padding: 0;
+}
+
+#home section, #cv section {
+    border-bottom: 1px solid var(--darkgray);
+    padding: 32px 0 32px 0;
+    margin: 0;
+}
+#home section:last-of-type, #cv section:last-of-type {
+    border-bottom: none;
+}
+#home section h2, #cv section  h2 {
+    margin: 0 0 16px 0;
+}
+
+#home .multicolumn, #cv .multicolumn {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    align-items: flex-start;
+}
+
+#socials a {
+    text-decoration: none;
+}
